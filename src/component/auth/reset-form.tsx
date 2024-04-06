@@ -71,6 +71,7 @@ export const ResetForm = () => {
                       disabled={isPending}
                       placeholder="Email"
                       type="email"
+                      className="placeholder"
                     />
                   </FormControl>
                   <FormMessage />
