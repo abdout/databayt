@@ -1,1 +1,1 @@
-export const domain = process.env.DOMAIN;
+export const domain = "https://eco.databayt.org"
