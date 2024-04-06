@@ -12,10 +12,11 @@ const SmIcon = (props: {
     <Link href={props.path}>
         <Image
           src={props.src}
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           alt={props.alt}
           onClick={props.onClick}
+          className=" rounded-full border"
         />
     </Link>
   );

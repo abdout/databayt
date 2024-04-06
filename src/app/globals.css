@@ -54,5 +54,12 @@ h1 {
     letter-spacing: 1px;
   }
 
+  .placeholder::placeholder {
+    color: #999;
+    opacity: 0.7;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+  }
+
 
   

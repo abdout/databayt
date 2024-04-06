@@ -23,7 +23,7 @@ const Header = ({ params }: { params: Params }) => {
 
   return (
     <div>
-      <nav className="flex justify-between p-4 absolute top-1 w-full">
+      <nav className="flex justify-between pt-4 absolute top-1 w-full">
         <ul className="flex space-x-8">
           {links.map((link) => (
             <li

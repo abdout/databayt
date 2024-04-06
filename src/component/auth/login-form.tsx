@@ -115,6 +115,7 @@ export const LoginForm = () => {
                           disabled={isPending}
                           placeholder="Email"
                           type="email"
+                          className="placeholder"
                         />
                       </FormControl>
                       <FormMessage />
@@ -133,6 +134,8 @@ export const LoginForm = () => {
                           disabled={isPending}
                           placeholder="Password"
                           type="password"
+                          className="placeholder"
+                          
                         />
                       </FormControl>
                       <Button

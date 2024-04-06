@@ -1,4 +1,4 @@
-import { FC, FormEvent, useState } from "react";
+import { FC, useState } from "react";
 import { useModal } from "@/provider/modal";
 import Task from "../step/task";
 import Team from "../step/team";
@@ -31,14 +31,14 @@ const Create: FC = () => {
   const nextStep = () => {
     setCurrentStep(prevStep => prevStep < 8 ? prevStep + 1 : 8);
   };
-  
+
   const prevStep = () => {
     setCurrentStep(prevStep => prevStep > 1 ? prevStep - 1 : 1);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     try {
       const res = await fetch(`${domain}/api/task`, {
         method: "POST",
@@ -56,7 +56,7 @@ const Create: FC = () => {
           project
         }),
       });
-  
+
       if (res.ok) {
         closeModal();
         await fetchTasks();
@@ -78,18 +78,18 @@ const Create: FC = () => {
             nextStep={nextStep}
           />
 
-{currentStep === 1 && <Project project={project} setProject={setProject} />}
-{currentStep === 2 && <Task title={title} setTitle={setTitle} />}
-{currentStep === 3 && <Day date={date} setDate={setDate} />}
-{currentStep === 4 && <Location location={location} setLocation={setLocation} />}
-{currentStep === 5 && <Team team={team} setTeam={setTeam} />}
-{currentStep === 6 && <Status status={status} setStatus={setStatus} />}
-{currentStep === 7 && <Priority priority={priority} setPriority={setPriority} />}
-{currentStep === 8 && <EstTime estTime={estTime} setEstTime={setEstTime} />}
+          {currentStep === 1 && <Project project={project} setProject={setProject} />}
+          {currentStep === 2 && <Task title={title} setTitle={setTitle} />}
+          {currentStep === 3 && <Day date={date} setDate={setDate} />}
+          {currentStep === 4 && <Location location={location} setLocation={setLocation} />}
+          {currentStep === 5 && <Team team={team} setTeam={setTeam} />}
+          {currentStep === 6 && <Status status={status} setStatus={setStatus} />}
+          {currentStep === 7 && <Priority priority={priority} setPriority={setPriority} />}
+          {currentStep === 8 && <EstTime estTime={estTime} setEstTime={setEstTime} />}
         </div>
         <div className="flex flex-col items-center space-y-4">
           <Indicator totalSteps={8} currentStep={currentStep} />
-          <Submit label="Create Task"/>
+          <Submit label="Create Task" />
         </div>
       </form>
     </div>

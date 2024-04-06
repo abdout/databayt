@@ -25,8 +25,8 @@ const Delete: FC<DeleteProps> = ({ id }) => {
   };
 
   return (
-    <button onClick={deleteProject} className="opacity-80 hover:opacity-100">
-      <Icon icon="ant-design:delete-outlined" width={30}/>
+    <button onClick={deleteProject} className="opacity-75 hover:opacity-100">
+      <Icon icon="ant-design:delete-filled" width={40}/>
     </button>
   );
 };

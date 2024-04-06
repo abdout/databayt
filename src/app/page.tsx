@@ -29,7 +29,7 @@ export default function Home() {
           <MdIcon
             src="/contribute/github.png"
             alt="Github"
-            path="https://github.com/Abdout/Databayt"
+            path="https://github.com/abdout/beta"
           />
           <MdIcon
             src="/contribute/discord.png"

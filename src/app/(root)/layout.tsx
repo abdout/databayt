@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
   const pathname = usePathname();
@@ -22,13 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <MainProvider>
       <html lang="en">
         <body className={`${inter.className} flex`}>
-        <div className="flex w-full">
+        <div className="flex w-full h-full">
         <div className="w-1/5">
           <Side />
         </div>
-        <div className="w-4/5 flex flex-col">
+        <div className="px-8 pt-4 w-4/5 flex flex-col ">
           <Header />
-          {children}
+         
+            {children}
+          
         </div>
         </div>
         </body>
