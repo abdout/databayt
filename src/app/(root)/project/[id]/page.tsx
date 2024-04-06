@@ -2,9 +2,7 @@
 import Action from "@/component/project/layout/action";
 import { useEffect, useState } from "react";
 import Info from "@/component/project/detial/info";
-import { api } from "@/constant/api";
-
-
+import { domain } from "@/constant/domain";
 
 interface Project {
   _id: string;
@@ -24,7 +22,7 @@ const Detail = ({ params }: { params: Params }) => {
 
   useEffect(() => {
     if (id) {
-      fetch(`${api}/project/${id}`)
+      fetch(`${domain}/api/project/${id}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");

@@ -8,13 +8,10 @@ import Modal from "@/component/atom/modal/modal";
 import Create from "./crud/create";
 import { useModal } from "@/provider/modal";
 import { Icon } from "@iconify/react";
-import { Task } from '@/type/task/task';  // Import the Task type
 import Circle from "./circle";
 import Image from "next/image";
-import { Delete } from "./crud/delete";
-import SmIcon from "../atom/icon/sm";
 import { useProject } from "@/provider/project";
-import { api } from "@/constant/api";
+import { domain } from "@/constant/domain";
 
 
 const DailyList: React.FC = () => {
@@ -45,7 +42,7 @@ const DailyList: React.FC = () => {
     const confirmed = window.confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`${api}/task?id=${id}`, {
+      const res = await fetch(`${domain}/api/task?id=${id}`, {
         method: "DELETE",
       });
 

@@ -1,6 +1,7 @@
 'use client' ;
 import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { domain } from "@/constant/domain";
 
 interface IFooterFormProps {
   setTriggerUpdate: (value: ((prevState: boolean) => boolean) | boolean) => void;
@@ -55,7 +56,7 @@ const FooterForm: React.FC<IFooterFormProps> = ({ setTriggerUpdate }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/api/report/footer");
+      const res = await fetch(`${domain}/api/report/footer`);
       const data = await res.json();
       if (data && data.footers && data.footers.length > 0) {
         const footer = data.footers[0];

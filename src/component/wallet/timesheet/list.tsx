@@ -14,7 +14,7 @@ import { Icon } from "@iconify/react";
 // import { Delete } from "./crud/delete";
 // import SmIcon from "../atom/icon/sm";
 import { useProject } from "@/provider/project";
-import { api } from "@/constant/api";
+import { domain } from "@/constant/domain";
 
 
 const TimeList: React.FC = () => {
@@ -44,7 +44,7 @@ const TimeList: React.FC = () => {
     const confirmed = window.confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`${api}/task?id=${id}`, {
+      const res = await fetch(`${domain}/api/task?id=${id}`, {
         method: "DELETE",
       });
 

@@ -12,7 +12,7 @@ import Indicator from "@/component/project/home/step/indicator";
 import Submit from "@/component/atom/button/submit";
 import { useTask } from "@/provider/task";
 import Day from "../step/day";
-import { api } from "@/constant/api";
+import { domain } from "@/constant/domain";
 
 
 const Create: FC = () => {
@@ -40,7 +40,7 @@ const Create: FC = () => {
     e.preventDefault();
   
     try {
-      const res = await fetch(`${api}/task`, {
+      const res = await fetch(`${domain}/api/task`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -11,7 +11,7 @@ import { Icon } from "@iconify/react";
 import Circle from "./circle";
 import Image from "next/image";
 import { useProject } from "@/provider/project";
-import { api } from "@/constant/api";
+import { domain } from "@/constant/domain";
 
 
 const TaskList: React.FC = () => {
@@ -41,7 +41,7 @@ const TaskList: React.FC = () => {
     const confirmed = window.confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`${api}/task?id=${id}`, {
+      const res = await fetch(`${domain}/api/task?id=${id}`, {
         method: "DELETE",
       });
 

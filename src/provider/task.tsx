@@ -1,5 +1,5 @@
 "use client";
-import { api } from '@/constant/api';
+import { domain } from '@/constant/domain';
 import { Task, TaskContextProps } from '@/type/task/task';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
@@ -18,14 +18,14 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const fetchTask = async (id: string) => {
-    const response = await fetch(`${api}/task/${id}`);
+    const response = await fetch(`${domain}/api/task/${id}`);
     const data = await response.json();
     setTask(data.task);
   };
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch(`${api}/task`);
+      const res = await fetch(`${domain}/api/task`);
       const data = await res.json();
       setTasks(data.tasks);
     } catch (error) {

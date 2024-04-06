@@ -1,5 +1,6 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { domain } from "@/constant/domain";
 
 interface IkitFormProps {
   setTriggerUpdate: (value: ((prevState: boolean) => boolean) | boolean) => void;
@@ -55,7 +56,7 @@ const KitForm: React.FC<IkitFormProps> = ({ setTriggerUpdate }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/api/report/kit");
+      const res = await fetch(`${domain}/api/report/kit`);
       const data = await res.json();
       if (data && data.kits && data.kits.length > 0) {
         const kit = data.kits[0];
@@ -108,7 +109,7 @@ const KitForm: React.FC<IkitFormProps> = ({ setTriggerUpdate }) => {
       serial3,
       date3,
     };
-    await fetch("http://localhost:3000/api/report/kit", {
+    await fetch(`${domain}/api/report/kit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(kit),

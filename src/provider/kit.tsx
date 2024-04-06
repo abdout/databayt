@@ -1,6 +1,6 @@
 // KitContext.tsx
 'use client';
-import { api } from '@/constant/api';
+import { domain } from '@/constant/domain';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface KitData {
@@ -31,7 +31,7 @@ export const KitProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const fetchKit = async () => {
     try {
-      const res = await fetch(`${api}/report/kit`, {
+      const res = await fetch(`${domain}/api/report/kit`, {
         cache: "no-store",
       });
 
@@ -53,7 +53,7 @@ export const KitProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const updateKit = async (updatedKit: KitData) => {
-    const res = await fetch(`${api}/report/kit`, {
+    const res = await fetch(`${domain}/api/report/kit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

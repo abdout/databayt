@@ -1,6 +1,6 @@
 // FooterContext.tsx
 'use client';
-import { api } from '@/constant/api';
+import { domain } from '@/constant/domain';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface FooterData {
@@ -37,7 +37,7 @@ export const FooterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const fetchFooter = async () => {
     try {
-      const res = await fetch(`${api}/report/footer`, {
+      const res = await fetch(`${domain}/api/report/footer`, {
         cache: "no-store",
       });
 
@@ -59,7 +59,7 @@ export const FooterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   };
 
   const updateFooter = async (updatedFooter: FooterData) => {
-    const res = await fetch(`${api}/report/footer`, {
+    const res = await fetch(`${domain}/report/footer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

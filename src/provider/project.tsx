@@ -1,5 +1,5 @@
 "use client";
-import { api } from '@/constant/api';
+import { domain } from '@/constant/domain';
 import { Project, ProjectContextProps } from '@/type/project/project';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
@@ -18,14 +18,14 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [projects, setProjects] = useState<Project[]>([]);
 
   const fetchProject = async (id: string) => {
-    const response = await fetch(`${api}/project/${id}`);
+    const response = await fetch(`${domain}/api/project/${id}`);
     const data = await response.json();
     setProject(data.project);
   };
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch(`${api}/project`);
+      const res = await fetch(`${domain}/api/project`);
       const data = await res.json();
       setProjects(data.projects);
     } catch (error) {
