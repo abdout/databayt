@@ -1,1 +1,1 @@
-export const domain = "https://eco.databayt.org"
+export const domain = "https://databayt.org"
