@@ -1,1 +1,1 @@
-export const domain = "http://localhost:3000"
+export const domain = "https://eco.databayt.org"
