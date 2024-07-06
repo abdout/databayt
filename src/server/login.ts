@@ -39,18 +39,18 @@ export const login = async (
     return { error: "Email does not exist!" }
   }
 
-  if (!existingUser.emailVerified) {
-    const verificationToken = await generateVerificationToken(
-      existingUser.email,
-    );
+  // if (!existingUser.emailVerified) {
+  //   const verificationToken = await generateVerificationToken(
+  //     existingUser.email,
+  //   );
 
-    await sendVerificationEmail(
-      verificationToken.email,
-      verificationToken.token,
-    );
+  //   await sendVerificationEmail(
+  //     verificationToken.email,
+  //     verificationToken.token,
+  //   );
 
-    return { success: "Confirmation email sent!" };
-  }
+  //   return { success: "Confirmation email sent!" };
+  // }
 
   if (existingUser.isTwoFactorEnabled && existingUser.email) {
     if (code) {
