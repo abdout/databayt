@@ -1,7 +1,6 @@
 import NextAuth from "next-auth"
 import { UserRole } from "@prisma/client";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-
 import { db } from "@/lib/prisma";
 import authConfig from "@/auth.config";
 import { getUserById } from "@/data/user";
@@ -77,6 +76,8 @@ export const {
       const existingUser = await getUserById(token.sub);
 
       if (!existingUser) return token;
+      
+      token.userId = existingUser.id; // Add userId to token
 
       const existingAccount = await getAccountByUserId(
         existingUser.id

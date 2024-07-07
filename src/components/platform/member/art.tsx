@@ -21,6 +21,7 @@ import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface FormData {
     terms: boolean;
@@ -59,6 +60,7 @@ const formSchema = z.object({
 });
 
 const Create: React.FC = () => {
+    const { data: session, status } = useSession();
     const { refreshMembers } = useMember();
     const { image } = useUpload();
     const [step, setStep] = useState(1);
@@ -127,6 +129,12 @@ const Create: React.FC = () => {
     const router = useRouter();
 
     const handleSubmit = async (data: FormData) => {
+        if (!session?.user?.id) {
+            console.error("User is not authenticated");
+            return;
+        }
+
+        const userId = session.user.id; // Get userId from session
         console.log("Form submitted", data);
 
         const response = await fetch('/api/member', {
@@ -134,17 +142,25 @@ const Create: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ...data, image: image }),
+            body: JSON.stringify({ ...data, image, userId }),
         });
         console.log(response);
 
         if (response.ok) {
             form.reset();
             refreshMembers();
-            router.push('/home');
-            
+            router.push('/platform');
         }
     };
+
+    if (status === "loading") {
+        return <div>Loading...</div>; // Show a loading indicator while session is being fetched
+    }
+
+    if (!session) {
+        router.push('/login'); // Redirect to login page if not authenticated
+        return null;
+    }
 
     return (
         <div className="flex flex-col items-center justify-center h-screen registration-page">

@@ -4,24 +4,12 @@ import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { name, dob, address, gender, rank, interest, skill, club, image, contact } = await request.json() as { 
-    name: string, 
-    dob: string, 
-    address: string, 
-    gender: string, 
-    rank: string, 
-    interest: string, 
-    skill: string, 
-    club: string,
-    image: string,
-    contact: { phone: string, facebook: string, whatsapp: string } 
-  };
+  const { userId, name, dob, address, gender, rank, interest, skill, club, image, contact } = await request.json();
 
-  console.log({ name, dob, address, gender, rank, interest, skill, club, image, contact });
-  
   await connectDB();
-  
+
   const member = new Member({
+    userId,
     name,
     dob,
     address,
@@ -31,17 +19,18 @@ export async function POST(request: NextRequest) {
     skill,
     club,
     image,
-    contact: contact
+    contact
   });
-  
+
   await member.save();
-  
+
   return NextResponse.json({ message: "Member Created" }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const userId = request.nextUrl.searchParams.get("userId");
   await connectDB();
-  const members = await Member.find() as unknown[];
+  const members = await Member.find({ userId });
   return NextResponse.json({ members });
 }
 
