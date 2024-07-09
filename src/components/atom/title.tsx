@@ -8,7 +8,7 @@ const Title = (props:
     placeholder: string
 }) => {
     return (
-        <div className='flex gap-2 items-center scroll' >
+        <div className='flex gap-2 items-center' >
             <Icon icon={props.icon} width={30} />
             <h4> {props.placeholder}</h4>
         </div>
