@@ -30,7 +30,7 @@ const Event: React.FC = () => {
             {events.map((event, index) => (
               <CarouselItem key={index} className="flex  items-center justify-center">
 
-                <div className="w-[45rem] h-full relative flex gap-10 items-center justify-center p-8  bg-yellow-400 overflow-visible">
+                <div className="w-[45rem] h-full relative flex gap-10 items-center justify-center p-8  bg-yellow-400 dark:bg-yellow-500 overflow-visible">
                   <Button size='icon' variant='ghost' className="absolute top-2 left-2 rounded-full">
                     <Icon icon="iconamoon:heart-thin" width={20} height={20} className="" />
                   </Button>
