@@ -7,6 +7,7 @@ import BulletList from '@tiptap/extension-bullet-list'
 import ListItem from '@tiptap/extension-list-item'
 import Text from '@tiptap/extension-text'
 import Underline from '@tiptap/extension-underline'
+import Heading from '@tiptap/extension-heading'
 import { EditorContent, useEditor } from '@tiptap/react'
 import Toolbar from './toolbar'
 
@@ -17,7 +18,9 @@ interface EditorProps {
 
 const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
   const editor = useEditor({
-    extensions: [Document, Paragraph, Text, Bold, Underline, BulletList, ListItem],
+    extensions: [Document, Paragraph, Text, Bold, Underline, BulletList, ListItem, Heading.configure({
+      levels: [1, 2],
+    }),],
     editorProps: {
       attributes: {
         class: "border border-gray-300 w-full h-80 p-4  outline-none rounded-none hover:border-gray-300",

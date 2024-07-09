@@ -46,8 +46,8 @@ const DialogContent = React.forwardRef<
   {...props}
 >
   {children}
-  <DialogPrimitive.Close className="absolute top-0 right-0 m-4">
-    <Button size='icon' variant='outline'>
+  <DialogPrimitive.Close className="absolute top-0 right-0 m-4 ">
+    <Button size='icon' variant='outline' className="rounded-full">
       <Icon icon='ic:twotone-close' width={25}  />
     </Button>
   </DialogPrimitive.Close>

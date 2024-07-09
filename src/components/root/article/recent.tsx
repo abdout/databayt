@@ -21,7 +21,7 @@ const RecentArticles: React.FC = () => {
         return (
           <div key={article._id} >
             <Link href={`/article/${article._id}`}>
-              <div className="flex gap-8">
+              <div className="flex gap-8 scroll">
                 <Image
                   src={article.image || '/hero/history.webp'}
                   alt={article.title}

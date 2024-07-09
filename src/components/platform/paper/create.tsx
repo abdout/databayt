@@ -6,11 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Editor from '@/components/editor/ui';
 import ImageUpload from '@/components/upload/image';
-import { useArticle } from "./context";
+import { usePaper } from "./context";
 import { useState } from "react";
 import { useUpload } from "@/components/upload/context";
 import { Icon } from "@iconify/react";
-import { author, authors } from "./constant";
+import { author, authors } from "./author";
 import SelectPopover from "@/components/atom/popover";
 
 interface FormData {
@@ -36,7 +36,7 @@ interface CreateProps {
 }
 
 const Create: React.FC<CreateProps> = ({ onClose }) => {
-  const { refreshArticles } = useArticle();
+  const { refreshPapers } = usePaper();
   const { image } = useUpload();
   const [step, setStep] = useState(1);
   const [selectedAuthor, setSelectedAuthor] = useState<author | null>(null);
@@ -70,7 +70,7 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
 
     if (response.ok) {
       form.reset();
-      refreshArticles();
+      refreshPapers();
       onClose();
     }
   };
@@ -84,14 +84,14 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
         >
           {step === 1 && (
             <div className="flex flex-col gap-6">
-              <Button size='icon' className="absolute top-4 right-[4.3rem] rounded-full" onClick={nextStep}>
+              <Button size='icon' className="absolute top-4 right-[4.5rem]" onClick={nextStep}>
                 <Icon icon='ic:sharp-arrow-back' width={25} />
               </Button>
               <SelectPopover
                 items={authors}
                 selectedItem={selectedAuthor}
                 setSelectedItem={setSelectedAuthor}
-                label="+ اختر كاتب"
+                label="+ اختر الامانة"
               />
               <FormField
                 control={form.control}
@@ -123,7 +123,7 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
           )}
           {step === 2 && (
             <div>
-              <Button size='icon' className="absolute top-4 right-[4.3rem] rounded-full" onClick={prevStep}>
+              <Button size='icon' className="absolute top-4 right-[4.5rem]" onClick={prevStep}>
                 <Icon icon='ic:sharp-arrow-forward' width={25} />
               </Button>
               <FormField

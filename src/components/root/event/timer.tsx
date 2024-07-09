@@ -14,10 +14,10 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       const difference = +new Date(targetDate) - +new Date();
       if (difference > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
+          days: Math.floor(difference / (1000 * 80 * 80 * 24)),
+          hours: Math.floor((difference / (1000 * 80 * 80)) % 24),
+          minutes: Math.floor((difference / 1000 / 80) % 80),
+          seconds: Math.floor((difference / 1000) % 80),
         });
       } else {
         setTimeLeft(null);
@@ -32,20 +32,20 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       {timeLeft ? (
         <div className="flex gap-4 text-xl">
           <div className="flex flex-col gap-[2px] items-center  ">
-            <span className=" bg-black text-[#fcfcfc] pt-[6px] rounded-sm shadow-md w-10 h-10 text-center">{timeLeft.days}</span>
-            <span className="text-sm ">يوم</span>
+            <span className=" border border-black pt-[6px] shadow-sm rounded-sm w-10 h-10 text-center ">{timeLeft.days}</span>
+            <span className="text-sm pt-1 ">يوم</span>
           </div>
           <div className="flex flex-col gap-[2px] items-center ">
-            <span className=" bg-black text-[#fcfcfc] pt-[6px] rounded-sm shadow-md w-10 h-10 text-center">{timeLeft.hours}</span>
-            <span className="text-sm">ساعة</span>
+            <span className=" border border-black pt-[6px] shadow-sm rounded-sm w-10 h-10 text-center ">{timeLeft.hours}</span>
+            <span className="text-sm pt-1">ساعة</span>
           </div>
           <div className="flex flex-col gap-[2px] items-center ">
-            <span className=" bg-black text-[#fcfcfc] pt-[6px] rounded-sm shadow-md w-10 h-10 text-center">{timeLeft.minutes}</span>
-            <span className="text-sm">دقيقة</span>
+            <span className=" border border-black pt-[6px] shadow-sm rounded-sm w-10 h-10 text-center ">{timeLeft.minutes}</span>
+            <span className="text-sm pt-1">دقيقة</span>
           </div>
           <div className="flex flex-col gap-[2px] items-center ">
-            <span className=" bg-black text-[#fcfcfc] pt-[6px] rounded-sm shadow-md w-10 h-10 text-center">{timeLeft.seconds}</span>
-            <span className="text-sm">ثانية</span>
+            <span className=" border border-black pt-[6px] shadow-sm rounded-sm w-10 h-10 text-center ">{timeLeft.seconds}</span>
+            <span className="text-sm pt-1">ثانية</span>
           </div>
         </div>
       ) : (

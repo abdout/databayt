@@ -17,7 +17,7 @@ const Paper = () => {
   return (
     <>
     <Title icon="system-uicons:paper" placeholder="أوراق الحركة"/>
-    <div className="flex items-center justify-center scroll">
+    <div className="flex items-center justify-center">
     <Carousel className="w-5/6 -mt-4 items-center justify-center" dir="ltr" autoPlay={true}>
       <CarouselContent >
         {papers.map((paper, index) => (

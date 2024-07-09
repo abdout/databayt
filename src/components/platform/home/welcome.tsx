@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 const Welcome = () => {
   return (
-    <div className='pt-6'>
+    <div className='pt-14'>
         <h1>مرحبا بيك</h1>
         <p className='text-xl font-light'>في منصة الحركة الوطنية للبناء والتنمية</p>
         

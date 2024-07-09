@@ -32,6 +32,9 @@ import { Input } from '@/components/ui/input'
 import { DataTableFacetedFilter } from '@/components/data-table/data-table-faceted-filter'
 import { useFilter } from '../platform/member/useFilter'
 import { MixerHorizontalIcon } from "@radix-ui/react-icons"
+import { Modal } from '../atom/dailog'
+import Create from '../root/article/create'
+import MemberChart from '../platform/member/chart'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -71,10 +74,16 @@ export function DataTable<TData, TValue>({
   const rankColumn = table.getColumn('rank');
   const skillColumn = table.getColumn('skill');
 
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+      setOpen(false);
+  };
+
   return (
     <>
       {/* Filters */}
-      <div className='flex items-center justify-between gap-4'>
+      <div className='flex items-center  gap-4'>
         <div className='flex items-center py-4'>
           <Input
             placeholder='بحث بالاسم ...'
@@ -137,6 +146,9 @@ export function DataTable<TData, TValue>({
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+        <Modal triggerText="" triggerIcon="mdi:analytics" >
+        <MemberChart onClose={handleClose} />
+        </Modal> 
       </div>
 
       {/* Table */}

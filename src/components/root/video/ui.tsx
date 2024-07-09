@@ -9,7 +9,7 @@ const Media = () => {
   return (
     <div>
       <Title icon="fluent:video-28-regular" placeholder="  الوثائقيات الجديدة"/>
-      <div className="flex gap-8 pt-6" dir="rtl">
+      <div className="flex gap-8 pt-6 scroll" dir="rtl">
         {media.map((item, index) => (
            <Link href={`/video?videoId=${item.videoId}&index=${index}`} key={index}>
           <div key={index} className=" justify-center items-center text-right">

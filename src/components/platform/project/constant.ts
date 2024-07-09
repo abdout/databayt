@@ -6,28 +6,28 @@ export type lead = {
   
  export const leads: lead[] = [
     {
-      value: "الحركة الوطنية",
-      label: "الحركة الوطنية",
+      value: "الامانة العامة",
+      label: "الامانة العامة",
       image: "/author/nmbd.png"
     },
     {
-      value: "المقداد الهجان",
-      label: "المقداد الهجان",
+      value: "الامانة السياسية",
+      label: "الامانة السياسية",
       image: "/author/almgdad.png"
     },
     {
-      value: "هشام احمد",
-      label: "هشام احمد",
+      value: "امانة المجتمع",
+      label: "امانة المجتمع",
       image: "/author/hesham.png"
     },
     {
-      value: "قاسم الظافر",
-      label: "قاسم الظافر",
+      value: "امانة الاعلام",
+      label: "امانة الاعلام",
       image: "/author/gasm.png"
     },
     {
-      value: "ابو بكر جيكوني",
-      label: "ابو بكر جيكوني",
+      value: "امانة الطلاب",
+      label: "امانة الطلاب",
       image: "/author/hesham.png"
     },
   ]

@@ -24,22 +24,26 @@ const Event: React.FC = () => {
   return (
     <>
       <Title icon="material-symbols-light:event-outline" placeholder="الاحداث القادمة" />
-      <div className="flex items-center justify-center overflow-visible">
-        <Carousel className="w-3/4" dir="ltr">
+      <div className="flex items-center justify-center overflow-visible scroll">
+        <Carousel className="w-[48rem]" dir="ltr" >
           <CarouselContent>
             {events.map((event, index) => (
-              <CarouselItem key={index} className="flex items-center justify-center">
-                <div className="w-[28rem] h-full relative flex flex-col items-center justify-center p-14  bg-yellow-400 overflow-visible">
-                  <Button size='icon' variant='ghost' className="absolute top-4 left-4 rounded-full">
-                  <Icon icon="iconamoon:heart-thin" width={20} height={20} className="" />
+              <CarouselItem key={index} className="flex  items-center justify-center">
+
+                <div className="w-[45rem] h-full relative flex gap-10 items-center justify-center p-8  bg-yellow-400 overflow-visible">
+                  <Button size='icon' variant='ghost' className="absolute top-2 left-2 rounded-full">
+                    <Icon icon="iconamoon:heart-thin" width={20} height={20} className="" />
                   </Button>
-                  
-                  <h5 className="pt-2">{event.title}</h5>
-                  <div className="flex gap-4 py-2">
-                    <p>{new Date(event.date).toLocaleDateString('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' })} - </p>
-                    <p>{event.location}</p>
-                  </div>
                   <Countdown targetDate={event.date} />
+                  <div className="flex flex-col justify-end items-end">
+                    <h5 className="pt-2">{event.title}</h5>
+                    <div className="flex gap-4 py-2">
+                      <p>{new Date(event.date).toLocaleDateString('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' })} - </p>
+                      <p>{event.location}</p>
+                    </div>
+                  </div>
+                  
+                  
                 </div>
               </CarouselItem>
             ))}

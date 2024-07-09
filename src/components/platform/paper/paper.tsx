@@ -10,14 +10,14 @@ const PaperContent = () => {
             <div className="flex justify-center items-center -mx-10">
                 <div className="grid grid-cols-4 gap-10">
                     {papers.map((paper, index) => (
-                        <Link href={`/awrag/${paper.id}`} key={paper.id}>
+                        <Link href={`/paper/${paper.id}`} key={paper.id}>
                         <Card key={index} className="relative border border-yellow-400">
                             <Image
                                 src={paper.image || '/hero/history.webp'}
                                 alt={paper.title}
                                 width={180}
                                 height={150}
-                                className="object-cover object-center w-80 h-44"
+                                className="object-cover object-center w-80 h-44 opacity-70"
                             />
                             <CardContent className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center leading-8 font-black  backdrop-blur-xl py-2 w-full mt-4">

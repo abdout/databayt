@@ -1,16 +1,11 @@
 'use client';
-import React, { useState, ReactNode } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import MemberChart from "./chart";
 import { Icon } from "@iconify/react";
 
-interface ModalProps {
-    triggerText: string;
-    triggerIcon: string;
-    children: ReactNode;
-}
-
-export function Modal({ triggerText, triggerIcon, children }: ModalProps) {
+export function DialogDemo() {
     const [open, setOpen] = useState(false);
 
     const handleClose = () => {
@@ -24,12 +19,12 @@ export function Modal({ triggerText, triggerIcon, children }: ModalProps) {
                     variant="outline"
                     className="flex items-center gap-2 font-medium text-lg"
                 >
-                    <Icon icon={triggerIcon} width={20} />
-                    {triggerText}
+                    <Icon icon="ic:sharp-plus" width={20} />
+                    اضافة مقال
                 </Button>
             </DialogTrigger>
             <DialogContent>
-                {React.cloneElement(children as React.ReactElement<any>, { onClose: handleClose })}
+                <MemberChart onClose={handleClose} />
             </DialogContent>
         </Dialog>
     );
