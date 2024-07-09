@@ -26,7 +26,7 @@ export const UserButton = () => {
           <Avatar>
             <AvatarImage src={user?.image || ""} />
             <AvatarFallback className="bg-black">
-              <Icon icon={"iconamoon:profile-fill"} height="16" color="white" />
+              <Icon icon={"iconamoon:profile-fill"} height="15" color="white" />
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>

@@ -45,12 +45,12 @@ const Header = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block p-2">ثيم</div>
             </div>
           </li>
-          <li className="opacity-50 hover:opacity-100 pt-1">
+          <li className="opacity-50 hover:opacity-100 pt-[4px]">
           <UserButton /> 
         </li>
           <li className="opacity-50 hover:opacity-100 z-50">
-            <div className="text-lg group relative flex justify-center -mt-[6px]">
-              <Hamburger size={23} distance="lg" toggled={open} toggle={setOpen} />
+            <div className="text-lg group relative flex justify-center -ml-2 -mt-[7px]">
+              <Hamburger size={22} distance="lg" toggled={open} toggle={setOpen} />
               <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block p-5">قائمة</div>
             </div>
           </li>
