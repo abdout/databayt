@@ -60,7 +60,7 @@ const formSchema = z.object({
 });
 
 const Create: React.FC = () => {
-    const { data: session, status } = useSession();
+    // const { data: session, status } = useSession();
     const { refreshMembers } = useMember();
     const { image } = useUpload();
     const [step, setStep] = useState(1);
@@ -129,20 +129,24 @@ const Create: React.FC = () => {
     const router = useRouter();
 
     const handleSubmit = async (data: FormData) => {
-        if (!session?.user?.id) {
-            console.error("User is not authenticated");
-            return;
-        }
+        // if (!session?.user?.id) {
+        //     console.error("User is not authenticated");
+        //     return;
+        // }
 
-        const userId = session.user.id; // Get userId from session
-        console.log("Form submitted", data);
+        // const userId = session.user.id; // Get userId from session
+        // console.log("Form submitted", data);
 
         const response = await fetch('/api/member', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ...data, image, userId }),
+            body: JSON.stringify({ 
+                ...data,
+                 image,
+                //  userId 
+                }),
         });
         console.log(response);
 
@@ -153,14 +157,14 @@ const Create: React.FC = () => {
         }
     };
 
-    if (status === "loading") {
-        return <div>Loading...</div>; // Show a loading indicator while session is being fetched
-    }
+    // if (status === "loading") {
+    //     return <div>Loading...</div>; // Show a loading indicator while session is being fetched
+    // }
 
-    if (!session) {
-        router.push('/login'); // Redirect to login page if not authenticated
-        return null;
-    }
+    // if (!session) {
+    //     router.push('/login'); // Redirect to login page if not authenticated
+    //     return null;
+    // }
 
     return (
         <div className="flex flex-col items-center justify-center h-screen registration-page">
