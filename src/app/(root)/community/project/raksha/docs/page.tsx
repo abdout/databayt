@@ -4,7 +4,7 @@ import React from 'react';
 const Docs: React.FC = () => {
     return (
         <div className="container mx auto py 8">
-            <h1 className="text 4xl font rubik mb 2">Raksha</h1>
+            {/* <h1 className="text 4xl font rubik mb 2">Raksha</h1>
             <h2 className="text 2xl mb 6">Technical Documentation</h2>
             <h2 className="text xl font bold mb 6 pl [2px]">Table of Contents</h2>
             <div className="flex flex col md:flex row pl 1">
@@ -33,9 +33,9 @@ const Docs: React.FC = () => {
                         <li><a href="#references">References</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
             <div className="w full mt 14 space y 4">
-                <section id="introduction" className='space y 2'>
+                {/* <section id="introduction" className='space y 2'>
                     <h3>Introduction</h3>
                     <p>
                     The technical documentation explores the process of converting gasolinepowered tuk tuks into electric vehicles, aiming to revolutionize urban transportation by enhancing sustainability and efficiency. This document provides a comprehensive overview of the conversion process, including technical specifications, environmental benefits, and economic considerations involved in transitioning to electric powered tuk tuks.
@@ -46,7 +46,7 @@ const Docs: React.FC = () => {
                     <p>
                         The conversion project seeks to address environmental concerns associated with gasoline powered vehicles while promoting cost efficiency and community engagement in Sudan.
                     </p>
-                </section>
+                </section> */}
                 <section id="conversion process">
                     <h3 className='my 2'>Conversion Process Guide</h3>
                     <p>
