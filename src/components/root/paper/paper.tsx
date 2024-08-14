@@ -11,7 +11,7 @@ const PaperContent = () => {
                 <div className="grid grid-cols-4 gap-10">
                     {papers.map((paper, index) => (
                         <Link href={`/awrag/${paper.id}`} key={paper.id}>
-                        <Card key={index} className="relative border border-yellow-400">
+                        <Card key={index} className="relative border-2 hover:border-yellow-400">
                             <Image
                                 src={paper.image || '/hero/history.webp'}
                                 alt={paper.title}
