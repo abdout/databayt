@@ -243,6 +243,50 @@
   }
 }
 
+.animate-flow {
+  display: flex;
+  width: 200%; /* Adjust according to your needs */
+  animation: flow 30s linear infinite;
+}
+
+.animate-flow:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+
+
 
 
 @layer components {
@@ -257,7 +301,7 @@
     content: '';
     position: absolute;
     height: 1px; /* Height of the border */
-    background: black; /* Color of the border */
+    background: #fcd34d; /* Color of the border */
     width: 0;
     transition: width 0.5s ease-in-out;
   }
@@ -278,7 +322,7 @@
     content: '';
     position: absolute;
     width: 1px; /* Width of the border */
-    background: black; /* Color of the border */
+    background: #fcd34d; /* Color of the border */
     height: 0;
     transition: height 0.2s ease-in-out;
   }
@@ -322,4 +366,59 @@
   animation: appear 1s ease-out;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+}
+
+@layer base {
+  @property --color-a {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-b {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-c {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+}
+
+@layer components {
+  .range {
+    appearance: none;
+    width: 100%;
+    background: white;
+    height: 2px;
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
+  .range::-moz-range-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
 }

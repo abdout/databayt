@@ -10,6 +10,12 @@ import Toggle from "@/components/theme/toggle";
 import Link from "next/link";
 import MobileHeader from "@/components/root/header/mobile";
 import { UserButton } from "@/components/auth/user-button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +24,7 @@ const Header = () => {
   return (
     <>
       <MobileHeader />
-      <div className="hidden md:flex gap-4 h-20 items-center justify-center" dir="ltr">
+      <div className="hidden md:flex h-20 items-center justify-center" dir="ltr">
         <ul className="flex space-x-8">
           {header.map((link) => (
             <li
@@ -33,10 +39,22 @@ const Header = () => {
                   : "opacity-50 hover:opacity-100"
               }
             >
-              <Link href={link.href} className="text-lg group relative flex justify-center">
-                <Icon icon={link.icon} width={35} className="flex-shrink-0" />
-                <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block p-3">{link.label}</div>
-              </Link>
+              <TooltipProvider>
+                <Tooltip>
+
+                  <Link href={link.href} className="text-lg group relative flex justify-center">
+                    <TooltipTrigger asChild>
+                      <Icon icon={link.icon} width={35} className="flex-shrink-0" />
+                    </TooltipTrigger>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block ">
+                      <TooltipContent>
+                        {link.label}
+                      </TooltipContent>
+                    </div>
+                  </Link>
+
+                </Tooltip>
+              </TooltipProvider>
             </li>
           ))}
           <li className="opacity-50 hover:opacity-100">
@@ -46,8 +64,8 @@ const Header = () => {
             </div>
           </li>
           <li className="opacity-50 hover:opacity-100 pt-[4px]">
-          <UserButton /> 
-        </li>
+            <UserButton />
+          </li>
           <li className="opacity-50 hover:opacity-100 z-50">
             <div className="text-lg group relative flex justify-center -ml-2 -mt-[7px]">
               <Hamburger size={22} distance="lg" toggled={open} toggle={setOpen} />

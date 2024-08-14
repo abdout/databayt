@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <SessionProvider session={session}>
       <html lang="en">
         <body className={rubik.className} dir="rtl">
-          <div className="container">
+          <div className="container min-h-0 max-h-0">
             <div className="wrapper">
               <ModalProvider>
                 <UploadProvider>

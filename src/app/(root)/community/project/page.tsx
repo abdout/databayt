@@ -10,7 +10,7 @@ const Landing = () => {
   return (
     <div className="pt-7">
       <p className="font-light text-lg flex items-center justify-center">
-        Read the <strong>&nbsp;paradigm&nbsp;</strong> behind community projects.
+        Read the <strong className='animate-bounce'>&nbsp;paradigm&nbsp;</strong> behind community projects.
       </p>
       <div className="flex flex-col gap-6 items-center justify-center p-8">
         <div className="relative w-72">

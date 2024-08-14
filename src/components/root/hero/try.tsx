@@ -27,13 +27,13 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const circleScale = useTransform(scrollYProgress, [0.3, 1], [0, 1]);
   const borderRadius = useTransform(scrollYProgress, [0.5, 0.7], ['50%', '0%']);
-  const glow = useTransform(scrollYProgress, [0, 0.5], ['0px 0px 100px 30px rgba(255, 213, 0, 1)', 'none']);
+  const glow = useTransform(scrollYProgress, [0.35, 0.5], ['0px 0px 30px 15px rgba(255, 213, 0, 1)', 'none']);
   const circleOpacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
-  const circlePositionX = useTransform(scrollYProgress, [0, 1], ['-20%', '-22.5%']);
-  const circlePositionY = useTransform(scrollYProgress, [0.5, 1.4], ['-100%', '0%']);
-  const imageScale = useTransform(scrollYProgress, [0.2, 0.9, 0.35], [0.1, 5, 10]);
-  const imagePositionX = useTransform(scrollYProgress, [0.2, 1], ['42%', '42%']);
-  const imagePositionY = useTransform(scrollYProgress, [0.5, 1], ['40%', '22%']);
+  const circlePositionX = useTransform(scrollYProgress, [0, 1], ['-20%', '-18%']);
+  const circlePositionY = useTransform(scrollYProgress, [0.5, 1.4], ['-107%', '0%']);
+  const imageScale = useTransform(scrollYProgress, [0.2, 0.9, 0.5], [0.1, 1.5, 4]);
+  const imagePositionX = useTransform(scrollYProgress, [0.5, 1], ['50%', '35%']);
+  const imagePositionY = useTransform(scrollYProgress, [0.5, 1], ['50%', '10%']);
 
   // Expanding to full screen
   const fullSWidth = useTransform(scrollYProgress, [0.7, 1], ['20rem', '100vw']);
