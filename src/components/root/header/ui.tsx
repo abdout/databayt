@@ -30,13 +30,7 @@ const Header = () => {
             <li
               key={link.key}
               className={
-                (
-                  link.label === "Detail"
-                    ? pathname === link.href
-                    : pathname === link.href
-                )
-                  ? "hover:opacity-100"
-                  : "opacity-50 hover:opacity-100"
+                link.href === '/' ? (pathname === '/' ? 'hover:opacity-100' : 'opacity-50 hover:opacity-100') : (pathname.startsWith(link.href) ? 'hover:opacity-100' : 'opacity-50 hover:opacity-100')
               }
             >
               <TooltipProvider>
