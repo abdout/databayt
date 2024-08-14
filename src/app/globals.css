@@ -353,8 +353,8 @@
 
 @keyframes appear {
   0% {
-    opacity: 0;
-    transform: scale(0.9) translateY(40px);
+    opacity: 0.5;
+    transform: scale(0.95) translateY(20px);
   }
   100% {
     opacity: 1;
