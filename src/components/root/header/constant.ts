@@ -27,7 +27,7 @@ export const header = [
     label: "مجتمع",
     icon: "prime:circle",
   },
-  { href: "/community", key: "search ", label: "بحث", icon: "mynaui:search" },
+  { href: "/search", key: "search ", label: "بحث", icon: "mynaui:search" },
 ];
 
 export const mobile = [
