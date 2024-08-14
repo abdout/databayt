@@ -9,11 +9,7 @@ import Media from "@/components/root/video/ui";
 import "@theme-toggles/react/css/DarkSide.css";
 import { useEffect } from "react";
 import Lenis from '@studio-freight/lenis'
-import Zoom from "@/components/root/gallery/zoom";
-import History from "@/components/root/history/ui";
 import { SmoothScrollHero } from "@/components/root/gallery/try";
-
-
 
 export default function Home() {
   useEffect(() => {
@@ -28,7 +24,6 @@ export default function Home() {
   }, [])
   return (
     <>
-    
       <Hero />
       <div className="space-y-10 pt-10">
         <Paper />
