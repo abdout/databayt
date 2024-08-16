@@ -13,8 +13,8 @@ const Office = () => {
             </div>
             <div className='flex gap-14 items-center justify-center scroll'>
                 <Link href='https://www.google.com/maps/place/%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D9%84%D9%84%D8%A8%D9%86%D8%A7%D8%A1+%D9%88%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9%E2%80%AD/@15.5723621,32.5455249,16z/data=!4m6!3m5!1s0x168e91065fdbb69f:0x20336b57e1831a16!8m2!3d15.5723414!4d32.5455571!16s%2Fg%2F11rcgr9ywr?authuser=0&entry=ttu'
-                className='border-2'>
-                <Image src='/map.png' alt='' width={400} height={300} className='' />
+                className=''>
+                <Image src='/map.png' alt='' width={500} height={400} className='' />
                 </Link>
                 <div className='flex flex-col gap-3'>
                     <h5>العمارات - شارع 35</h5>

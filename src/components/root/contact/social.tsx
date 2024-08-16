@@ -6,8 +6,11 @@ const Social = () => {
         <div className='flex flex-col items-center justify-center space-y-4 pt-8'>
             <h5>اتصل بينا</h5>
             <div className='flex items-center justify-center gap-10 fill-current scroll' dir='ltr'>
-                <a href="https://github.com/abdout/databayt" target="_blank" rel="noopener noreferrer">
-                    <Icon icon={"akar-icons:github-fill"} height="55" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+                <a href="https://www.clubhouse.com/house/%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9?fbclid=IwY2xjawEsTnVleHRuA2FlbQIxMAABHT4-mDkQPNb1hBd5GcexlNrc6tX_xKmOg7vWOOwmPfY71KNUw9CtVx7ZxQ_aem_7UeyIfZyhVokJorFTciHNQ" target="_blank" rel="noopener noreferrer">
+                    <Icon icon={"simple-icons:clubhouse"} height="60" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+                </a>
+                <a href="https://www.clubhouse.com/house/%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9?fbclid=IwY2xjawEsTnVleHRuA2FlbQIxMAABHT4-mDkQPNb1hBd5GcexlNrc6tX_xKmOg7vWOOwmPfY71KNUw9CtVx7ZxQ_aem_7UeyIfZyhVokJorFTciHNQ" target="_blank" rel="noopener noreferrer">
+                    <Icon icon={"ph:soundcloud-logo-fill"} height="60" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
                 </a>
                 <a href="https://www.tiktok.com/@national.movement.sd" target="_blank" rel="noopener noreferrer">
                     <Icon icon={"ant-design:tik-tok-filled"} height="60" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
@@ -18,8 +21,8 @@ const Social = () => {
                 <a href="https://www.youtube.com/channel/UCTXtGXX9PG1OXtbs8USReEQ" target="_blank" rel="noopener noreferrer">
                     <Icon icon={"formkit:youtube"} height="60" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
                 </a>
-                <a href="https://www.facebook.com/national.movement.sd/?locale=ar_AR" target="_blank" rel="noopener noreferrer">
-                    <Icon icon={"cib:messenger"} height="55" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
+                <a href="https://t.me/Nationalsd" target="_blank" rel="noopener noreferrer">
+                    <Icon icon={"akar-icons:telegram-fill"} height="55" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
                 </a>
                 <a href="https://www.facebook.com/national.movement.sd/?locale=ar_AR" target="_blank" rel="noopener noreferrer">
                     <Icon icon={"bi:facebook"} height="55" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />

@@ -14,9 +14,13 @@ const Excute = () => {
       <div className="grid grid-cols-4 gap-8 scroll items-center justify-center">
         {cardsData.map((card, index) => (
           <Card key={index} className="group w-[180px] flex flex-col p-3 gap-2 items-center justify-center relative border border-transparent">
-            <div className="border-animation border absolute inset-0 pointer-events-none">
-              <span className="absolute inset-0"></span>
-            </div>
+          <div className="border-animation border absolute inset-0 pointer-events-none">
+            <span className="absolute inset-0"></span>
+            <div className="left-top absolute top-0 left-0"></div>
+            <div className="left-bottom absolute bottom-0 left-0"></div>
+            <div className="right-top absolute top-0 right-0"></div>
+            <div className="right-bottom absolute bottom-0 right-0"></div>
+          </div>
             <Image
               src={card.image}
               alt={card.name}
