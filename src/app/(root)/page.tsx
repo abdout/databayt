@@ -5,13 +5,25 @@ import Event from "@/components/root/event/event";
 import Scroll from "@/components/root/friend/scroll";
 import Hero from "@/components/root/hero/ui";
 import Paper from "@/components/root/paper/ui";
-import Media from "@/components/root/video/ui";
 import "@theme-toggles/react/css/DarkSide.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from '@studio-freight/lenis'
 import { SmoothScrollHero } from "@/components/root/gallery/try";
+import { fetchYouTubeVideos } from "@/lib/youtube";
+import RecentVideos from "@/components/root/video/recent";
+
 
 export default function Home() {
+  const [videos, setVideos] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const fetchedVideos = await fetchYouTubeVideos(process.env.YOUTUBE_API_KEY!, process.env.CHANNEL_ID!);
+      setVideos(fetchedVideos);
+    };
+
+    fetchVideos();
+  }, []);
   useEffect(() => {
     const lenis = new Lenis()
 
@@ -27,7 +39,7 @@ export default function Home() {
       <Hero />
       <div className="space-y-10 pt-10">
         <Paper />
-        <Media />
+        <RecentVideos />
         <RecentArticles />
         <SmoothScrollHero />
         <div className="pb-4 items-center justify-center">
