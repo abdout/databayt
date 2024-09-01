@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useUpload } from "@/components/upload/context";
 import { Icon } from "@iconify/react";
 import { author, authors } from "./constant";
-import { Combobox } from "@/components/atom/try";
+import SelectPopover from "@/components/atom/popover";
 
 
 interface FormData {
@@ -88,7 +88,13 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
               <Button size='icon' className="absolute top-4 right-[4.3rem] rounded-full" onClick={nextStep}>
                 <Icon icon='ic:sharp-arrow-back' width={25} />
               </Button>
-              <Combobox selectedAuthor={selectedAuthor} setSelectedAuthor={setSelectedAuthor} />
+              <SelectPopover
+                items={authors}
+                selectedItem={selectedAuthor}
+                setSelectedItem={setSelectedAuthor}
+                label="+ اختر كاتب"
+              />
+
               <FormField
                 control={form.control}
                 name="title"
