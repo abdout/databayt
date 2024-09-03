@@ -11,6 +11,7 @@ import {
 import { papers } from "./constant"
 import Image from "next/image"
 import Title from "@/components/atom/title"
+import Recent from "./recent-mobile"
 
 
 const Paper = () => {
@@ -18,7 +19,7 @@ const Paper = () => {
     <>
     <Title icon="system-uicons:paper" placeholder="أوراق الحركة"/>
     <div className="flex items-center justify-center scroll">
-    <Carousel className="w-5/6 -mt-4 items-center justify-center" dir="ltr" autoPlay={true}>
+    <Carousel className="hidden md:block w-5/6 -mt-4 items-center justify-center" dir="ltr" autoPlay={true}>
       <CarouselContent >
         {papers.map((paper, index) => (
           <CarouselItem key={index}>
@@ -54,6 +55,9 @@ const Paper = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
+    <div className="md:hidden">
+          <Recent /> 
+        </div>
     </div>
     </>
   )

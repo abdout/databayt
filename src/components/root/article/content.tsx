@@ -9,6 +9,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Button } from "@/components/ui/button";
 import { MoreHorizontal } from "lucide-react";
 import { useSession } from "next-auth/react";
+import { Icon } from "@iconify/react";
 
 const ArticleContent: React.FC = () => {
     const { refreshArticles, articles, deleteArticle } = useArticle();
@@ -22,7 +23,15 @@ const ArticleContent: React.FC = () => {
     return (
         <>
             {status === "authenticated" && (
-                <DialogDemo />
+                <Link href={"/article/add"}>
+                    <Button
+                        variant="outline"
+                        className="flex items-center gap-2 font-medium text-lg"
+                    >
+                        <Icon icon="ic:sharp-plus" width={20} />
+                        اضافة مقال
+                    </Button>
+                </Link>
             )}
             <div className="flex justify-start">
             </div>
@@ -34,7 +43,7 @@ const ArticleContent: React.FC = () => {
                     return (
                         <div key={article._id} className="flex justify-between items-start">
                             <Link href={`/article/${article._id}`}>
-                                <div className="flex gap-8 w-5/6">
+                                <div className="flex gap-8   justify-between items-start">
                                     <Image
                                         src={article.image || '/hero/history.webp'}
                                         alt={article.title}

@@ -5,7 +5,7 @@ const Social = () => {
     return (
         <div className='flex flex-col items-center justify-center space-y-4 pt-8'>
             <h5>اتصل بينا</h5>
-            <div className='flex items-center justify-center gap-10 fill-current scroll' dir='ltr'>
+            <div className='flex flex-wrap items-center justify-center gap-10 sm:gap-8 md:gap-10 fill-current scroll' dir='ltr'>
                 <a href="https://www.clubhouse.com/house/%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9?fbclid=IwY2xjawEsTnVleHRuA2FlbQIxMAABHT4-mDkQPNb1hBd5GcexlNrc6tX_xKmOg7vWOOwmPfY71KNUw9CtVx7ZxQ_aem_7UeyIfZyhVokJorFTciHNQ" target="_blank" rel="noopener noreferrer">
                     <Icon icon={"simple-icons:clubhouse"} height="60" className="opacity-85 hover:opacity-100 transition-opacity duration-200 cursor-pointer" />
                 </a>

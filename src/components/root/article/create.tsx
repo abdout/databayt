@@ -77,7 +77,7 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="flex items-top h-screen">
+    <div className="flex items-top h-screen z-50">
       <Form  {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}

@@ -33,15 +33,14 @@ const Header = () => {
 
   return (
     <>
-      <MobileHeader />
       <motion.div
-        className="hidden md:flex h-20 items-center justify-center"
+        className="h-20 flex justify-center items-center"
         dir="ltr"
         initial={{ opacity: 0 }} // Initial state: hidden
         animate={{ opacity: isVisible ? 1 : 0 }} // Animate to visible state
         transition={{ duration: 1 }} // Adjust the duration as needed
       >
-        <ul className="flex space-x-8">
+        <ul className="hidden md:flex space-x-8">
           {header.map((link) => (
             <li
               key={link.key}
@@ -74,6 +73,37 @@ const Header = () => {
           <li className="opacity-50 hover:opacity-100 pt-[4px]">
             <UserButton />
           </li>
+          <li className="opacity-50 hover:opacity-100 z-50">
+            <div className="text-lg group relative flex justify-center -ml-2 -mt-[7px]">
+              <Hamburger size={22} distance="lg" toggled={open} toggle={setOpen} />
+              <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block p-5">قائمة</div>
+            </div>
+          </li>
+        </ul>
+        <ul className="md:hidden flex space-x-8">
+          {header.filter((link, index) => [0, 2, 3].includes(index)).map((link) => (
+            <li
+              key={link.key}
+              className={
+                link.href === '/' ? (pathname === '/' ? 'hover:opacity-100' : 'opacity-50 hover:opacity-100') : (pathname.startsWith(link.href) ? 'hover:opacity-100' : 'opacity-50 hover:opacity-100')
+              }
+            >
+              <TooltipProvider>
+                <Tooltip>
+                  <Link href={link.href} className="text-lg group relative flex justify-center">
+                    <TooltipTrigger asChild>
+                      <Icon icon={link.icon} width={35} className="flex-shrink-0" />
+                    </TooltipTrigger>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block">
+                      <TooltipContent>
+                        {link.label}
+                      </TooltipContent>
+                    </div>
+                  </Link>
+                </Tooltip>
+              </TooltipProvider>
+            </li>
+          ))}
           <li className="opacity-50 hover:opacity-100 z-50">
             <div className="text-lg group relative flex justify-center -ml-2 -mt-[7px]">
               <Hamburger size={22} distance="lg" toggled={open} toggle={setOpen} />

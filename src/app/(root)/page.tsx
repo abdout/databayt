@@ -11,6 +11,8 @@ import Lenis from '@studio-freight/lenis'
 import { SmoothScrollHero } from "@/components/root/gallery/try";
 import { fetchYouTubeVideos } from "@/lib/youtube";
 import RecentVideos from "@/components/root/video/recent";
+import Recent from "@/components/root/paper/recent-mobile";
+import { ComboboxDemo } from "@/components/atom/try";
 
 
 export default function Home() {

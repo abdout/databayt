@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -76,22 +75,19 @@ const RecentVideos = () => {
   };
 
   return (
-    <div dir="rtl" className=" mx-auto p-4">
-      <Title icon="fluent:video-28-regular" placeholder="  الوثائقيات الجديدة"/>
+    <div dir="rtl" className="mx-auto p-4">
+      <Title icon="fluent:video-28-regular" placeholder="الوثائقيات الجديدة" />
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="flex gap-8 pt-6 overflow-x-auto">
-          {videos.map((video, index) => {
+        <div className="flex flex-col md:flex-row gap-8 pt-6 overflow-x-auto">
+          {videos.map((video) => {
             const titleWithoutEmoji = removeEmojiFromTitle(video.title);
             const author = extractAuthor(titleWithoutEmoji);
             const titleWithoutAuthor = removeAuthorFromTitle(titleWithoutEmoji);
             return (
-              
               <Link href={`/video/${video.id}`} key={video.id}>
-
-
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full md:w-auto"> {/* Adjust width based on screen size */}
                   <Image
                     src={video.thumbnail}
                     alt={titleWithoutAuthor}
@@ -99,9 +95,8 @@ const RecentVideos = () => {
                     height={350}
                     className="object-cover"
                   />
-                  <h4 className="font-large text-xl leading-7 mt-2">{formatTitle(titleWithoutAuthor)}</h4>
+                  <h4 className="text-xl leading-7 mt-2">{formatTitle(titleWithoutAuthor)}</h4>
                   <p className="text-sm text-gray-500 mt-1">{author}</p>
-                  
                 </div>
               </Link>
             );

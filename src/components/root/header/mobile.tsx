@@ -2,11 +2,9 @@
 "use client";
 import React, { useState } from "react";
 import { Squash as Hamburger } from 'hamburger-react'
-// import HamburgerMenu from "@/components/hamburger/hamburger";
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import { mobile } from "./constant";
-// import Toggle from "@/components/theme/toggle";
 import Link from "next/link";
 
 const MobileHeader = () => {
