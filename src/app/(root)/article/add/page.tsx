@@ -34,11 +34,7 @@ const formSchema = z.object({
     author: z.string().min(1, "الكاتب مطلوب"),  // Author is required
 });
 
-interface CreateProps {
-    onClose: () => void;
-}
-
-const Create: React.FC<CreateProps> = ({ onClose }) => {
+const Create = () => {
     const { refreshArticles } = useArticle();
     const { image } = useUpload();
     const [step, setStep] = useState(1);
