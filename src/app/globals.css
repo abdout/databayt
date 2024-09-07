@@ -17,6 +17,19 @@
   overflow-x: hidden; 
 }
 
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* For medium and larger screens, no need to set overflow-x */
+@media (min-width: 768px) {
+  body {
+  
+  }
+}
+
 
 .rubik {
   font-family: var(--rubik);
@@ -99,7 +112,7 @@
     min-height: 100vh;
     background-color: var(--bg);
     color: var(--textColor);
-    width: 100%; /* Ensure the container doesn't exceed the viewport */
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
     
 }
 
@@ -124,18 +137,21 @@
   @media screen and (max-width: 1024px) {
     .wrapper {
       max-width: 768px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 2px;
+      padding-right: 2px;
     }
   }
   @media screen and (max-width: 768px) {
     .wrapper {
-      max-width: 640px;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
-  }
+}
+
   @media screen and (max-width: 640px) {
     .wrapper {
-      max-width: 475px;
+      max-width: 100%;
     }
   }
 
@@ -168,7 +184,7 @@
   }
   
   h6 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
    
   }

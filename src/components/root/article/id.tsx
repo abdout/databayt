@@ -29,13 +29,13 @@ const ArticleById: React.FC<ArticleByIdProps> = ({ id }) => {
   const authorImage = author ? author.image : '/author/default.jpg';
 
   return (
-    <div className='flex flex-col pt-6 px-20'>
+    <div className='flex flex-col pt-6 md:px-20'>
       <div className='flex gap-2 text-4xl pb-2'>
-        <h1 className='text-2xl'>{article.title}</h1>
+        <h1 className="text-lg md:text-2xl truncate md:w-3/5">{article.title}</h1>
       </div>
       <p>{article.desc}</p>
       <div className='flex gap-4 items-center py-6'>
-        <div className='rounded-full overflow-hidden border w-12 h-12'>
+        <div className="rounded-full overflow-hidden border w-10 h-10 md:w-12 md:h-12 ">
           <Image
             src={authorImage || '/author/default.jpg'}
             alt={article.author}
@@ -44,21 +44,21 @@ const ArticleById: React.FC<ArticleByIdProps> = ({ id }) => {
             objectFit="contain"
           />
         </div>
-        <div className='flex flex-col'>
-          <p>{article.author}</p>
-          <p>{formattedDate}</p>
+        <div className="flex flex-col pl-4">
+          <p className="md:font-bold text-sm">{article.author}</p>
+          <p className='text-sm'>{formattedDate}</p>
         </div>
       </div>
-      <hr className="border-t border-gray-500 mb-5 w-[700px]" />
+      <hr className="border-t border-gray-500 mb-5 md:w-[700px]" />
       <Image
         src={article.image}
         alt='alt'
         width={700}
         height={330}
-        className="object-cover object-center w-[50rem] h-[25rem]"
+        className="object-cover object-center w-[50rem] md:h-[25rem]"
       />
       <div
-        className='flex flex-col space-y-6 pt-8 ml-[9rem]'
+        className='flex flex-col space-y-6 pt-8 md:ml-[9rem]'
         dangerouslySetInnerHTML={{ __html: article.body }} />
     </div>
   )

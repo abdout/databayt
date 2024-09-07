@@ -8,17 +8,17 @@ import { usePathname } from 'next/navigation';
 interface Video {
   id: string;
   title: string;
-  description: string;
   thumbnail: string;
-  author: string;
-  date: string;
+  publishedAt: string;
 }
+
+const authors = ['هشام أحمد', 'المقداد الهجان', 'قاسم الظافر', 'أحمد المجتبى', 'إبراهيم نمر', 'ابوبكر جيكوني ', 'صالح ناصر', 'إبراهيم أحمد', 'عبدالعزيز إبراهيم ']; // Add more authors as needed
 
 const More = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
-  const currentVideoId = pathname.split('/').pop(); // Get the current video ID from the URL
+  const currentVideoId = pathname.split('/').pop();
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -29,10 +29,7 @@ const More = () => {
         }
         const data: Video[] = await response.json();
 
-        // Filter out the current video
         const filteredVideos = data.filter(video => video.id !== currentVideoId);
-
-        // Shuffle and select the first 4 videos
         const shuffledVideos = filteredVideos.sort(() => 0.5 - Math.random());
         const selectedVideos = shuffledVideos.slice(0, 4);
 
@@ -47,39 +44,79 @@ const More = () => {
     fetchVideos();
   }, [currentVideoId]);
 
+  const extractAuthor = (title: string) => {
+    for (const author of authors) {
+      if (title.includes(author)) {
+        return author;
+      }
+    }
+    return '';
+  };
+
+  const removeAuthorFromTitle = (title: string, author: string) => {
+    return title.replace(author, '');
+  };
+
+  const removeEmojiFromTitle = (title: string) => {
+    const regex = /🔻/g;
+    return title.replace(regex, '');
+  };
+
+  const formatTitle = (title: string) => {
+    const truncatedTitle = title.split(/[.\-_]/)[0].trim();
+    return (
+      <div className="flex flex-wrap md:block">
+        <span>{truncatedTitle}</span>
+      </div>
+    );
+  };
+
+  const formatDate = (date: string) => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    return new Date(date).toLocaleDateString('ar-SA', options);
+  };
+
   return (
-    <div>
+    <div className='space-y-10'>
       <h5 className="pt-8" dir="rtl">المزيد</h5>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div className="flex flex-col gap-12 pt-6">
-          {videos.map((video, index) => (
-            <Link href={`/video?videoId=${video.id}&index=${index}`} key={index}>
-              <div className="flex gap-4 items-center text-right">
-                <Image
-                  src={video.thumbnail}
-                  alt={video.title}
-                  width={200}
-                  height={150}
-                  className="object-cover"
-                />
-                <div className="flex flex-col gap-1">
-                  <div className="flex gap-2">
-                    <p className="font-medium text-lg w-96">{video.title}</p>
-                  </div>
-                  <p className="text-sm w-80">{video.description}</p>
-                  <div className="flex gap-4">
-                    <p>
-                      {video.author}
-                      <span className="text-3xl items-center" style={{ position: 'relative', top: '0.15em' }}> · </span>
-                      {video.date}
+          {videos.map((video, index) => {
+            const titleWithoutEmoji = removeEmojiFromTitle(video.title);
+            const author = extractAuthor(titleWithoutEmoji);
+            const titleWithoutAuthor = removeAuthorFromTitle(titleWithoutEmoji, author);
+            const formattedDate = formatDate(video.publishedAt);
+
+            return (
+              <Link href={`/video/${video.id}`} key={index}>
+                <div className="flex gap-4 md:gap-10 items-center text-right">
+                  <Image
+                    src={video.thumbnail}
+                    alt={titleWithoutAuthor}
+                    width={180}
+                    height={150}
+                    className="object-cover object-center max-w-full block h-28 w-24 md:w-44 md:h-36"
+                  />
+                  <div className="flex flex-col space-y-1">
+                    <strong className="md:text-xl block truncate md:whitespace-normal md:overflow-visible md:w-auto w-48 whitespace-nowrap overflow-ellipsis">
+                      {formatTitle(titleWithoutAuthor)}
+                    </strong>
+                    <p className='text-[12px] md:text-[14px] font-light'>
+                      {author}
+                      <span className="text-sm md:text-3xl items-center" style={{ position: 'relative', top: '0.15em' }}> · </span>
+                      7 سبتمر 2024
                     </p>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>

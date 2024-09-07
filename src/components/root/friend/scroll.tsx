@@ -10,7 +10,13 @@ export default function Home() {
     "/friend/حركة المستقبل.png",
     "/friend/جامعة الخرطوم.png",
     "/friend/249.png",
+    "/friend/نورين.jpg",
     "/friend/الحركة الاسلامية.png",
+    "/friend/تأسيس.png",
+    "/friend/الميزاب.png",
+    "/friend/الباحثين.png",
+    "/friend/تنوير.jpg",
+    "/friend/السكة.png",
   ];
   const FAST_DURATION = 25;
   const SLOW_DURATION = 75;
@@ -52,14 +58,14 @@ export default function Home() {
   return (
     <div className="relative">
       <Title icon="ph:users-three" placeholder="أصدقاء الحركة" />
-      <div className="py-8 overflow-hidden relative h-64 -mt-6 -mx-40">
+      <div className="md:py-8 overflow-hidden relative h-32 -mt-1 -mx-10 md:h-64 md:-mt-6 md:-mx-40">
         {/* Left gradient overlay */}
-        <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-background/100 to-background/0 z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 h-full w-20 md:w-32 bg-gradient-to-r from-background/100 to-background/0 z-10 pointer-events-none" />
         {/* Right gradient overlay */}
-        <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-background/100 to-background/0 z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 h-full w-20 md:w-32 bg-gradient-to-l from-background/100 to-background/0 z-10 pointer-events-none" />
 
         <motion.div
-          className="absolute left-0 flex gap-12 items-center h-full"
+          className="absolute left-0 flex gap-6 md:gap-12 items-center h-full"
           style={{ x: xTranslation }}
           ref={ref}
           onHoverStart={() => {

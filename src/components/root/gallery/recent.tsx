@@ -1,8 +1,8 @@
 import React from 'react'
 import MobileRecent from './recent-mobile'
-import DesktopRecent from './recent-desktop'
+import { DesktopRecent } from './recent-desktop'
 
-const Paper = () => {
+const RecentGallery = () => {
   return (
     <div>
       {/* Mobile version */}
@@ -13,9 +13,10 @@ const Paper = () => {
       {/* Desktop version */}
       <div className="hidden md:block">
         <DesktopRecent />
+
       </div>
     </div>
   )
 }
 
-export default Paper
+export default RecentGallery

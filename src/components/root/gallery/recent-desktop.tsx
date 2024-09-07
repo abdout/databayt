@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
 import Title from "@/components/atom/title";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-export const SmoothScrollHero = () => {
+export const DesktopRecent = () => {
   return (
     <div className="">
          <Title icon="ph:camera-light" placeholder="معرض الصور"/>

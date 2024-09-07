@@ -18,7 +18,7 @@ const RecentArticles: React.FC = () => {
       {articles.map((article) => {
         // Get the date object
         const date = new Date(article.updatedAt);
-        
+
         // Format the day and year in English
         const day = date.getDate(); // No need for Intl.NumberFormat for day
         const year = date.getFullYear(); // Get the full year directly
@@ -32,21 +32,25 @@ const RecentArticles: React.FC = () => {
         return (
           <div key={article._id}>
             <Link href={`/article/${article._id}`}>
-              <div className="flex gap-10 scroll">
+              <div className="flex gap-4 md:gap-10 scroll">
                 <Image
                   src={article.image || '/hero/history.webp'}
                   alt={article.title}
                   width={180}
                   height={150}
-                  className="object-cover object-center w-44 h-36"
+                  className="object-cover object-center max-w-full block h-28 w-24 md:w-44 md:h-36"
                 />
                 <div className="flex flex-col space-y-1">
-                  <h4>{article.title}</h4>
-                  <p className='text-lg font-light w-[28rem]'>{article.desc}</p>
-                  <div className="flex gap-4 ">
-                    <p className='font-light'>
+                  <strong className="md:text-xl block truncate md:whitespace-normal md:overflow-visible md:w-auto w-48 whitespace-nowrap overflow-ellipsis">
+                    {article.title}
+                  </strong>
+
+
+                  <p className='text-sm md:text-lg font-light w-[13rem] md:w-[28rem]'>{article.desc}</p>
+                  <div className="flex gap-2 md:gap-4 ">
+                    <p className='text-[12px] md:[16px] font-light'>
                       {article.author}
-                      <span className="text-3xl items-center" style={{ position: 'relative', top: '0.15em' }}> · </span>
+                      <span className="text-sm md:text-3xl items-center" style={{ position: 'relative', top: '0.15em' }}> · </span>
                       {formattedDate}
                     </p>
                   </div>

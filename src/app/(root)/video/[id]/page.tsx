@@ -12,6 +12,8 @@ interface Video {
   thumbnail: string;
 }
 
+const authors = ['هشام أحمد', 'المقداد الهجان', 'قاسم الظافر', 'أحمد المجتبى', '']; // Add more authors as needed
+
 const OneVideo = () => {
   const pathname = usePathname();
   const id = pathname.split('/').pop();
@@ -62,16 +64,46 @@ const OneVideo = () => {
 
   if (!id) return null;
 
+  const extractAuthor = (title: string) => {
+    for (const author of authors) {
+      if (title.includes(author)) {
+        return author;
+      }
+    }
+    return '';
+  };
+
+  const removeAuthorFromTitle = (title: string, author: string) => {
+    return title.replace(author, '');
+  };
+
+  const removeEmojiFromTitle = (title: string) => {
+    const regex = /🔻/g;
+    return title.replace(regex, '');
+  };
+
+  const formatTitle = (title: string) => {
+    // Remove text after symbols like - or .
+    const formattedTitle = title.replace(/[-.].*$/, '');
+    return formattedTitle;
+  };
+
+  const formatDate = () => {
+    return '7 سبتمر 2024'; // Placeholder date for now
+  };
+
   return (
-    <div className="flex flex-col pt-6 pr-20">
+    <div className="flex flex-col pt-2 md:pt-6 md:pr-20">
       {loading ? (
         <p>Loading...</p>
       ) : (
         <>
-          <h2 className="text-2xl truncate w-3/5">{video.title}</h2>
+          <h2 className="text-lg md:text-2xl truncate md:w-3/5">
+            {formatTitle(removeEmojiFromTitle(video.title))}
+          </h2>
           <p className="truncate w-3/5">{video.description}</p>
-          <div className="flex items-center py-6">
-            <div className="rounded-full overflow-hidden border w-12 h-12">
+          <div className="flex items-center gap-2 md:gap-3 py-2 md:py-6">
+            <div className="rounded-full overflow-hidden border w-10 h-10 md:w-12 md:h-12 ">
               <Image
                 src={video.thumbnail || '/author/almgdad.png'}
                 alt={video.title}
@@ -81,20 +113,23 @@ const OneVideo = () => {
               />
             </div>
             <div className="flex flex-col pl-4">
-              <p className="font-bold">Author Name</p> {/* Placeholder for author name */}
-              <p>{new Date().toLocaleDateString('ar-SA', { day: 'numeric', month: 'long', year: 'numeric' })}</p> {/* Custom date format */}
+              <p className="md:font-bold text-sm">
+                {extractAuthor(removeEmojiFromTitle(video.title))}
+              </p>
+              <p className='text-sm'>{formatDate()}</p>
             </div>
           </div>
-          <hr className="border-t border-gray-500 mb-5 w-[43.7rem]" />
-          <iframe
-            width="700"
-            height="355"
-            src={`https://www.youtube.com/embed/${video.id}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <hr className="border-t border-gray-500 mb-5 md:w-[43.7rem]" />
+          <div className="w-full md:w-[700px] h-[200px] md:h-[355px] relative">
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
           <More />
         </>
       )}

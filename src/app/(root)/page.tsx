@@ -8,11 +8,9 @@ import Paper from "@/components/root/paper/ui";
 import "@theme-toggles/react/css/DarkSide.css";
 import { useEffect, useState } from "react";
 import Lenis from '@studio-freight/lenis'
-import { SmoothScrollHero } from "@/components/root/gallery/try";
 import { fetchYouTubeVideos } from "@/lib/youtube";
 import RecentVideos from "@/components/root/video/recent";
-import Recent from "@/components/root/paper/recent-mobile";
-import { ComboboxDemo } from "@/components/atom/try";
+import RecentGallery from "@/components/root/gallery/recent";
 
 
 export default function Home() {
@@ -39,11 +37,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="space-y-10 pt-10">
+      <div className="space-y-6 md:space-y-10 pt-6 md:pt-10 -mt-28 md:mt-0">
         <Paper />
         <RecentVideos />
         <RecentArticles />
-        <SmoothScrollHero />
+        <RecentGallery />
         <div className="pb-4 items-center justify-center">
         </div>
         <Event />

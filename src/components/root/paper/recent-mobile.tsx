@@ -14,23 +14,24 @@ import Title from "@/components/atom/title"
 import Link from "next/link"
 
 
-const Recent = () => {
+const MobileRecent = () => {
     return (
         <>
-            <div className="flex items-center justify-center scroll">
-                <Carousel className="w-60 -mt-4 items-center justify-center" dir="ltr" autoPlay={true}>
+        <Title icon="system-uicons:paper" placeholder="أوراق الحركة"/>
+            <div className="flex items-center justify-center mt-10 scroll z-20">
+                <Carousel className="w-80 -mt-4 items-center justify-center" dir="ltr" autoPlay={true}>
                     <CarouselContent >
                         {papers.map((paper, index) => (
                             <CarouselItem key={index}>
                                 <div className="p-1">
                                     <Link href={`/awrag/${paper.id}`} key={paper.id}>
-                                        <Card key={index} className="relative border-2 hover:border-yellow-400">
+                                        <Card key={index} className="relative ">
                                             <Image
                                                 src={paper.image || '/hero/history.webp'}
                                                 alt={paper.title}
-                                                width={180}
-                                                height={150}
-                                                className="object-cover object-center w-80 h-44"
+                                                width={400}
+                                                height={400}
+                                                className="object-cover object-center w-full block h-44"
                                             />
                                             <CardContent className="absolute inset-0 flex items-center justify-center">
                                                 <div className="text-center leading-8 font-black  backdrop-blur-xl py-2 w-full mt-4">
@@ -52,4 +53,4 @@ const Recent = () => {
     )
 }
 
-export default Recent
+export default MobileRecent

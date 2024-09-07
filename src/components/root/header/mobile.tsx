@@ -12,7 +12,7 @@ const MobileHeader = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex gap-4 h-20 items-center justify-center md:hidden" dir="ltr">
+    <div className="flex gap-3 h-20 items-center justify-center md:hidden" dir="ltr">
       <ul className="flex space-x-8">
         {mobile.map((link) => (
           <li
@@ -28,7 +28,7 @@ const MobileHeader = () => {
             }
           >
             <Link href={link.href} className="text-lg group relative flex justify-center">
-              <Icon icon={link.icon} width={35} className="flex-shrink-0" />
+              <Icon icon={link.icon} width={40} className="flex-shrink-0" />
               <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-5 hidden group-hover:block p-3">{link.label}</div>
             </Link>
           </li>
