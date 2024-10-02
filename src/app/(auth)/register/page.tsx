@@ -1,23 +1,9 @@
-'use client';
-import React from 'react';
-import { MemberProvider } from '@/components/platform/member/context';
-import { UploadProvider } from '@/components/upload/context';
-import Create from '@/components/platform/member/art';
-import { ArticleProvider } from '@/components/root/article/context';
+import { RegisterForm } from "@/components/auth/register-form";
 
-const Register = () => {
-
-  return (
-    <ArticleProvider>
-      <UploadProvider>
-        <MemberProvider>
-          <div>
-            <Create />
-          </div>
-        </MemberProvider>
-      </UploadProvider>
-    </ArticleProvider>
+const RegisterPage = () => {
+  return ( 
+    <RegisterForm />
   );
-};
-
-export default Register;
+}
+ 
+export default RegisterPage;

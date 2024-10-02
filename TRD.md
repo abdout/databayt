@@ -1,8 +1,7 @@
 
-**Welcome to**    
-**NMBD's Technical Record Document (TRD)** 
+## Auth's Technical Record Document (TRD)
 
-The **Objective** of NMBD, to automate and streamline business operations within the realm of National Movement for Building and Development 
+The **Objective** of Auth is to build a reusable block for authentication and authorization, developed by a community of interest.
 
 **Table of Contents**
 1. [Introduction](#introduction)

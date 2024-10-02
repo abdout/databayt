@@ -1,17 +1,9 @@
-import mongoose from "mongoose";
+import { PrismaClient } from "@prisma/client";
 
-const connectDB = async (): Promise<void> => {
-  const uri: string = process.env.MONGODB_URI as string;
-  if (!uri) {
-    throw new Error("Please define the MONGODB_URI environment variable");
-  }
+declare global {
+  var prisma: PrismaClient | undefined;
+}
 
-  try {
-    await mongoose.connect(uri);
-    console.log("Connected to MongoDB.");
-  } catch (error) {
-    console.error(error);
-  }
-};
+export const db = globalThis.prisma || new PrismaClient();
 
-export default connectDB;
+if (process.env.NODE_ENV !== "production") globalThis.prisma = db;

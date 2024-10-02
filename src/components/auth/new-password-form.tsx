@@ -6,8 +6,8 @@ import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { NewPasswordSchema } from "@/schemas";
-import { Input } from "@/components/auth/ui/input";
+
+import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -15,12 +15,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,  
-} from "@/components/auth/ui/form";
+} from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
-import { Button } from "@/components/auth/ui/button";
-import { FormError } from "@/components/auth/form-error";
-import { FormSuccess } from "@/components/auth/form-success";
-import { newPassword } from "@/server/new-password";
+import { Button } from "@/components/ui/button";
+import { NewPasswordSchema } from "./schemas";
+import { newPassword } from "./actions/new-password";
+import { FormError } from "./form-error";
+import { FormSuccess } from "./form-success";
+
 
 export const NewPasswordForm = () => {
   const searchParams = useSearchParams();
@@ -51,11 +53,10 @@ export const NewPasswordForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
     <CardWrapper
-      headerLabel="ادخل الرمز الجديد"
-      backButtonLabel="الرجوع للدخول"
-      backButtonHref="/login"
+      headerLabel="Enter a new password"
+      backButtonLabel="Back to login"
+      backButtonHref="/auth/login"
     >
       <Form {...form}>
         <form 
@@ -87,13 +88,12 @@ export const NewPasswordForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full text-[#fcfcfc]"
+            className="w-full"
           >
-            ضبط الرمز
+            Reset password
           </Button>
         </form>
       </Form>
     </CardWrapper>
-    </div>
   );
 };

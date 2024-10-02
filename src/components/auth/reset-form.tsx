@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 import { useState, useTransition } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { ResetSchema } from "@/schemas";
-import { Input } from "@/components/auth/ui/input";
+import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -14,12 +13,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,  
-} from "@/components/auth/ui/form";
+} from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
-import { Button } from "@/components/auth/ui/button";
-import { FormError } from "@/components/auth/form-error";
-import { FormSuccess } from "@/components/auth/form-success";
-import { reset } from "@/server/reset";
+import { Button } from "@/components/ui/button";
+import { ResetSchema } from "./schemas";
+import { reset } from "./actions/reset";
+import { FormError } from "./form-error";
+import { FormSuccess } from "./form-success";
+
 
 export const ResetForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -47,16 +48,15 @@ export const ResetForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
     <CardWrapper
-      headerLabel="المجتمع اولاً"
-      backButtonLabel="الرجوع للدخول"
+      headerLabel=""
+      backButtonLabel="Back to login"
       backButtonHref="/login"
     >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6"
+          className="space-y-8"
         >
           <div className="space-y-4">
             <FormField
@@ -69,9 +69,8 @@ export const ResetForm = () => {
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="البريد"
+                      placeholder="Email"
                       type="email"
-                      className="placeholder"
                     />
                   </FormControl>
                   <FormMessage />
@@ -84,13 +83,12 @@ export const ResetForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full text-[#fcfcfc]"
+            className="w-full h-12 tracking-wide text-[15.5px] text-[#fcfcfc]"
           >
-            ضبط الرمز
+            Reset password
           </Button>
         </form>
       </Form>
     </CardWrapper>
-    </div>
   );
 };

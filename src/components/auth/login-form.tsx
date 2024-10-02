@@ -1,12 +1,14 @@
 "use client";
+
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { LoginSchema } from "@/schemas";
-import { Input } from "@/components/auth/ui/input";
+
+
+import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -14,12 +16,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,  
-} from "@/components/auth/ui/form";
+} from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
-import { Button } from "@/components/auth/ui/button";
-import { FormError } from "@/components/auth/form-error";
-import { FormSuccess } from "@/components/auth/form-success";
-import { login } from "@/server/login";
+import { Button } from "@/components/ui/button";
+import { LoginSchema } from "./schemas";
+import { login } from "./actions/login";
+import { FormError } from "./form-error";
+import { FormSuccess } from "./form-success";
+
 
 export const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -53,10 +57,10 @@ export const LoginForm = () => {
             setError(data.error);
           }
 
-          // if (data?.success) {
-          //   form.reset();
-          //   setSuccess(data.success);
-          // }
+          if (data?.success) {
+            form.reset();
+            setSuccess(data.success);
+          }
 
           if (data?.twoFactor) {
             setShowTwoFactor(true);
@@ -67,12 +71,11 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen overflow-hidden" style={{ maxHeight: '100vh', overflowY: 'auto' }}>
     <CardWrapper
-      headerLabel="المجتمع اولاً"
-      backButtonLabel="ما عندك حساب؟"
-      backButtonHref="/join"
-      showSocial
+      headerLabel=""
+      backButtonLabel="Don't have an account?"
+      backButtonHref="/register"
+      // showSocial
     >
       <Form {...form}>
         <form 
@@ -111,9 +114,8 @@ export const LoginForm = () => {
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="البريد"
+                          placeholder="Email"
                           type="email"
-                          className="placeholder"
                         />
                       </FormControl>
                       <FormMessage />
@@ -130,10 +132,8 @@ export const LoginForm = () => {
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="الرمز"
+                          placeholder="Password"
                           type="password"
-                          className="placeholder"
-                          
                         />
                       </FormControl>
                       <Button
@@ -142,8 +142,8 @@ export const LoginForm = () => {
                         asChild
                         className="px-0 font-normal"
                       >
-                        <Link href="/reset">
-                          نسيت الرمز؟
+                        <Link href="/reset" className="tracking-wide">
+                          Forgot password?
                         </Link>
                       </Button>
                       <FormMessage />
@@ -158,13 +158,12 @@ export const LoginForm = () => {
           <Button
             disabled={isPending}
             type="submit"
-            className="w-full text-[#fcfcfc]"
+            className="w-full h-12 text-[16px] text-[#fcfcfc]"
           >
-            {showTwoFactor ? "Confirm" : "الدخول"}
+            {showTwoFactor ? "Confirm" : "Login"}
           </Button>
         </form>
       </Form>
     </CardWrapper>
-    </div>
   );
 };

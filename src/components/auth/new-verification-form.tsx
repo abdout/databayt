@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
+import { newVerification } from "./actions/new-verification";
+import { CardWrapper } from "./card-wrapper";
+import { FormSuccess } from "./form-success";
+import { FormError } from "./form-error";
 
-import { newVerification } from "@/server/new-verification";
-import { CardWrapper } from "@/components/auth/card-wrapper";
-import { FormError } from "@/components/auth/form-error";
-import { FormSuccess } from "@/components/auth/form-success";
+
 
 export const NewVerificationForm = () => {
   const [error, setError] = useState<string | undefined>();
@@ -17,34 +18,45 @@ export const NewVerificationForm = () => {
 
   const token = searchParams.get("token");
 
+  // Debugging: Log the token value
+  console.log("Token retrieved from URL:", token);
+
   const onSubmit = useCallback(() => {
     if (success || error) return;
 
     if (!token) {
+      console.log("Token missing, cannot proceed.");
       setError("Missing token!");
       return;
     }
 
+    console.log("Submitting newVerification request with token:", token);
+
     newVerification(token)
       .then((data) => {
+        console.log("New verification response:", data);
         setSuccess(data.success);
         setError(data.error);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Verification request failed:", error);
         setError("Something went wrong!");
       })
   }, [token, success, error]);
 
   useEffect(() => {
-    onSubmit();
-  }, [onSubmit]);
+    if (token) {
+      onSubmit();
+    } else {
+      console.log("Token not found in URL.");
+    }
+  }, [token, onSubmit]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
     <CardWrapper
-      headerLabel="تأكيد التحقق"
-      backButtonLabel="الرجوع للدخول"
-      backButtonHref="/login"
+      headerLabel="Confirming your verification"
+      backButtonLabel="Back to login"
+      backButtonHref="/auth/login"
     >
       <div className="flex items-center w-full justify-center">
         {!success && !error && (
@@ -56,6 +68,5 @@ export const NewVerificationForm = () => {
         )}
       </div>
     </CardWrapper>
-    </div>
   )
 }

@@ -1,9 +1,10 @@
 "use client";
 
 import { UserRole } from "@prisma/client";
+import { useCurrentRole } from "./hooks/use-current-role";
+import { FormError } from "./form-error";
 
-import { useCurrentRole } from "@/hook/use-current-role";
-import { FormError } from "@/components/auth/form-error";
+
 
 interface RoleGateProps {
   children: React.ReactNode;

@@ -6,7 +6,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
-} from "@/components/auth/ui/dialog";
+} from "@/components/ui/dialog";
 import { LoginForm } from "@/components/auth/login-form";
 
 interface LoginButtonProps {
@@ -23,7 +23,7 @@ export const LoginButton = ({
   const router = useRouter();
 
   const onClick = () => {
-    router.push("/login");
+    router.push("/auth/login");
   };
 
   if (mode === "modal") {

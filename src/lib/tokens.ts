@@ -1,10 +1,11 @@
 import crypto from "crypto";
 import { v4 as uuidv4 } from "uuid";
+import { getTwoFactorTokenByEmail } from "@/components/auth/data/two-factor-token";
+import { db } from "@/lib/db";
+import { getPasswordResetTokenByEmail } from "@/components/auth/data/password-reset-token";
+import { getVerificationTokenByEmail } from "@/components/auth/data/verificiation-token";
 
-import { db } from "@/lib/prisma";
-import { getVerificationTokenByEmail } from "@/data/verificiation-token";
-import { getPasswordResetTokenByEmail } from "@/data/password-reset-token";
-import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
+
 
 export const generateTwoFactorToken = async (email: string) => {
   const token = crypto.randomInt(100_000, 1_000_000).toString();
@@ -56,7 +57,7 @@ export const generatePasswordResetToken = async (email: string) => {
 
 export const generateVerificationToken = async (email: string) => {
   const token = uuidv4();
-  const expires = new Date(new Date().getTime() + 3600 * 1000);
+  const expires = new Date(new Date().getTime() + 24 * 3600 * 1000);
 
   const existingToken = await getVerificationTokenByEmail(email);
 

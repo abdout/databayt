@@ -1,31 +1,63 @@
-![NMBD Logo](/public/nmbd.png)
+# Auth
 
-# NMBD
+Welcome to Auth! A reuseable block for authentication and authorization, built using Authjs, Nextjs, React, Typescript, Tailwind css, Shadch, mongoDB, and Prisma.
 
-Welcome to the NMBD repository! This repository is owned by the National Movement for Building and Development, where its website and internal tools are maintained.
+<!-- ### The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
+### Thanks to the Code With Antonio YouTube channel -->
 
-## Getting Started
+**The code inspired by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).**  
+**Credits: [Antonio Erdeljac](https://github.com/AntonioErdeljac).**
 
-To get started contributing to NMBD, follow these steps:
+Key Features:
+- 🔐 Next-auth v5 (Auth.js)
+- 🚀 Next.js 14 with server actions
+- 🔑 Credentials Provider
+- 🌐 OAuth Provider (Social login with Google & GitHub)
+- 🔒 Forgot password functionality
+- ✉️ Email verification
+- 📱 Two factor verification
+- 👥 User roles (Admin & User)
+- 🔓 Login component (Opens in redirect or modal)
+- 📝 Register component
+- 🤔 Forgot password component
+- ✅ Verification component
+- ⚠️ Error component
+- 🔘 Login button
+- 🚪 Logout button
+- 🚧 Role Gate
+- 🔍 Exploring next.js middleware
+- 📈 Extending & Exploring next-auth session
+- 🔄 Exploring next-auth callbacks
+- 👤 useCurrentUser hook
+- 🛂 useRole hook
+- 🧑 currentUser utility
+- 👮 currentRole utility
+- 🖥️ Example with server component
+- 💻 Example with client component
+- 👑 Render content for admins using RoleGate component
+- 🛡️ Protect API Routes for admins only
+- 🔐 Protect Server Actions for admins only
+- 📧 Change email with new verification in Settings page
+- 🔑 Change password with old password confirmation in Settings page
+- 🔔 Enable/disable two-factor auth in Settings page
+- 🔄 Change user role in Settings page (for development purposes only)
 
 ### Documentation 
 
-To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/nmbd/blob/main/TRD.md).  
-
-
+To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
 
 ### Installation
 
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/abdout/nmbd.git
+    git clone https://github.com/abdout/auth.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd nmbd
+    cd auth
     ```
 
 3. Install dependencies:
@@ -57,20 +89,8 @@ npx prisma db push
     npm run dev
     ```
 
-- Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the components.
+- Navigate to [http://localhost:3000](http://localhost:3000).
 
-### Contributing
+# Support
 
-We welcome contributions from the community! To contribute to Auth, please follow these guidelines:
-
-1. Fork the repository
-2. create a new branch for your feature or bug fix.
-3. Ensure your code adheres to coding standards in TRD.
-4. Test your changes locally.
-5. Commit your changes and push them to your fork.
-6. Open a pull request, describing the changes you've made and why they should be merged.
-
-## Support
-
-If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/nmbd/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
-
+If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/auth/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
