@@ -29,19 +29,15 @@ export const UserInfo = ({
           <p className="text-lg font-light flex gap-4"><strong className="font-semibold">Email: </strong> {user?.email}</p>
           <p className="text-lg font-light flex gap-4"><strong className="font-semibold">Role: </strong> {user?.role}</p>
          
-       
-       
           <div className="flex gap-4 text-lg font-light">
              <strong className="font-semibold">2FA: </strong>
              <Badge 
-               className="px-2"
-               variant={user?.isTwoFactorEnabled ? "success" : "destructive"}
+               className={`px-2 ${user?.isTwoFactorEnabled ? "bg-green-500" : "bg-red-500"} text-white`}
              >
             {user?.isTwoFactorEnabled ? "ON" : "OFF"}
           </Badge>
           </div>
           
-        
       </CardContent>
     </Card>
   )
