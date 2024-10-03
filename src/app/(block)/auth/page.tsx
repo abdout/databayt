@@ -12,7 +12,7 @@ const Auth = () => {
 
         <h1 className="text-5xl font-bold"> 🔒 Auth </h1>
         <p className=" text-lg font-light">
-          A reusable authentication and authorization block. 
+          An authentication and authorization block. 
         </p>
         <div className="flex items-center justify-center space-x-6 pt-4">
           <Link href="/login">

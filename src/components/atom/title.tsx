@@ -12,7 +12,7 @@ const Title = (props: {
 }) => {
   return (
     <div className='justify-start md:-ml-2 rubik'>
-      <p className="font-light text-[16px] pb-2 tracking-wide"> {props.description}</p>
+      <p className="font-light text-[16px] pb-2 tracking-wide pl-[2px]"> {props.description}</p>
       <div className={rubik.className}>
         <h1 className="word-animation text-6xl font-extrabold tracking-wide">
           {props.title.split('').map((letter, index) => (

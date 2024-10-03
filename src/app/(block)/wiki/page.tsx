@@ -9,9 +9,9 @@ const Wiki = () => {
             <GithubButton url="https://github.com/abdout/auth" />
             <div className="flex flex-col justify-center items-center h-screen">
                 <div className="space-y-4 text-center">
-                    <h1 className="text-5xl font-bold"> 📄 Wiki </h1>
+                    <h1 className="text-5xl font-bold"> 🪶 Wiki </h1>
                     <p className=" text-lg font-light">
-                        A reusable real time collaborative editing block.
+                        A real time collaborative editing block.
                     </p>
                     <div className="flex items-center justify-center space-x-6 pt-4">
                         <Link href="/login">
