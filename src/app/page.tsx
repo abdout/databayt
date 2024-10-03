@@ -19,8 +19,7 @@ export default function Home() {
     <>
     <GithubButton url="https://github.com/abdout/databayt" />
     <div className="flex flex-col justify-center px-48 h-screen">
-        <p className="font-light text-[16px] pb-2 tracking-wide">🧱 Building blocks</p>
-        <h1 className="text-6xl font-extrabold tracking-wide"> Databayt </h1>
+      <Title title="Databayt" description="🧱 Building blocks" />
         <p className=" text-xl font-light tracking-wide py-4">
           Automate the boring, elevate the extraordinary. 
         </p>
