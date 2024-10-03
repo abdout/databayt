@@ -11,11 +11,11 @@ const Wiki = () => {
                 <div className="space-y-4 text-center">
                     <h1 className="text-5xl font-bold"> 📄 Wiki </h1>
                     <p className=" text-lg font-light">
-                        A reusable collaborative editing block.
+                        A reusable real time collaborative editing block.
                     </p>
                     <div className="flex items-center justify-center space-x-6 pt-4">
                         <Link href="/login">
-                            <Button className="w-24 h-11 px-4 py-2 text-[16px] bg-black text-[#fcfcfc]">Explore</Button>
+                            <Button className="w-24 h-11 px-4 py-2 text-[16px] bg-black text-[#fcfcfc]">Edit</Button>
                         </Link>
                     </div>
                 </div>
