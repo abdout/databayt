@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { LoginButton } from "@/components/auth/login-button";
 import Title from "@/components/atom/title";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import GithubButton from "@/components/atom/github-button";
+import BlockButton from "@/components/atom/block-button";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -13,22 +16,26 @@ const font = Poppins({
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <div className="space-y-4 text-center">
-
-        <h1 className="text-5xl font-bold"> 🔐 Auth </h1>
-        <p className=" text-lg font-light">
-          A reusable authentication and authorization block. 
+    <>
+    <GithubButton url="https://github.com/abdout/databayt" />
+    <div className="flex flex-col justify-center px-48 h-screen">
+        <p className="font-light text-[16px] pb-2 tracking-wide">🧱 Building blocks</p>
+        <h1 className="text-6xl font-extrabold tracking-wide"> Databayt </h1>
+        <p className=" text-xl font-light tracking-wide py-4">
+          Automate the boring, elevate the extraordinary. 
         </p>
-        <div className="flex items-center justify-center space-x-6 pt-4">
-          <Link href="/login">
-            <Button className="w-24 h-11 px-4 py-2 text-[16px] bg-black text-[#fcfcfc]">Login</Button>
-          </Link>
-          <Link href="/join">
-            <Button className="w-24 h-11 border text-[16px] border-black text-black hover:bg-gray-100 bg-[#fcfcfc]">Join</Button>
-          </Link>
+        <Separator className="w-80" />
+        
+        <div className="fex space-x-4 pt-8 ">
+          <BlockButton url="/atom" label="Atom" />
+          <BlockButton url="/auth" label="Auth" />
+          <BlockButton url="/wiki" label="Wiki" />
+          <BlockButton url="/x" label="X" />
+          <BlockButton url="/flow" label="Flow"  />
+          <BlockButton url="/fix" label="Fix" disabled/>
+          <BlockButton url="/vote" label="Vote" disabled />
         </div>
-      </div>
     </div>
+    </>
   )
 }
