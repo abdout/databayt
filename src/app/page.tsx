@@ -32,6 +32,7 @@ export default function Home() {
           <BlockButton url="/wiki" label="Wiki" />
           <BlockButton url="/x" label="X" />
           <BlockButton url="/flow" label="Flow"  />
+          <BlockButton url="/sera" label="Sera" disabled />
           <BlockButton url="/fix" label="Fix" disabled/>
           <BlockButton url="/vote" label="Vote" disabled />
         </div>
