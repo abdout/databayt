@@ -42,7 +42,7 @@ export const newVerification = async (token: string) => {
   }
 
   if (existingUser.emailVerified) {
-    return { success: "Email already verified!" };
+    return { success: "Email verified!" };
   }
 
   await db.user.update({
@@ -54,9 +54,12 @@ export const newVerification = async (token: string) => {
   });
   console.log("User email verified and updated successfully.");
 
-  await db.verificationToken.delete({
-    where: { id: existingToken.id }
-  });
+  setTimeout(async () => {
+    await db.verificationToken.delete({
+      where: { id: existingToken.id }
+    });
+    console.log("Verification token deleted successfully.");
+  }, 9000);
   console.log("Verification token deleted successfully.");
 
   return { success: "Email verified!" };
