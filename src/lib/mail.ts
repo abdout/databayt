@@ -67,7 +67,10 @@ export const sendVerificationEmail = async (email: string, token: string) => {
     // Debugging: Log the response from Resend API
     console.log("Verification email sent successfully, response:", response);
   } catch (error) {
-    // Debugging: Log the error if sending email fails
     console.error("Error sending verification email:", error);
+    if (error instanceof Error) {
+      console.error("Error message:", error.message);
+      console.error("Error stack:", error.stack);
+    }
   }
 };
