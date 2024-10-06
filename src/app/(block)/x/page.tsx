@@ -24,7 +24,7 @@ const X = () => {
 
         <h1 className="text-5xl font-bold"> 🐤 X </h1>
         <p className=" text-lg font-light">
-          An interactive features, found in soical apps. 
+          Interactive features, found in soical apps. 
         </p>
         <div className="flex items-center justify-center space-x-6 pt-4">
           <Link href="/login">
