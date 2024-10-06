@@ -58,7 +58,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
 
   try {
     const response = await resend.emails.send({
-      from: 'member@databayt.org',
+      from: 'onboarding@resend.dev',
       to: email,
       subject: "Confirm your email",
       html: `<p>Click <a href="${confirmLink}">here</a> to confirm email.</p>`,
