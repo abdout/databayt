@@ -1,20 +1,21 @@
 # Databayt
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/Shadcn%20UI-000000?style=for-the-badge&logo=shutterstock&logoColor=white" alt="Shadcn UI" />
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Auth.js-000000?style=for-the-badge&logo=auth0&logoColor=white" alt="Auth.js" />
-  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white" alt="Prettier" />
-  <img src="https://img.shields.io/badge/Resend-FF4F5E?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Resend" />
-  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
-  <img src="https://img.shields.io/badge/Zod-000000?style=for-the-badge&logo=buffer&logoColor=white" alt="Zod" />
+  <!-- Replace the image sources with your own logo image paths -->
+  <img src="stack/nextjs.webp" alt="Next.js" width="50" />
+  <img src="stack/react.png" alt="React" width="50" />
+  <img src="stack/typescript.png" alt="TypeScript" width="50" />
+  <img src="stack/mongodb.webp" alt="MongoDB" width="50" />
+  <img src="stack/prisma.png" alt="Prisma" width="50" />
+  <img src="stack/authjs.webp" alt="Auth.js" width="50" />
+  <img src="stack/tailwindcss.png" alt="Tailwind CSS" width="50" />
+  <img src="stack/bun.png" alt="Bun" width="50" />
+  <img src="stack/shadcn.png" alt="Shadcn UI" width="50" />
+  <img src="stack/prettier.png" alt="Prettier" width="50" />
+  <img src="stack/resend.png" alt="Resend" width="50" />
+  <img src="stack/github.png" alt="GitHub" width="50" />
+  <img src="stack/figma.png" alt="Figma" width="50" />
+  <img src="stack/zod.svg" alt="Zod" width="50" />
 </p>
 
 ## Databayt
@@ -30,17 +31,19 @@ Databayt focuses on business automation, leveraging cutting-edge technologies to
 - **Next.js**: The React framework for production.
 - **React**: A JavaScript library for building user interfaces.
 - **TypeScript**: Strongly typed programming language that builds on JavaScript.
-- **Bun**: A fast all-in-one JavaScript runtime.
 - **MongoDB**: A document-based, distributed database.
-- **Shadcn UI**: Accessible and customizable UI components built with Radix UI and Tailwind CSS.
-- **Tailwind CSS**: A utility-first CSS framework.
+- **Prisma**: Next-generation ORM for Node.js & TypeScript.
 - **Auth.js**: Authentication for Next.js applications.
+- **Tailwind CSS**: A utility-first CSS framework.
+- **Bun**: A fast all-in-one JavaScript runtime.
+- **Shadcn UI**: Accessible and customizable UI components built with Radix UI and Tailwind CSS.
 - **Prettier**: An opinionated code formatter.
 - **Resend**: Email sending service.
-- **Prisma**: Next-generation ORM for Node.js & TypeScript.
 - **GitHub**: Hosting for version control and collaboration.
 - **Figma**: Collaborative interface design tool.
 - **Zod**: TypeScript-first schema validation.
+
+---
 
 ## 📖 Table of Contents
 
