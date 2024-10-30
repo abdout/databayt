@@ -21,7 +21,7 @@ export default function Home() {
     <div className="flex flex-col justify-center px-48 h-screen">
       <Title title="Databayt" description="🧱 Building blocks" />
         <p className=" text-xl font-light tracking-wide py-4">
-          Automate the boring, elevate the extraordinary. 
+          Automate the boring, elevate the wondrous. 
         </p>
         <Separator className="w-80" />
         

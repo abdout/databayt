@@ -1,96 +1,68 @@
-# Auth
+# Databayt
 
-Welcome to Auth! A reuseable block for authentication and authorization, built using Authjs, Nextjs, React, Typescript, Tailwind css, Shadch, mongoDB, and Prisma.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Shadcn%20UI-000000?style=for-the-badge&logo=shutterstock&logoColor=white" alt="Shadcn UI" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Auth.js-000000?style=for-the-badge&logo=auth0&logoColor=white" alt="Auth.js" />
+  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white" alt="Prettier" />
+  <img src="https://img.shields.io/badge/Resend-FF4F5E?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Resend" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
+  <img src="https://img.shields.io/badge/Zod-000000?style=for-the-badge&logo=buffer&logoColor=white" alt="Zod" />
+</p>
 
-<!-- ### The code inspierd by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).
-### Thanks to the Code With Antonio YouTube channel -->
+## Databayt
 
-**The code inspired by this [video](https://www.youtube.com/watch?v=1MTyCvS05V4).**  
-**Credits: [Antonio Erdeljac](https://github.com/AntonioErdeljac).**
+**Automate the boring, elevate the wonders**
 
-Key Features:
-- 🔐 Next-auth v5 (Auth.js)
-- 🚀 Next.js 14 with server actions
-- 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with Google & GitHub)
-- 🔒 Forgot password functionality
-- ✉️ Email verification
-- 📱 Two factor verification
-- 👥 User roles (Admin & User)
-- 🔓 Login component (Opens in redirect or modal)
-- 📝 Register component
-- 🤔 Forgot password component
-- ✅ Verification component
-- ⚠️ Error component
-- 🔘 Login button
-- 🚪 Logout button
-- 🚧 Role Gate
-- 🔍 Exploring next.js middleware
-- 📈 Extending & Exploring next-auth session
-- 🔄 Exploring next-auth callbacks
-- 👤 useCurrentUser hook
-- 🛂 useRole hook
-- 🧑 currentUser utility
-- 👮 currentRole utility
-- 🖥️ Example with server component
-- 💻 Example with client component
-- 👑 Render content for admins using RoleGate component
-- 🛡️ Protect API Routes for admins only
-- 🔐 Protect Server Actions for admins only
-- 📧 Change email with new verification in Settings page
-- 🔑 Change password with old password confirmation in Settings page
-- 🔔 Enable/disable two-factor auth in Settings page
-- 🔄 Change user role in Settings page (for development purposes only)
+Databayt focuses on business automation, leveraging cutting-edge technologies to streamline processes and boost productivity.
 
-### Documentation 
+---
 
-To start with ease, you may browse the [Technical Record Document](https://github.com/abdout/auth/blob/main/TRD.md).  
+## 🚀 Technologies Used
+
+- **Next.js**: The React framework for production.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
+- **Bun**: A fast all-in-one JavaScript runtime.
+- **MongoDB**: A document-based, distributed database.
+- **Shadcn UI**: Accessible and customizable UI components built with Radix UI and Tailwind CSS.
+- **Tailwind CSS**: A utility-first CSS framework.
+- **Auth.js**: Authentication for Next.js applications.
+- **Prettier**: An opinionated code formatter.
+- **Resend**: Email sending service.
+- **Prisma**: Next-generation ORM for Node.js & TypeScript.
+- **GitHub**: Hosting for version control and collaboration.
+- **Figma**: Collaborative interface design tool.
+- **Zod**: TypeScript-first schema validation.
+
+## 📖 Table of Contents
+
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## 🏁 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- **Node.js** and **Bun** installed on your local machine.
+- **MongoDB** database setup.
 
 ### Installation
 
-1. Clone the repository to your local machine:
+1. **Clone the repository**
 
-    ```bash
-    git clone https://github.com/abdout/auth.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd auth
-    ```
-
-3. Install dependencies:
-
-    ```bash
-    npm install
-    ```
-4. Setup .env file
-
-
-```js
-MONOGDB_URI=
-DIRECT_URL=
-AUTH_SECRET=
-RESEND_API_KEY=
-NEXT_PUBLIC_APP_URL=
-DOMAIN=
-```
-
-5. Setup Prisma
-```shell
-npx prisma generate
-npx prisma db push
-```
-
-6. Run the development server:
-
-    ```bash
-    npm run dev
-    ```
-
-- Navigate to [http://localhost:3000](http://localhost:3000).
-
-# Support
-
-If you have any questions or need assistance, feel free to [open an issue](https://github.com/abdout/auth/issues) in the repository, or reach out to us on [Discord](https://discord.com/invite/uPa4gGG62c).
+   ```bash
+   git clone https://github.com/yourusername/databayt.git
