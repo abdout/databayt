@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { MainNav } from "@/components/main-nav";
-import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { marketingConfig } from "@/config/marketing";
 import { cn } from "@/lib/utils";
-import { SiteFooter } from "@/components/site-footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter as FontSans } from "next/font/google"
 
