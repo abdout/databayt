@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import {  CarouselItem } from '@/components/ui/carousel';
 import { Card, } from '@/components/ui/card';
 import Link from 'next/link';
 
@@ -29,14 +28,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ src, name, papers }) => {
             <div className="w-full h-full flex items-center justify-center" dir="ltr">
               
                 {papers.map((paper, index) => (
-                  <CarouselItem key={index}>
+                  <div key={index}>
                     <Card>
                       <div className="w-48 h-40 items-center justify-center">
                         <p>{paper.title}</p>
                         <strong>{paper.desc}</strong>
                       </div>
                     </Card>
-                  </CarouselItem>
+                  </div>
                 ))}
               
             </div>
