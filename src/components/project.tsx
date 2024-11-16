@@ -33,7 +33,7 @@ const Landing = () => {
       </div>
       <div className="grid grid-cols-4 gap-7 items-center justify-center">
         {projects.map((project, index) => (
-          <ProjectCard src={project.src} name={project.name} papers={project.papers} key={index} />
+          <ProjectCard key={index} src={project.src} name={project.name} />
         ))}
       </div>
       
