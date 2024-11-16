@@ -1,14 +1,8 @@
 'use client';
-import { Input } from '@/components/ui/input';
-import Image from 'next/image';
 import React from 'react';
-import { Icon } from "@iconify/react";
 import ProjectCard from '@/components/card';
 import { projects } from '@/components/constant'; // Adjust the import path accordingly
-import { Button, buttonVariants } from './ui/button';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { siteConfig } from '@/config/site';
 import { ArrowRightIcon } from 'lucide-react';
 
 const Landing = () => {
