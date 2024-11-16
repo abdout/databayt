@@ -1,6 +1,6 @@
 import React from 'react'
 import { Rubik } from 'next/font/google'
-import Image from 'next/image';
+
 
 const rubik = Rubik({
   weight: '600',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-import { Card, CardContent } from '@/components/ui/card';
+import {  CarouselItem } from '@/components/ui/carousel';
+import { Card, } from '@/components/ui/card';
 import Link from 'next/link';
 
 interface ProjectCardProps {
@@ -11,7 +11,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ src, name, papers }) => {
-  const [hover, setHover] = useState(false);
+  // const [hover, setHover] = useState(false);
 
   return (
     <Link href=''>
@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ src, name, papers }) => {
       <Image src={src} alt={name} width={120} height={120} className="p-4" />
       <p className="text-lg text-muted-foreground">{name}</p>
 
-      {hover && (
+      {/* {hover && ( */}
         <div className="absolute inset-0 z-10 bg-opacity-80 flex items-center justify-center p-4">
           <div className="relative w-full h-full max-w-xs max-h-xs flex items-center justify-center">
             <div className="w-full h-full flex items-center justify-center" dir="ltr">
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ src, name, papers }) => {
             </div>
           </div>
         </div>
-      )}
+      {/* )} */}
     </div>
     </Link>
   );
