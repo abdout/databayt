@@ -3,6 +3,7 @@ export type Template = {
   name: string;
   imagePath: string;
   description: string;
+  businessTypes: string[];
 };
 
 export type Feature = {
@@ -1147,39 +1148,24 @@ export const businesses: Business[] = [
 
 export const templates: Template[] = [
   {
-    id: "modern",
-    name: "Modern",
-    imagePath: "/templates/modern.jpg",
-    description: "Clean and minimalist design with focus on functionality",
+    id: "clinic-modern",
+    name: "Modern Clinic",
+    imagePath: "/templates/clinic-modern.png",
+    description: "Clean and professional design for modern medical practices",
+    businessTypes: ["clinic"]
   },
   {
-    id: "classic",
-    name: "Classic",
-    imagePath: "/templates/classic.jpg",
-    description: "Traditional layout with proven conversion elements",
+    id: "clinic-classic",
+    name: "Classic Clinic",
+    imagePath: "/templates/clinic-classic.png",
+    description: "Classic and trustworthy medical interface",
+    businessTypes: ["clinic"]
   },
   {
-    id: "bold",
-    name: "Bold",
-    imagePath: "/templates/bold.jpg",
-    description: "Stand out with striking visuals and strong typography",
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    imagePath: "/templates/professional.jpg",
-    description: "Corporate style with emphasis on trust and reliability",
-  },
-  {
-    id: "minimal",
-    name: "Minimal",
-    imagePath: "/templates/minimal.jpg",
-    description: "Ultra-clean design that puts your content first",
-  },
-  {
-    id: "creative",
-    name: "Creative",
-    imagePath: "/templates/creative.jpg",
-    description: "Unique and artistic design for creative businesses",
+    id: "clinic-bold",
+    name: "Bold Clinic",
+    imagePath: "/templates/clinic-bold.png",
+    description: "Classic and trustworthy medical interface",
+    businessTypes: ["clinic"]
   },
 ];

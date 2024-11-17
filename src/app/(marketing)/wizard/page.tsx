@@ -78,6 +78,7 @@ export default function SelectionWizard() {
           <TemplateSelector
             templates={templates}
             selectedTemplate={selections.template}
+            selectedBusiness={selections.business}
             onSelect={handleTemplateSelect}
           />
         )}
