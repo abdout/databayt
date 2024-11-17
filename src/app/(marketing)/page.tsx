@@ -7,6 +7,8 @@ import Landing from "@/components/project"
 import Stack from "@/components/stack"
 import Testimonial from "@/components/testimonial"
 import LetsWorkTogether from "@/components/lets-work-together"
+import Wizard from "@/components/wizard"
+
 
 export default function Home() {
   return (
@@ -50,7 +52,7 @@ export default function Home() {
         
         <div className="mx-auto flex max-w-full flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-            Features
+            Stack
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
 
@@ -176,6 +178,7 @@ export default function Home() {
           
         </div>
       </section>
+      <Wizard />
       <Testimonial />
       <LetsWorkTogether />
     </>
