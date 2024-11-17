@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import ClientOnly from "@/components/layout/ClientOnly";
 import FooterColumn from "@/components/layout/FooterColumn";
 
-type Props = {};
 
-function Footer({}: Props) {
+
+function Footer() {
   const [country, setCountry] = useState("United States");
 
   const itemData = [
