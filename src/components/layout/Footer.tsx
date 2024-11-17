@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ClientOnly from "@/components/layout/ClientOnly";
 import FooterColumn from "@/components/layout/FooterColumn";

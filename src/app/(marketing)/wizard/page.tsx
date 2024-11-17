@@ -55,7 +55,7 @@ export default function SelectionWizard() {
   const selectedBusiness = businesses.find((b) => b.id === selections.business);
 
   return (
-    <div className="container mx-auto px-40 py-8">
+    <div className="container mx-auto px-40 py-8 h-sreen pb-60">
       <div className="space-y-6">
         {step === 1 && (
           <BusinessSelector

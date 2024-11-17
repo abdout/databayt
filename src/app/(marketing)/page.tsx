@@ -9,7 +9,7 @@ import Testimonial from "@/components/testimonial"
 import LetsWorkTogether from "@/components/lets-work-together"
 import Wizard from "@/components/wizard"
 import Time from "@/components/landing/time"
-import Clock from "@/components/landing/clock"
+
 
 
 export default function Home() {

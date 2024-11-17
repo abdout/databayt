@@ -13,7 +13,7 @@ export const FeatureSelector = ({
   features,
   selectedFeatures,
   onToggle,
-  businessName
+  // businessName
 }: FeatureSelectorProps) => {
   return (
     <div>
