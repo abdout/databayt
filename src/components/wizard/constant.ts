@@ -1155,9 +1155,9 @@ export const templates: Template[] = [
     businessTypes: ["clinic"]
   },
   {
-    id: "clinic-classic",
-    name: "Classic Clinic",
-    imagePath: "/templates/clinic-classic.png",
+    id: "clinic-minimal",
+    name: "Classic Minimal",
+    imagePath: "/templates/clinic-minimal.png",
     description: "Classic and trustworthy medical interface",
     businessTypes: ["clinic"]
   },

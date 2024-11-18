@@ -1,17 +1,66 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 const Clock = () => {
     const [isReverse, setIsReverse] = useState(false);
+    const [transitionSpeed, setTransitionSpeed] = useState(1); // 1 is normal speed, -1 is full reverse
+
+    // Smooth transition function using easing
+    const easeInOutQuad = (t: number) => {
+        return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    };
 
     useEffect(() => {
         // Toggle between forward and reverse every 10 seconds
         const toggleInterval = setInterval(() => {
             setIsReverse(prev => !prev);
-        }, 10000); // 10 seconds normal, then 10 seconds reverse
+        }, 10000);
 
         return () => clearInterval(toggleInterval);
     }, []);
+
+    // Handle smooth transition when direction changes
+    useEffect(() => {
+        if (isReverse) {
+            // Gradually transition to reverse over 1 second
+            let startTime = Date.now();
+            const transitionDuration = 1000; // 1 second transition
+
+            const transitionToReverse = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / transitionDuration, 1);
+                
+                // Use easing function for smooth acceleration
+                const easedProgress = easeInOutQuad(progress);
+                setTransitionSpeed(1 - (easedProgress * 2)); // Transition from 1 to -1
+
+                if (progress < 1) {
+                    requestAnimationFrame(transitionToReverse);
+                }
+            };
+
+            requestAnimationFrame(transitionToReverse);
+        } else {
+            // Gradually transition back to normal over 1 second
+            let startTime = Date.now();
+            const transitionDuration = 1000;
+
+            const transitionToNormal = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / transitionDuration, 1);
+                
+                // Use easing function for smooth deceleration
+                const easedProgress = easeInOutQuad(progress);
+                setTransitionSpeed(-1 + (easedProgress * 2)); // Transition from -1 to 1
+
+                if (progress < 1) {
+                    requestAnimationFrame(transitionToNormal);
+                }
+            };
+
+            requestAnimationFrame(transitionToNormal);
+        }
+    }, [isReverse]);
 
     useEffect(() => {
         let animationFrameId: number;
@@ -27,12 +76,14 @@ const Clock = () => {
             let minutes = date.getMinutes();
             let hours = date.getHours();
 
-            if (isReverse) {
-                // When in reverse mode, add a fast-moving offset
-                const fastOffset = (elapsedTime / 10) % (12 * 60 * 60); // Complete cycle every 12 hours
-                seconds = (seconds - fastOffset) % 60;
-                minutes = (minutes - fastOffset / 60) % 60;
-                hours = (hours - fastOffset / 3600) % 12;
+            // Apply the transition speed to the time offset
+            const timeOffset = (elapsedTime / 10) * Math.abs(transitionSpeed);
+            
+            if (transitionSpeed < 0) {
+                // Apply reverse movement based on transition speed
+                seconds = (seconds - timeOffset) % 60;
+                minutes = (minutes - timeOffset / 60) % 60;
+                hours = (hours - timeOffset / 3600) % 12;
 
                 // Ensure we don't get negative values
                 if (seconds < 0) seconds += 60;
@@ -75,10 +126,10 @@ const Clock = () => {
                 cancelAnimationFrame(animationFrameId);
             }
         };
-    }, [isReverse]);
+    }, [transitionSpeed]);
 
     return (
-        <div className="justify-center items-center ">
+        <div className="justify-center items-center">
             <article className="clock simple">
                 <div className="hours-container">
                     <div className="hours"></div>

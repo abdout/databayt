@@ -4,19 +4,27 @@ import { useState } from 'react';
 import { BusinessSelector } from '@/components/wizard/business';
 import { FeatureSelector } from '@/components/wizard/feature';
 import { TemplateSelector } from '@/components/wizard/template';
+
 import { EstimatesDisplay } from '@/components/wizard/estimate';
 import { StepIndicator } from '@/components/wizard/indicator';
 import { businesses } from '@/components/wizard/constant';
-import { templates } from '@/components/wizard/constant';
 import { Button } from '@/components/ui/button';
 import { WizardSelections } from '@/components/wizard/constant';
+import ThemeSelector from '@/components/wizard/theme';
+
+interface ExtendedWizardSelections extends WizardSelections {
+  themeColor?: string;
+  borderRadius?: number;
+}
 
 export default function SelectionWizard() {
   const [step, setStep] = useState<number>(1);
-  const [selections, setSelections] = useState<WizardSelections>({
+  const [selections, setSelections] = useState<ExtendedWizardSelections>({
     business: '',
     features: [],
     template: '',
+    themeColor: 'zinc',
+    borderRadius: 0.5,
   });
 
   const calculateEstimates = () => {
@@ -51,6 +59,10 @@ export default function SelectionWizard() {
     setSelections({ ...selections, template: templateId });
   };
 
+  const handleThemeSelect = (color: string, radius: number) => {
+    setSelections({ ...selections, themeColor: color, borderRadius: radius });
+  };
+
   const estimates = calculateEstimates();
   const selectedBusiness = businesses.find((b) => b.id === selections.business);
 
@@ -76,10 +88,16 @@ export default function SelectionWizard() {
 
         {step === 3 && (
           <TemplateSelector
-            templates={templates}
             selectedTemplate={selections.template}
-            selectedBusiness={selections.business}
             onSelect={handleTemplateSelect}
+          />
+        )}
+
+        {step === 4 && (
+          <ThemeSelector
+            selectedColor={selections.themeColor}
+            selectedRadius={selections.borderRadius}
+            onSelect={handleThemeSelect}
           />
         )}
 
@@ -87,7 +105,7 @@ export default function SelectionWizard() {
       </div>
 
       <div className="mt-8 flex flex-col items-center space-y-4">
-        <StepIndicator currentStep={step} totalSteps={3} />
+        <StepIndicator currentStep={step} totalSteps={4} />
         
         <div className="space-x-4">
           <Button
@@ -97,13 +115,13 @@ export default function SelectionWizard() {
             Back
           </Button>
           <Button
-            onClick={() => step < 3 && setStep(step + 1)}
+            onClick={() => step < 4 && setStep(step + 1)}
             disabled={
               (step === 1 && !selections.business) ||
               (step === 2 && selections.features.length === 0)
             }
           >
-            Next
+            {step === 4 ? 'Finish' : 'Next'}
           </Button>
         </div>
       </div>
