@@ -23,7 +23,7 @@ const Clock = () => {
     useEffect(() => {
         if (isReverse) {
             // Gradually transition to reverse over 1 second
-            let startTime = Date.now();
+            const startTime = Date.now();
             const transitionDuration = 1000; // 1 second transition
 
             const transitionToReverse = () => {
@@ -42,7 +42,7 @@ const Clock = () => {
             requestAnimationFrame(transitionToReverse);
         } else {
             // Gradually transition back to normal over 1 second
-            let startTime = Date.now();
+            const startTime = Date.now();
             const transitionDuration = 1000;
 
             const transitionToNormal = () => {
