@@ -3,12 +3,13 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Contributors from "@/components/contributors"
-import Landing from "@/components/project"
+import Landing from "@/components/automated/project"
 import Stack from "@/components/stack"
 import Testimonial from "@/components/testimonial"
 import LetsWorkTogether from "@/components/lets-work-together"
 import Wizard from "@/components/wizard"
 import Time from "@/components/landing/time"
+import Support from "@/components/landing/boost"
 
 
 
@@ -184,6 +185,8 @@ export default function Home() {
       <Wizard />
       <Testimonial />
       <LetsWorkTogether />
+      <Support />
+      
     </>
   )
 }
