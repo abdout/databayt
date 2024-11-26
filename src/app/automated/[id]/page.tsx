@@ -10,6 +10,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Price from "@/components/automated/price";
+import AllFeatures from "@/components/feature/all";
 
 const ProjectPage = () => {
     const { id } = useParams();
@@ -101,6 +102,7 @@ const ProjectPage = () => {
                     ))}
                 </div>
             </div>
+            <AllFeatures />
             <Price />
         </div>
     );
