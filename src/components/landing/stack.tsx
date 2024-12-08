@@ -2,16 +2,12 @@ import React from 'react'
 
 const Stack = () => {
   return (
-    <div
-        className="space-y-6 "
-      >
-        
+    <div className="space-y-6 "> 
         <div className="mx-auto flex max-w-full flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Stack
           </h2>
           <p className="max-w-[65%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
-
             Databayt leverages state-of-the-art technology to craft innovative and modern applications, delivering seamless performance, scalability, and a superior user experience
           </p>
         </div>
@@ -101,9 +97,7 @@ const Stack = () => {
               </div>
             </div>
           </div>
-        </div>
-        {/* <Stack /> */}
-        
+        </div>   
       </div>
   )
 }
