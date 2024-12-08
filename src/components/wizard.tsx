@@ -92,8 +92,8 @@ const FeatureCard = ({
 
 const Wizard = () => {
   return (
-    <div className="relative w-full min-h-screen">
-      <div className="mx-auto flex max-w-full flex-col items-center space-y-4 text-center py-8">
+    <div className="space-y-6 ">
+      <div className="mx-auto flex max-w-full flex-col items-center space-y-4 text-center ">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Wizard
         </h2>
@@ -101,7 +101,7 @@ const Wizard = () => {
           Prototype a business automation solution using wizard. Choose the features and design,<br /> and get real-time cost and delivery estimates.
         </p>
 
-        <div className="relative w-full max-w-5xl h-[250px] overflow-hidden">
+        <div className="relative w-full max-w-5xl lg:max-w-7xl h-[250px] overflow-hidden">
           <div className="absolute inset-0">
             <div className="relative h-full flex flex-col justify-center gap-4">
               <Marquee pauseOnHover className="[--duration:40s]">

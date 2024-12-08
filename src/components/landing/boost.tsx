@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Boost = () => {
     return (
-        <section id="open-source" className="container py-8 md:py-12 lg:py-24">
+        <div className="container pb-20">
             <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
                 <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
                     Boost
@@ -37,7 +37,7 @@ const Boost = () => {
                     </Link>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

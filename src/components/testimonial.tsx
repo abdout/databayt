@@ -43,7 +43,7 @@ export default function Testimonial() {
     return (
         <section
             id="features"
-            className="container space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24"
+            className="container space-y-6  dark:bg-transparent "
         >
             <div className="mx-auto flex max-w-full flex-col items-center space-y-4 text-center">
                 <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
