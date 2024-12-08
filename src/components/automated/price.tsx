@@ -1,8 +1,8 @@
-import { Link } from 'lucide-react';
+
 import React from 'react';
 import { Button } from '../ui/button';
 import Image from 'next/image';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Price = () => {
   return (

@@ -1,4 +1,3 @@
-import exp from 'constants'
 import { PawPrintIcon as Patreon, Coffee } from 'lucide-react'
 import Link from 'next/link'
 
