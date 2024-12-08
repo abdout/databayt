@@ -1,19 +1,19 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import {
-  KeyRound,
-  FileText,
-  LayoutDashboard,
-  Globe2,
-  Calculator,
-  Workflow,
-  Clock,
-  Calendar,
-  MessageSquare,
-  Bell,
+  // KeyRound,
+  // FileText,
+  // LayoutDashboard,
+  // Globe2,
+  // Calculator,
+  // Workflow,
+  // Clock,
+  // Calendar,
+  // MessageSquare,
+  // Bell,
   Edit3,
-  BookOpen,
-  Book,
+  // BookOpen,
+  // Book,
   Newspaper,
   Users,
   Mail,
@@ -28,7 +28,7 @@ import {
   Database,
   Lock,
 } from 'lucide-react';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const features = [
 //   { name: "Authentication", icon: KeyRound },
