@@ -96,7 +96,7 @@ const AllFeatures = () => {
         Feature
           </h2>
           <p className="max-w-[65%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
-            End to end features you would like.
+            End to end features you would love.
           </p>
 
         <div className="">

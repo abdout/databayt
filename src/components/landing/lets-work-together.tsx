@@ -7,12 +7,12 @@ export default function LetsWorkTogether() {
   return (
    
   
-      <div className=" px-4 md:px-6 container">
+      <div className=" px-4 md:px-20 container">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">Let&apos;s Work Together</h2>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 ">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 ">
           <div className="flex-1">
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mb-4">
-              Ready to revolutionize your business with our automation solutions? Whether you&apos;re in healthcare, education, or hospitality, we&apos;re here to streamline your operations and boost efficiency.
+            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mb-4 ">
+            Ready to elevate business with advanced automation solutions? Experience streamlined operations and enhanced efficiency for any industry.
             </p>
             <div className="flex gap-4 mt-4 items-center">
               <Icon icon="bytesize:github" width="30" height="30" />
