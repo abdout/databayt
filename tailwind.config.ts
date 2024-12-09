@@ -11,12 +11,12 @@ export default {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem", // Default padding for all screens
-        sm: "1.5rem",    // Small screens
-        md: "2rem",      // Medium screens
-        lg: "3rem",      // Large screens
-        xl: "4rem",      // Extra-large screens
-        "2xl": "5rem",   // 2XL screens
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        md: "2rem",
+        lg: "3rem",
+        xl: "4rem",
+        "2xl": "5rem",
       },
       screens: {
         "2xl": "1400px",

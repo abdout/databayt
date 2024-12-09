@@ -113,7 +113,7 @@ const ProjectPage = () => {
           Technology
         </h2>
         <p className="max-w-[65%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
-          Madrsa levearge state-of-the-art technology.
+          Madrsa leverages state-of-the-art technology.
         </p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
