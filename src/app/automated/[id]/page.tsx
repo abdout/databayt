@@ -7,14 +7,14 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+// import Image from "next/image";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "@/components/ui/carousel";
 import Price from "@/components/automated/price";
 import AllFeatures from "@/components/feature/all";
 import { Icons } from "@/components/icons";
@@ -29,7 +29,9 @@ const ProjectPage = () => {
     return <p>Project not found!</p>;
   }
 
-  const { name, technologies, livePreview, github } = project;
+  const {
+    //  name, 
+     technologies, livePreview, github } = project;
 
   return (
     <div className="container flex  flex-col space-y-4 ">
