@@ -13,6 +13,7 @@ import { WizardSelections } from '@/components/wizard/constant';
 import ThemeSelector from '@/components/wizard/theme';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Icons } from '@/components/icons';
 
 interface ExtendedWizardSelections extends WizardSelections {
   themeColor?: string;
@@ -69,19 +70,21 @@ export default function SelectionWizard() {
   const selectedBusiness = businesses.find((b) => b.id === selections.business);
 
   return (
-    <div className="container mx-auto px-40 py-8 h-sreen pb-60 h-screen">
-      <div className="flex items-end justify-end ">
-            <Link
-              href="/"
-              className={cn(
-                buttonVariants({ variant: "secondary", size: "sm" }, ),
-                "px-4"
-              )}
-            >
-              Back
-            </Link>
-            </div>
-      <div className="space-y-6">
+    <div className="container flex h-screen w-screen flex-col items-center justify-center">
+      <Link
+        href="/"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          "absolute left-4 top-4 md:left-8 md:top-8"
+        )}
+      >
+        <>
+          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          Back
+        </>
+      </Link>
+           
+      <div className="space-y-6 max-w-[50%]">
         {step === 1 && (
           <BusinessSelector
             businesses={businesses}

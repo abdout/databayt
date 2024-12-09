@@ -3,7 +3,7 @@ import React from 'react'
 
 const Contributors = () => {
   return (
-    <div className='flex flex-col gap-4 rounded-full'>
+    <div className='flex flex-col gap-4 md:gap-10 md:scale-110  rounded-full'>
         <div className='flex gap-4 items-center'>
         <Image src="/contributors/abdout.jpg" alt="" width={70} height={70} className='rounded-full' />
         <Image src="/contributors/sedon.png" alt="" width={70} height={70} className='rounded-full' />
