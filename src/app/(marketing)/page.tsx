@@ -1,9 +1,9 @@
 import Stack from "@/components/landing/stack";
 import Testimonial from "@/components/testimonial";
-import LetsWorkTogether from "@/components/lets-work-together";
+import LetsWorkTogether from "@/components/landing/lets-work-together";
 import Wizard from "@/components/wizard";
 import Time from "@/components/landing/time";
-import Support from "@/components/landing/boost";
+import Boost from "@/components/landing/boost";
 import Hero from "@/components/landing/hero";
 import OpenSource from "@/components/landing/open-source";
 import Automated from "@/components/automated/project";
@@ -20,7 +20,7 @@ export default function Home() {
         <Wizard />
         <Testimonial />
         <LetsWorkTogether />
-        <Support />
+        <Boost />
       </div>
     </>
   );

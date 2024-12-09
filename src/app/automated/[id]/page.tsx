@@ -19,6 +19,7 @@ import Price from "@/components/automated/price";
 import AllFeatures from "@/components/feature/all";
 import { Icons } from "@/components/icons";
 import Photo from "@/components/automated/photo";
+import { Introducation } from "@/components/automated/intro";
 
 const ProjectPage = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const ProjectPage = () => {
   const { name, technologies, livePreview, github } = project;
 
   return (
-    <div className="container flex w-screen flex-col ">
+    <div className="container flex  flex-col space-y-4 ">
       <Link
         href="/"
         className={cn(
@@ -44,10 +45,10 @@ const ProjectPage = () => {
           Back
         </>
       </Link>
-      <div className="flex items-center justify-between pt-28">
+      <div className="flex items-center justify-between pt-20">
         <div className="flex items-center space-x-2 ">
           {/* <Image src={project.src} alt={name} width={30} height={30} /> */}
-          <h2 className="font-heading text-xl leading-[1.1] sm:text-3xl md:text-xl -mt-1">
+          <h2 className="text-lg leading-[1.1] sm:text-3xl md:text-xl ">
             {typeof id === "string"
               ? id.charAt(0).toUpperCase() + id.slice(1)
               : Array.isArray(id)
@@ -57,12 +58,11 @@ const ProjectPage = () => {
               : "No ID"}
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                
-                - School automation
-                </p>
+            - School automation
+          </p>
         </div>
 
-        <div className="flex items-center space-x-4 mb-6">
+        <div className="flex items-center space-x-2">
           <Link
             href={livePreview}
             target="_blank"
@@ -82,8 +82,7 @@ const ProjectPage = () => {
             <Icon icon="bytesize:github" width="40" height="40" />
             GitHub
           </Link>
-        
-      </div>
+        </div>
       </div>
       <Photo />
 
@@ -105,9 +104,15 @@ const ProjectPage = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel> */}
+      <Introducation />
 
-      <div className="px-2 mt-8">
-        <h2 className="text-xl font-semibold mb-4">Technologies</h2>
+      <div className=" py-2 pb-4">
+        <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-4xl pb-2">
+          Technology
+        </h2>
+        <p className="max-w-[65%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
+          Madrsa levearge state-of-the-art technology.
+        </p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
             <Badge key={index} variant="secondary">

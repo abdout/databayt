@@ -10,7 +10,7 @@ const Price = () => {
       <Image src="/trial.png" alt="Trial Image" width={250} height={250} className="rounded-md" />
       <Card className="shadow-none border-none bg-background p-6 max-w-md w-full">
       <CardContent className="flex flex-col items-center text-center">
-  <h4 className="text-7xl font-bold mb-4">$19</h4>
+  <h4 className="text-7xl font-bold mb-4">$10</h4>
   <p className="text-sm font-medium  mb-2">
     Per Month After Trial
   </p>

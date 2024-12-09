@@ -4,12 +4,12 @@ import React from 'react'
 
 const Photo = () => {
   return (
-    <div className="w-full max-w-8xl mx-auto p-4">
-      <div className="grid grid-cols-2 gap-2 h-[400px] overflow-hidden rounded-3xl">
+    <div className="w-full max-w-8xl mx-auto ">
+      <div className="grid grid-cols-2 gap-2 h-[400px] overflow-hidden rounded-xl">
         {/* Left half - large image */}
         <div className="relative h-full group">
           <Image
-            src="/templates/a.png"
+            src="/templates/fallback.png"
             alt="Large image"
             fill
             style={{ objectFit: 'cover' }}
@@ -30,7 +30,7 @@ const Photo = () => {
           </div>
           <div className="relative group">
             <Image
-              src="/templates/a.png"
+              src="/templates/sudan.jpg"
               alt="Top right small image"
               fill
               style={{ objectFit: 'cover' }}
@@ -39,7 +39,7 @@ const Photo = () => {
           </div>
           <div className="relative group">
             <Image
-              src="/templates/a.png"
+              src="/templates/c.png"
               alt="Bottom left small image"
               fill
               style={{ objectFit: 'cover' }}
@@ -50,7 +50,7 @@ const Photo = () => {
           {/* Bottom right small image with "Show all photos" always visible */}
           <div className="relative group">
             <Image
-              src="/templates/a.png"
+              src="/templates/d.png"
               alt="Bottom right small image"
               fill
               style={{ objectFit: 'cover' }}

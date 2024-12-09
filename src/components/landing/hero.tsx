@@ -7,7 +7,7 @@ import { buttonVariants } from '../ui/button'
 const Hero = () => {
   return (
     <div className="space-y-6 h-[calc(100vh-5rem)]">
-    <div className="container flex max-w-[70rem] flex-col items-center gap-4 text-center mt-20">
+    <div className="flex flex-col items-center gap-4 text-center mt-24">
       <Link
         href={siteConfig.links.twitter}
         className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
@@ -15,7 +15,7 @@ const Hero = () => {
       >
         Follow along on Discord
       </Link>
-      <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-8xl">
+      <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-[90px]">
         Automate the boring, <br />elevate the wondrous.
       </h1>
       <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">

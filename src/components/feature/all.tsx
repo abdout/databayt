@@ -84,16 +84,22 @@ const FeatureCard = ({
 
 const AllFeatures = () => {
   return (
-    <div className="relative w-full min-h-screen">
-      <div className="mx-auto flex max-w-full flex-col  space-y-4 text-center py-8">
+    <div className="relative">
+      <div className="mx-auto flex max-w-full flex-col ">
         {/* <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Wizard
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           Prototype a business automation solution using wizard. Choose the features and design,<br /> and get real-time cost and delivery estimates.
         </p> */}
+        <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-4xl pb-2">
+        Feature
+          </h2>
+          <p className="max-w-[65%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 pb-7">
+            End to end features you would like.
+          </p>
 
-        <div className="w-full max-w-5xl px-4">
+        <div className="">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
             {features.map((feature) => (
               <FeatureCard key={feature.name} {...feature} />

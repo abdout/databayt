@@ -3,18 +3,17 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Inter as FontSans } from "next/font/google"
+import { Inter as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
-
+});
 
 const fontHeading = localFont({
   src: "./fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
-})
+});
 
 export const metadata: Metadata = {
   title: "Databayt",
@@ -36,8 +35,7 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          
+          <div className="container">{children}</div>
         </ThemeProvider>
       </body>
     </html>
