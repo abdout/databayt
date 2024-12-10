@@ -1,7 +1,7 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Button } from "@/components/ui/button";
 import Marquee from "@/components/ui/marquee";
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   KeyRound,
   FileText,
@@ -29,8 +29,8 @@ import {
   Printer,
   Database,
   Lock,
-} from 'lucide-react';
-import Link from 'next/link';
+} from "lucide-react";
+import Link from "next/link";
 
 const features = [
   { name: "Authentication", icon: KeyRound },
@@ -58,7 +58,7 @@ const features = [
   { name: "Sharing System", icon: Share2 },
   { name: "Print Service", icon: Printer },
   { name: "Database Backup", icon: Database },
-  { name: "Access Control", icon: Lock }
+  { name: "Access Control", icon: Lock },
 ];
 
 const midPoint = Math.ceil(features.length / 2);
@@ -67,7 +67,7 @@ const secondRow = features.slice(midPoint);
 
 const FeatureCard = ({
   icon: Icon,
-  name
+  name,
 }: {
   icon: React.ElementType;
   name: string;
@@ -77,7 +77,7 @@ const FeatureCard = ({
       className={cn(
         "relative min-w-fit cursor-pointer overflow-hidden rounded-xl border p-4",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
       <div className="flex flex-col items-start gap-3">
@@ -97,8 +97,20 @@ const Wizard = () => {
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Wizard
         </h2>
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Prototype a business automation solution using wizard. Choose the features and design,<br /> and get real-time cost and delivery estimates.
+        <p className="max-w-[90%] md:max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          {/* Shown on screens smaller than sm */}
+          <span className="block sm:hidden">
+          Choose the features and design, and get real-time cost and delivery
+          estimates.
+           
+          </span>
+
+          {/* Shown at sm screens and above */}
+          <span className="hidden sm:block">
+          Prototype a business automation solution using wizard. Choose the
+            features and design,
+            <br /> and get real-time cost and delivery estimates.
+          </span>
         </p>
 
         <div className="relative w-full max-w-5xl lg:max-w-7xl h-[250px] overflow-hidden">
@@ -121,9 +133,9 @@ const Wizard = () => {
         </div>
 
         <Link href="/wizard" className="relative z-10 mt-8">
-            <Button size="lg" className="px-8">
-              Launch Wizard
-            </Button>
+          <Button size="lg" className="px-8">
+            Launch Wizard
+          </Button>
         </Link>
       </div>
     </div>

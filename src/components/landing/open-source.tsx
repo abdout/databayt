@@ -1,5 +1,5 @@
 import React from 'react'
-import Contributors from '../contributors'
+import Contributors from './contributors'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 

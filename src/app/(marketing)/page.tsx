@@ -1,5 +1,5 @@
 import Stack from "@/components/landing/stack";
-import Testimonial from "@/components/testimonial";
+import Testimonial from "@/components/landing/testimonial";
 import LetsWorkTogether from "@/components/landing/lets-work-together";
 import Wizard from "@/components/wizard";
 import Time from "@/components/landing/time";

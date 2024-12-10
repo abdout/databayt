@@ -12,10 +12,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, src, name }) => {
   return (
     <Link
       href={`/automated/${id}`}
-      className="relative flex flex-col items-center justify-center px-12"
+      className="relative flex flex-col items-center justify-center pb-4 md:px-12"
     >
-      <Image src={src} alt={name} width={120} height={120} className="p-4" />
-      <p className="text-lg text-muted-foreground">{id}</p>
+      <Image src={src} alt={name} width={120} height={120} className="p-6 md:p-4" />
+      <p className="text-md md:text-lg text-muted-foreground">{id}</p>
     </Link>
   );
 };

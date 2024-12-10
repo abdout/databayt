@@ -13,7 +13,7 @@ const Photo = () => {
             alt="Large image"
             fill
             style={{ objectFit: 'cover' }}
-            className="rounded-tl-md rounded-bl-3xl opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+            className="rounded-tl-md rounded-bl-md opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           />
         </div>
 

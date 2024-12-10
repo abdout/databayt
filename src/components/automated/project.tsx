@@ -26,7 +26,7 @@ const Automated = () => {
           </Link>
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-7 items-center justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7 items-center justify-center">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
