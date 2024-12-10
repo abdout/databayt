@@ -47,9 +47,8 @@ const ProjectPage = () => {
           Back
         </>
       </Link>
-      <div className="flex items-center justify-between pt-20">
+      <div className="flex flex-col md:flex-row items-start justify-between pt-14 md:pt-20">
         <div className="flex items-center space-x-2 ">
-          {/* <Image src={project.src} alt={name} width={30} height={30} /> */}
           <h2 className="text-lg leading-[1.1] sm:text-3xl md:text-xl ">
             {typeof id === "string"
               ? id.charAt(0).toUpperCase() + id.slice(1)
@@ -64,7 +63,7 @@ const ProjectPage = () => {
           </p>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-start space-x-2">
           <Link
             href={livePreview}
             target="_blank"
