@@ -39,11 +39,11 @@ const ProjectPage = () => {
         href="/"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
+          "absolute left-4 top-4 md:left-8 md:top-8 -ml-1"
         )}
       >
         <>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          <Icons.chevronLeft className=" h-4 w-4" />
           Back
         </>
       </Link>
@@ -59,11 +59,11 @@ const ProjectPage = () => {
               : "No ID"}
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            - School automation
+            - School Automation
           </p>
         </div>
 
-        <div className="flex items-start space-x-2">
+        <div className="flex items-start space-x-2 -ml-4 pt-1">
           <Link
             href={livePreview}
             target="_blank"
