@@ -7,6 +7,7 @@ import Boost from "@/components/landing/boost";
 import Hero from "@/components/landing/hero";
 import OpenSource from "@/components/landing/open-source";
 import Automated from "@/components/automated/project";
+import Codebase from "@/components/landing/codebase";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Stack />
         <Automated />
         <OpenSource />
+        <Codebase />
         <Time />
         <Wizard />
         <Testimonial />

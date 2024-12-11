@@ -27,9 +27,9 @@ export const FeatureSelector = ({
         {features.map(({ id, name, popularity }) => (
           <span
             key={id}
-            className={`cursor-pointer transition-all hover:opacity-100 ${
+            className={`cursor-pointer  hover:opacity-100 ${
               selectedFeatures.includes(id)
-                ? 'text-blue-800 font-bold opacity-100'
+                ? 'text-blue-800 underline opacity-100'
                 : 'text-gray-700 opacity-50'
             }`}
             style={{

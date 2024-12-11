@@ -22,7 +22,7 @@ export const BusinessSelector = ({
             key={id}
             className={`cursor-pointer transition-all hover:opacity-100 ${
               selectedBusiness === id
-                ? 'text-blue-800 font-bold opacity-100'
+                ? 'text-blue-800 underline opacity-100'
                 : 'text-gray-700 opacity-50'
             }`}
             style={{

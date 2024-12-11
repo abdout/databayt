@@ -70,7 +70,7 @@ export default function SelectionWizard() {
   const selectedBusiness = businesses.find((b) => b.id === selections.business);
 
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center">
+    <div className=" flex h-screen  flex-col items-center justify-center">
       <Link
         href="/"
         className={cn(
@@ -83,6 +83,7 @@ export default function SelectionWizard() {
           Back
         </>
       </Link>
+      
            
       <div className="space-y-6 max-w-[50%]">
         {step === 1 && (
