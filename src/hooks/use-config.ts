@@ -1,4 +1,3 @@
-// use-config.ts (remains the same)
 "use client"
 import { useAtom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
@@ -13,7 +12,7 @@ const styles = [
     name: "default",
     label: "Default",
   },
-] as const
+] as const // Use `as const` to derive literal types
 
 type Style = (typeof styles)[number]
 
@@ -32,4 +31,3 @@ const configAtom = atomWithStorage<Config>("config", {
 export function useConfig() {
   return useAtom(configAtom)
 }
-

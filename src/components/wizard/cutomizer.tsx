@@ -10,7 +10,6 @@ import { Label } from "../ui/label";
 import { baseColors } from "./base-color";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "../ui/skeleton";
-import * as Dialog from "@radix-ui/react-dialog";
 
 const CustomizerUI = () => {
   const [mounted, setMounted] = React.useState(false);

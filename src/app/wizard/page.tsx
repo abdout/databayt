@@ -83,7 +83,6 @@ export default function SelectionWizard() {
           Back
         </>
       </Link>
-      
            
       <div className="space-y-6 max-w-[50%]">
         {step === 1 && (
