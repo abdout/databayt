@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to ui.shadcn.com. We're happy to have you here.
+Thanks for your interest in contributing to Databayt. We're happy to have you here.
 
 Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
 
@@ -8,7 +8,7 @@ If you need any help, feel free to reach out to [Discord](https://discord.gg/uPa
 
 ## About this repository
 
-This repository is a monorepo.
+This repository is a micro serivce.
 
 - We use [pnpm](https://pnpm.io) and [`workspaces`](https://pnpm.io/workspaces) for development.
 - We use [Turborepo](https://turbo.build/repo) as our build system.
