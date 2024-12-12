@@ -1,6 +1,8 @@
 # Databayt
 
-Reclaim Your Time by Automating the Boring. Databayt is a bussiness automation service provider to allow a soultion to save time and effort. Free. Open Source. **Use this to build your own compact and reusable code library**.
+Reclaim your time by automating the boring. Databayt is a bussiness automation service provider to allow soultions to save time and effort. Free. Open Source. **Use this to build your own compact and reusable automation codebase**.
+
+<br>
 
 ![hero](public/readme/stack.png)
 
