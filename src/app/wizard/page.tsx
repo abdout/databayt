@@ -1,4 +1,4 @@
-// ThemeSelector.tsx
+// src/components/ThemeSelector.tsx
 "use client";
 import React from "react";
 import {
@@ -16,8 +16,6 @@ import { Icons } from "@/components/icons";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { useConfig } from "@/hooks/use-config";
 import CustomizerUI from "@/components/wizard/cutomizer";
-
-// Make sure Customizer doesn't cause unnecessary re-renders
 
 const MemoizedCustomizer = React.memo(CustomizerUI);
 
@@ -50,10 +48,9 @@ interface ThemeSelectorProps {
   onSelect: (color: string, radius: number) => void;
 }
 
-const ThemeSelector: React.FC<ThemeSelectorProps> = ({ selectedColor, selectedRadius, onSelect }) => {
+export const ThemeSelector = React.memo(({ selectedColor, selectedRadius, onSelect }: ThemeSelectorProps) => {
   const [config] = useConfig();
 
-  // Update config when props change
   React.useEffect(() => {
     if (selectedColor && selectedRadius) {
       onSelect(selectedColor, selectedRadius);
@@ -172,6 +169,6 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({ selectedColor, selectedRa
       </div>
     </div>
   );
-};
+});
 
-export default React.memo(ThemeSelector);
+ThemeSelector.displayName = "ThemeSelector";
