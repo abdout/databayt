@@ -6,7 +6,7 @@ import Image from "next/image";
 const Codebase = () => {
   const categories = [
     {
-      src: "/codebase/atom.png",
+      src: "/codebase/radiation.png",
       title: "Atom",
       description: "Atomic components for larger structures",
     },
@@ -49,7 +49,7 @@ const Codebase = () => {
                 className="w-10 h-10 md:w-14 md:h-14 pb-1 md:pb-2"
               />
               <h3 className="text-[15px] md:text-lg font-medium mb-2">{category.title}</h3>
-              <p className="max-w-[80%] md:max-w-[70%] leading-normal text-muted-foreground text-[13px] sm:text-sm sm:leading-7">
+              <p className="max-w-[80%] md:max-w-[70%]  text-muted-foreground text-[13px] sm:text-sm sm:leading-6">
                 {category.description}
               </p>
             </div>

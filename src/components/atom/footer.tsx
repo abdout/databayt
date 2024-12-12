@@ -6,11 +6,11 @@ function FooterAddressComponent() {
     <Card className="w-full bg-transparent border-none shadow-none">
       <CardContent className="p-0">
         {/* A single row (flex) displaying Sudan, English, $USD, and Light */}
-        <div className="flex space-x-7 text-sm text-gray-500">
-          <p>Sudan</p>
-          <p>English</p>
-          <p>$USD</p>
-          <p>Light</p>
+        <div className="flex space-x-8 text-sm items-center justify-center md:justify-start text-gray-500">
+          <p className="text-[13px] md:text-[15px]">Sudan</p>
+          <p className="text-[13px] md:text-[15px]">English</p>
+          <p className="text-[13px] md:text-[15px]">$USD</p>
+          <p className="text-[13px] md:text-[15px]">Light</p>
         </div>
       </CardContent>
     </Card>
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <hr className="my-8 border-gray-200" />
+        <hr className="my-5 md:my-8 border-gray-200" />
         <FooterAddressComponent />
       </div>
     </footer>
