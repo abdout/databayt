@@ -6,7 +6,7 @@ import Image from "next/image";
 const Codebase = () => {
   const categories = [
     {
-      src: "/codebase/radiation.png",
+      src: "/codebase/atom.png",
       title: "Atom",
       description: "Atomic components for larger structures",
     },
@@ -21,9 +21,9 @@ const Codebase = () => {
       description: "Reusable blocks for project assembly",
     },
     {
-      src: "/codebase/saas.png",
-      title: "SaaS",
-      description: "Ready-to-use minimal saas",
+      src: "/codebase/micro.png",
+      title: "Micro",
+      description: "Ready-to-use micro serivces",
     },
   ];
   return (
