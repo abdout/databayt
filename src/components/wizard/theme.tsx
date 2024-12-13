@@ -20,14 +20,14 @@ import { useConfig } from "@/hooks/use-config";
 import CustomizerUI from "./cutomizer";
 const MemoizedCustomizer = React.memo(CustomizerUI);
 
-// type ThemeColor =
-//   | "zinc"
-//   | "red"
-//   | "orange"
-//   | "green"
-//   | "blue"
-//   | "yellow"
-//   | "violet";
+type ThemeColor =
+  | "zinc"
+  | "red"
+  | "orange"
+  | "green"
+  | "blue"
+  | "yellow"
+  | "violet";
 
 interface ThemeColors {
   [key: string]: string;
@@ -53,7 +53,7 @@ interface StyleProps {
 }
 
 const ThemeSelector = () => {
-  const [config] = useConfig();
+  const [config, setConfig] = useConfig();
 
   const getPrimaryButtonStyle = React.useMemo<StyleProps>(
     () => ({
