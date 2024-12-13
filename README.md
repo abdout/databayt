@@ -6,6 +6,7 @@ Reclaim your time by automating the boring. Databayt is a bussiness automation s
 
 ![hero](public/readme/stack.png)
 
+<br>
 
 ## Documentation
 
