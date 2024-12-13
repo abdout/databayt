@@ -1,174 +1,147 @@
-// src/components/ThemeSelector.tsx
-"use client";
-import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import { Icons } from "@/components/icons";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
-import { useConfig } from "@/hooks/use-config";
-import CustomizerUI from "@/components/wizard/cutomizer";
+// pages/wizard.tsx
+'use client';
+import { useState } from 'react';
+import { BusinessSelector } from '@/components/wizard/business';
+import { FeatureSelector } from '@/components/wizard/feature';
+import { TemplateSelector } from '@/components/wizard/template';
 
-const MemoizedCustomizer = React.memo(CustomizerUI);
+import { EstimatesDisplay } from '@/components/wizard/estimate';
+import { StepIndicator } from '@/components/wizard/indicator';
+import { businesses } from '@/components/wizard/constant';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { WizardSelections } from '@/components/wizard/constant';
+import ThemeSelector from '@/components/wizard/theme';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { Icons } from '@/components/icons';
 
-interface ThemeColors {
-  [key: string]: string;
+interface ExtendedWizardSelections extends WizardSelections {
+  themeColor?: string;
+  borderRadius?: number;
 }
 
-const THEME_COLORS: ThemeColors = {
-  zinc: "#111111",
-  red: "#EF4444",
-  orange: "#F97316",
-  green: "#22C55E",
-  blue: "#3B82F6",
-  yellow: "#EAB308",
-  violet: "#8B5CF6",
-};
+export default function SelectionWizard() {
+  const [step, setStep] = useState<number>(1);
+  const [selections, setSelections] = useState<ExtendedWizardSelections>({
+    business: '',
+    features: [],
+    template: '',
+    themeColor: 'zinc',
+    borderRadius: 0.5,
+  });
 
-interface StyleProps {
-  backgroundColor?: string;
-  borderRadius?: string;
-  borderColor?: string;
-  color?: string;
-  borderWidth?: string;
-  borderStyle?: string;
-}
+  const calculateEstimates = () => {
+    let totalPrice = 0;
+    let totalTime = 0;
 
-interface ThemeSelectorProps {
-  selectedColor?: string;
-  selectedRadius?: number;
-  onSelect: (color: string, radius: number) => void;
-}
+    const selectedBusiness = businesses.find((b) => b.id === selections.business);
+    selections.features.forEach((featureId) => {
+      const feature = selectedBusiness?.features.find((f) => f.id === featureId);
+      if (feature) {
+        totalPrice += feature.price;
+        totalTime += feature.time;
+      }
+    });
 
-export const ThemeSelector = React.memo(({ selectedColor, selectedRadius, onSelect }: ThemeSelectorProps) => {
-  const [config] = useConfig();
+    return { price: totalPrice, time: totalTime };
+  };
 
-  React.useEffect(() => {
-    if (selectedColor && selectedRadius) {
-      onSelect(selectedColor, selectedRadius);
-    }
-  }, [config.theme, config.radius, selectedColor, selectedRadius, onSelect]);
+  const handleBusinessSelect = (businessId: string) => {
+    setSelections({ ...selections, business: businessId, features: [] });
+    setStep(2);
+  };
 
-  const getPrimaryButtonStyle = React.useMemo<StyleProps>(
-    () => ({
-      backgroundColor: THEME_COLORS[config.theme],
-      borderRadius: `${config.radius * 16}px`,
-      color: "#FFFFFF",
-    }),
-    [config.theme, config.radius]
-  );
+  const handleFeatureToggle = (featureId: string) => {
+    const updatedFeatures = selections.features.includes(featureId)
+      ? selections.features.filter((f) => f !== featureId)
+      : [...selections.features, featureId];
+    setSelections({ ...selections, features: updatedFeatures });
+  };
+
+  const handleTemplateSelect = (templateId: string) => {
+    setSelections({ ...selections, template: templateId });
+  };
+
+  const handleThemeSelect = (color: string, radius: number) => {
+    setSelections({ ...selections, themeColor: color, borderRadius: radius });
+  };
+
+  const estimates = calculateEstimates();
+  const selectedBusiness = businesses.find((b) => b.id === selections.business);
 
   return (
-    <div className="w-full -mt-4">
-      <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-5xl flex items-center justify-center pb-7">
-        Custom Theme!
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-40 -mx-20">
-        <div className="flex items-center gap-2">
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button size="sm" className="md:hidden">
-                Customize
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="p-6 pt-0">
-              <MemoizedCustomizer />
-            </DrawerContent>
-          </Drawer>
+    <div className=" flex h-screen  flex-col items-center justify-center">
+      <Link
+        href="/"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          "absolute left-4 top-4 md:left-8 md:top-8"
+        )}
+      >
+        <>
+          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          Back
+        </>
+      </Link>
+      
 
-          <div className="hidden items-center md:flex">
-            <div className="z-40 w-[340px] p-6">
-              <MemoizedCustomizer />
-            </div>
-          </div>
+      <div className="space-y-6 max-w-[50%]">
+        {step === 1 && (
+          <BusinessSelector
+            businesses={businesses}
+            selectedBusiness={selections.business}
+            onSelect={handleBusinessSelect}
+          />
+        )}
+
+        {step === 2 && selectedBusiness && (
+          <FeatureSelector
+            features={selectedBusiness.features}
+            selectedFeatures={selections.features}
+            onToggle={handleFeatureToggle}
+            businessName={selectedBusiness.name}
+          />
+        )}
+
+        {step === 3 && (
+          <TemplateSelector
+            selectedTemplate={selections.template}
+            onSelect={handleTemplateSelect}
+          />
+        )}
+
+        {step === 4 && (
+          <ThemeSelector
+            selectedColor={selections.themeColor}
+            selectedRadius={selections.borderRadius}
+            onSelect={handleThemeSelect}
+          />
+        )}
+
+        {step > 1 && <EstimatesDisplay {...estimates} />}
+      </div>
+
+      <div className="mt-8 flex flex-col items-center space-y-4">
+        <StepIndicator currentStep={step} totalSteps={4} />
+
+        <div className="space-x-4">
+          <Button
+            variant="outline"
+            onClick={() => step > 1 && setStep(step - 1)}
+          >
+            Back
+          </Button>
+          <Button
+            onClick={() => step < 4 && setStep(step + 1)}
+            disabled={
+              (step === 1 && !selections.business) ||
+              (step === 2 && selections.features.length === 0)
+            }
+          >
+            {step === 4 ? 'Finish' : 'Next'}
+          </Button>
         </div>
-
-        <Card
-          style={
-            {
-              "--theme-color": THEME_COLORS[config.theme],
-              "--theme-radius": `${config.radius * 16}px`,
-            } as React.CSSProperties
-          }
-          className="rounded-[var(--theme-radius)] h-[22rem]"
-        >
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Create an account</CardTitle>
-            <CardDescription>
-              Enter your email below to create your account
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-4">
-            <div className="grid grid-cols-2 gap-6">
-              <Button
-                variant="outline"
-                className="rounded-[var(--theme-radius)]"
-              >
-                <Icons.gitHub className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-[var(--theme-radius)]"
-              >
-                <svg role="img" viewBox="0 0 24 24" className="mr-2 h-4 w-4">
-                  <path
-                    fill="currentColor"
-                    d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"
-                  />
-                </svg>
-                Google
-              </Button>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-card px-2 text-muted-foreground">
-                  Or continue with
-                </span>
-              </div>
-            </div>
-            <div className="grid gap-2">
-              <Input
-                id="email"
-                type="email"
-                placeholder="Email"
-                className={cn(
-                  "appearance-none",
-                  "border border-gray-300",
-                  "rounded-[var(--theme-radius)]",
-                  "focus:border-[var(--theme-color)]",
-                  "focus:outline-none",
-                  "focus:ring-0",
-                  "focus:ring-offset-0",
-                  "focus:shadow-none"
-                )}
-                style={{
-                  boxShadow: "none",
-                  outline: "none",
-                }}
-              />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full" style={getPrimaryButtonStyle}>
-              Create account
-            </Button>
-          </CardFooter>
-        </Card>
       </div>
     </div>
   );
-});
-
-ThemeSelector.displayName = "ThemeSelector";
+}

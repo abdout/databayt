@@ -1,3 +1,5 @@
+
+
 // ThemeSelector.tsx
 "use client";
 import React from "react";
@@ -14,12 +16,11 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useConfig } from "@/hooks/use-config";
-
 // Make sure Customizer doesn't cause unnecessary re-renders
 import CustomizerUI from "./cutomizer";
 const MemoizedCustomizer = React.memo(CustomizerUI);
-
 type ThemeColor =
   | "zinc"
   | "red"
@@ -82,7 +83,6 @@ const ThemeSelector = () => {
               <MemoizedCustomizer />
             </DrawerContent>
           </Drawer>
-
           {/* Popover Trigger (Desktop) */}
           <div className="hidden items-center md:flex">
             {/* <Popover>
@@ -90,7 +90,7 @@ const ThemeSelector = () => {
                 <Button size="sm">Customize</Button>
               </PopoverTrigger> */}
               <div
-                
+
                 className="z-40 w-[340px]  p-6"
               >
                 <MemoizedCustomizer />
