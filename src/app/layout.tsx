@@ -6,6 +6,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter as FontSans } from "next/font/google";
+import { Toaster } from "sonner";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,7 +38,10 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-          <div className="container">{children}</div>
+          <div className="container">
+            <Toaster position="bottom-right" />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

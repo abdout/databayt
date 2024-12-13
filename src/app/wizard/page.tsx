@@ -1,4 +1,3 @@
-// pages/wizard.tsx
 'use client';
 import { useState } from 'react';
 import { BusinessSelector } from '@/components/wizard/business';
@@ -13,6 +12,7 @@ import ThemeSelector from '@/components/wizard/theme';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Icons } from '@/components/icons';
+import { toast } from 'sonner';
 
 interface ExtendedWizardSelections extends WizardSelections {
   themeColor?: string;
@@ -51,10 +51,24 @@ export default function SelectionWizard() {
   };
 
   const handleFeatureToggle = (featureId: string) => {
-    const updatedFeatures = selections.features.includes(featureId)
+    const selectedBusiness = businesses.find((b) => b.id === selections.business);
+    const isSelected = selections.features.includes(featureId);
+    const updatedFeatures = isSelected
       ? selections.features.filter((f) => f !== featureId)
       : [...selections.features, featureId];
+
     setSelections({ ...selections, features: updatedFeatures });
+
+    // Show toast notification
+    toast(
+      `Feature ${isSelected ? 'removed' : 'added'}: ${
+        selectedBusiness?.features.find((f) => f.id === featureId)?.name || featureId
+      }`,
+      {
+        description: `Updated estimates: $${calculateEstimates().price} in ${calculateEstimates().time} days.`,
+        duration: 3000,
+      }
+    );
   };
 
   const handleTemplateSelect = (templateId: string) => {
@@ -73,8 +87,8 @@ export default function SelectionWizard() {
       <Link
         href="/"
         className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
+          buttonVariants({ variant: 'ghost' }),
+          'absolute left-4 top-4 md:left-8 md:top-8'
         )}
       >
         <>
@@ -82,7 +96,6 @@ export default function SelectionWizard() {
           Back
         </>
       </Link>
-      
 
       <div className="space-y-6 max-w-[50%]">
         {step === 1 && (
