@@ -16,7 +16,6 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useConfig } from "@/hooks/use-config";
 // Make sure Customizer doesn't cause unnecessary re-renders
 import CustomizerUI from "./cutomizer";
