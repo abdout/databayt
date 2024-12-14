@@ -12,8 +12,22 @@ const Automated = () => {
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Automated
         </h2>
+        <p className="pb-8 max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        Beautifully designed. Well maintained. Blazing fast.  {" "}
+            {" "}
+            <Link
+              href=''
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 flex items-center justify-center "
+            >
+              Request your automation
+              <ArrowRightIcon className="ml-1 mt-[4.5px] h-4 w-4" />
+            </Link>
+            {" "}
+          </p>
 
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        {/* <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           Beautifully designed. Well maintained. Blazing fast.
           <Link
             href=""
@@ -24,9 +38,9 @@ const Automated = () => {
             </span>
             <ArrowRightIcon className="ml-1 mt-[4.5px] h-4 w-4" />
           </Link>
-        </p>
+        </p> */}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7 items-center justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-7 items-center justify-center">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
