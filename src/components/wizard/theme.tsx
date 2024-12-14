@@ -20,14 +20,6 @@ import { useConfig } from "@/hooks/use-config";
 // Make sure Customizer doesn't cause unnecessary re-renders
 import CustomizerUI from "./cutomizer";
 const MemoizedCustomizer = React.memo(CustomizerUI);
-type ThemeColor =
-  | "zinc"
-  | "red"
-  | "orange"
-  | "green"
-  | "blue"
-  | "yellow"
-  | "violet";
 
 interface ThemeColors {
   [key: string]: string;
@@ -53,7 +45,7 @@ interface StyleProps {
 }
 
 const ThemeSelector = () => {
-  const [config, setConfig] = useConfig();
+  const [config] = useConfig();
 
   const getPrimaryButtonStyle = React.useMemo<StyleProps>(
     () => ({
