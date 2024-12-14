@@ -56,7 +56,7 @@ const Codebase = () => {
           ))}
         </div>
 
-        <Link href="/wizard" className="relative z-10 mt-8">
+        <Link href="https://cb.databayt.org" className="relative z-10 mt-8">
           <Button size="lg" className="px-8">
             Explore Codebase
           </Button>
