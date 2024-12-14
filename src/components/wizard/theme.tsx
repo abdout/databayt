@@ -44,7 +44,13 @@ interface StyleProps {
   borderStyle?: string;
 }
 
-const ThemeSelector = () => {
+interface ThemeSelectorProps {
+  selectedColor?: string;
+  selectedRadius?: number;
+  onSelect: (color: string, radius: number) => void;
+}
+
+const ThemeSelector: React.FC<ThemeSelectorProps> = () => {
   const [config] = useConfig();
 
   const getPrimaryButtonStyle = React.useMemo<StyleProps>(
