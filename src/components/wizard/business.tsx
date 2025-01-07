@@ -16,7 +16,7 @@ export const BusinessSelector = ({
       <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-5xl flex items-center justify-center pb-7">
         What business!
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-3">
+      <div className="flex md:flex-wrap justify-center items-center gap-3 -mx-20">
         {businesses.map(({ id, name, popularity }) => (
           <span
             key={id}
@@ -31,6 +31,7 @@ export const BusinessSelector = ({
             onClick={() => onSelect(id)}
           >
             {name}
+          
           </span>
         ))}
       </div>
