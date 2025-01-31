@@ -81,8 +81,8 @@ const contribute = () => {
           />
           <Block />
 
-          <h4 className='pt-3 text-sm sm:text-lg'>Get in Touch 📬</h4>
-          <p className='text-sm sm:text-base'>
+          <h4 className='pt-4'>Get in Touch 📬</h4>
+          <p className='-mt-4'>
             Have a suggestion, idea, question, feedback, or need assistance? Feel free to{' '}
             <Link className='text-blue-700' href="https://github.com/abdout/databayt/issues">
               open an issue

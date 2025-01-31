@@ -5,7 +5,6 @@ function FooterAddressComponent() {
   return (
     <Card className="w-full bg-transparent border-none shadow-none">
       <CardContent className="p-0">
-        {/* A single row (flex) displaying Sudan, English, $USD, and Light */}
         <div className="flex space-x-8 text-sm items-center justify-center md:justify-start text-gray-500">
           <p className="text-[13px] md:text-[15px]">Sudan</p>
           <p className="text-[13px] md:text-[15px]">English</p>
@@ -20,19 +19,39 @@ function FooterAddressComponent() {
 const footerSections = [
   {
     title: "ABOUT",
-    links: ["Paradigm", "Contributors", "Careers", "Investors"]
+    links: [
+      { text: "Paradigm", href: "/about/paradigm" },
+      { text: "Contributors", href: "/contributor" },
+      { text: "Careers", href: "/about/careers" },
+      { text: "Investors", href: "/about/investors" }
+    ]
   },
   {
     title: "SUPPORT",
-    links: ["Help Center", "FAQs", "Docs", "Sitemap"]
+    links: [
+      { text: "Help Center", href: "/help" },
+      { text: "FAQs", href: "/faqs" },
+      { text: "Docs", href: "/docs" },
+      { text: "Sitemap", href: "/sitemap" }
+    ]
   },
   {
     title: "SOLUTION",
-    links: ["Workflow", "Integration", "AI Agent", "Features"]
+    links: [
+      { text: "Workflow", href: "/solutions/workflow" },
+      { text: "Integration", href: "/solutions/integration" },
+      { text: "AI Agent", href: "/agent" },
+      { text: "Features", href: "/features" }
+    ]
   },
   {
     title: "RESOURCE",
-    links: ["Codebase", "Showcase", "Books", "Videos"]
+    links: [
+      { text: "Codebase", href: "/resources/codebase" },
+      { text: "Showcase", href: "/resources/showcase" },
+      { text: "Books", href: "/resources/books" },
+      { text: "Videos", href: "/resources/videos" }
+    ]
   }
 ]
 
@@ -50,10 +69,10 @@ const Footer = () => {
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
-                      href="#"
+                      href={link.href}
                       className="text-base text-gray-500 hover:text-gray-900 transition-colors duration-300"
                     >
-                      {link}
+                      {link.text}
                     </Link>
                   </li>
                 ))}
