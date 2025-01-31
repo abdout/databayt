@@ -3,7 +3,7 @@ import React from 'react';
 const DocsPage: React.FC = () => {
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-4xl font-rubik mb-2">NMBD</h1>
+      <h1 className="text-4xl font-rubik mb-2">Databayt</h1>
       <h2 className="text-2xl mb-6">Technical Record Document</h2>
       <h2 className="text-xl font-bold mb-6 pl-[2px]">Table of Contents</h2>
       <div className="flex flex-col md:flex-row pl-1">
@@ -37,7 +37,7 @@ const DocsPage: React.FC = () => {
         <section id="introduction" className='space-y-2'>
           <h3>Introduction</h3>
           <p>
-            NMBD is paradigm shift in the realm of business automation. As an open-source, publicly traded entity, Databayt mission is to empower businesses to streamline their operations by providing an innovative platform that facilitates the automation of diverse processes.
+            Databayt is paradigm shift in the realm of business automation. As an open-source, publicly traded entity, Databayt mission is to empower businesses to streamline their operations by providing an innovative platform that facilitates the automation of diverse processes.
             Built upon the vision of creating reusable components and tools, Databayt aims to deliver unparalleled flexibility and efficiency. By leveraging compact, independent building blocks, users can assemble sophisticated applications tailored to their unique needs. As these applications evolve over time, they morph into comprehensive, reusable blocks capable of servicing similar clients with minimal customization.
             Our approach is dynamic and forward-thinking. With each iteration, Databayt targets specific milestones, offering its services as Software as a Service (SaaS). Furthermore, our aspiration extends beyond mere service provision; we envision Databayt as a central hub for businesses seeking automation solutions. Through fostering a collaborative community, we aim to establish Databayt as the go-to destination for businesses looking to enhance productivity and competitiveness through automation.
           </p>
@@ -48,7 +48,7 @@ const DocsPage: React.FC = () => {
         </section>
         <section id="technologies-used">
           <h3 className='my-2'>Technologies Used</h3>
-          <p>NMBD leverages a robust stack of cutting-edge technologies to deliver a seamless user experience and ensure optimal performance. Our tech stack includes:</p>
+          <p>Databayt leverages a robust stack of cutting-edge technologies to deliver a seamless user experience and ensure optimal performance. Our tech stack includes:</p>
           <div className='my-4'>
             <div className="mb-2">
               <strong>Next.js:</strong> serves as the foundation for building dynamic and server-rendered React applications, enabling fast and efficient development.
