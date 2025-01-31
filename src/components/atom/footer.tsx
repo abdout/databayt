@@ -21,7 +21,7 @@ const footerSections = [
     title: "ABOUT",
     links: [
       { text: "Paradigm", href: "/about/paradigm" },
-      { text: "Contributors", href: "/contributor" },
+      { text: "Contributors", href: "/contribute" },
       { text: "Careers", href: "/about/careers" },
       { text: "Investors", href: "/about/investors" }
     ]
