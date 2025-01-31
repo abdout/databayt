@@ -1,4 +1,3 @@
-import Title from '@/components/atom/title/databayt'
 import Block from '@/components/contribute/block'
 import Section from '@/components/contribute/section'
 import Link from 'next/link'
@@ -8,16 +7,22 @@ const contribute = () => {
   return (
     <div className='flex flex-col justify-center items-center py-4 md:py-8 md:px-4 mt-4'>
       <div className='w-full max-w-screen-lg'>
-        <Title title='Contributors! 👋' description='Welcome' />
+      <p className="pb-2 max-w-[85%] leading-normal sm:text-lg sm:leading-7">
+        Welcome
+      </p>
+      <h2 className="-ml-1 font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+      Contributors! 👋
+        </h2>
+        {/* <Title title='Contributors! 👋' description='Welcome' /> */}
         <div className='flex flex-col space-y-4 pt-1 '>
-          <p className='text-sm sm:text-base'>
-            Thank you for considering contributing to NMBD! Greatly appreciate your interest and support.
-            Below are some essential resources and information to help you <strong>get started</strong>:
+        <p className="pb-4 pt-2 max-w-[85%] leading-normal  sm:text-lg sm:leading-7">
+            Thanks for your interest in contributing to Databayt. We're happy to have you here. <br />
+            Below are some essential resources and informations to help you get started:
           </p>
 
           <Section
             title='Paradigm 🏷️'
-            body='The core principles and conceptual framework that guide NMBD.'
+            body='The core principles and conceptual framework that guide Databayt.'
             link='/tech-paradigm'
             label='Link to Paradigm'
           />
@@ -30,9 +35,10 @@ const contribute = () => {
           <Section
             title='Repository 🏠'
             body='Main repository serves as the central hub for the project. This is where you will find the core codebase and contribute to its development.'
-            link='https://github.com/abdout/nmbd'
+            link='https://github.com/abdout/databayt'
             label='Link to Repository'
           />
+          
           <Section
             title='Figma 🖌️'
             body='Design repository for the project, containing wireframes, prototypes, and visual design assets.'
@@ -95,7 +101,7 @@ const contribute = () => {
           />
           <Section
             title='Thank You 🙏'
-            body='Once again, thank you for considering contributing to NMBD! Open source is the magic. ✨'
+            body='Once again, thank you for considering contributing to Databayt! Open source is the magic. ✨'
           />
         </div>
       </div>
