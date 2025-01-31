@@ -7,16 +7,15 @@ const contribute = () => {
   return (
     <div className='flex flex-col justify-center items-center py-4 md:py-8 md:px-4 mt-4'>
       <div className='w-full max-w-screen-lg'>
-      <p className="pb-2 max-w-[85%] leading-normal sm:text-lg sm:leading-7">
-        Welcome
-      </p>
-      <h2 className="-ml-1 font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-      Contributors! 👋
+        <p className="pb-2 max-w-[85%] leading-normal sm:text-lg sm:leading-7">
+          Welcome
+        </p>
+        <h2 className="-ml-1 font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          Contributors! 👋
         </h2>
-        {/* <Title title='Contributors! 👋' description='Welcome' /> */}
         <div className='flex flex-col space-y-4 pt-1 '>
-        <p className="pb-4 pt-2 max-w-[85%] leading-normal  sm:text-lg sm:leading-7">
-            Thanks for your interest in contributing to Databayt. We're happy to have you here. <br />
+          <p className="pb-4 pt-2 max-w-[85%] leading-normal  sm:text-lg sm:leading-7">
+            Thanks for your interest in contributing to Databayt. We&apos;re happy to have you here. <br />
             Below are some essential resources and informations to help you get started:
           </p>
 
@@ -38,7 +37,6 @@ const contribute = () => {
             link='https://github.com/abdout/databayt'
             label='Link to Repository'
           />
-          
           <Section
             title='Figma 🖌️'
             body='Design repository for the project, containing wireframes, prototypes, and visual design assets.'
