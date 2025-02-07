@@ -30,8 +30,8 @@ export const projects: Project[] = [
       "Role-based access control"
     ],
     price: 999,
-    livePreview: "https://company.example.com",
-    github: "https://github.com/your-repo/company"
+    livePreview: "https://co.databayt.org",
+    github: "https://github.com/abdout/company-underway"
   },
   {
     id: "health",
@@ -62,9 +62,10 @@ export const projects: Project[] = [
       "Telemedicine support"
     ],
     price: 1499,
-    livePreview: "https://health.example.com",
-    github: "https://github.com/your-repo/health"
+    livePreview: "https://hc.databayt.org",
+    github: "https://github.com/abdout/health-underway"
   },
+
   {
     id: "automotive",
     name: "Automotive Dealership Platform",
@@ -94,8 +95,8 @@ export const projects: Project[] = [
       "Financial reporting"
     ],
     price: 1299,
-    livePreview: "https://automotive.example.com",
-    github: "https://github.com/your-repo/automotive"
+    livePreview: "https://auto.databayt.org",
+    github: "https://github.com/abdout/auto-underway"
   },
   {
     id: "souq",
@@ -126,8 +127,9 @@ export const projects: Project[] = [
       "Analytics dashboard"
     ],
     price: 1999,
-    livePreview: "https://souq.example.com",
-    github: "https://github.com/your-repo/souq"
+    livePreview: "https://souq.databayt.org",
+    github: "https://github.com/abdout/souq-underway"
+
   },
   {
     id: "coffee",
@@ -158,9 +160,10 @@ export const projects: Project[] = [
       "Sales reporting"
     ],
     price: 799,
-    livePreview: "https://coffee.example.com",
-    github: "https://github.com/your-repo/coffee"
+    livePreview: "https://coffee.databayt.org",
+    github: "https://github.com/abdout/coffee-underway"
   },
+
   {
     id: "restaurant",
     name: "Restaurant Management Platform",
@@ -190,9 +193,10 @@ export const projects: Project[] = [
       "Staff management"
     ],
     price: 1599,
-    livePreview: "https://restaurant.example.com",
-    github: "https://github.com/your-repo/restaurant"
+    livePreview: "https://rs.databayt.org",
+    github: "https://github.com/abdout/restaurant-underway"
   },
+
   {
     id: "estate",
     name: "Real Estate Management System",
@@ -222,11 +226,12 @@ export const projects: Project[] = [
       "Document management"
     ],
     price: 1799,
-    livePreview: "https://estate.example.com",
-    github: "https://github.com/your-repo/estate"
+    livePreview: "https://estate.databayt.org",
+    github: "https://github.com/abdout/estate-underway"
   },
+
   {
-    id: "madrsa",
+    id: "school",
     name: "Education Automation",
     description: "Comprehensive education management platform.",
     body: "A complete school management system with features for student management, attendance tracking, grade management, and parent communication.",
@@ -255,7 +260,7 @@ export const projects: Project[] = [
       "Communication system"
     ],
     price: 1899,
-    livePreview: "https://madrsa.example.com",
-    github: "https://github.com/your-repo/madrsa"
+    livePreview: "https://ed.databayt.org",
+    github: "https://github.com/abdout/school-underway"
   }
 ];
