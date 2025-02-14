@@ -15,7 +15,7 @@ const Hero = () => {
         >
           Follow along on Discord
         </Link>
-        <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-[90px]">
+        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-[90px]">
           Automate the boring,<br /> elevate the wondrous.
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
