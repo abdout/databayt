@@ -132,11 +132,11 @@ export const projects: Project[] = [
 
   },
   {
-    id: "coffee",
-    name: "Coffee Shop Management System",
-    description: "Complete solution for managing coffee shop operations.",
-    body: "An all-in-one management system for coffee shops, including order management, inventory tracking, and customer loyalty programs.",
-    src: "/project/riche.png",
+    id: "public-party",
+    name: "Community Management System",
+    description: "Complete solution for managing community operations.",
+    body: "An all-in-one management system for communities, including order management, inventory tracking, and customer loyalty programs.",
+    src: "/project/dome.png",
     images: [
       "/project/riche.png",
       "/project/riche-orders.png",
@@ -160,8 +160,8 @@ export const projects: Project[] = [
       "Sales reporting"
     ],
     price: 799,
-    livePreview: "https://coffee.databayt.org",
-    github: "https://github.com/abdout/coffee-underway"
+    livePreview: "https://nmbdsd.org",
+    github: "https://github.com/abdout/nmbd"
   },
 
   {
