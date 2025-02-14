@@ -6,7 +6,7 @@ export const projects: Project[] = [
     name: "Modern Company Management System",
     description: "A comprehensive company management system with HR, finance, and project management capabilities.",
     body: "A fully-featured company management solution that helps businesses streamline their operations. The platform includes modules for employee management, project tracking, financial reporting, and advanced analytics. Built with modern technologies to ensure scalability and performance.",
-    src: "/project/office.png",
+    src: "/project/company.png",
     images: [
       "/project/office.png",
       "/project/office-dashboard.png",
