@@ -1,355 +1,318 @@
-# System Architecture
 
-*Comprehensive overview of our technical infrastructure and design principles*
+## Architecture
 
-## 🏗️ **Architecture Overview**
+**Automate** the boring, elevate the wondrous. Our architecture embodies the same principles we apply to business automation — minimal complexity, maximum efficiency, and atomic reusability. Every component is designed to work independently while contributing to a cohesive ecosystem.
 
-Our technology stack is designed for **scalability**, **reliability**, and **maintainability**. We leverage modern cloud-native architectures, microservices patterns, and open-source technologies to deliver robust automation solutions.
+We don't just build software; we craft **automation solutions** that scale with your business. From single components to complete platforms, our architecture supports the journey from prototype to production.
 
-## 🎯 **Design Principles**
+### Core Design Philosophy
 
-### **1. Cloud-Native First**
-- **Containerized Applications** - Docker and Kubernetes for orchestration
-- **Serverless Functions** - Event-driven compute for optimal resource utilization
-- **Infrastructure as Code** - Terraform and GitOps for reproducible deployments
-- **Multi-Cloud Strategy** - Vendor independence and disaster recovery
+#### **Atomic Everything**
+- **Component-First** - Every piece of UI is a reusable, tested component
+- **Minimal Complexity** - Simple solutions that compound into powerful systems
+- **Open Source First** - Transparency in every line of code
+- **Shadcn/UI Inspired** - Following proven patterns and naming conventions
 
-### **2. Microservices Architecture**
-- **Domain-Driven Design** - Services aligned with business capabilities
-- **API-First Approach** - RESTful and GraphQL APIs for all integrations
-- **Event-Driven Communication** - Asynchronous messaging for loose coupling
-- **Service Mesh** - Istio for secure, observable service communication
+#### **Modern Web Standards**
+- **Next.js 15** - App Router with React 19 for cutting-edge performance
+- **TypeScript** - Type safety across the entire stack
+- **MDX Integration** - Documentation as code with seamless content management
+- **Tailwind CSS** - Utility-first styling for consistent design systems
 
-### **3. Data-Centric Design**
-- **Event Sourcing** - Complete audit trail and temporal queries
-- **CQRS Pattern** - Optimized read and write operations
-- **Data Lake Architecture** - Centralized data storage for analytics
-- **Real-Time Processing** - Stream processing for immediate insights
+#### **Business-Focused Architecture**
+- **Documentation-Driven** - Every feature documented, every decision transparent
+- **Community-Centric** - Built for contributors, maintained by the community
+- **Automation-Ready** - Architecture designed for business process automation
 
-## 🔧 **Technology Stack**
+### Technology Stack
 
-### **Frontend & User Experience**
-
-```typescript
-// Modern React Stack
-- Next.js 15         // Full-stack React framework
-- TypeScript         // Type-safe development
-- Tailwind CSS       // Utility-first styling
-- Radix UI           // Accessible component primitives
-- Framer Motion      // Smooth animations
-- React Query        // Server state management
-```
-
-### **Backend & APIs**
-
-```python
-# Microservices Stack
-- FastAPI            # High-performance Python APIs
-- Node.js            # JavaScript runtime for real-time services
-- GraphQL            # Flexible data querying
-- gRPC               # High-performance RPC communication
-- Redis              # In-memory data structure store
-- PostgreSQL         # Relational database
-- MongoDB            # Document database for flexible schemas
-```
-
-### **Infrastructure & DevOps**
-
-```yaml
-# Cloud Infrastructure
-- Kubernetes         # Container orchestration
-- Docker             # Containerization
-- Terraform          # Infrastructure as Code
-- GitLab CI/CD       # Continuous integration and deployment
-- Prometheus         # Monitoring and alerting
-- Grafana            # Observability dashboards
-- ELK Stack          # Centralized logging
-```
-
-## 🌐 **System Components**
-
-### **Core Platform Services**
+#### **Frontend Foundation**
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <div className="p-6 border rounded-lg">
-    <h4 className="font-semibold mb-2">🔐 Authentication Service</h4>
+    <h4 className="font-semibold mb-2">Next.js 15</h4>
     <div className="text-sm text-muted-foreground mb-2">
-      OAuth 2.0 / OpenID Connect with JWT tokens
+      App Router with React 19 Server Components
     </div>
     <ul className="text-xs text-muted-foreground space-y-1">
-      <li>• Multi-factor authentication</li>
-      <li>• Role-based access control</li>
-      <li>• Single sign-on (SSO)</li>
+      <li>• File-based routing with app directory</li>
+      <li>• Server and client components</li>
+      <li>• Built-in performance optimizations</li>
     </ul>
   </div>
   
   <div className="p-6 border rounded-lg">
-    <h4 className="font-semibold mb-2">📊 Analytics Engine</h4>
+    <h4 className="font-semibold mb-2">TypeScript</h4>
     <div className="text-sm text-muted-foreground mb-2">
-      Real-time data processing and insights
+      Full-stack type safety and developer experience
     </div>
     <ul className="text-xs text-muted-foreground space-y-1">
-      <li>• Stream processing with Kafka</li>
-      <li>• Machine learning pipelines</li>
-      <li>• Custom dashboards</li>
+      <li>• Strict type checking</li>
+      <li>• IntelliSense and autocomplete</li>
+      <li>• Compile-time error detection</li>
     </ul>
   </div>
   
   <div className="p-6 border rounded-lg">
-    <h4 className="font-semibold mb-2">🔄 Automation Engine</h4>
+    <h4 className="font-semibold mb-2">Tailwind CSS 4</h4>
     <div className="text-sm text-muted-foreground mb-2">
-      Business process automation and workflows
+      Latest utility-first CSS framework
     </div>
     <ul className="text-xs text-muted-foreground space-y-1">
-      <li>• Visual workflow designer</li>
-      <li>• Integration connectors</li>
-      <li>• Error handling & retries</li>
+      <li>• CSS variables for theming</li>
+      <li>• JIT compilation</li>
+      <li>• Dark mode support</li>
     </ul>
   </div>
   
   <div className="p-6 border rounded-lg">
-    <h4 className="font-semibold mb-2">🔗 Integration Hub</h4>
+    <h4 className="font-semibold mb-2">Shadcn/UI</h4>
     <div className="text-sm text-muted-foreground mb-2">
-      Universal connector for third-party systems
+      Copy-paste components built on Radix UI
     </div>
     <ul className="text-xs text-muted-foreground space-y-1">
-      <li>• REST/SOAP/GraphQL APIs</li>
-      <li>• Database connectors</li>
-      <li>• Legacy system bridges</li>
+      <li>• Radix UI primitives</li>
+      <li>• Accessible by default</li>
+      <li>• Customizable and composable</li>
     </ul>
   </div>
 </div>
 
-## 🔄 **Data Flow Architecture**
-
-### **Request Processing Pipeline**
-
-```mermaid
-graph LR
-    A[Client Request] --> B[API Gateway]
-    B --> C[Authentication]
-    C --> D[Rate Limiting]
-    D --> E[Load Balancer]
-    E --> F[Microservice]
-    F --> G[Database]
-    F --> H[Cache Layer]
-    F --> I[Message Queue]
-```
-
-### **Event-Driven Architecture**
+#### **Content & Documentation**
 
 ```typescript
-// Event Flow Example
-interface BusinessEvent {
-  id: string
-  type: 'automation.workflow.started' | 'user.action.completed'
-  timestamp: Date
-  payload: Record<string, unknown>
-  metadata: {
-    source: string
-    version: string
-    correlationId: string
-  }
-}
+// MDX Configuration
+const withMDX = createMDX({
+  // Documentation as code approach
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  // Seamless integration with Next.js
+})
 
-// Event Handlers
-const eventHandlers = {
-  'automation.workflow.started': handleWorkflowStart,
-  'user.action.completed': handleUserAction,
-  'integration.data.received': processIncomingData
+// Component-driven documentation
+export default function DocsLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="docs-container">
+      <Sidebar />
+      <main className="docs-content">
+        {children}
+      </main>
+    </div>
+  )
 }
 ```
 
-## 🚀 **Scalability Strategy**
+#### **State Management & Utilities**
 
-### **Horizontal Scaling**
-- **Auto-scaling Groups** - Dynamic capacity based on demand
-- **Container Orchestration** - Kubernetes HPA (Horizontal Pod Autoscaler)
-- **Database Sharding** - Distributed data across multiple instances
-- **CDN Integration** - Global content delivery for static assets
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+  <div className="p-4 border rounded-lg text-center">
+    <h4 className="font-semibold mb-2">Jotai</h4>
+    <div className="text-sm text-muted-foreground">
+      Atomic state management
+    </div>
+  </div>
+  
+  <div className="p-4 border rounded-lg text-center">
+    <h4 className="font-semibold mb-2">React Hook Form</h4>
+    <div className="text-sm text-muted-foreground">
+      Performant form handling
+    </div>
+  </div>
+  
+  <div className="p-4 border rounded-lg text-center">
+    <h4 className="font-semibold mb-2">Framer Motion</h4>
+    <div className="text-sm text-muted-foreground">
+      Smooth animations
+    </div>
+  </div>
+</div>
 
-### **Performance Optimization**
-- **Caching Layers** - Redis for session and application caching
-- **Database Optimization** - Query optimization and read replicas
-- **Asset Optimization** - Image compression and lazy loading
-- **Connection Pooling** - Efficient database connection management
+### Project Ecosystem
 
-## 🔒 **Security Architecture**
+Our architecture spans multiple specialized projects, each serving different aspects of business automation:
 
-### **Defense in Depth**
+#### **1. Databayt** (Main Platform)
+- **Repository**: [github.com/abdout/databayt](https://github.com/abdout/databayt)
+- **Purpose**: Core business automation platform
+- **Tech Stack**: Next.js 15, TypeScript, Tailwind CSS, Shadcn/UI
+- **Features**: Documentation system, component library, automation tools
+
+#### **2. Hogwarts** (Education Platform)
+- **Repository**: [github.com/abdout/hogwarts](https://github.com/abdout/hogwarts)
+- **URL**: [ed.databayt.org](https://ed.databayt.org)
+- **Purpose**: Educational and learning management
+- **Additional Features**: Authentication (NextAuth/Clerk), Database (Prisma)
+
+#### **3. Future Platforms** (In Development)
+- **Co**: Collaboration and community features
+- **NMBD**: Specialized automation modules
+
+### Component Architecture
+
+#### **Atomic Design System**
 
 ```typescript
-// Security Layers
-const securityLayers = {
-  network: [
-    'VPC with private subnets',
-    'Web Application Firewall (WAF)',
-    'DDoS protection',
-    'SSL/TLS encryption'
+// Component hierarchy following atomic design
+interface ComponentStructure {
+  atoms: [
+    'Button', 'Input', 'Label', 'Badge'
   ],
-  application: [
-    'Input validation and sanitization',
-    'SQL injection prevention',
-    'XSS protection',
-    'CSRF tokens'
+  molecules: [
+    'SearchBox', 'FormField', 'Card'
   ],
-  data: [
-    'Encryption at rest',
-    'Encryption in transit',
-    'Key management (KMS)',
-    'Data anonymization'
+  organisms: [
+    'Header', 'Sidebar', 'DataTable'
+  ],
+  templates: [
+    'DocsLayout', 'DashboardLayout', 'LandingLayout'
+  ],
+  pages: [
+    'HomePage', 'DocsPage', 'DashboardPage'
   ]
 }
 ```
 
-### **Compliance & Standards**
-- **SOC 2 Type II** - Security controls and processes
-- **GDPR Compliance** - Data protection and privacy
-- **ISO 27001** - Information security management
-- **OWASP Top 10** - Web application security
+#### **File Organization**
 
-## 📊 **Monitoring & Observability**
-
-### **Three Pillars of Observability**
-
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-  <div className="p-4 border rounded-lg text-center">
-    <h4 className="font-semibold mb-2">📈 Metrics</h4>
-    <div className="text-sm text-muted-foreground">
-      Prometheus & Grafana for system metrics
-    </div>
-  </div>
-  
-  <div className="p-4 border rounded-lg text-center">
-    <h4 className="font-semibold mb-2">📝 Logs</h4>
-    <div className="text-sm text-muted-foreground">
-      ELK Stack for centralized logging
-    </div>
-  </div>
-  
-  <div className="p-4 border rounded-lg text-center">
-    <h4 className="font-semibold mb-2">🔍 Traces</h4>
-    <div className="text-sm text-muted-foreground">
-      Jaeger for distributed tracing
-    </div>
-  </div>
-</div>
-
-### **Key Performance Indicators**
-
-- **System Uptime** - 99.9% availability target
-- **Response Time** - P95 < 200ms for API calls
-- **Error Rate** - < 0.1% for critical operations
-- **Throughput** - Requests per second capacity
-- **Resource Utilization** - CPU, memory, and storage metrics
-
-## 🔄 **Deployment Strategy**
-
-### **Blue-Green Deployments**
-- **Zero-downtime deployments** - Seamless user experience
-- **Instant rollback capability** - Quick recovery from issues
-- **Environment parity** - Consistent staging and production
-
-### **GitOps Workflow**
-
-```yaml
-# Deployment Pipeline
-stages:
-  - build:
-      - Unit tests
-      - Code quality checks
-      - Security scanning
-      - Docker image build
-  
-  - deploy-staging:
-      - Infrastructure provisioning
-      - Application deployment
-      - Integration tests
-      - Performance tests
-  
-  - deploy-production:
-      - Manual approval gate
-      - Blue-green deployment
-      - Health checks
-      - Monitoring validation
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── (marketing)/       # Marketing pages
+│   ├── docs/              # Documentation
+│   ├── dashboard/         # Admin interface
+│   └── layout.tsx         # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # Shadcn/UI components
+│   ├── atom/             # Atomic components
+│   ├── template/         # Page templates
+│   └── feature/          # Feature-specific components
+├── lib/                  # Utilities and helpers
+├── hooks/                # Custom React hooks
+└── styles/               # Global styles
 ```
 
-## 📱 **API Design**
+### Development Workflow
 
-### **RESTful API Standards**
+#### **Package Management**
+```bash
+# Using pnpm for efficient dependency management
+pnpm install    # Install dependencies
+pnpm dev        # Development server
+pnpm build      # Production build
+```
+
+#### **Code Standards**
+- **ESLint** with Next.js configuration
+- **TypeScript** strict mode enabled
+- **Prettier** for consistent formatting
+- **Shadcn/UI** naming conventions
+
+#### **Component Development**
 
 ```typescript
-// API Response Format
-interface APIResponse<T> {
-  data: T
-  meta: {
-    timestamp: string
-    version: string
-    requestId: string
-  }
-  links?: {
-    self: string
-    next?: string
-    prev?: string
-  }
+// Example component following our patterns
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'default' | 'destructive' | 'outline'
+  size?: 'default' | 'sm' | 'lg'
 }
 
-// Error Response Format
-interface APIError {
-  error: {
-    code: string
-    message: string
-    details?: Record<string, unknown>
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+    return (
+      <button
+        className={cn(buttonVariants({ variant, size }), className)}
+        ref={ref}
+        {...props}
+      />
+    )
   }
-  meta: {
-    timestamp: string
-    requestId: string
-  }
-}
+)
 ```
 
-### **GraphQL Schema Design**
+### Performance Strategy
 
-```graphql
-type Query {
-  automation(id: ID!): Automation
-  automations(filter: AutomationFilter): [Automation!]!
-  metrics(timeRange: TimeRange!): Metrics
-}
+#### **Build Optimization**
+- **Turbopack** for faster development builds
+- **MDX** compilation for documentation
+- **Tree shaking** for minimal bundle sizes
+- **Code splitting** with Next.js automatic optimization
 
-type Mutation {
-  createAutomation(input: CreateAutomationInput!): Automation!
-  updateAutomation(id: ID!, input: UpdateAutomationInput!): Automation!
-  executeWorkflow(id: ID!): WorkflowExecution!
-}
+#### **Runtime Performance**
+- **React 19** with concurrent features
+- **Server Components** for reduced client bundle
+- **Image optimization** with Next.js Image component
+- **Font optimization** with Geist font family
 
-type Subscription {
-  workflowProgress(workflowId: ID!): WorkflowEvent!
-  systemHealth: HealthStatus!
-}
+### Authentication & Database (Hogwarts)
+
+#### **Authentication Options**
+```typescript
+// Multiple auth providers supported
+providers: [
+  NextAuth.Provider,    // Traditional auth
+  Clerk.Provider,       // Modern auth solution
+]
+
+// Protected routes
+middleware: [
+  authMiddleware,       // Route protection
+  roleBasedAccess,      // Permission management
+]
 ```
 
-## 🌟 **Future Architecture Considerations**
+#### **Database Layer**
+- **Prisma** ORM for type-safe database access
+- **PostgreSQL** for production workloads
+- **Database migrations** with Prisma migrate
 
-### **Emerging Technologies**
-- **Edge Computing** - Reduce latency with edge deployments
-- **WebAssembly** - High-performance browser-based processing
-- **Quantum Computing** - Advanced optimization algorithms
-- **AI/ML Integration** - Intelligent automation decisions
+### Deployment Architecture
 
-### **Sustainability Goals**
-- **Carbon-neutral infrastructure** - Green cloud providers
-- **Efficient resource usage** - Optimized compute allocation
-- **Serverless adoption** - Pay-per-use model for better efficiency
-- **Edge optimization** - Reduced data transfer and processing
+#### **Static Generation**
+- **MDX** content pre-rendered at build time
+- **ISR** (Incremental Static Regeneration) for dynamic content
+- **CDN** optimization for global distribution
+
+#### **Hosting Strategy**
+- **Vercel** for optimal Next.js deployment
+- **Edge Functions** for dynamic features
+- **Analytics** integration for performance monitoring
+
+### Security Considerations
+
+#### **Type Safety**
+- **TypeScript** strict mode prevents runtime errors
+- **Zod** validation for form inputs and API data
+- **ESLint** security rules enabled
+
+#### **Authentication Security**
+- **JWT** tokens for session management
+- **CSRF** protection enabled
+- **Rate limiting** on API routes
 
 ---
 
-## 📚 **Related Documentation**
+### What Makes This Different
 
-- [**Technical Stack Details**](/docs/architecture/technical-stack) - Deep dive into our technology choices
-- [**Infrastructure Guide**](/docs/architecture/infrastructure) - Deployment and operations
-- [**Development Patterns**](/docs/development/patterns) - Coding standards and practices
-- [**Security Guidelines**](/docs/development/security) - Security implementation details
+#### **Business-First**
+Every architectural decision is made with business automation in mind. Our components aren't just UI elements — they're building blocks for automation solutions.
+
+#### **Community-Driven**
+Open source from day one, with clear contribution guidelines and transparent development. Every line of code serves the community.
+
+#### **Documentation-Native**
+Architecture that treats documentation as a first-class citizen. MDX integration means our docs are as powerful as our applications.
+
+#### **Minimal Complexity**
+We choose simple, proven solutions over complex abstractions. TypeScript + Tailwind + Shadcn/UI creates a powerful yet approachable development experience.
+
+---
+
+### Getting Started
+
+Ready to build with our architecture? Start here:
+
+* [**Development Setup**](/docs/development/setup) - Get your local environment ready
+* [**Component Guide**](/docs/development/components) - Learn our component patterns
+* [**Contributing**](/docs/contributing) - Join the community
+* [**Technical Records**](/docs/development/technical-record) - Deep dive into decisions
 
 **Questions about our architecture?** [Join the discussion](/docs/community/discussions) or [contact our technical team](/docs/community/support). 

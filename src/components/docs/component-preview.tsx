@@ -32,9 +32,11 @@ export function ComponentPreview({
 
   const codeToString = React.useMemo(() => {
     if (
+      React.isValidElement(children) &&
       typeof children === "object" &&
-      "type" in children! &&
-      "props" in children!
+      children !== null &&
+      "type" in children &&
+      "props" in children
     ) {
       const { children: childrenProp, ...restProps } = children.props
 

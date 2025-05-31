@@ -37,7 +37,7 @@ export default function PricingPage() {
         <div className="flex justify-center">
           <Badge className="bg-muted text-foreground">ROI Guaranteed</Badge>
         </div>
-        <h2 className="font-heading text-3xl sm:text-3xl md:text-6xl">
+        <h2 className="font-heading font-extrabold text-3xl sm:text-3xl md:text-6xl">
           Simple. Transparent.
         </h2>
         <p className="max-w-[85%] mx-auto leading-normal text-muted-foreground sm:text-lg sm:leading-7">
