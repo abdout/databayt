@@ -2,63 +2,76 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 
 export const metadata = {
   title: "Pricing",
 }
 
+const pricingPlans = [
+  {
+    title: "One Project",
+    description: "Perfect for businesses looking to automate a particular process or solve a focused challenge. We'll deliver a tailored solution built with precision — one project, one powerful outcome.",
+    price: "$19",
+    billing: "Billed Monthly"
+  },
+  {
+    title: "Strategic Partner", 
+    description: "Ideal for businesses to outsource development, tap into specialized talent, or co-build long-term solutions. We become your tech partner — agile, reliable, and aligned with your vision.",
+    price: "$19",
+    billing: "Billed Monthly"
+  },
+  {
+    title: "Product Access",
+    description: "Access a growing library of deployable tools designed to solve common business problems — from workflow automation to intelligent integrations. Configure, connect, and go.",
+    price: "$19", 
+    billing: "Billed Monthly"
+  }
+]
+
 export default function PricingPage() {
   return (
-    <section className="container flex flex-col  gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24">
-      <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
-        <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Simple, transparent pricing
+    <section className="flex flex-col items-center justify-center gap-6 py-8 md:pb-12 lg:pb-24">
+      <div className="flex w-full max-w-4xl flex-col gap-4 text-center">
+        <div className="flex justify-center">
+          <Badge className="bg-muted text-foreground">ROI Guaranteed</Badge>
+        </div>
+        <h2 className="font-heading text-3xl sm:text-3xl md:text-6xl">
+          Simple. Transparent.
         </h2>
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Unlock all features including unlimited posts for your blog.
+        <p className="max-w-[85%] mx-auto leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          Unlock a horizon of possibilities with flexible pricing options.
         </p>
       </div>
-      <div className="grid w-full items-start gap-10 rounded-lg border p-10 md:grid-cols-[1fr_200px]">
-        <div className="grid gap-6">
-          <h3 className="text-xl font-bold sm:text-2xl">
-            What&apos;s included in the PRO plan
-          </h3>
-          {/* <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Posts
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Unlimited Users
-            </li>
-
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Custom domain
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Dashboard Analytics
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Access to Discord
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 h-4 w-4" /> Premium Support
-            </li>
-          </ul> */}
-        </div>
-        <div className="flex flex-col gap-4 text-center">
-          <div>
-            <h4 className="text-7xl font-bold">$19</h4>
-            <p className="text-sm font-medium text-muted-foreground">
-              Billed Monthly
-            </p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full pt-8">
+        {pricingPlans.map((plan, index) => (
+          <div key={index} className="flex flex-col w-full items-center justify-between gap-10 rounded-lg border p-10 text-center">
+            <div className="grid gap-6">
+              <h3 className="text-lg font-bold sm:text-xl">
+                {plan.title}
+              </h3>
+              <p className="font-light">
+                {plan.description}
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 text-center">
+              <div>
+                <h4 className="text-7xl font-bold">{plan.price}</h4>
+                <p className="text-sm font-medium text-muted-foreground">
+                  {plan.billing}
+                </p>
+              </div>
+              <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+                Get Started
+              </Link>
+            </div>
           </div>
-          <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
-            Get Started
-          </Link>
-        </div>
+        ))}
       </div>
-      <div className="mx-auto flex w-full max-w-[58rem] flex-col gap-4">
+      
+      <div className="flex w-full max-w-4xl flex-col gap-4">
         {/* <p className="max-w-[85%] leading-normal text-muted-foreground sm:leading-7">
           Taxonomy is a demo app.{" "}
           <strong>You can test the upgrade and won&apos;t be charged.</strong>
