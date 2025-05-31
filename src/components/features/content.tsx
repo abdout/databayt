@@ -15,7 +15,7 @@ export default function BlocksPage() {
             {feature.icon}
             {/* </div> */}
             <div className="space-y-2">
-              <h4 className="transition-colors group-hover:text-primary">
+              <h4 className="transition-colors">
                 {feature.title}
               </h4>
               <p className="text-sm text-muted-foreground font-light">

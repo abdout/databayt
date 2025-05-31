@@ -24,8 +24,8 @@ const Automated = () => {
             id={project.id}
             src={project.src}
             name={project.name}
-            width={index === 3 ? 115 : index === 4 ? 140 : 120}
-            height={index === 3 ? 115 : index === 4 ? 140 : 120}
+            width={index === 0 ? 115 : index === 3 ? 118 : index === 3 ? 115 : index === 4 ? 136 : 120 }
+            height={index === 0 ? 115 : index === 3 ? 118 :index === 3 ? 115 : index === 4 ? 136 : 120}
           />
         ))}
       </div>

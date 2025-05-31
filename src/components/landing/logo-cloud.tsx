@@ -3,13 +3,55 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import Image from 'next/image'
 
 const sponsors = [
-    { name: "Faisal", src: "/sponser/faisal.png" },
-    { name: "MTDT", src: "/sponser/mtdt.png" },
-    { name: "Zain", src: "/sponser/zain.png" },
-    { name: "Khartoum", src: "/sponser/khartoum.png" },
-    { name: "Dal", src: "/sponser/dal.png" },
-    { name: "249", src: "/sponser/249.png" },
-    { name: "University of Khartoum", src: "/sponser/uok.png" },
+    { 
+        name: "Faisal", 
+        src: "/sponser/faisal.png", 
+        width: 120, 
+        height: 60, 
+        className: "h-12 w-auto" 
+    },
+    { 
+        name: "MTDT", 
+        src: "/sponser/mtdt.png", 
+        width: 120, 
+        height: 60, 
+        className: "h-12 w-auto" 
+    },
+    { 
+        name: "Zain", 
+        src: "/sponser/zain.png", 
+        width: 100, 
+        height: 50, 
+        className: "h-10 w-auto" 
+    },
+    { 
+        name: "Khartoum", 
+        src: "/sponser/khartoum.png", 
+        width: 120, 
+        height: 60, 
+        className: "h-12 w-auto" 
+    },
+    { 
+        name: "Dal", 
+        src: "/sponser/dal.png", 
+        width: 120, 
+        height: 60, 
+        className: "h-12 w-auto" 
+    },
+    { 
+        name: "249", 
+        src: "/sponser/249.png", 
+        width: 100, 
+        height: 50, 
+        className: "h-10 w-auto" 
+    },
+    { 
+        name: "University of Khartoum", 
+        src: "/sponser/uok.png", 
+        width: 110, 
+        height: 55, 
+        className: "h-11 w-auto" 
+    },
 ]
 
 export default function LogoCloud() {
@@ -30,9 +72,9 @@ export default function LogoCloud() {
                                     <Image
                                         src={sponsor.src}
                                         alt={sponsor.name}
-                                        width={120}
-                                        height={60}
-                                        className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert"
+                                        width={sponsor.width}
+                                        height={sponsor.height}
+                                        className={`${sponsor.className} object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert`}
                                     />
                                 </div>
                             ))}
