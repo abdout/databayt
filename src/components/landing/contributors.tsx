@@ -31,7 +31,7 @@ const Contributors = () => {
   return (
     <div className="grid grid-cols-4 gap-4 md:grid-cols-10">
       {contributors.map((contributor, index) => (
-        <div key={index} className="relative w-[100px] h-[100px] rounded-full overflow-hidden bg-gray-100">
+        <div key={index} className="relative w-[85px] h-[85px] rounded-full overflow-hidden bg-gray-100">
           <Image 
             src={`/contributors/${contributor}`} 
             alt="" 
