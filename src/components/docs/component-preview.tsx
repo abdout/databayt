@@ -34,7 +34,7 @@ export function ComponentPreview({
     if (React.isValidElement(children)) {
       const element = children as React.ReactElement<unknown>
       const props = element.props || {}
-      const { children: childrenProp, ...restProps } = props as any
+      const { children: childrenProp, ...restProps } = props as Record<string, unknown>
 
       // Remove unwanted props.
       const cleanedProps = Object.fromEntries(

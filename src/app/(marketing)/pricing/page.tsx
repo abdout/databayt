@@ -33,42 +33,6 @@ const pricingPlans = [
   }
 ]
 
-const planGuide = [
-  {
-    title: "Choose One Project If:",
-    scenarios: [
-      "You have a specific automation challenge to solve",
-      "You need a custom solution built from scratch", 
-      "You prefer fixed-scope project delivery",
-      "You want a one-time investment with lasting results"
-    ],
-    badge: "Project-Based",
-    badgeClass: "bg-green-100 text-green-800"
-  },
-  {
-    title: "Choose Strategic Partner If:",
-    scenarios: [
-      "You need ongoing development support",
-      "You want to scale your technical team flexibly",
-      "You have multiple projects or long-term needs",
-      "You prefer hourly billing for maximum control"
-    ],
-    badge: "Hourly Support",
-    badgeClass: "bg-blue-100 text-blue-800"
-  },
-  {
-    title: "Choose Product Access If:",
-    scenarios: [
-      "You want ready-made automation tools",
-      "You prefer monthly subscription pricing",
-      "You need quick deployment without custom development",
-      "You want access to a growing library of solutions"
-    ],
-    badge: "SaaS Tools",
-    badgeClass: "bg-purple-100 text-purple-800"
-  }
-]
-
 const faqs = [
   {
     question: "What's included in the One Project plan?",
@@ -99,7 +63,7 @@ export default function PricingPage() {
           Simple. Transparent.
         </h2>
         <p className="max-w-[85%] mx-auto leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Unlock a horizon of possibilities with flexible pricing options.
+         All components and building blocks are open source — we charge for crafting fully functional masterpieces and ensuring their ongoing reliability.
         </p>
       </div>
       
@@ -199,7 +163,7 @@ export default function PricingPage() {
                   <div>
                     <div className="font-medium">Fast Turnaround</div>
                     <div className="text-sm text-muted-foreground">
-                      We've been doing this for years. Our streamlined processes and automation expertise deliver results quickly.
+                      We&apos;ve been doing this for years. Our streamlined processes and automation expertise deliver results quickly.
                     </div>
                   </div>
                 </td>
@@ -237,6 +201,111 @@ export default function PricingPage() {
                 <td className="p-4 text-center text-2xl">☀️</td>
                 <td className="p-4 text-center text-2xl">💡</td>
                 <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">💩</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Industry Savvy</div>
+                    <div className="text-sm text-muted-foreground">
+                      We have people with specific skills working in-house with us. Whatever you want, they have done hundreds of times before.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Reliability</div>
+                    <div className="text-sm text-muted-foreground">
+                      Thanks to the tremendous experience with business automation and development, our people will take complete care of your project. Start to finish, and beyond.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Team Support</div>
+                    <div className="text-sm text-muted-foreground">
+                      Dedicated team of specialists working together to ensure your success with continuous support.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">💩</td>
+                <td className="p-4 text-center text-2xl">💩</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Production Process</div>
+                    <div className="text-sm text-muted-foreground">
+                      Streamlined, proven workflow with clear milestones and communication channels.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Revision Flexibility</div>
+                    <div className="text-sm text-muted-foreground">
+                      Structured yet flexible revision process to ensure your complete satisfaction.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">💩</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Technical Expertise</div>
+                    <div className="text-sm text-muted-foreground">
+                      Advanced technical capabilities across all aspects of automation development and system integration.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+                <td className="p-4 text-center text-2xl">😰</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-4">
+                  <div>
+                    <div className="font-medium">Asset Management</div>
+                    <div className="text-sm text-muted-foreground">
+                      Comprehensive documentation, code management, and knowledge transfer for long-term maintainability.
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">💡</td>
+                <td className="p-4 text-center text-2xl">☀️</td>
+                <td className="p-4 text-center text-2xl">💩</td>
                 <td className="p-4 text-center text-2xl">💩</td>
               </tr>
             </tbody>
