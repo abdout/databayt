@@ -1,0 +1,95 @@
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical-reverse {
+  from {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.marquee-reverse {
+  animation: marquee-reverse var(--duration) infinite linear;
+}
+
+.marquee-vertical {
+  animation: marquee-vertical var(--duration) infinite linear;
+}
+
+.marquee-vertical-reverse {
+  animation: marquee-vertical-reverse var(--duration) infinite linear;
+}
+
+/* Marquee utility classes */
+.marquee-pause-on-hover:hover .marquee,
+.marquee-pause-on-hover:hover .marquee-reverse,
+.marquee-pause-on-hover:hover .marquee-vertical,
+.marquee-pause-on-hover:hover .marquee-vertical-reverse {
+  animation-play-state: paused;
+}
+
+/* Default gap and duration variables */
+.marquee-container {
+  --gap: 1rem;
+  --duration: 40s;
+}
+
+/* Utility Classes */
+.marquee-slow {
+  --duration: 60s;
+}
+
+.marquee-fast {
+  --duration: 20s;
+}
+
+.marquee-gap-sm {
+  --gap: 0.5rem;
+}
+
+.marquee-gap-lg {
+  --gap: 2rem;
+}
+
+/* Responsive Durations */
+@media (max-width: 768px) {
+  .marquee-container {
+    --duration: 30s;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-container {
+    --duration: 20s;
+  }
+} 

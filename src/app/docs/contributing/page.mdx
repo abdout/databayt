@@ -1,0 +1,428 @@
+# Contributing Guide
+
+*Join our open-source community and help build the future of business automation*
+
+## 🎯 **Welcome Contributors!**
+
+We're thrilled that you're interested in contributing to our open-source projects! Whether you're fixing bugs, adding features, improving documentation, or helping with community support, every contribution makes a difference.
+
+## 🌟 **Ways to Contribute**
+
+### **Code Contributions**
+- 🐛 **Bug Fixes** - Help us squash bugs and improve stability
+- ✨ **New Features** - Implement exciting new capabilities
+- 🔧 **Performance Improvements** - Optimize existing functionality
+- 📦 **Dependencies** - Keep our tech stack current and secure
+
+### **Documentation**
+- 📝 **Content Writing** - Create tutorials, guides, and examples
+- 🎨 **Visual Aids** - Add diagrams, screenshots, and illustrations
+- 🌐 **Translations** - Help us reach a global audience
+- 📋 **API Documentation** - Keep technical docs accurate and complete
+
+### **Community Support**
+- 💬 **Answer Questions** - Help other community members
+- 🎤 **Speak at Events** - Share your experience with our tools
+- 📢 **Blog Posts** - Write about your use cases and solutions
+- 🎓 **Tutorials** - Create educational content
+
+## 🚀 **Getting Started**
+
+### **1. Set Up Your Environment**
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/main-repo.git
+cd main-repo
+
+# Install dependencies
+pnpm install
+
+# Set up pre-commit hooks
+pnpm run setup
+
+# Start development server
+pnpm dev
+```
+
+### **2. Choose Your First Issue**
+
+Look for issues labeled with:
+- 🟢 **good first issue** - Perfect for newcomers
+- 🎯 **help wanted** - We need community assistance
+- 📚 **documentation** - Non-code contributions welcome
+- 🐛 **bug** - Critical fixes needed
+
+### **3. Fork and Branch**
+
+```bash
+# Fork the repository on GitHub
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/main-repo.git
+
+# Create a feature branch
+git checkout -b feature/amazing-new-feature
+
+# Make your changes
+# Commit and push
+git commit -m "feat: add amazing new feature"
+git push origin feature/amazing-new-feature
+```
+
+## 📋 **Contribution Types**
+
+### **🔧 Code Contributions**
+
+#### **Before You Start**
+1. **Check existing issues** - Avoid duplicate work
+2. **Discuss major changes** - Open an issue for discussion
+3. **Review coding standards** - See our [Development Rules](/docs/development/rules)
+4. **Set up development environment** - Follow our setup guide
+
+#### **Pull Request Process**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">📝 Planning Phase</h4>
+    <ul className="text-sm text-muted-foreground space-y-1">
+      <li>• Research the problem thoroughly</li>
+      <li>• Design your solution approach</li>
+      <li>• Break down into manageable tasks</li>
+      <li>• Get feedback on your plan</li>
+    </ul>
+  </div>
+  
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">💻 Development Phase</h4>
+    <ul className="text-sm text-muted-foreground space-y-1">
+      <li>• Write clean, readable code</li>
+      <li>• Add comprehensive tests</li>
+      <li>• Update documentation</li>
+      <li>• Follow coding standards</li>
+    </ul>
+  </div>
+  
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">🔍 Review Phase</h4>
+    <ul className="text-sm text-muted-foreground space-y-1">
+      <li>• Self-review your changes</li>
+      <li>• Run all tests locally</li>
+      <li>• Check for performance impact</li>
+      <li>• Validate accessibility</li>
+    </ul>
+  </div>
+  
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">🚀 Submission Phase</h4>
+    <ul className="text-sm text-muted-foreground space-y-1">
+      <li>• Create detailed pull request</li>
+      <li>• Link related issues</li>
+      <li>• Request specific reviewers</li>
+      <li>• Respond to feedback promptly</li>
+    </ul>
+  </div>
+</div>
+
+### **📚 Documentation Contributions**
+
+#### **Types of Documentation**
+- **User Guides** - Help users accomplish specific tasks
+- **API Reference** - Complete technical specifications
+- **Tutorials** - Step-by-step learning materials
+- **Architecture Docs** - System design and decisions
+- **Troubleshooting** - Common problems and solutions
+
+#### **Documentation Standards**
+
+```markdown
+# Title (Clear and Descriptive)
+
+Brief introduction explaining what this document covers.
+
+## Prerequisites
+- What users need to know beforehand
+- Required software or accounts
+- Links to related documentation
+
+## Step-by-Step Instructions
+1. Clear, actionable steps
+2. Include code examples
+3. Explain expected outcomes
+4. Add screenshots when helpful
+
+## Common Issues
+- Anticipated problems
+- Solutions and workarounds
+- When to seek help
+
+## Next Steps
+- Related documentation
+- Advanced topics
+- Community resources
+```
+
+## 🎭 **Contributor Recognition**
+
+### **Recognition Levels**
+
+<div className="space-y-4 my-8">
+  <div className="p-4 border rounded-lg">
+    <div className="flex items-center gap-2 mb-2">
+      <span className="text-2xl">🌱</span>
+      <h4 className="font-semibold">New Contributor</h4>
+    </div>
+    <p className="text-sm text-muted-foreground">
+      First-time contributors who make their initial pull request. Welcome to the community!
+    </p>
+  </div>
+  
+  <div className="p-4 border rounded-lg">
+    <div className="flex items-center gap-2 mb-2">
+      <span className="text-2xl">🤝</span>
+      <h4 className="font-semibold">Active Contributor</h4>
+    </div>
+    <p className="text-sm text-muted-foreground">
+      Regular contributors with multiple merged PRs. Eligible for contributor swag and early access to features.
+    </p>
+  </div>
+  
+  <div className="p-4 border rounded-lg">
+    <div className="flex items-center gap-2 mb-2">
+      <span className="text-2xl">⭐</span>
+      <h4 className="font-semibold">Core Contributor</h4>
+    </div>
+    <p className="text-sm text-muted-foreground">
+      Trusted community members with significant contributions. May receive review permissions and special recognition.
+    </p>
+  </div>
+  
+  <div className="p-4 border rounded-lg">
+    <div className="flex items-center gap-2 mb-2">
+      <span className="text-2xl">💎</span>
+      <h4 className="font-semibold">Maintainer</h4>
+    </div>
+    <p className="text-sm text-muted-foreground">
+      Experienced contributors with full access. Participate in project governance and strategic decisions.
+    </p>
+  </div>
+</div>
+
+### **Rewards & Benefits**
+
+- 🎁 **Contributor Swag** - T-shirts, stickers, and exclusive merchandise
+- 🎫 **Conference Tickets** - Sponsored attendance at tech conferences
+- 📈 **Stock Options** - Equity participation for significant contributions
+- 🏆 **Public Recognition** - Featured in our contributor hall of fame
+- 🎓 **Mentorship** - One-on-one guidance from senior maintainers
+- 💼 **Job Opportunities** - First consideration for open positions
+
+## 🔄 **Development Workflow**
+
+### **Git Workflow**
+
+```bash
+# 1. Sync with upstream
+git checkout main
+git pull upstream main
+
+# 2. Create feature branch
+git checkout -b feat/new-automation-connector
+
+# 3. Make changes and commit
+git add .
+git commit -m "feat(connectors): add Slack integration
+
+- Add Slack API wrapper
+- Implement message posting
+- Add configuration validation
+- Update documentation
+
+Closes #123"
+
+# 4. Push and create PR
+git push origin feat/new-automation-connector
+```
+
+### **Commit Message Convention**
+
+```bash
+# Format: type(scope): description
+# 
+# Types:
+feat:     # New feature
+fix:      # Bug fix
+docs:     # Documentation changes
+style:    # Code style changes
+refactor: # Code refactoring
+test:     # Adding or updating tests
+chore:    # Maintenance tasks
+
+# Examples:
+feat(auth): add OAuth2 integration
+fix(api): handle null values in user profile
+docs(readme): update installation instructions
+test(utils): add unit tests for date helpers
+```
+
+### **Pull Request Template**
+
+```markdown
+## Description
+Brief description of what this PR does.
+
+## Type of Change
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
+
+## Testing
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+- [ ] I have tested this change manually
+
+## Documentation
+- [ ] I have updated the documentation accordingly
+- [ ] I have added/updated JSDoc comments for new/modified functions
+
+## Checklist
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] My changes generate no new warnings or errors
+
+## Related Issues
+Closes #(issue_number)
+Related to #(issue_number)
+```
+
+## 🎯 **Contribution Guidelines**
+
+### **Code Quality Standards**
+
+```typescript
+// ✅ Good Example
+/**
+ * Validates user input for automation workflow creation
+ * @param input - The workflow configuration object
+ * @returns Validation result with errors if any
+ */
+export function validateWorkflowInput(input: WorkflowInput): ValidationResult {
+  const errors: ValidationError[] = []
+  
+  if (!input.name?.trim()) {
+    errors.push({
+      field: 'name',
+      message: 'Workflow name is required',
+      code: 'REQUIRED_FIELD'
+    })
+  }
+  
+  if (input.steps.length === 0) {
+    errors.push({
+      field: 'steps',
+      message: 'At least one step is required',
+      code: 'MIN_LENGTH'
+    })
+  }
+  
+  return {
+    isValid: errors.length === 0,
+    errors
+  }
+}
+```
+
+### **Testing Requirements**
+
+```typescript
+// Unit Test Example
+describe('validateWorkflowInput', () => {
+  it('should return valid result for correct input', () => {
+    const input: WorkflowInput = {
+      name: 'Test Workflow',
+      description: 'A test workflow',
+      steps: [{ type: 'action', config: {} }]
+    }
+    
+    const result = validateWorkflowInput(input)
+    
+    expect(result.isValid).toBe(true)
+    expect(result.errors).toHaveLength(0)
+  })
+  
+  it('should return errors for missing required fields', () => {
+    const input: WorkflowInput = {
+      name: '',
+      steps: []
+    }
+    
+    const result = validateWorkflowInput(input)
+    
+    expect(result.isValid).toBe(false)
+    expect(result.errors).toHaveLength(2)
+    expect(result.errors[0].field).toBe('name')
+    expect(result.errors[1].field).toBe('steps')
+  })
+})
+```
+
+## 🤔 **Need Help?**
+
+### **Getting Support**
+
+- 💬 **Community Chat** - Join our [Discord server](https://discord.gg/your-server)
+- 📧 **Direct Contact** - Email contributors@yourcompany.com
+- 📅 **Office Hours** - Weekly video calls for Q&A
+- 📚 **Documentation** - Comprehensive guides and tutorials
+
+### **Common Questions**
+
+<details>
+<summary><strong>How do I get my first contribution merged?</strong></summary>
+
+1. Start with a "good first issue"
+2. Follow our coding standards
+3. Add tests for your changes
+4. Update documentation
+5. Be responsive to code review feedback
+
+</details>
+
+<details>
+<summary><strong>Can I work on multiple issues simultaneously?</strong></summary>
+
+We recommend focusing on one issue at a time, especially when starting out. This helps ensure quality and makes the review process smoother.
+
+</details>
+
+<details>
+<summary><strong>How long does code review take?</strong></summary>
+
+We aim to provide initial feedback within 48 hours. Complex changes may require multiple review rounds. We appreciate your patience!
+
+</details>
+
+<details>
+<summary><strong>What if my PR conflicts with recent changes?</strong></summary>
+
+Don't worry! We'll help you resolve conflicts. You can also rebase your branch or merge the latest changes from main.
+
+</details>
+
+## 🎉 **Thank You!**
+
+Your contributions help make our platform better for everyone. Whether you're fixing a typo, adding a major feature, or helping other community members, your efforts are deeply appreciated.
+
+**Ready to make your first contribution?** Check out our [good first issues](https://github.com/your-org/main-repo/labels/good%20first%20issue) and join our community!
+
+---
+
+## 📚 **Related Documentation**
+
+- [**Code of Conduct**](/docs/governance/code-of-conduct) - Community standards and expectations
+- [**Development Rules**](/docs/development/rules) - Coding standards and best practices  
+- [**Issue Guidelines**](/docs/contributing/issue-guidelines) - How to report bugs and request features
+- [**Pull Request Process**](/docs/contributing/pull-requests) - Detailed PR workflow
+
+**Questions about contributing?** [Join our community discussions](/docs/community/discussions) or [contact our team](/docs/community/support)! 
