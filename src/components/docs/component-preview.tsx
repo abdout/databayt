@@ -33,7 +33,8 @@ export function ComponentPreview({
   const codeToString = React.useMemo(() => {
     if (React.isValidElement(children)) {
       const element = children as React.ReactElement<unknown>
-      const { children: childrenProp, ...restProps } = element.props || {}
+      const props = element.props || {}
+      const { children: childrenProp, ...restProps } = props as any
 
       // Remove unwanted props.
       const cleanedProps = Object.fromEntries(
