@@ -44,7 +44,7 @@ export function ComponentPreview({
       )
 
       const jsx = React.createElement(
-        element.type as React.ComponentType<any> | string,
+        element.type as React.ComponentType<Record<string, unknown>> | string,
         cleanedProps,
         childrenProp as React.ReactNode
       )
