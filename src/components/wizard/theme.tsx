@@ -1,5 +1,3 @@
-
-
 // ThemeSelector.tsx
 "use client";
 import React from "react";
@@ -63,8 +61,8 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = () => {
   );
 
   return (
-    <div className="w-full -mt-4">
-      <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-5xl flex items-center justify-center pb-7">
+    <div className="w-full">
+      <h2 className="font-heading text-3xl leading-[1.1] sm:text-2xl md:text-3xl flex items-center justify-center pb-7">
         Custom Theme!
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-40 -mx-20">
@@ -103,16 +101,13 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = () => {
               "--theme-radius": `${config.radius * 16}px`,
             } as React.CSSProperties
           }
-          className="rounded-[var(--theme-radius)] h-[22rem]"
+          className="rounded-[var(--theme-radius)] h-[18rem]"
         >
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Create an account</CardTitle>
-            <CardDescription>
-              Enter your email below to create your account
-            </CardDescription>
+            {/* Removed CardTitle and CardDescription */}
           </CardHeader>
           <CardContent className="grid gap-4">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               <Button
                 variant="outline"
                 className="rounded-[var(--theme-radius)]"

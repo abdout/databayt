@@ -139,11 +139,13 @@ export default function SelectionWizard() {
         <div className="space-x-4">
           <Button
             variant="outline"
+            size="sm"
             onClick={() => step > 1 && setStep(step - 1)}
           >
             Back
           </Button>
           <Button
+            size="sm"
             onClick={() => step < 4 && setStep(step + 1)}
             disabled={
               (step === 1 && !selections.business) ||
