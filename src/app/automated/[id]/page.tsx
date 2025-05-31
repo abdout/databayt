@@ -19,7 +19,6 @@ import Price from "@/components/automated/price";
 import AllFeatures from "@/components/feature/all";
 import { Icons } from "@/components/icons";
 import Photo from "@/components/automated/photo";
-import { Introducation } from "@/components/automated/intro";
 import { ReviewPage } from "@/components/automated/video";
 import { TableOfContents } from "@/components/automated/toc";
 import { 
@@ -53,8 +52,6 @@ const ProjectPage = () => {
   // Update active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200; // Add offset for better detection
-
       const isInViewport = (ref: React.RefObject<HTMLDivElement | null>) => {
         if (!ref.current) return false;
         const { top, bottom } = ref.current.getBoundingClientRect();
@@ -86,7 +83,7 @@ const ProjectPage = () => {
     return <p>Project not found!</p>;
   }
 
-  const { name, technologies, livePreview, github, description } = project;
+  const { name, technologies, livePreview, description } = project;
 
   // FAQ items
   const faqItems = [

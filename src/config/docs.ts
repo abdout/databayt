@@ -9,9 +9,9 @@ export interface NavItemWithChildren extends NavItem {
   items: NavItemWithChildren[]
 }
 
-export interface MainNavItem extends NavItem {}
+export type MainNavItem = NavItem
 
-export interface SidebarNavItem extends NavItemWithChildren {}
+export type SidebarNavItem = NavItemWithChildren
 
 interface DocsConfig {
   mainNav: MainNavItem[]

@@ -24,25 +24,12 @@ export default function SectionHeading({
   className,
   titleClassName,
   descriptionClassName,
-  align = "center",
   linkText,
   linkHref,
   linkTarget,
   linkIcon,
   children
 }: SectionHeadingProps) {
-  const alignmentClasses = {
-    left: "text-left",
-    center: "text-center",
-    right: "text-right"
-  }
-
-  const flexAlignmentClasses = {
-    left: "justify-start",
-    center: "justify-center", 
-    right: "justify-end"
-  }
-
   return (
     <div className={cn("flex flex-col items-center space-y-2 text-center pt-20", className)}>
       <h2 

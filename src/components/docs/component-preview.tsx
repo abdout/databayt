@@ -1,31 +1,22 @@
 "use client"
 
 import * as React from "react"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name?: string
-  extractClassname?: boolean
-  extractedClassNames?: string
   align?: "center" | "start" | "end"
 }
 
 export function ComponentPreview({
   children,
   className,
-  extractClassname,
-  extractedClassNames,
   align = "center",
-  name,
   ...props
 }: ComponentPreviewProps) {
-  const [isOpened, setIsOpened] = React.useState(false)
-
   const Preview = React.useMemo(() => {
     const Component = React.Children.only(children) as React.ReactElement & {
-      type: { render?: Function; __docgenInfo?: any }
+      type: { render?: (() => React.ReactElement) | undefined; __docgenInfo?: unknown }
     }
 
     if (!Component) {

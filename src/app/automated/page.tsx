@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ProjectCard from '@/components/automated/card';
-import { projects } from '@/components/automated/constant';
+import { automated } from '@/components/automated/constant';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 
@@ -27,7 +27,7 @@ const Automated = () => {
         </p>
       </div>
       <div className="grid grid-cols-4 gap-7 items-center justify-center">
-        {projects.map((project) => (
+        {automated.map((project) => (
           <ProjectCard
             key={project.id}
             id={project.id}

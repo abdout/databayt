@@ -38,7 +38,7 @@ export function DocsNav() {
       >
         Docs
       </Link>
-      {breadcrumbs.slice(1).map((breadcrumb, index) => (
+      {breadcrumbs.slice(1).map((breadcrumb) => (
         <div key={breadcrumb.href} className="flex items-center">
           <ChevronRightIcon className="h-4 w-4" />
           <Link

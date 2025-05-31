@@ -1,7 +1,6 @@
 import Link from "next/link";
 import NewsLetter from "./newsletter";
 import { footerSections } from "./constant";
-import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/atom/icons";
 
 export function SiteFooter() {
@@ -20,7 +19,7 @@ export function SiteFooter() {
           {/* Links Section */}
           <div className="w-full pl-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-20 lg:flex  lg:items-start px-0 text-center lg:text-left">
-              {footerSections.map((section, index) => (
+              {footerSections.map((section) => (
                 <div key={section.title} className="w-full lg:flex-1">
                   <h3 className="text-sm font-medium mb-4">{section.title}</h3>
                   <ul className="space-y-2">
