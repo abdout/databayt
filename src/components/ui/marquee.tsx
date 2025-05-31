@@ -7,6 +7,7 @@ interface MarqueeProps {
   children?: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
+  style?: React.CSSProperties;
   [key: string]: unknown;
 }
 
@@ -17,6 +18,7 @@ export default function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  style,
   ...props
 }: MarqueeProps) {
   return (
@@ -34,8 +36,8 @@ export default function Marquee({
       style={{
         "--gap": "1rem",
         "--duration": "40s",
-        ...props.style,
-      }}
+        ...style,
+      } as React.CSSProperties}
     >
       {Array(repeat)
         .fill(0)
