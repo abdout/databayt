@@ -16,7 +16,7 @@ import { buttonVariants } from "@/components/ui/button";
 //   CarouselPrevious,
 // } from "@/components/ui/carousel";
 import Price from "@/components/automated/price";
-import AllFeatures from "@/components/feature/all";
+import AllFeatures from "@/components/features/all";
 import { Icons } from "@/components/icons";
 import Photo from "@/components/automated/photo";
 import { ReviewPage } from "@/components/automated/video";
