@@ -31,14 +31,9 @@ export function ComponentPreview({
   }, [children])
 
   const codeToString = React.useMemo(() => {
-    if (
-      React.isValidElement(children) &&
-      typeof children === "object" &&
-      children !== null &&
-      "type" in children &&
-      "props" in children
-    ) {
-      const { children: childrenProp, ...restProps } = children.props
+    if (React.isValidElement(children)) {
+      const element = children as React.ReactElement<any>
+      const { children: childrenProp, ...restProps } = element.props || {}
 
       // Remove unwanted props.
       const cleanedProps = Object.fromEntries(
@@ -47,7 +42,7 @@ export function ComponentPreview({
         )
       )
 
-      const jsx = React.createElement(children.type, cleanedProps, childrenProp)
+      const jsx = React.createElement(element.type, cleanedProps, childrenProp)
       return jsx
     }
 

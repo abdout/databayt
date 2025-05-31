@@ -13,14 +13,14 @@ const pricingPlans = [
   {
     title: "One Project",
     description: "Perfect for businesses looking to automate a particular process or solve a focused challenge. We'll deliver a tailored solution built with precision — one project, one powerful outcome.",
-    price: "$19",
-    billing: "Billed Monthly"
+    price: "$40",
+    billing: "starting from"
   },
   {
     title: "Strategic Partner", 
     description: "Ideal for businesses to outsource development, tap into specialized talent, or co-build long-term solutions. We become your tech partner — agile, reliable, and aligned with your vision.",
-    price: "$19",
-    billing: "Billed Monthly"
+    price: "$10",
+    billing: "per hours"
   },
   {
     title: "Product Access",
@@ -63,12 +63,23 @@ export default function PricingPage() {
                   {plan.billing}
                 </p>
               </div>
-              <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+              <Link href="/login" className={cn(buttonVariants({ size: "lg" }), "bg-muted text-foreground hover:bg-muted/80")}>
                 Get Started
               </Link>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="flex w-full max-w-[62rem] flex-col gap-6 text-center pt-16">
+        <p className="text-lg leading-relaxed text-muted-foreground">
+          Not sure about these plans? Try us for your first video. You will want us for your next. And if you don&apos;t like working with us, we will even refund the money... or something... I don&apos;t know, we&apos;ve never been there before.
+        </p>
+        <div className="flex justify-center">
+          <Link href="/docs/community/support" className={cn(buttonVariants({ size: "lg" }), "")}>
+            Contact Us
+          </Link>
+        </div>
       </div>
       
       <div className="flex w-full max-w-4xl flex-col gap-4">
