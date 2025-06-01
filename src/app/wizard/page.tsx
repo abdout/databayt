@@ -11,7 +11,6 @@ import { WizardSelections } from '@/components/wizard/constant';
 import ThemeSelector from '@/components/wizard/theme';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Icons } from '@/components/icons';
 import { toast } from 'sonner';
 
 interface ExtendedWizardSelections extends WizardSelections {
