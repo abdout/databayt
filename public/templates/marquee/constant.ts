@@ -32,17 +32,17 @@ export interface Feature {
 
 export const features: Feature[] = [
   {
-    id: "security",
-    name: "Security & Protection",
+    id: "auth",
+    name: "Authentication",
     icon: "/features/shield.png",
     description: "Advanced security features to protect your data"
   },
-  {
-    id: "authentication",
-    name: "Authentication",
-    icon: Authentication,
-    description: "Secure user authentication and authorization"
-  },
+  // {
+  //   id: "authentication",
+  //   name: "Authentication",
+  //   icon: Authentication,
+  //   description: "Secure user authentication and authorization"
+  // },
   {
     id: "api-keys",
     name: "API Key Management",
@@ -63,7 +63,7 @@ export const features: Feature[] = [
   },
   {
     id: "community",
-    name: "Community Features",
+    name: "Community",
     icon: "/features/community.png",
     description: "Connect and collaborate with the community"
   },
@@ -91,27 +91,16 @@ export const features: Feature[] = [
     icon: "/features/tent.png",
     description: "One-click deployment to multiple platforms"
   },
+  
   {
-    id: "ai-features",
-    name: "AI-Powered Features",
-    icon: "/features/light-bulb.png",
-    description: "Intelligent features powered by AI"
-  },
-  {
-    id: "global-cdn",
-    name: "Global CDN",
-    icon: "/features/earth.png",
-    description: "Fast global content delivery network"
-  },
-  {
-    id: "worldwide",
-    name: "Worldwide Support",
+    id: "internationalization",
+    name: "Internationalization",
     icon: "/features/world.png",
     description: "24/7 support across all time zones"
   },
   {
-    id: "instant-sync",
-    name: "Instant Sync",
+    id: "ai-agent",
+    name: "AI Agent",
     icon: "/features/teleport.png",
     description: "Real-time synchronization across devices"
   },
@@ -128,8 +117,8 @@ export const features: Feature[] = [
     description: "Intelligent tagging and categorization"
   },
   {
-    id: "design-tools",
-    name: "Design Tools",
+    id: "editor",
+    name: "Text Editor",
     icon: "/features/pen-tool.png",
     description: "Professional design and editing tools"
   },
@@ -159,7 +148,7 @@ export const features: Feature[] = [
   },
   {
     id: "workflows",
-    name: "Automated Workflows",
+    name: "Workflows",
     icon: Flow,
     description: "Streamline processes with automated workflows"
   },
@@ -171,31 +160,31 @@ export const features: Feature[] = [
   },
   {
     id: "notifications",
-    name: "Smart Notifications",
+    name: "Notifications",
     icon: Notification,
     description: "Stay updated with intelligent notifications"
   },
   {
     id: "content-layer",
-    name: "Content Management",
+    name: "Content layer",
     icon: Contentlayer,
     description: "Powerful content management system"
   },
   {
     id: "subscription",
-    name: "Subscription Management",
+    name: "Subscription",
     icon: Subscription,
     description: "Flexible subscription and billing management"
   },
   {
     id: "onboarding",
-    name: "User Onboarding",
+    name: "Onboarding",
     icon: Onboarding,
     description: "Smooth onboarding experience for new users"
   },
   {
     id: "math-tools",
-    name: "Mathematical Tools",
+    name: "Mathematical",
     icon: Math,
     description: "Advanced mathematical calculations and tools"
   },

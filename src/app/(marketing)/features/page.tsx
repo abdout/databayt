@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import FeatureHeader from "@/components/features/feature-header"
-import BlocksPage from "@/components/features/content"
+import AllFeatures from "@/components/features/content"
 
 export default function FeaturesPage() {
   return (
@@ -18,7 +18,7 @@ export default function FeaturesPage() {
           />
         </div>
         
-        <BlocksPage />
+        <AllFeatures />
       </div>
     </div>
   )
