@@ -3,7 +3,6 @@ import React from 'react';
 import ProjectCard from '@/components/automated/card';
 import { automated } from '@/components/automated/constant';
 import Link from 'next/link';
-import { ArrowRightIcon } from 'lucide-react';
 
 const Automated = () => {
   return (
@@ -22,7 +21,6 @@ const Automated = () => {
             <span className="underline-offset-4 group-hover:underline">
               Request your automation
             </span>
-            <ArrowRightIcon className="ml-1 mt-[4.5px] h-4 w-4" />
           </Link>
         </p>
       </div>

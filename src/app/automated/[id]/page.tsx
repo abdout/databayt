@@ -116,7 +116,6 @@ const ProjectPage = () => {
         className="absolute top-4 md:top-8 flex items-center text-foreground/80 hover:text-foreground group transition-all"
       >
         <span className="flex items-center group-hover:underline">
-          <Icons.chevronLeft className="h-4 w-4 mr-1" />
           Back
         </span>
       </Link>

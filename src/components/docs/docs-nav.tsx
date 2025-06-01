@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -40,7 +39,7 @@ export function DocsNav() {
       </Link>
       {breadcrumbs.slice(1).map((breadcrumb) => (
         <div key={breadcrumb.href} className="flex items-center">
-          <ChevronRightIcon className="h-4 w-4" />
+          <span className="mx-1">/</span>
           <Link
             href={breadcrumb.href}
             className={cn(

@@ -91,10 +91,7 @@ export default function SelectionWizard() {
           'absolute left-4 top-4 md:left-8 md:top-8'
         )}
       >
-        <>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          Back
-        </>
+        Back
       </Link>
 
       <div className="space-y-6 max-w-[50%]">
