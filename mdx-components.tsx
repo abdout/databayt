@@ -130,7 +130,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: ({ className, ...props }) => (
       <pre
         className={cn(
-          "mb-4 mt-6 overflow-x-auto rounded-lg border bg-muted px-4 py-4",
+          "mb-4 mt-6 overflow-x-auto rounded-md mr-7 [&_*]:!font-normal border bg-muted px-4 py-4 ",
           className
         )}
         {...props}
