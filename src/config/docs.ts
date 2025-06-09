@@ -56,23 +56,33 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Technical Stack",
-          href: "/docs/architecture/technical-stack",
+          title: "Stack",
+          href: "/docs/stack",
           items: [],
         },
         {
-          title: "Infrastructure",
-          href: "/docs/architecture/infrastructure",
+          title: "Pattern",
+          href: "/docs/pattern",
           items: [],
         },
       ],
     },
     {
-      title: "Contributing",
+      title: "Upwork",
       items: [
         {
-          title: "Contributing Guide",
-          href: "/docs/contributing",
+          title: "Upwork",
+          href: "/docs/upwork",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Contribute",
+      items: [
+        {
+          title: "Contribute",
+          href: "/docs/contribute",
           items: [],
         },
         {
@@ -202,6 +212,7 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    
     {
       title: "Meta",
       items: [
