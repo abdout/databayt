@@ -59,7 +59,7 @@ export default function Stack() {
           className="p-2 "
           title={name}
         >
-          <Icon className={`${name === "R" || name === "Prettier" ? "w-10 h-10" : name === "TypeScript" || name === "React Hook Form" || name === "shadcn/ui" || name === "Subscription" || name === "Triangle" || name === "Framer" || name === "Git" ? "w-11 h-11" : name === "Tailwind CSS" || name === "Prisma" ? "w-13 h-13" : "w-12 h-12"} text-black`} />
+          <Icon className={`${name === "R" || name === "Prettier" || name === "Subscription" ? "w-10 h-10" : name === "React Hook Form" || name === "shadcn/ui" || name === "Triangle" || name === "Framer" ? "w-11 h-11" : name === "Tailwind CSS" || name === "Prisma" ? "w-13 h-13" : "w-12 h-12"} text-black`} />
         </div>
       ))}
     </div>
