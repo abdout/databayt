@@ -17,7 +17,7 @@ export default function SiteFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-normal text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      className="text-xs font-normal text-muted-foreground hover:text-foreground transition-colors duration-300"
                     >
                       {link.text}
                     </Link>

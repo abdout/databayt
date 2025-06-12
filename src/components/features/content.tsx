@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { features } from "./constant"
+import { features } from "../agent/constant"
 
 export default function AllFeatures() {
   return (

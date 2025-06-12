@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AlertCircle, CheckCircle, Github, ExternalLink, Copy, RefreshCw, Zap } from 'lucide-react';
@@ -121,6 +120,7 @@ const UpworkAgent = () => {
   const [jobAnalysis, setJobAnalysis] = useState<JobAnalysis | null>(null);
   const [proposal, setProposal] = useState('');
   const [loading, setLoading] = useState(false);
+  const [aiProvider, setAiProvider] = useState<'openai' | 'gemini'>('gemini');
 
   // Job Scoring Function
   const scoreJob = (description: string): Score => {
@@ -315,32 +315,65 @@ const UpworkAgent = () => {
   };
 
   // Analyze Job Function
-  const analyzeJob = () => {
+  const analyzeJob = async () => {
     if (!jobDescription.trim()) return;
-    
+
     setLoading(true);
-    
-    // Simulate processing time
-    setTimeout(() => {
+
+    const fallbackLocal = () => {
       const score = scoreJob(jobDescription);
       const details = extractJobDetails(jobDescription);
       const relevant = findRelevantRepos(jobDescription, score);
-      
+
       const analysis: JobAnalysis = {
         score,
         details,
-        relevantRepos: relevant
+        relevantRepos: relevant,
       };
-      
+
       setJobAnalysis(analysis);
-      
+
       if (score.viable) {
         const generatedProposal = generateProposal(details, relevant, score);
         setProposal(generatedProposal);
       }
-      
+    };
+
+    try {
+      const endpoint = aiProvider === 'openai' ? '/api/upwork/analyze' : '/api/upwork/analyze-gemini';
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ description: jobDescription, repositories }),
+      });
+
+      if (!res.ok) {
+        fallbackLocal();
+      } else {
+        const data = await res.json();
+
+        if (data.error) throw new Error(data.error);
+
+        const analysis: JobAnalysis = {
+          score: data.score,
+          details: data.details,
+          relevantRepos: findRelevantRepos(jobDescription, data.score),
+        };
+
+        setJobAnalysis(analysis);
+
+        if (analysis.score.viable) {
+          setProposal(data.proposal ?? generateProposal(data.details, analysis.relevantRepos, data.score));
+        }
+      }
+    } catch (error) {
+      console.error('AI analysis failed, falling back to heuristic', error);
+      fallbackLocal();
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   const copyToClipboard = (text: string) => {
@@ -466,6 +499,19 @@ const UpworkAgent = () => {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium" htmlFor="provider-select">AI Provider</label>
+                <select
+                  id="provider-select"
+                  value={aiProvider}
+                  onChange={(e) => setAiProvider(e.target.value as 'openai' | 'gemini')}
+                  className="w-full rounded-md border px-3 py-2 text-sm bg-white dark:bg-black"
+                >
+                  <option value="gemini">Gemini 1.5 Flash (free)</option>
+                  <option value="openai">OpenAI GPT-4o Mini</option>
+                </select>
+              </div>
+
               <Textarea
                 placeholder="Paste the complete job description here (including any extra content - AI will filter out headers/footers automatically)..."
                 value={jobDescription}
