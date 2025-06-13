@@ -396,7 +396,7 @@ const UpworkAgent = () => {
       return updated;
     });
   };
-
+ 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
       <div className="text-center mb-8">
@@ -406,7 +406,7 @@ const UpworkAgent = () => {
         </h1>
         <p className="text-gray-600">Automate your Upwork job applications with intelligent proposal generation</p>
       </div>
-
+ 
       <Tabs defaultValue="repos" className="space-y-6">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="repos">Repositories</TabsTrigger>

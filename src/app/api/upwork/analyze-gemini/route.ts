@@ -27,7 +27,6 @@ export async function POST(request: Request) {
     const response = await model.generateContent({ contents: [{ role: 'user', parts: [{ text: prompt }] }] });
 
     // Gemini returns the text in response.text()
-    // @ts-expect-error SDK typing may differ
     const text = response?.response?.text?.() ?? '';
     const json = JSON.parse(text || '{}');
 

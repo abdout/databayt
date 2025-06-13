@@ -57,7 +57,13 @@ export default function UpworkBot() {
     const content = input.trim()
     if (!content) return
 
-    // No need to store user message; just process it
+    // Add user message
+    const userMsg: Message = {
+      id: uuid(),
+      role: "user",
+      content,
+    }
+    setMessages((prev) => [...prev, userMsg])
     setInput("")
 
     // Generate assistant response using Upwork analysis logic
