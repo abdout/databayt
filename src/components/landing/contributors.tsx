@@ -12,7 +12,7 @@ const Contributors = () => {
     's.jpeg',
     'a.jpg',
     'aa.jpeg',
-    'b.jpg',
+    '5.jpg',
    
     
     'mazin.jpg',
