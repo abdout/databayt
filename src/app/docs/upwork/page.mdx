@@ -358,3 +358,105 @@ Based on Production Experience:
 **Remember:** Your mission is to help clients "reclaim their time through automation." Every interaction should reinforce this value proposition and demonstrate your expertise in turning time-consuming tasks into efficient, automated systems.
 
 Time to automate the boring and elevate the wondrous.
+
+## Upwork Agent
+
+### Current Progress
+
+```text
+src/
+  app/
+    (marketing)/
+      agent/
+        upwork/
+          page.tsx                # Route entry loading the Upwork agent UI
+
+  components/
+    agent/
+      upwork/                     # Core agent logic & domain-specific helpers
+        bot.tsx                  # Client component wiring chat UI to analysis logic
+        chat.tsx                 # Presentation & input handling (leverages template/chatbot)
+        chat-message.tsx         # Message renderer (markdown, code blocks, etc.)
+        model.tsx                # (WIP) Provider selector / agent state models
+        logic.ts                 # Pure scoring, extraction & proposal-generation helpers
+        score.ts                 # Legacy scoring helpers (to be merged into logic.ts)
+        proposal.ts              # Markdown proposal template builder
+        prompt.ts                # Prompt strings shared with serverless endpoints
+        repo.ts                  # Repository metadata used for relevance matching
+
+    template/
+      chatbot/                    # Generic, reusable chat experience powering many agents
+        chat.tsx
+        chat-message.tsx
+        message-input.tsx
+        typing-indicator.tsx
+        use-scroll.ts
+        ... (utilities, audio support, copy helpers)
+```
+
+**Flow Overview**
+1. `UpworkBot` (client component) renders a `Chat` powered by the generic template/chatbot components.
+2. When the user pastes a job description and hits **Send**:
+   - `bot.tsx` calls the async `analyze()` helper which in turn delegates to either:
+     • A local pure-TS implementation in `logic.ts` (default)  
+     • Or a remote provider (OpenAI / Gemini) API route for richer LLM analysis.
+3. `logic.ts` performs:
+   - Keyword-based scoring (`scoreJob`).
+   - Detail extraction (`extractJobDetails`).
+   - Repository relevance matching (`findRelevantRepos`).
+   - Proposal composition (`generateProposal`).
+4. The formatted result is streamed back into the chat as the assistant message.
+5. The user can iterate, copy, or tweak the generated proposal directly in the chat.
+
+### Brainstorm
+- **TypeScript vs. Rust vs. LangGraph**: Compare our current Node/TypeScript implementation against:
+  • **Rust (e.g. using axum + Wasm/Edge)** – Pros: near-native speed, lower memory, strong type guarantees. Cons: longer compile times, smaller LLM ecosystem.  
+  • **LangGraph / Python orchestration** – Pros: rich AI tooling, graph-based agent flows, mature community. Cons: additional runtime, bridging to Next.js.  
+  → **Recommendation:** keep core web layer in TypeScript for tight Next.js integration, but spin out compute-heavy analysis (e.g. embedding similarity) into a small Rust service compiled to WebAssembly for edge execution.
+- Migrate from `/api/*` routes to **Next.js Server Actions** wherever possible to simplify data-fetching and reduce client bundle size.
+- Replace heuristic keyword scoring with an embedding-based similarity check (OpenAI embeddings or vector DB) for higher accuracy.
+- Introduce streaming responses for LLM providers → real-time typing indicator already exists in template/chatbot.
+- Add a **Job Board** panel listing fetched Upwork jobs with quick-apply shortcuts that pre-fill the chat with the job description.
+- Persist chat sessions per job in localStorage / Supabase so context is preserved across reloads.
+- Provide multiple proposal tones (casual, executive summary, technical deep-dive) via a dropdown.
+- Integrate Resume / Portfolio snippets so the agent can reference concrete achievements automatically.
+- Prompt-based refactor assistant ("shorten", "add timeline", "focus on ROI") to post-process generated proposals.
+
+### Issues
+1. **Modularize core logic**: Split `src/components/agent/upwork/logic.ts` into focused files:  
+   • `scoring.ts` → `scoreJob` & weight constants  
+   • `extract.ts` → `extractJobDetails`  
+   • `repos.ts` → `findRelevantRepos` (plus future embedding helpers)  
+   • `proposal.ts` → `generateProposal`  
+   Keep a barrel export in `logic.ts` for backward-compatibility.
+2. **Remove duplication**: Delete legacy `score.ts` and update all imports to the new modules.
+3. **Finish model selector**: Implement `model.tsx` to choose provider (OpenAI, Gemini, Local) and parameters.
+4. **Server actions pipeline**: Add typed `analyze` action (`actions.ts`) and deprecate any remaining API routes.
+5. **State persistence**: Store chat sessions & provider choice with `usePersistentState` (localStorage/Supabase).
+6. **Dynamic weighting UI**: Expose sliders/toggles for adjusting scoring weights in real time.
+7. **Prompt library build-out**: Populate `prompt.ts` with reusable system/user prompts and role templates.
+8. **Testing**: Add Vitest unit tests for all new modules and CI workflow.
+9. **CI/CD**: GitHub Action for lint, test, and type-check on every PR.
+
+### Prompt Library
+```prompt
+// Generate Upwork analyze server action
+Create `src/components/agent/upwork/actions.ts` exporting an async `analyze` server action that:
+1. Receives { description, repositories }.
+2. Calls OpenAI chat completions with the system prompt from `src/components/agent/upwork/prompt.ts`.
+3. Returns { score, details } JSON matching `JobAnalysis`.
+
+// Consolidate duplicate scoring logic
+Move all functions from score.ts into logic.ts, export unified helpers, delete score.ts and update imports project-wide.
+
+// Persist chat history
+Implement a usePersistentState hook in src/components/lib/use-persistent-state.ts that mirrors useState but syncs to localStorage keyed by window.location.pathname.
+
+// Add embedding-based repo matching
+Enhance findRelevantRepos in logic.ts to:
+1. Generate embeddings for description & repo descriptions using @upstash/vector.
+2. Compute cosine similarity and pick top-N repos where similarity > 0.75.
+
+// Scaffold Vitest tests
+Create tests/logic.test.ts with cases for scoreJob, extractJobDetails, generateProposal ensuring expected outputs for sample descriptions.
+```
