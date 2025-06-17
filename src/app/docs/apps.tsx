@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { ArrowUpRight } from "lucide-react"
 import { appsData } from "./contant"
 
 const LinkButton = ({ href, type, children }: { href: string; type: "repository" | "preview"; children: React.ReactNode }) => {
@@ -10,18 +11,19 @@ const LinkButton = ({ href, type, children }: { href: string; type: "repository"
   )
   
   const Preview = () => (
-    <svg className="w-3 h-3 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <g fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="3.5"/>
-        <path d="M21 12s-1-8-9-8s-9 8-9 8"/>
-      </g>
-    </svg>
+    <ArrowUpRight className="w-3 h-3 ml-1" />
   )
   
   return (
     <Button variant="ghost" size="sm" asChild>
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {type === "repository" ? <Repository /> : <Preview />} {children}
+      <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+        {type === "repository" && (
+          <span className="mr-1 inline-flex">
+            <Repository />
+          </span>
+        )}
+        {children}
+        {type === "preview" && <Preview />}
       </a>
     </Button>
   )
@@ -39,7 +41,9 @@ export default function ActiveApps() {
               <div className="font-medium min-w-[120px]">{app.name}</div>
               <div className="text-sm text-muted-foreground min-w-[140px]">{app.description}</div>
               {/* <LinkButton href={app.repositoryUrl} type="repository">Repo</LinkButton> */}
-              <LinkButton href={app.previewUrl} type="preview">View</LinkButton>
+              <div className="ml-auto">
+                <LinkButton href={app.previewUrl} type="preview">Live&nbsp;preview</LinkButton>
+              </div>
             </div>
             {index < appsData.length - 1 && (
               <hr className="border-t border-border" />
