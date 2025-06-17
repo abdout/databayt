@@ -64,43 +64,42 @@ export function CustomVideoPlayer({ url, className = "" }: CustomVideoPlayerProp
         </div>
       }>
         {isYouTube ? (
-          <ReactPlayer
-            url={url}
-            width="100%"
-            height="100%"
-            playing={isInView && !hasPlayedOnce && isMounted}
-            muted={isMuted}
-            onEnded={handleVideoEnd}
-            config={{
-              youtube: {
-                playerVars: {
-                  modestbranding: 1,
-                  rel: 0,
-                  color: "white",
-                  controls: 0,
-                  showinfo: 0,
-                  iv_load_policy: 3, // Hide video annotations
-                  fs: 0, // Hide fullscreen button
-                  disablekb: 1, // Disable keyboard controls
-                  playsinline: 1,
-                  origin: typeof window !== 'undefined' ? window.location.origin : '',
-                  widget_referrer: typeof window !== 'undefined' ? window.location.origin : '',
-                  enablejsapi: 1,
-                },
-                embedOptions: {
-                  controls: 0,
-                  showinfo: 0,
-                  rel: 0,
-                },
-              },
-            }}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              pointerEvents: "none", // Prevent interaction with YouTube UI
-            }}
-          />
+          <div className="relative w-full h-full overflow-hidden">
+            <div className="absolute inset-[-60px]">
+              <ReactPlayer
+                url={url}
+                width="100%"
+                height="100%"
+                playing={isInView && !hasPlayedOnce && isMounted}
+                muted={isMuted}
+                onEnded={handleVideoEnd}
+                playsinline
+                controls={false}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      modestbranding: 1,
+                      rel: 0,
+                      controls: 0,
+                      showinfo: 0,
+                      iv_load_policy: 3,
+                      fs: 0,
+                      disablekb: 1,
+                      playsinline: 1,
+                      cc_load_policy: 0,
+                      origin: typeof window !== 'undefined' ? window.location.origin : '',
+                    },
+                  },
+                }}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  pointerEvents: "none",
+                }}
+              />
+            </div>
+          </div>
         ) : (
           <video
             className="w-full h-full object-cover"
