@@ -85,153 +85,152 @@ export const docsConfig: DocsConfig = {
           href: "/docs/contribute",
           items: [],
         },
-        {
-          title: "Code Review",
-          href: "/docs/contributing/code-review",
-          items: [],
-        },
-        {
-          title: "Issue Guidelines",
-          href: "/docs/contributing/issue-guidelines",
-          items: [],
-        },
-        {
-          title: "Pull Requests",
-          href: "/docs/contributing/pull-requests",
-          items: [],
-        },
+        // {
+        //   title: "Code Review",
+        //   href: "/docs/contributing/code-review",
+        //   items: [],
+        // },
+        // {
+        //   title: "Issue Guidelines",
+        //   href: "/docs/contributing/issue-guidelines",
+        //   items: [],
+        // },
+        // {
+        //   title: "Pull Requests",
+        //   href: "/docs/contributing/pull-requests",
+        //   items: [],
+        // },
       ],
     },
-    {
-      title: "Governance",
-      items: [
-        {
-          title: "Code of Conduct",
-          href: "/docs/governance/code-of-conduct",
-          items: [],
-        },
-        {
-          title: "Decision Making",
-          href: "/docs/governance/decision-making",
-          items: [],
-        },
-        {
-          title: "Stock Sharing",
-          href: "/docs/governance/stock-sharing",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Development",
-      items: [
-        {
-          title: "Development Patterns",
-          href: "/docs/development/patterns",
-          items: [],
-        },
-        {
-          title: "Rules & Standards",
-          href: "/docs/development/rules",
-          items: [],
-        },
-        {
-          title: "Technical Record",
-          href: "/docs/development/technical-record",
-          items: [],
-        },
-        {
-          title: "MCP Protocols",
-          href: "/docs/development/mcp",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Business",
-      items: [
-        {
-          title: "Roadmap",
-          href: "/docs/business/roadmap",
-          items: [],
-        },
-        {
-          title: "Earning Model",
-          href: "/docs/business/earning",
-          items: [],
-        },
-        {
-          title: "Sales Process",
-          href: "/docs/business/sales",
-          items: [],
-        },
-        {
-          title: "Pricing Strategy",
-          href: "/docs/business/pricing",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Community",
-      items: [
-        {
-          title: "Issues & Support",
-          href: "/docs/community/issues",
-          items: [],
-        },
-        {
-          title: "Discussions",
-          href: "/docs/community/discussions",
-          items: [],
-        },
-        {
-          title: "Customer Support",
-          href: "/docs/community/support",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Legal",
-      items: [
-        {
-          title: "Open Source Licenses",
-          href: "/docs/legal/licenses",
-          items: [],
-        },
-        {
-          title: "Terms of Service",
-          href: "/docs/legal/terms",
-          items: [],
-        },
-        {
-          title: "Privacy Policy",
-          href: "/docs/legal/privacy",
-          items: [],
-        },
-      ],
-    },
-    
-    {
-      title: "Meta",
-      items: [
-        {
-          title: "Changelog",
-          href: "/docs/meta/changelog",
-          items: [],
-        },
-        {
-          title: "Site Map",
-          href: "/docs/meta/sitemap",
-          items: [],
-        },
-        {
-          title: "API Reference",
-          href: "/docs/meta/api-reference",
-          items: [],
-        },
-      ],
-    },
+    // {
+    //   title: "Governance",
+    //   items: [
+    //     {
+    //       title: "Code of Conduct",
+    //       href: "/docs/governance/code-of-conduct",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Decision Making",
+    //       href: "/docs/governance/decision-making",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Stock Sharing",
+    //       href: "/docs/governance/stock-sharing",
+    //       items: [],
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Development",
+    //   items: [
+    //     {
+    //       title: "Development Patterns",
+    //       href: "/docs/development/patterns",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Rules & Standards",
+    //       href: "/docs/development/rules",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Technical Record",
+    //       href: "/docs/development/technical-record",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "MCP Protocols",
+    //       href: "/docs/development/mcp",
+    //       items: [],
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Business",
+    //   items: [
+    //     {
+    //       title: "Roadmap",
+    //       href: "/docs/business/roadmap",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Earning Model",
+    //       href: "/docs/business/earning",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Sales Process",
+    //       href: "/docs/business/sales",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Pricing Strategy",
+    //       href: "/docs/business/pricing",
+    //       items: [],
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Community",
+    //   items: [
+    //     {
+    //       title: "Issues & Support",
+    //       href: "/docs/community/issues",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Discussions",
+    //       href: "/docs/community/discussions",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Customer Support",
+    //       href: "/docs/community/support",
+    //       items: [],
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Legal",
+    //   items: [
+    //     {
+    //       title: "Open Source Licenses",
+    //       href: "/docs/legal/licenses",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Terms of Service",
+    //       href: "/docs/legal/terms",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Privacy Policy",
+    //       href: "/docs/legal/privacy",
+    //       items: [],
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Meta",
+    //   items: [
+    //     {
+    //       title: "Changelog",
+    //       href: "/docs/meta/changelog",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Site Map",
+    //       href: "/docs/meta/sitemap",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "API Reference",
+    //       href: "/docs/meta/api-reference",
+    //       items: [],
+    //     },
+    //   ],
+    // },
   ],
 } 
