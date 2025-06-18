@@ -70,6 +70,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/pattern",
           items: [],
         },
+        {
+          title: "Credits",
+          href: "/docs/credit",
+          items: [],
+        },
       ],
     },
     {
