@@ -51,6 +51,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Newcomers",
+          href: "/docs/newcomers",
+          items: [],
+        },
+        {
           title: "Architecture",
           href: "/docs/architecture",
           items: [],
