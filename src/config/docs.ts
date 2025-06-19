@@ -56,6 +56,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Business Model",
+          href: "/docs/business-model",
+          items: [],
+        },
+        {
           title: "Revenue",
           href: "/docs/revenue",
           items: [],
