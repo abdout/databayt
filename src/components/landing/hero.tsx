@@ -23,15 +23,15 @@ const Hero = () => {
             Building codebase for business automation and open sourcing
             everything. Follow along as we figure this out together.
           </p>
-          <div className="space-x-4">
-            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 w-full sm:w-auto px-4 sm:px-0 max-w-[240px] sm:max-w-none mx-auto">
+            <Link href="/login" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto")}>
               Get Started
             </Link>
             <Link
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}
             >
               GitHub
             </Link>
