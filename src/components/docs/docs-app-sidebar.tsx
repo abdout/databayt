@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +11,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar
 } from "@/components/ui/sidebar"
+
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { docsConfig } from "@/config/docs"
 
@@ -51,7 +52,12 @@ function flattenSidebarNav(items: typeof docsConfig.sidebarNav) {
 
 export function DocsAppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
+  const { setOpenMobile } = useSidebar()
   const flatNavItems = React.useMemo(() => flattenSidebarNav(docsConfig.sidebarNav), [])
+
+  const handleLinkClick = React.useCallback(() => {
+    setOpenMobile(false)
+  }, [setOpenMobile])
 
   return (
     <Sidebar 
@@ -62,7 +68,7 @@ export function DocsAppSidebar({ ...props }: React.ComponentProps<typeof Sidebar
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link href="/docs" className="flex items-center">
+              <Link href="/docs" className="flex items-center" onClick={handleLinkClick}>
                 <div className="flex flex-col leading-none">
                   <span className="font-medium text-base text-foreground -ml-1">Documentation</span>
                 </div>
@@ -80,7 +86,7 @@ export function DocsAppSidebar({ ...props }: React.ComponentProps<typeof Sidebar
                 return (
                   <SidebarMenuItem key={item.href}>
                     <SidebarMenuButton asChild isActive={isActive} size="sm">
-                      <Link href={item.href} className="text-sm font-normal">
+                      <Link href={item.href} className="text-sm font-normal" onClick={handleLinkClick}>
                         {item.title}
                       </Link>
                     </SidebarMenuButton>

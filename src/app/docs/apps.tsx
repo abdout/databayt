@@ -36,10 +36,10 @@ export default function ActiveApps() {
       <div className="grid grid-cols-1 my-6 mr-8">
         {appsData.map((app, index) => (
           <div key={app.name}>
-            <div className="flex  gap-2 py-4">
+            <div className="flex gap-2 py-4">
               <div className="font-mono text-sm text-muted-foreground min-w-[20px]">{index + 1}.</div>
               <div className="font-medium min-w-[120px]">{app.name}</div>
-              <div className="text-sm text-muted-foreground min-w-[140px]">{app.description}</div>
+              <div className="hidden md:block text-sm text-muted-foreground min-w-[140px]">{app.description}</div>
               {/* <LinkButton href={app.repositoryUrl} type="repository">Repo</LinkButton> */}
               <div className="ml-auto">
                 <LinkButton href={app.previewUrl} type="preview">Live&nbsp;preview</LinkButton>

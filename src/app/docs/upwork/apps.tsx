@@ -34,12 +34,16 @@ export default function ActiveApps() {
       <div className="grid grid-cols-1 my-6 mr-8">
         {appsData.map((app, index) => (
           <div key={app.name}>
-            <div className="flex  gap-2 py-4">
-              <div className="font-mono text-sm text-muted-foreground min-w-[20px]">{index + 1}.</div>
-              <div className="font-medium min-w-[120px]">{app.name}</div>
-              <div className="text-sm text-muted-foreground min-w-[140px]">{app.description}</div>
-              <LinkButton href={app.repositoryUrl} type="repository">Repo</LinkButton>
-              <LinkButton href={app.previewUrl} type="preview">View</LinkButton>
+            <div className="flex flex-col sm:flex-row gap-2 py-4">
+              <div className="flex gap-2 items-center">
+                <div className="font-mono text-sm text-muted-foreground min-w-[20px]">{index + 1}.</div>
+                <div className="font-medium">{app.name}</div>
+              </div>
+              <div className="text-sm text-muted-foreground sm:ml-[140px]">{app.description}</div>
+              <div className="flex gap-2 mt-2 sm:mt-0">
+                <LinkButton href={app.repositoryUrl} type="repository">Repo</LinkButton>
+                <LinkButton href={app.previewUrl} type="preview">View</LinkButton>
+              </div>
             </div>
             {index < appsData.length - 1 && (
               <hr className="border-t border-border" />
