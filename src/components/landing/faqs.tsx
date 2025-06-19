@@ -142,6 +142,37 @@ export default function FAQs() {
                                     </AccordionContent>
                                 </AccordionItem>
 
+                                <AccordionItem value="item-12">
+                                    <AccordionTrigger className="text-base font-medium">
+                                        Can I include Databayt projects in my portfolio?
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <p className="text-muted-foreground mb-4">Absolutely! Working with us provides multiple portfolio benefits:</p>
+                                        <ul className="list-outside list-disc space-y-2 pl-4">
+                                            <li className="text-muted-foreground">Add real-world enterprise projects to your portfolio</li>
+                                            <li className="text-muted-foreground">Showcase your contributions to open-source</li>
+                                            <li className="text-muted-foreground">Demonstrate experience with modern tech stack</li>
+                                            <li className="text-muted-foreground">Build a public contribution history on GitHub</li>
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+
+                                <AccordionItem value="item-13">
+                                    <AccordionTrigger className="text-base font-medium">
+                                        How does the earning model work for real-world projects?
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <p className="text-muted-foreground mb-4">Our earning model has multiple streams:</p>
+                                        <ul className="list-outside list-disc space-y-2 pl-4">
+                                            <li className="text-muted-foreground">Revenue share from components used in client projects</li>
+                                            <li className="text-muted-foreground">Direct earnings from client project implementations</li>
+                                            <li className="text-muted-foreground">Ongoing maintenance and support revenue</li>
+                                            <li className="text-muted-foreground">Bonus rewards for high-impact contributions</li>
+                                            <li className="text-muted-foreground">Ownership stake in projects you help build</li>
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+
                                 <AccordionItem value="item-11">
                                     <AccordionTrigger className="text-base font-medium">
                                         Still have questions?
