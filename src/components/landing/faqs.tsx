@@ -1,6 +1,7 @@
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 
 export default function FAQs() {
     return (
@@ -147,10 +148,43 @@ export default function FAQs() {
                                     </AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Join our community discussions on GitHub</li>
+                                            <li className="text-muted-foreground">
+                                                <Link 
+                                                    href="https://github.com/abdout/databayt/discussions" 
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:underline"
+                                                >
+                                                    Join our community discussions on GitHub
+                                                </Link>
+                                            </li>
+                                            <li className="text-muted-foreground">
+                                                <Link 
+                                                    href="https://discord.gg/uPa4gGG62c" 
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:underline"
+                                                >
+                                                    Join our Discord community
+                                                </Link>
+                                            </li>
                                             <li className="text-muted-foreground">Contact us for a free consultation</li>
-                                            <li className="text-muted-foreground">Check our documentation at databayt.org/docs</li>
-                                            <li className="text-muted-foreground">Email us at hello@databayt.org</li>
+                                            <li className="text-muted-foreground">
+                                                <Link 
+                                                    href="/docs" 
+                                                    className="hover:underline"
+                                                >
+                                                    Check our documentation at databayt.org/docs
+                                                </Link>
+                                            </li>
+                                            <li className="text-muted-foreground">
+                                                <Link 
+                                                    href="mailto:hello@databayt.org"
+                                                    className="hover:underline"
+                                                >
+                                                    Email us at hello@databayt.org
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>

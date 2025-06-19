@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { GitHub, Discord } from "@/components/atom/icons"
+import Link from "next/link"
 
 export default function LetsWorkTogether() {
   return (
@@ -15,8 +16,22 @@ export default function LetsWorkTogether() {
             Ready to elevate business with advanced automation solutions? Experience streamlined operations and enhanced efficiency for any industry.
             </p>
             <div className="flex gap-4 mt-4 items-center">
-              <GitHub width={30} height={30} />
-              <Discord width={35} height={35} />
+              <Link 
+                href="https://github.com/abdout/databayt" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <GitHub width={30} height={30} />
+              </Link>
+              <Link 
+                href="https://discord.gg/uPa4gGG62c" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Discord width={35} height={35} />
+              </Link>
             </div>
           </div>
           <div className="flex-1 pt-1">
