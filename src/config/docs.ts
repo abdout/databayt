@@ -51,21 +51,6 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Get Started",
-          href: "/docs/get-started",
-          items: [],
-        },
-        {
-          title: "GitHub",
-          href: "/docs/github",
-          items: [],
-        },
-        {
-          title: "Localhost",
-          href: "/docs/localhost",
-          items: [],
-        },
-        {
           title: "Newcomers",
           href: "/docs/newcomers",
           items: [],
@@ -78,6 +63,21 @@ export const docsConfig: DocsConfig = {
         {
           title: "Revenue",
           href: "/docs/revenue",
+          items: [],
+        },
+        {
+          title: "Get Started",
+          href: "/docs/get-started",
+          items: [],
+        },
+        {
+          title: "Localhost",
+          href: "/docs/localhost",
+          items: [],
+        },
+        {
+          title: "GitHub",
+          href: "/docs/github",
           items: [],
         },
         {
