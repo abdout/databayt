@@ -51,6 +51,16 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Get Started",
+          href: "/docs/get-started",
+          items: [],
+        },
+        {
+          title: "Localhost",
+          href: "/docs/localhost",
+          items: [],
+        },
+        {
           title: "Newcomers",
           href: "/docs/newcomers",
           items: [],

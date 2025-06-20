@@ -1,0 +1,238 @@
+# Get Started
+
+This guide will help you quickly set up your development environment and make your first contribution to Databayt. Whether you're a seasoned developer or just starting out, we'll walk you through everything you need to know.
+
+<div className="text-sm text-muted-foreground pt-4 bg-muted rounded-lg px-4 flex items-center">
+  <strong>Technology used:</strong> Next.js, React, TypeScript, Tailwind CSS, pnpm... <a href="/docs/stack" className="underline hover:text-primary">see full stack →</a>
+</div>
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed on your machine:
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Node.js 18+</h4>
+    <div className="text-sm text-muted-foreground">
+      Download from <a href="https://nodejs.org" className="underline hover:text-primary" target="_blank">nodejs.org</a>. We recommend the LTS version for stability.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">pnpm</h4>
+    <div className="text-sm text-muted-foreground">
+      Fast, disk space efficient package manager. Install with: <code className="bg-muted px-1 rounded">npm install -g pnpm</code>
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Git</h4>
+    <div className="text-sm text-muted-foreground">
+      Version control system. Download from <a href="https://git-scm.com" className="underline hover:text-primary" target="_blank">git-scm.com</a> or install via your OS package manager.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Code Editor</h4>
+    <div className="text-sm text-muted-foreground">
+      For free, we recommend <a href="https://code.visualstudio.com" className="underline hover:text-primary" target="_blank">VS Code</a>. For paid, we recommend <a href="https://cursor.sh" className="underline hover:text-primary" target="_blank">Cursor</a>.
+    </div>
+  </div>
+</div>
+
+## Quick Start
+
+Get up and running in 5 minutes:
+
+<div className="p-6 border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/20 my-6">
+  <h4 className="font-semibold mb-2">📋 Detailed Step-by-Step Guide</h4>
+  <p className="text-sm text-muted-foreground">
+    For a comprehensive visual guide with screenshots, check out our <a href="/docs/localhost" className="underline hover:text-primary font-medium">Localhost Development Setup</a> page.
+  </p>
+</div>
+
+### 1. Fork & Clone
+
+First, fork the repository you want to contribute to on GitHub, then clone it locally:
+
+```bash
+# Replace [repository] with the specific repo you want to contribute to
+git clone https://github.com/your-username/[repository].git
+cd [repository]
+```
+
+### 2. Install Dependencies
+
+Install all project dependencies using pnpm:
+
+```bash
+pnpm install
+```
+
+### 3. Set Up Environment
+
+Copy the environment variables file and configure as needed:
+
+```bash
+cp .env.example .env.local
+```
+
+### 4. Start Development Server
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Your app should now be running at `http://localhost:3000` 🎉
+
+<div className="mt-6 p-4 bg-muted rounded-lg">
+  <p className="text-sm">
+    <strong>Need more help?</strong> Our <a href="/docs/localhost" className="underline hover:text-primary">visual localhost setup guide</a> provides detailed screenshots for each step above.
+  </p>
+</div>
+
+## Your First Contribution
+
+### Finding Something to Work On
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Good First Issues</h4>
+    <div className="text-sm text-muted-foreground">
+      Look for issues labeled "good first issue" - these are specifically chosen for newcomers.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Documentation</h4>
+    <div className="text-sm text-muted-foreground">
+      Improve docs, fix typos, add examples. Perfect for getting familiar with our codebase.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">UI Components</h4>
+    <div className="text-sm text-muted-foreground">
+      Build reusable components following our design system and patterns.
+    </div>
+  </div>
+</div>
+
+### Making Changes
+
+1. **Create a branch** for your changes:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make your changes** following our [coding patterns](/docs/pattern)
+
+3. **Test your changes** locally:
+   ```bash
+   pnpm build
+   pnpm lint
+   ```
+
+4. **Commit your changes** using conventional commits:
+   ```bash
+   git add .
+   git commit -m "feat: add new component feature"
+   ```
+
+5. **Push and create a Pull Request**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+## Development Workflow
+
+### Project Structure
+
+Understanding our architecture helps you navigate the codebase:
+
+```
+src/
+├── app/                 # Next.js app router
+├── components/          # Reusable UI components
+│   ├── ui/             # Basic UI primitives
+│   ├── landing/        # Landing page components
+│   └── [feature]/      # Feature-specific components
+├── lib/                # Utility functions
+├── styles/             # Global styles
+└── types/              # TypeScript type definitions
+```
+
+### Key Commands
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Development</h4>
+    <div className="text-sm text-muted-foreground space-y-1">
+      <div><code className="bg-muted px-1 rounded">pnpm dev</code> - Start dev server</div>
+      <div><code className="bg-muted px-1 rounded">pnpm build</code> - Build for production</div>
+      <div><code className="bg-muted px-1 rounded">pnpm start</code> - Run production build</div>
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Quality</h4>
+    <div className="text-sm text-muted-foreground space-y-1">
+      <div><code className="bg-muted px-1 rounded">pnpm lint</code> - Run ESLint</div>
+      <div><code className="bg-muted px-1 rounded">pnpm type-check</code> - Check TypeScript</div>
+      <div><code className="bg-muted px-1 rounded">pnpm format</code> - Format with Prettier</div>
+    </div>
+  </div>
+</div>
+
+## Getting Help
+
+### Community Support
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Discord Community</h4>
+    <div className="text-sm text-muted-foreground">
+      Join our active Discord server with 500+ members. Get real-time help and connect with other contributors.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">GitHub Discussions</h4>
+    <div className="text-sm text-muted-foreground">
+      Ask questions, share ideas, and discuss features in our GitHub discussions forum.
+    </div>
+  </div>
+</div>
+
+### Mentorship Program
+
+New contributors get paired with experienced mentors who provide:
+- Code review and feedback
+- Guidance on best practices
+- Help with technical challenges
+- Career development advice
+
+## Next Steps
+
+Once you're set up and have made your first contribution:
+
+1. **Explore the codebase** - Browse different repositories to understand our ecosystem
+2. **Read the patterns** - Check our [development patterns](/docs/pattern) guide
+3. **Join the community** - Connect with other contributors on Discord
+4. **Find your niche** - Identify areas that match your interests and skills
+5. **Share your work** - Showcase your contributions and get feedback
+
+## Resources
+
+### Essential Reading
+
+* [Architecture Overview](/docs/architecture) – Understand our system design
+* [Development Patterns](/docs/pattern) – Learn our coding standards
+* [Contributing Guide](/docs/contribute) – Detailed contribution guidelines
+* [Revenue Sharing](/docs/revenue) – How contributors earn from their work
+
+### Quick Links
+
+* [GitHub Organization](https://github.com/databayt)
+* [Discord Community](https://discord.gg/databayt)
+* [Issue Tracker](https://github.com/databayt/community/issues)
+* [Project Roadmap](/docs/roadmap)
+
+---
+
+**Ready to build something amazing?** The best way to learn is by doing. Pick a good first issue and start contributing today. Remember, every expert was once a beginner, and we're here to support your journey every step of the way. 

@@ -1,0 +1,317 @@
+import Image from "next/image"
+
+# Localhost Development Setup
+
+A complete step-by-step guide to fork, clone, and run Databayt projects locally on your machine.
+
+<div className="text-sm text-muted-foreground pt-4 bg-muted rounded-lg px-4 flex items-center">
+  <strong>What you'll learn:</strong> Fork repository → Clone locally → Install dependencies → Run development server → Make your first contribution
+</div>
+
+## Step 1: Fork the Project
+
+Start by creating your own copy of the repository on GitHub.
+
+1. **Navigate to the repository** you want to contribute to
+2. **Click the "Fork" button** in the top-right corner
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-1-fork.png" 
+    alt="Click the Fork button on GitHub repository page" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 2: Create Your Fork
+
+Ensure the repository name is available and create your fork.
+
+1. **Verify the repository name** is available
+2. **Keep the default settings** (unless you need to change them)
+3. **Click "Create fork"** to complete the process
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-2-create-fork.png" 
+    alt="Create fork dialog with repository name and settings" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 3: Open VS Code/Cursor
+
+Launch your preferred code editor and prepare to clone the repository.
+
+1. **Open a new window** in VS Code or Cursor
+2. **Click on "Clone Repository"** or use the Source Control panel
+3. **Prepare to paste your repository URL**
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-3-open-editor.png" 
+    alt="VS Code or Cursor editor with clone repository option highlighted" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 4: Clone from GitHub
+
+Get your forked repository URL and clone it locally.
+
+1. **Go back to your forked repository** on GitHub
+2. **Click the green "Code" button**
+3. **Copy the HTTPS URL** to your clipboard
+4. **Paste it in your editor's clone dialog**
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-4-clone-github.png" 
+    alt="GitHub clone dialog showing HTTPS URL copy button" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 5: Choose Local Directory
+
+Select where you want to store the project on your computer.
+
+1. **Choose a directory** for your projects (e.g., `~/Documents/projects/`)
+2. **Create a new folder** if needed
+3. **Select the location** and confirm
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-5-choose-directory.png" 
+    alt="File explorer showing directory selection for cloning" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 6: Open in Editor
+
+Open the cloned project in your code editor.
+
+1. **Wait for the cloning process** to complete
+2. **Click "Open"** when prompted
+3. **Your project is now ready** for development
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-6-open-project.png" 
+    alt="Project successfully opened in VS Code or Cursor" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 7: Install Dependencies
+
+Use pnpm to install all required dependencies.
+
+1. **Open the integrated terminal** (`Ctrl/Cmd + ~`)
+2. **Run the install command**:
+
+```bash
+pnpm install
+```
+
+3. **Wait for installation** to complete
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-7-install-deps.png" 
+    alt="Terminal showing pnpm install command running" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 8: Set Up Environment
+
+Configure your environment variables for local development.
+
+1. **Copy the environment template**:
+```bash
+cp .env.example .env.local
+```
+
+2. **Edit `.env.local`** with your specific values (if needed)
+3. **Save the file**
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-8-env-setup.png" 
+    alt="Environment file setup and configuration" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 9: Start Development Server
+
+Launch the development server and see your app running.
+
+1. **Run the development command**:
+```bash
+pnpm dev
+```
+
+2. **Wait for the server** to start
+3. **Open your browser** to `http://localhost:3000`
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-9-dev-server.png" 
+    alt="Terminal showing development server running and localhost URL" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Step 10: Verify Installation
+
+Confirm everything is working correctly.
+
+1. **Check the website loads** properly in your browser
+2. **Verify hot reload** by making a small change
+3. **Ensure no console errors** are present
+
+<div className="my-8 border rounded-lg overflow-hidden">
+  <Image 
+    src="/contribute/step-10-verify.png" 
+    alt="Browser showing the running application at localhost:3000" 
+    width={800}
+    height={400}
+    className="w-full h-auto"
+  />
+</div>
+
+## Next Steps: Making Your First Contribution
+
+Now that your local environment is set up, you're ready to contribute!
+
+### Create a Feature Branch
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+### Make Your Changes
+
+1. **Follow our coding patterns** - Check [/docs/pattern](/docs/pattern)
+2. **Use our components** - Browse `src/components/ui/` for reusable components
+3. **Test locally** - Ensure your changes work properly
+
+### Test Your Changes
+
+```bash
+# Build the project
+pnpm build
+
+# Run linting
+pnpm lint
+
+# Type checking (if available)
+pnpm type-check
+```
+
+### Commit and Push
+
+```bash
+# Stage your changes
+git add .
+
+# Commit with conventional format
+git commit -m "feat: add new feature description"
+
+# Push to your fork
+git push origin feature/your-feature-name
+```
+
+### Create a Pull Request
+
+1. **Go to your fork** on GitHub
+2. **Click "Compare & pull request"**
+3. **Fill out the PR template**
+4. **Submit for review**
+
+## Common Commands Reference
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Development</h4>
+    <div className="text-sm text-muted-foreground space-y-1">
+      <div><code className="bg-muted px-1 rounded">pnpm dev</code> - Start development server</div>
+      <div><code className="bg-muted px-1 rounded">pnpm build</code> - Build for production</div>
+      <div><code className="bg-muted px-1 rounded">pnpm start</code> - Run production build</div>
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Quality Checks</h4>
+    <div className="text-sm text-muted-foreground space-y-1">
+      <div><code className="bg-muted px-1 rounded">pnpm lint</code> - Run ESLint</div>
+      <div><code className="bg-muted px-1 rounded">pnpm format</code> - Format code</div>
+      <div><code className="bg-muted px-1 rounded">pnpm type-check</code> - Check TypeScript</div>
+    </div>
+  </div>
+</div>
+
+## Troubleshooting
+
+### Common Issues
+
+**Port already in use?**
+```bash
+# Kill process on port 3000
+npx kill-port 3000
+# Or use a different port
+pnpm dev -- --port 3001
+```
+
+**Node modules issues?**
+```bash
+# Clean and reinstall
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+**Environment variables not working?**
+- Check `.env.local` file exists
+- Restart the development server
+- Ensure variables start with `NEXT_PUBLIC_` for client-side
+
+## Getting Help
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Community Support</h4>
+    <div className="text-sm text-muted-foreground">
+      Join our Discord server for real-time help and connect with other contributors.
+    </div>
+  </div>
+  <div className="p-6 border rounded-lg">
+    <h4 className="font-semibold mb-2">Documentation</h4>
+    <div className="text-sm text-muted-foreground">
+      Check our <a href="/docs/get-started" className="underline hover:text-primary">Get Started guide</a> and <a href="/docs/contribute" className="underline hover:text-primary">Contributing guidelines</a>.
+    </div>
+  </div>
+</div>
+
+---
+
+**🎉 Congratulations!** You now have a fully functional local development environment. Start exploring the codebase, pick an issue that interests you, and make your first contribution to Databayt! 
