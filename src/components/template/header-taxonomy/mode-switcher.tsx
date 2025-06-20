@@ -7,10 +7,17 @@ import { Button } from "@/components/ui/button"
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleTheme = React.useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
   }, [resolvedTheme, setTheme])
+
+  if (!mounted) return null // must wait untill the component mount to prevent hydration mismatch
 
   return (
     <Button
