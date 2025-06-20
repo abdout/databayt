@@ -56,6 +56,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "GitHub",
+          href: "/docs/github",
+          items: [],
+        },
+        {
           title: "Localhost",
           href: "/docs/localhost",
           items: [],
