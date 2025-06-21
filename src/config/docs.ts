@@ -100,6 +100,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/credit",
           items: [],
         },
+        {
+          title: "Vibe Coding",
+          href: "/docs/vibe-coding",
+          items: [],
+        },
       ],
     },
     {
