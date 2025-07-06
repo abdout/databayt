@@ -1,7 +1,12 @@
+'use client'
+
 import Link from "next/link"
 import { features } from "../agent/constant"
+import { useLocale } from "@/hooks/use-locale"
 
 export default function AllFeatures() {
+  const { t } = useLocale()
+  
   return (
     <div className="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {features.map((feature) => (
@@ -17,11 +22,11 @@ export default function AllFeatures() {
             </div>
             {/* </div> */}
             <div className="space-y-2">
-              <h4 className="text-foreground">
-                {feature.title}
+              <h4 className="text-foreground rtl:text-right ltr:text-left">
+                {t(`features.items.${feature.id}.title`)}
               </h4>
-              <p className="text-sm text-muted-foreground font-light">
-                {feature.description}
+              <p className="text-sm text-muted-foreground font-light rtl:text-right ltr:text-left">
+                {t(`features.items.${feature.id}.description`)}
               </p>
             </div>
           </div>

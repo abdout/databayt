@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { automated } from "@/components/automated/constant";
+import { useAutomatedI18n } from "@/components/automated/use-automated-i18n";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
@@ -29,7 +29,8 @@ import {
 
 const ProjectPage = () => {
   const { id } = useParams();
-  const project = automated.find((project) => project.id === id);
+  const automatedProjects = useAutomatedI18n();
+  const project = automatedProjects.find((project) => project.id === id);
   const [activeSection, setActiveSection] = useState("overview");
 
   // Create refs for each section

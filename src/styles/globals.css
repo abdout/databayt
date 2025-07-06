@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
   :root {
@@ -77,5 +77,21 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Enhanced Arabic typography */
+  [dir="rtl"] {
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: auto;
+  }
+  
+  /* Arabic text justification */
+  [dir="rtl"] .text-justify {
+    text-align: justify;
+    text-align-last: right;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 }

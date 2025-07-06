@@ -2,218 +2,219 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
+import { useLocale } from "@/hooks/use-locale"
 
 export default function FAQs() {
+    const { t } = useLocale()
     return (
         <section className="scroll-py-16 py-16 md:scroll-py-32 md:py-32">
-            <div className="">
-                <div className="grid gap-y-12 px-2 lg:[grid-template-columns:1fr_auto]">
-                    <div className="text-center lg:text-left">
-                        <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
-                            Frequently <br className="hidden lg:block" /> Asked <br className="hidden lg:block" />
-                            Questions
+            <div className="container mx-auto px-4">
+                <div className="grid gap-y-16 lg:gap-y-12 lg:[grid-template-columns:1fr_auto] lg:gap-x-16">
+                    <div className="text-center lg:text-start rtl:lg:text-end space-y-4">
+                        <h2 className="mb-6 text-3xl font-semibold md:text-4xl leading-tight">
+                            {t('landing.faqs.title')}
                         </h2>
-                        <p>Your guide to business automation with Databayt.</p>
+                        <p className="text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 rtl:lg:me-0">{t('landing.faqs.subtitle')}</p>
                     </div>
 
-                    <div className="divide-y divide-dashed sm:mx-auto sm:max-w-xl lg:mx-0">
-                        <div className="pb-6">
-                            <h3 className="font-medium">Is the codebase really open source?</h3>
-                            <p className="text-muted-foreground my-4">Yes! Every component and building block is open source. We charge for crafting fully functional solutions and ensuring their ongoing reliability.</p>
-                            <ul className="list-outside list-disc space-y-2 pl-4">
-                                <li className="text-muted-foreground">All atomic components and templates are freely available</li>
-                                <li className="text-muted-foreground">Contributors earn a share of the value they help create</li>
-                                <li className="text-muted-foreground">Full transparency in development and business processes</li>
-                                <li className="text-muted-foreground">Community-driven innovation and collaboration</li>
+                    <div className="divide-y divide-dashed sm:mx-auto sm:max-w-2xl lg:mx-0 lg:max-w-3xl space-y-6">
+                        <div className="pb-8">
+                            <h3 className="font-medium mb-4 text-lg leading-tight">{t('landing.faqs.questions.openSource.title')}</h3>
+                            <p className="text-muted-foreground my-4 leading-relaxed">{t('landing.faqs.questions.openSource.description')}</p>
+                            <ul className="list-outside list-disc space-y-3 ps-6 rtl:ps-0 rtl:pe-6">
+                                <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.openSource.points.1')}</li>
+                                <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.openSource.points.2')}</li>
+                                <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.openSource.points.3')}</li>
+                                <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.openSource.points.4')}</li>
                             </ul>
                         </div>
-                        <div className="pt-6">
+                        <div className="pt-8">
                             <Accordion type="single" collapsible defaultValue="item-1">
                                 <AccordionItem value="item-1">
                                     <AccordionTrigger className="text-base font-medium">
-                                        What exactly does Databayt automate?
+                                        {t('landing.faqs.questions.whatAutomate.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <p className="text-muted-foreground mb-4">We automate repetitive business processes, streamline workflows, and build custom solutions that save you time and reduce manual work.</p>
-                                        <ol className="list-outside list-decimal space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Data processing and analysis automation</li>
-                                            <li className="text-muted-foreground">Workflow optimization and task automation</li>
-                                            <li className="text-muted-foreground">Custom enterprise applications and integrations</li>
+                                        <p className="text-muted-foreground mb-4">{t('landing.faqs.questions.whatAutomate.description')}</p>
+                                        <ol className="list-outside list-decimal space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.whatAutomate.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.whatAutomate.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.whatAutomate.points.3')}</li>
                                         </ol>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-2">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How do I know which plan is right for my business?
+                                        {t('landing.faqs.questions.planSelection.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Choose One Project for specific challenges, Strategic Partner for ongoing development needs, or Product Access for ready-made automation tools. We can help you decide during a consultation.
+                                        {t('landing.faqs.questions.planSelection.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-3">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How can I contribute as a Data Scientist?
+                                        {t('landing.faqs.questions.dataScientist.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Build data analysis automation, predictive models, AI agents for business insights
+                                        {t('landing.faqs.questions.dataScientist.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-4">
                                     <AccordionTrigger className="text-base font-medium">
-                                        Do you provide ongoing support?
+                                        {t('landing.faqs.questions.support.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Yes, we offer continuous support and maintenance to ensure your automation solutions keep running smoothly as your business grows and evolves.
+                                        {t('landing.faqs.questions.support.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-5">
                                     <AccordionTrigger className="text-base font-medium">
-                                        Is this work remote?
+                                        {t('landing.faqs.questions.remote.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Yes, completely remote! Contributors work from anywhere in the world. We use GitHub for collaboration, async communication, and project management.
+                                        {t('landing.faqs.questions.remote.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-6">
                                     <AccordionTrigger className="text-base font-medium">
-                                        What if I can only contribute part-time?
+                                        {t('landing.faqs.questions.partTime.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <p className="text-muted-foreground mb-4">Perfect! Most contributors work part-time:</p>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">No minimum time commitment required</li>
-                                            <li className="text-muted-foreground">Contribute when your schedule allows</li>
-                                            <li className="text-muted-foreground">Start with small tasks and grow your involvement</li>
-                                            <li className="text-muted-foreground">Earn proportional to your contribution level</li>
+                                        <p className="text-muted-foreground mb-4">{t('landing.faqs.questions.partTime.description')}</p>
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.partTime.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.partTime.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.partTime.points.3')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.partTime.points.4')}</li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-7">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How much do you pay contributors?
+                                        {t('landing.faqs.questions.payment.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <p className="text-muted-foreground mb-4">We use a revenue-sharing model:</p>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Contributors earn a percentage of revenue generated from components they build</li>
-                                            <li className="text-muted-foreground">Higher contribution value = higher revenue share</li>
-                                            <li className="text-muted-foreground">Transparent tracking of all contributions and earnings</li>
-                                            <li className="text-muted-foreground">Payment details discussed during onboarding</li>
+                                        <p className="text-muted-foreground mb-4">{t('landing.faqs.questions.payment.description')}</p>
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.payment.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.payment.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.payment.points.3')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.payment.points.4')}</li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-8">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How do I get started contributing?
+                                        {t('landing.faqs.questions.getStartedContributing.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Explore the codebase at our GitHub repository</li>
-                                            <li className="text-muted-foreground">Join our community discussions to introduce yourself</li>
-                                            <li className="text-muted-foreground">Pick a first issue - we have "good first issue" labels for newcomers</li>
-                                            <li className="text-muted-foreground">Submit a pull request - start small and build up</li>
-                                            <li className="text-muted-foreground">Earn your first revenue share as your contributions are used</li>
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.getStartedContributing.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.getStartedContributing.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.getStartedContributing.points.3')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.getStartedContributing.points.4')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.getStartedContributing.points.5')}</li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-9">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How do I get started?
+                                        {t('landing.faqs.questions.getStarted.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Contact us for a consultation where we'll discuss your specific needs, challenges, and goals. We'll recommend the best approach and provide a detailed proposal.
+                                        {t('landing.faqs.questions.getStarted.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-10">
                                     <AccordionTrigger className="text-base font-medium">
-                                        Can I use Databayt components in my own projects?
+                                        {t('landing.faqs.questions.useComponents.title')}
                                     </AccordionTrigger>
                                     <AccordionContent className="text-muted-foreground">
-                                        Yes! All components are open source and can be used in your projects according to their respective licenses. We encourage reuse and building upon our work.
+                                        {t('landing.faqs.questions.useComponents.description')}
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-12">
                                     <AccordionTrigger className="text-base font-medium">
-                                        Can I include Databayt projects in my portfolio?
+                                        {t('landing.faqs.questions.portfolio.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <p className="text-muted-foreground mb-4">Absolutely! Working with us provides multiple portfolio benefits:</p>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Add real-world enterprise projects to your portfolio</li>
-                                            <li className="text-muted-foreground">Showcase your contributions to open-source</li>
-                                            <li className="text-muted-foreground">Demonstrate experience with modern tech stack</li>
-                                            <li className="text-muted-foreground">Build a public contribution history on GitHub</li>
+                                        <p className="text-muted-foreground mb-4">{t('landing.faqs.questions.portfolio.description')}</p>
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.portfolio.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.portfolio.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.portfolio.points.3')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.portfolio.points.4')}</li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-13">
                                     <AccordionTrigger className="text-base font-medium">
-                                        How does the earning model work for real-world projects?
+                                        {t('landing.faqs.questions.earningModel.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <p className="text-muted-foreground mb-4">Our earning model has multiple streams:</p>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">Revenue share from components used in client projects</li>
-                                            <li className="text-muted-foreground">Direct earnings from client project implementations</li>
-                                            <li className="text-muted-foreground">Ongoing maintenance and support revenue</li>
-                                            <li className="text-muted-foreground">Bonus rewards for high-impact contributions</li>
-                                            <li className="text-muted-foreground">Ownership stake in projects you help build</li>
+                                        <p className="text-muted-foreground mb-4">{t('landing.faqs.questions.earningModel.description')}</p>
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.earningModel.points.1')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.earningModel.points.2')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.earningModel.points.3')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.earningModel.points.4')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.earningModel.points.5')}</li>
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
 
                                 <AccordionItem value="item-11">
                                     <AccordionTrigger className="text-base font-medium">
-                                        Still have questions?
+                                        {t('landing.faqs.questions.moreQuestions.title')}
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <ul className="list-outside list-disc space-y-2 pl-4">
-                                            <li className="text-muted-foreground">
+                                        <ul className="list-outside list-disc space-y-2 ps-4 rtl:ps-0 rtl:pe-4">
+                                            <li className="text-muted-foreground leading-relaxed">
                                                 <Link 
                                                     href="https://github.com/abdout/databayt/discussions" 
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="hover:underline"
                                                 >
-                                                    Join our community discussions on GitHub
+                                                    {t('landing.faqs.questions.moreQuestions.links.github')}
                                                 </Link>
                                             </li>
-                                            <li className="text-muted-foreground">
+                                            <li className="text-muted-foreground leading-relaxed">
                                                 <Link 
                                                     href="https://discord.gg/uPa4gGG62c" 
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="hover:underline"
                                                 >
-                                                    Join our Discord community
+                                                    {t('landing.faqs.questions.moreQuestions.links.discord')}
                                                 </Link>
                                             </li>
-                                            <li className="text-muted-foreground">Contact us for a free consultation</li>
-                                            <li className="text-muted-foreground">
+                                            <li className="text-muted-foreground leading-relaxed">{t('landing.faqs.questions.moreQuestions.links.consultation')}</li>
+                                            <li className="text-muted-foreground leading-relaxed">
                                                 <Link 
                                                     href="/docs" 
                                                     className="hover:underline"
                                                 >
-                                                    Check our documentation at databayt.org/docs
+                                                    {t('landing.faqs.questions.moreQuestions.links.docs')}
                                                 </Link>
                                             </li>
-                                            <li className="text-muted-foreground">
+                                            <li className="text-muted-foreground leading-relaxed">
                                                 <Link 
                                                     href="mailto:hello@databayt.org"
                                                     className="hover:underline"
                                                 >
-                                                    Email us at hello@databayt.org
+                                                    {t('landing.faqs.questions.moreQuestions.links.email')}
                                                 </Link>
                                             </li>
                                         </ul>

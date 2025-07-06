@@ -5,8 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 import SectionHeading from "../atom/section-heading";
 import { Volume2, VolumeX } from "lucide-react";
+import { useLocale } from "@/hooks/use-locale";
 
 export function Gallery() {
+  const { t } = useLocale()
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(false);
@@ -80,56 +82,68 @@ export function Gallery() {
   };
 
   return (
-    <section className="py-16 flex flex-col items-center justify-center">
-      <SectionHeading 
-        title="Gallery" 
-        description="Explore our portfolio showcasing innovative business automation solutions, custom software development, and successful digital transformation projects that have helped companies streamline their operations and boost productivity." 
-      />
+    <section className="py-16 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <SectionHeading 
+          title={t('landing.gallery.title')} 
+          description={t('landing.gallery.description')} 
+          className="text-center mb-8"
+        />
 
-      <Link href="/gallery">
-        <Button variant="outline" size="lg" className="rounded-full">
-            Gallery
+        <div className="flex justify-center mb-12">
+          <Link href="/gallery">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full px-8 py-3 text-base font-medium min-w-[140px] hover:scale-105 transition-transform"
+            >
+              {t('landing.gallery.button')}
             </Button>
           </Link>
+        </div>
 
-      <div 
-        ref={containerRef}
-        className="mt-10 relative aspect-video w-full max-w-3xl mx-auto rounded-sm overflow-hidden bg-black/5 transition-transform duration-300 ease-out"
-        style={{ 
-          transform: `scale(${scale})`,
-          willChange: 'transform'
-        }}
-      >
-            <video
-          ref={videoRef}
-              className="w-full h-full object-cover"
-          loop={false}
-          muted={isMuted}
-              playsInline
-          onEnded={handleVideoEnd}
-            >
-              <source src="/story.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-        
-            <div className="absolute inset-0 bg-black/10"></div>
-        
-        <div className="absolute bottom-4 right-4 flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={toggleMute}
-            className="h-8 w-8 p-0 text-white hover:bg-white/20 rounded-full"
+        <div 
+          ref={containerRef}
+          className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden bg-black/5 transition-transform duration-300 ease-out shadow-lg"
+          style={{ 
+            transform: `scale(${scale})`,
+            willChange: 'transform'
+          }}
+        >
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover"
+            loop={false}
+            muted={isMuted}
+            playsInline
+            onEnded={handleVideoEnd}
           >
-            {isMuted ? (
-              <VolumeX className="h-4 w-4" />
-            ) : (
-              <Volume2 className="h-4 w-4" />
-            )}
-          </Button>
-          <span className="text-white text-sm font-medium">databayt</span>
-            </div>
+            <source src="/story.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          <div className="absolute inset-0 bg-black/10"></div>
+          
+          <div className="absolute bottom-4 end-4 rtl:end-auto rtl:start-4 flex items-center gap-3 bg-black/30 px-3 py-2 rounded-lg backdrop-blur-sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleMute}
+              className="h-8 w-8 p-0 text-white hover:bg-white/20 rounded-full flex-shrink-0"
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? (
+                <VolumeX className="h-4 w-4" />
+              ) : (
+                <Volume2 className="h-4 w-4" />
+              )}
+            </Button>
+            <span className="text-white/90 text-sm font-medium leading-relaxed">
+              {t('landing.gallery.company')}
+            </span>
           </div>
+        </div>
+      </div>
     </section>
   );
 }

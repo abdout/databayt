@@ -15,7 +15,7 @@ import { FilePreview } from "@/components/template/chatbot/file-preview"
 import { MarkdownRenderer } from "@/components/template/chatbot/markdown-rendrer"
 
 const chatBubbleVariants = cva(
-  "group/message relative break-words rounded-lg p-3 text-sm sm:max-w-[70%]",
+  "group/message relative break-words rounded-lg p-3 text-sm sm:max-w-[70%] leading-relaxed font-arabic text-justify rtl:text-right ltr:text-left",
   {
     variants: {
       isUser: {
@@ -33,22 +33,22 @@ const chatBubbleVariants = cva(
       {
         isUser: true,
         animation: "slide",
-        class: "slide-in-from-right",
+        class: "slide-in-from-right rtl:slide-in-from-left",
       },
       {
         isUser: false,
         animation: "slide",
-        class: "slide-in-from-left",
+        class: "slide-in-from-left rtl:slide-in-from-right",
       },
       {
         isUser: true,
         animation: "scale",
-        class: "origin-bottom-right",
+        class: "origin-bottom-right rtl:origin-bottom-left",
       },
       {
         isUser: false,
         animation: "scale",
-        class: "origin-bottom-left",
+        class: "origin-bottom-left rtl:origin-bottom-right",
       },
     ],
   }
@@ -77,7 +77,7 @@ interface ToolResult {
   toolName: string
   result: {
     __cancelled?: boolean
-    [key: string]: any
+    [key: string]: unknown
   }
 }
 
@@ -150,7 +150,10 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   if (isUser) {
     return (
       <div
-        className={cn("flex flex-col", isUser ? "items-end" : "items-start")}
+        className={cn(
+          "flex flex-col", 
+          isUser ? "items-end rtl:items-start" : "items-start rtl:items-end"
+        )}
       >
         {files ? (
           <div className="mb-1 flex flex-wrap gap-2">
@@ -168,7 +171,8 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
           <time
             dateTime={createdAt.toISOString()}
             className={cn(
-              "mt-1 block px-1 text-xs opacity-50",
+              "mt-1 block text-xs opacity-50",
+              isUser ? "pr-1 rtl:pl-1 rtl:pr-0" : "pl-1 rtl:pr-1 rtl:pl-0",
               animation !== "none" && "duration-500 animate-in fade-in-0"
             )}
           >
@@ -186,14 +190,18 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
           <div
             className={cn(
               "flex flex-col",
-              isUser ? "items-end" : "items-start"
+              isUser ? "items-end rtl:items-start" : "items-start rtl:items-end"
             )}
             key={`text-${index}`}
           >
             <div className={cn(chatBubbleVariants({ isUser, animation }))}>
               <MarkdownRenderer>{part.text}</MarkdownRenderer>
               {actions ? (
-                <div className="absolute -bottom-4 right-2 flex space-x-1 rounded-lg border bg-background p-1 text-foreground opacity-0 transition-opacity group-hover/message:opacity-100">
+                <div className={cn(
+                  "absolute -bottom-4 flex rounded-lg border bg-background p-1 text-foreground opacity-0 transition-opacity group-hover/message:opacity-100",
+                  isUser ? "right-2 rtl:left-2" : "left-2 rtl:right-2",
+                  "space-x-1 rtl:space-x-reverse"
+                )}>
                   {actions}
                 </div>
               ) : null}
@@ -203,7 +211,8 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
               <time
                 dateTime={createdAt.toISOString()}
                 className={cn(
-                  "mt-1 block px-1 text-xs opacity-50",
+                  "mt-1 block text-xs opacity-50",
+                  isUser ? "pr-1 rtl:pl-1 rtl:pr-0" : "pl-1 rtl:pr-1 rtl:pl-0",
                   animation !== "none" && "duration-500 animate-in fade-in-0"
                 )}
               >
@@ -231,11 +240,18 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   }
 
   return (
-    <div className={cn("flex flex-col", isUser ? "items-end" : "items-start")}>
+    <div className={cn(
+      "flex flex-col", 
+      isUser ? "items-end rtl:items-start" : "items-start rtl:items-end"
+    )}>
       <div className={cn(chatBubbleVariants({ isUser, animation }))}>
         <MarkdownRenderer>{content}</MarkdownRenderer>
         {actions ? (
-          <div className="absolute -bottom-4 right-2 flex space-x-1 rounded-lg border bg-background p-1 text-foreground opacity-0 transition-opacity group-hover/message:opacity-100">
+          <div className={cn(
+            "absolute -bottom-4 flex rounded-lg border bg-background p-1 text-foreground opacity-0 transition-opacity group-hover/message:opacity-100",
+            isUser ? "right-2 rtl:left-2" : "left-2 rtl:right-2",
+            "space-x-1 rtl:space-x-reverse"
+          )}>
             {actions}
           </div>
         ) : null}
@@ -245,7 +261,8 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         <time
           dateTime={createdAt.toISOString()}
           className={cn(
-            "mt-1 block px-1 text-xs opacity-50",
+            "mt-1 block text-xs opacity-50",
+            isUser ? "pr-1 rtl:pl-1 rtl:pr-0" : "pl-1 rtl:pr-1 rtl:pl-0",
             animation !== "none" && "duration-500 animate-in fade-in-0"
           )}
         >

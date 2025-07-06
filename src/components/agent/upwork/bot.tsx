@@ -9,20 +9,22 @@ import { analyzeJobDescription, JobAnalysis } from "./score"
 import { generateProposal } from "./proposal"
 import { v4 as uuid } from "uuid"
 import PageHeader from "@/components/atom/page-header"
-// import ProviderSelect from "./model"
-
-// Suggestions that fit Upwork usage
-const SUGGESTIONS = [
-  "Build a small SaaS in Next.js",
-  "Create a school management dashboard",
-  "Automate repetitive business tasks",
-]
+import ProviderSelect from "./model"
+import { useLocale } from "@/hooks/use-locale"
 
 export default function UpworkBot() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [isGenerating, setIsGenerating] = useState(false)
   const [aiProvider, setAiProvider] = useState<'gemini' | 'openai' | 'local'>('gemini')
+  const { t } = useLocale()
+
+  // Translated suggestions
+  const SUGGESTIONS = [
+    t("pages.agent.upwork.suggestions.buildSaas"),
+    t("pages.agent.upwork.suggestions.schoolDashboard"),
+    t("pages.agent.upwork.suggestions.automateTask"),
+  ]
 
   async function analyze(description: string) {
     // helper to analyze using chosen provider
@@ -99,12 +101,15 @@ export default function UpworkBot() {
   return (
     <section
       className={cn(
-        "relative flex flex-col items-center justify-center text-center py-24 md:py-32"
+        "relative flex flex-col items-center justify-center py-24 md:py-32",
+        "text-center"
       )}
     >
-      {messages.length === 0 && <PageHeader title="Upwork Agent" />}
+      {messages.length === 0 && <PageHeader title={t("pages.agent.upwork.title")} />}
       <div className="w-full max-w-3xl mt-10">
-        {/* <ProviderSelect value={aiProvider} onChange={val => setAiProvider(val)} /> */}
+        <div className="mb-4 flex justify-center">
+          <ProviderSelect value={aiProvider} onChange={val => setAiProvider(val)} />
+        </div>
         <Chat
           className="grow"
           messages={messages}
@@ -125,5 +130,5 @@ export default function UpworkBot() {
 function formatAnalysisResponse(analysis: JobAnalysis): string {
   const { score, details, relevantRepos } = analysis
   const proposal = generateProposal(details, relevantRepos, score)
-  return `Job score: ${score.total}/10 (viable: ${score.viable ? "yes" : "no"})\n\n${proposal}`
+  return `${score.total}/10 (${score.viable ? "✓" : "✗"})\n\n${proposal}`
 } 

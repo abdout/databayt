@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-// No external icon imports required for now
+import { useLocale } from '@/hooks/use-locale';
 
 // Upwork SVG as a React component to match Lucide signature
 const UpworkIcon = ({ size = 24, className, ...props }: { size?: number; className?: string } & React.SVGProps<SVGSVGElement>) => (
@@ -18,16 +18,6 @@ const UpworkIcon = ({ size = 24, className, ...props }: { size?: number; classNa
   </svg>
 );
 
-const agents = [
-  {
-    id: 1,
-    title: 'Upwork',
-    slug: 'upwork',
-    icon: UpworkIcon,
-    description: 'Auto apply to jobs, score and generate proposals.',
-  },
-];
-
 const AgentCard = ({
   icon: Icon,
   title,
@@ -40,18 +30,20 @@ const AgentCard = ({
   return (
     <figure
       className={cn(
-        "relative overflow-hidden rounded-lg border bg-background p-2 hover:border-primary transition-[border-color] duration-200 text-foreground hover:text-foreground cursor-pointer"
+        "relative overflow-hidden rounded-lg border bg-background hover:border-primary transition-[border-color] duration-200 text-foreground hover:text-foreground cursor-pointer p-2"
       )}
     >
-      <div className="flex h-[180px] flex-col justify-between rounded-sm p-6">
+      <div className={cn(
+        "flex h-[180px] flex-col justify-between rounded-sm p-6"
+      )}>
         <div className="text-foreground">
           <Icon size={24} />
         </div>
-        <div className="space-y-2">
-          <h4 className="text-foreground">
+        <div className="space-y-2 text-start rtl:text-end">
+          <h4 className="text-foreground font-medium font-arabic">
             {title}
           </h4>
-          <p className="text-sm text-muted-foreground font-light">
+          <p className="text-sm text-muted-foreground font-light leading-relaxed font-arabic">
             {description}
           </p>
         </div>
@@ -61,6 +53,18 @@ const AgentCard = ({
 };
 
 const AllAgents = () => {
+  const { t } = useLocale()
+  
+  const agents = [
+    {
+      id: 1,
+      title: t('pages.agent.upwork.title'),
+      slug: 'upwork',
+      icon: UpworkIcon,
+      description: t('pages.agent.upwork.description'),
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {agents.map((agent) => (

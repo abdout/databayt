@@ -1,0 +1,1739 @@
+{
+  "codeBlock": {
+    "viewCode": "View Code"
+  },
+  "newcomers": {
+    "title": "Newcomers",
+    "technologyUsed": "Technology used:",
+    "techStack": "Next.js, React, TypeScript, Tailwind CSS...",
+    "seeFullStack": "see full stack →",
+    "introduction": "So you've heard about Databayt and you're curious. Maybe someone invited you to contribute, or you stumbled across our project and want to understand what we're all about. Either way,",
+    "welcome": "welcome!",
+    "introDescription": "This page is specifically for you - the newcomer who has questions, concerns, and wants to understand how this all works before diving in.",
+
+    "whyDatabayt": {
+      "title": "Why Databayt",
+      "description": "Databayt is a collaborative open-source ecosystem designed to accelerate development. With a patterned, searchable code library, developers can start projects up to 70% complete—never from scratch. While open source has come a long way and countless codebases already exist, there's still real value in building a well-structured, indexed library where code follows consistent patterns and architecture. Databayt is about creating that shared standard—together. It's not just practical; it's exciting to shape a clean, reusable codebase as a community—making development faster for everyone, and driving collective progress for Databayt as a publicly traded entity."
+    },
+
+    "benefits": {
+      "generateRevenue": {
+        "title": "Generate Revenue",
+        "description": "Build once, earn repeatedly through our transparent revenue-sharing model."
+      },
+      "realWorldExperience": {
+        "title": "Real-World Experience",
+        "description": "Work on live, enterprise-grade projects solving actual business challenges."
+      },
+      "publicOwnership": {
+        "title": "Public Ownership",
+        "description": "Own and showcase your work while building a strong GitHub portfolio."
+      },
+      "collaborativeLearning": {
+        "title": "Collaborative Learning",
+        "description": "Learn from experts while working on enterprise solutions with our team."
+      }
+    },
+
+    "remoteWork": {
+      "title": "Remote Work",
+      "yes": "Yes, 100% remote.",
+      "description": "There's no office, no required meetings, no fixed hours. Contributors work from their home offices in different countries, coffee shops while traveling, co-working spaces, or wherever they're most productive. You collaborate through GitHub, communicate async, and work on your own schedule."
+    },
+
+    "revenueSharing": {
+      "title": "Revenue Sharing",
+      "description1": "No traditional salaries here. Databayt is collectively owned by us - the contributors. When sales team brings in projects, we complete them together and everyone takes their share. You're not an employee; you're a co-owner building equity in something bigger.",
+      "description2": "We use a transparent revenue-sharing model where contributors earn a percentage of revenue generated from their contributions across our four core business models.",
+      "readMore": "read more →"
+    },
+
+    "partTimeContribution": {
+      "title": "Part-Time Contribution",
+      "description": "Perfect for part-time contributors. Most of our successful contributors:",
+      "hours": "Work 5-10 hours per week",
+      "timing": "Contribute during evenings or weekends",
+      "breaks": "Take breaks when life gets busy",
+      "noPressure": "Have no pressure or deadlines",
+      "success": "Many successful contributors started with just 2-3 hours per week."
+    },
+
+    "experienceRequirements": {
+      "title": "Experience Requirements",
+      "description": "Everyone starts somewhere. What matters most:",
+      "willingness": "Willingness to learn",
+      "pattern": "Ability to adopt pattern",
+      "communication": "Good communication",
+      "persistence": "Persistence when facing challenges",
+      "mentorship": "We provide mentorship and have \"good first issue\" labels specifically for newcomers."
+    },
+
+    "gettingStarted": {
+      "title": "Getting Started",
+      "explore": {
+        "title": "Explore",
+        "description": "Browse our GitHub repositories to understand our architecture. Check issues labeled \"good first issue\" for beginner tasks. Read our documentation to learn our development practices."
+      },
+      "setup": {
+        "title": "Setup",
+        "description": "Pick a repository that matches your skills and interests. Follow our setup guide to configure your environment. Test the development server and start experimenting."
+      },
+      "contribute": {
+        "title": "Contribute",
+        "description": "Start with small, manageable tasks to build confidence. Follow our contribution guidelines and coding standards. Get feedback from experienced contributors through PRs."
+      },
+      "build": {
+        "title": "Build",
+        "description": "Leverage our battle-tested components for your projects. Start with up to 70% of your project pre-built. Customize and extend components to match your needs."
+      }
+    },
+
+    "supportAvailable": {
+      "title": "Support Available",
+      "community": {
+        "title": "Community",
+        "countries": "Growing contributor base from 10+ countries",
+        "discord": "Active Discord community with 500+ members",
+        "calls": "Monthly community calls and workshops",
+        "mentorship": "Active mentorship program"
+      },
+      "resources": {
+        "title": "Resources",
+        "documentation": "Comprehensive documentation",
+        "tutorials": "Video tutorials",
+        "guides": "Setup guides",
+        "practices": "Best practices"
+      }
+    },
+
+    "commonQuestions": {
+      "title": "Common Questions",
+      "usingComponents": {
+        "question": "Can I use Databayt components in my own projects?",
+        "answer": "Yes! All components are open source and can be used in your projects according to their respective licenses. We encourage reuse and building upon our work."
+      },
+      "experience": {
+        "question": "What if I'm not experienced enough?",
+        "answer": "We have contributors at all skill levels. Beginners often bring fresh perspectives that experts miss. We provide mentorship and support."
+      },
+      "workOn": {
+        "question": "How do I know what to work on?",
+        "answer": "Start with issues labeled \"good first issue\", join community discussions, or talk to project maintainers. You're never working blindly."
+      }
+    },
+
+    "futureOpportunities": {
+      "title": "Future Opportunities",
+      "intro": "As you grow with us, you can look forward to:",
+      "enterprise": "Building enterprise solutions",
+      "designSystem": "Contributing to our design system framework",
+      "education": "Helping create our developer education platform",
+      "community": "Leading community programs",
+      "mentoring": "Mentoring new contributors"
+    },
+
+    "readyToStart": {
+      "title": "Ready to Start?",
+      "description": "Every contributor started exactly where you are now. You don't have to decide everything today. Just take one small step forward.",
+      "joinDiscord": {
+        "label": "Join Discord:",
+        "link": "Connect with our community on Discord"
+      },
+      "questions": "Questions?",
+      "discussions": "Ask in our discussions"
+    }
+  },
+  "home": {
+    "introduction": {
+      "title": "Introduction",
+      "automate": "Automate",
+      "boring": "the boring. at Databayt we're building codebase for business automation, one atomic component at a time. Every line of code is open source, every contribution is valued, and every developer may shape the future of how businesses operate.",
+      "sellTime1": "We sell the origin of all value — we sell",
+      "time": "Time",
+      "sellTime2": "the currency that drives the world — what if you could reclaim yours and focus on what truly matters? It's more than a service — it's an escape from the matrix. A restoration of time through the elimination of repetitive tasks, streamlined operations, and automated processes. Break free. Reclaim your hours.",
+      "repository1": "The Repository of",
+      "wonders": "Wonders.",
+      "repository2": "Think of our codebase as a living library where every contribution becomes part of something greater. From atomic components to complete templates, from blocks to micro-services to full automation solutions—we're creating the building blocks that will power tomorrow's businesses.",
+      "followAlong1": "Follow along as we",
+      "figure": "figure",
+      "followAlong2": "this out together. This isn't just about building software; it's about creating a collaborative ecosystem where developers, businesses, and innovators unite to solve real problems. Every contribution you make doesn't just help one project—it becomes part of a growing foundation that serves countless businesses worldwide."
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "development": {
+        "title": "Development",
+        "description": "Enterprise-grade applications and platforms"
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Streamlined workflows and process optimization"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Technical expertise and implementation support"
+      },
+      "openSource": {
+        "title": "Open Source",
+        "description": "Community-driven development and innovation"
+      }
+    },
+    "businessModel": {
+      "title": "Business Model",
+      "perProject": {
+        "title": "Per Project",
+        "description": "Custom solutions tailored to specific client requirements and business processes. Each project delivers unique automation systems designed to solve particular challenges and operational needs."
+      },
+      "partners": {
+        "title": "Partners",
+        "description": "Partnership opportunities for businesses seeking to outsource technology development, access specialized talent for temporary projects and specific technical expertise."
+      },
+      "codebase": {
+        "title": "Codebase",
+        "description": "Codebase executes the majority of the task, through accumulated, reusable components. Contributors who expand this foundation earn a share of the value it generates."
+      },
+      "saas": {
+        "title": "SaaS",
+        "description": "Ready-to-deploy software products sold to multiple organizations with similar needs. act as a go-to central hub for businesses seeking automation solutions."
+      }
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "transparency": {
+        "title": "Transparency",
+        "description": "Every decision, from technical architecture to business strategy, is documented and accessible to the community. We use GitHub to manage our codebase and discussions, ensuring transparency, traceability, and open collaboration. Contributions are publicly tracked, so every developer can see their impact and know the process is clear and fair. We believe this openness builds trust and enables better contributions."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Our best ideas come from our diverse community of developers, business professionals, and users. We actively encourage contributions and value every perspective. We're actively building in: Business Automation, Data Analytics, AI Agents, Blockchain, and Distributed Computing."
+      },
+      "growth": {
+        "title": "Growth",
+        "description": "We balance rapid innovation with long-term sustainability, ensuring our solutions remain robust and our business model benefits all stakeholders."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Every product we ship meets the highest standards of quality, security, and performance. Our reputation is built on reliable, enterprise-grade solutions."
+      }
+    },
+    "whatYoullFind": {
+      "title": "What You'll Find Here",
+      "forDevelopers": {
+        "title": "For Developers",
+        "architecture": "Architecture",
+        "architectureDesc": "System design and technical specs",
+        "stack": "Stack",
+        "stackDesc": "Technology used",
+        "pattern": "Pattern",
+        "patternDesc": "Best practices and coding standards",
+        "contribute": "Contributing Guide",
+        "contributeDesc": "How to get involved in development"
+      },
+      "forStakeholders": {
+        "title": "For Stakeholders",
+        "businessModel": "Business Model",
+        "businessModelDesc": "Revenue streams and value creation",
+        "roadmap": "Roadmap",
+        "roadmapDesc": "Product development plans and strategic goals",
+        "sales": "Sales Process",
+        "salesDesc": "Customer acquisition and revenue generation",
+        "stockSharing": "Stock Sharing",
+        "stockSharingDesc": "Equity distribution and governance"
+      },
+      "forCommunity": {
+        "title": "For Community",
+        "codeOfConduct": "Code of Conduct",
+        "codeOfConductDesc": "Community standards and expectations",
+        "issues": "Issues & Support",
+        "issuesDesc": "Bug reporting and assistance",
+        "discussions": "Discussions",
+        "discussionsDesc": "Forums and knowledge sharing"
+      },
+      "forClients": {
+        "title": "For Clients",
+        "understand": "Understand our",
+        "businessModel": "Business Model",
+        "seeWhatsAhead": "See what's ahead in the",
+        "roadmap": "Roadmap",
+        "contactSales": "Contact Sales",
+        "toDiscuss": "to discuss your needs",
+        "access": "Access",
+        "supportOptions": "Support Options",
+        "whenNeeded": "when needed"
+      },
+      "forLegal": {
+        "title": "For Legal",
+        "openSourceLicenses": "Open Source Licenses",
+        "openSourceLicensesDesc": "Usage terms and compliance",
+        "termsOfService": "Terms of Service",
+        "termsOfServiceDesc": "Legal policies",
+        "privacyPolicy": "Privacy Policy",
+        "privacyPolicyDesc": "Data protection commitments"
+      }
+    },
+    "gettingStarted": {
+      "title": "Getting Started",
+      "newComer": "New comer? Start with the essentials:",
+      "review": "Review the",
+      "codeOfConduct": "Code of Conduct",
+      "explore": "Explore the",
+      "architecture": "Architecture",
+      "check": "Check the",
+      "contributing": "Contributing Guide",
+      "join": "Join",
+      "communityDiscussions": "Community Discussions"
+    }
+  },
+  "businessModel": {
+    "title": "Business Model",
+    "description": "Databayt operates through four complementary revenue models that support both sustainability and community-driven growth.",
+    "perProject": {
+      "title": "Per Project",
+      "subtitle": "Bespoke Development for Unique Business Needs",
+      "description": "We deliver custom-built automation systems tailored to the specific operational requirements of individual clients.",
+      "point1": "Ideal for companies with complex or specialized workflows",
+      "point2": "Involves discovery, architecture, design, and implementation phases",
+      "point3": "Generates revenue through direct service contracts",
+      "point4": "Often integrates components from our codebase to reduce time-to-delivery"
+    },
+    "partners": {
+      "title": "Partners",
+      "subtitle": "Strategic Collaborations & Outsourced Development",
+      "description": "We form long-term partnerships with businesses that need recurring access to development capacity and domain-specific technical talent.",
+      "point1": "Perfect for agencies, enterprises, or startups without an in-house tech team",
+      "point2": "Offers flexible engagement models: staff augmentation, dedicated teams, or project-based collaborations",
+      "point3": "Revenue comes from retainers, joint ventures, or shared-value agreements",
+      "point4": "Partners also benefit from priority access to our open-source tools and components"
+    },
+    "codebase": {
+      "title": "Codebase",
+      "subtitle": "Reusable Components as a Revenue Engine",
+      "description": "The Databayt codebase is the backbone of our operation: a growing library of clean, modular components contributed by the community.",
+      "point1": "These components are used across client projects and SaaS products",
+      "point2": "Contributors earn recognition and a share of the value their code generates",
+      "point3": "Monetization occurs when projects leverage these prebuilt modules to accelerate delivery",
+      "point4": "Encourages collective ownership and open-source sustainability"
+    },
+    "saas": {
+      "title": "SaaS",
+      "subtitle": "Scalable Automation Products for Common Needs",
+      "description": "We package recurring patterns into ready-to-deploy SaaS tools aimed at industries with similar operational challenges.",
+      "point1": "Examples: CRMs for clinics, document workflow tools for HR, or compliance dashboards for real estate",
+      "point2": "Allows clients to onboard instantly with minimal configuration",
+      "point3": "SaaS offerings are continuously improved through usage data and community feedback",
+      "point4": "This model generates recurring revenue and positions Databayt as a central hub for automation solutions"
+    },
+    "links": {
+      "revenue": "Learn about revenue distribution →",
+      "contribute": "Understand contributor incentives →"
+    }
+  },
+  "architecture": {
+    "title": "Architecture",
+    "automate": "Automate",
+    "intro1": "the boring. Architecture embodies the same principles we apply to business automation — minimal complexity, maximum efficiency, and atomic reusability. Every component is designed to work independently while contributing to a cohesive ecosystem.",
+    "intro2": "We don't just build software; we craft",
+    "automationSolutions": "automation solutions",
+    "intro3": "that scale with your business. From single components to complete platforms, our architecture supports the journey from prototype to production.",
+    "corePhilosophy": {
+      "title": "Core Design Philosophy",
+      "atomic": {
+        "title": "Atomic Everything",
+        "component": {
+          "title": "Component-First",
+          "description": "Every piece of UI is a reusable, tested component"
+        },
+        "minimal": {
+          "title": "Minimal Complexity",
+          "description": "Simple solutions that compound into powerful systems"
+        },
+        "opensource": {
+          "title": "Open Source First",
+          "description": "Transparency in every line of code"
+        },
+        "shadcn": {
+          "title": "Shadcn/UI Inspired",
+          "description": "Following proven patterns and naming conventions"
+        }
+      },
+      "modernWeb": {
+        "title": "Modern Web Standards",
+        "nextjs": {
+          "title": "Next.js 15",
+          "description": "App Router with React 19 for cutting-edge performance"
+        },
+        "typescript": {
+          "title": "TypeScript",
+          "description": "Type safety across the entire stack"
+        },
+        "mdx": {
+          "title": "MDX Integration",
+          "description": "Documentation as code with seamless content management"
+        },
+        "tailwind": {
+          "title": "Tailwind CSS",
+          "description": "Utility-first styling for consistent design systems"
+        }
+      },
+      "business": {
+        "title": "Business-Focused Architecture",
+        "documentation": {
+          "title": "Documentation-Driven",
+          "description": "Every feature documented, every decision transparent"
+        },
+        "community": {
+          "title": "Community-Centric",
+          "description": "Built for contributors, maintained by the community"
+        },
+        "automation": {
+          "title": "Automation-Ready",
+          "description": "Architecture designed for business process automation"
+        }
+      }
+    },
+    "technologyStack": {
+      "title": "Technology Stack",
+      "frontend": {
+        "title": "Frontend Foundation",
+        "nextjs": {
+          "title": "Next.js 15",
+          "subtitle": "App Router with React 19 Server Components",
+          "feature1": "File-based routing with app directory",
+          "feature2": "Server and client components",
+          "feature3": "Built-in performance optimizations"
+        },
+        "typescript": {
+          "title": "TypeScript",
+          "subtitle": "Full-stack type safety and developer experience",
+          "feature1": "Strict type checking",
+          "feature2": "IntelliSense and autocomplete",
+          "feature3": "Compile-time error detection"
+        },
+        "tailwind": {
+          "title": "Tailwind CSS 4",
+          "subtitle": "Latest utility-first CSS framework",
+          "feature1": "CSS variables for theming",
+          "feature2": "JIT compilation",
+          "feature3": "Dark mode support"
+        },
+        "shadcn": {
+          "title": "Shadcn/UI",
+          "subtitle": "Copy-paste components built on Radix UI",
+          "feature1": "Radix UI primitives",
+          "feature2": "Accessible by default",
+          "feature3": "Customizable and composable"
+        }
+      },
+      "content": {
+        "title": "Content & Documentation"
+      },
+      "state": {
+        "title": "State Management & Utilities",
+        "jotai": {
+          "title": "Jotai",
+          "description": "Atomic state management"
+        },
+        "reactHookForm": {
+          "title": "React Hook Form",
+          "description": "Performant form handling"
+        },
+        "framerMotion": {
+          "title": "Framer Motion",
+          "description": "Smooth animations"
+        }
+      }
+    },
+    "ecosystem": {
+      "title": "Project Ecosystem",
+      "description": "Our architecture spans multiple specialized projects, each serving different aspects of business automation:",
+      "databayt": {
+        "title": "1. Databayt (Main Platform)",
+        "repository": {
+          "label": "Repository",
+          "value": "github.com/abdout/databayt"
+        },
+        "purpose": {
+          "label": "Purpose",
+          "value": "Core business automation platform"
+        },
+        "stack": {
+          "label": "Tech Stack",
+          "value": "Next.js 15, TypeScript, Tailwind CSS, Shadcn/UI"
+        },
+        "features": {
+          "label": "Features",
+          "value": "Documentation system, component library, automation tools"
+        }
+      },
+      "hogwarts": {
+        "title": "2. Hogwarts (Education Platform)",
+        "repository": {
+          "label": "Repository",
+          "value": "github.com/abdout/hogwarts"
+        },
+        "url": {
+          "label": "URL",
+          "value": "ed.databayt.org"
+        },
+        "purpose": {
+          "label": "Purpose",
+          "value": "Educational and learning management"
+        },
+        "features": {
+          "label": "Additional Features",
+          "value": "Authentication (NextAuth/Clerk), Database (Prisma)"
+        }
+      },
+      "future": {
+        "title": "3. Future Platforms (In Development)",
+        "co": {
+          "title": "Co",
+          "description": "Collaboration and community features"
+        },
+        "nmbd": {
+          "title": "NMBD",
+          "description": "Specialized automation modules"
+        }
+      }
+    },
+    "gettingStarted": {
+      "title": "Getting Started",
+      "description": "Ready to build with our architecture? Start here:",
+      "setup": "Development Setup",
+      "setupDescription": "Get your local environment ready",
+      "components": "Component Guide",
+      "componentsDescription": "Learn our component patterns",
+      "contributing": "Contributing",
+      "contributingDescription": "Join the community",
+      "technicalRecords": "Technical Records",
+      "technicalRecordsDescription": "Deep dive into decisions",
+      "questions": "Questions about our architecture?",
+      "joinDiscussion": "Join the discussion",
+      "or": "or",
+      "contactTeam": "contact our technical team"
+    }
+  },
+  "revenue": {
+    "title": "Revenue Sharing",
+    "noTraditionalSalaries": "No traditional salaries here.",
+    "collectivelyOwned": "Databayt is collectively owned by us - the contributors. When our sales team brings in projects, we complete them together and everyone takes their share, including sales. You're not an employee; you're a co-owner building equity in something bigger.",
+    "transparentModel": "We use a transparent revenue-sharing model where contributors earn a percentage of revenue generated from their contributions across our four core business models:",
+    "businessModelsTitle": "Our Business Models & Your Revenue Opportunities",
+    
+    "perProject": {
+      "title": "Per Project Revenue",
+      "description": "Custom solutions tailored to specific client requirements and business processes. Each project delivers unique automation systems designed to solve particular challenges and operational needs.",
+      "earningsTitle": "Your Earnings:",
+      "earnings": "Direct revenue share based on your contribution to project completion. Whether you build components, integrate systems, or manage client requirements - you earn from the project's success."
+    },
+    
+    "partnership": {
+      "title": "Partnership Revenue",
+      "description": "Partnership opportunities for businesses seeking to outsource technology development, access specialized talent for temporary projects, and leverage specific technical expertise.",
+      "earningsTitle": "Your Earnings:",
+      "earnings": "Revenue share from partnership contracts you help fulfill. Long-term partnerships create recurring income streams as you become the go-to expert for specific partner needs."
+    },
+    
+    "codebase": {
+      "title": "Codebase Revenue",
+      "highestEarner": "(Our Highest Earner)",
+      "description": "Our codebase executes the majority of tasks through accumulated, reusable components. Contributors who expand this foundation earn a share of the value it generates across all projects that use their components.",
+      "earningsTitle": "Your Earnings:",
+      "earnings": "This is where the 40-70% project acceleration pays off. Every time your indexed components are reused in client projects, you earn. Build once, earn repeatedly. Top codebase contributors receive significant monthly earnings from component reuse alone."
+    },
+    
+    "saas": {
+      "title": "SaaS Revenue",
+      "description": "Ready-to-deploy software products sold to multiple organizations with similar needs. We act as a go-to central hub for businesses seeking automation solutions.",
+      "earningsTitle": "Your Earnings:",
+      "earnings": "Ongoing royalties from SaaS products you help build. As these products scale to hundreds or thousands of customers, your revenue share grows proportionally."
+    },
+    
+    "whyWorks": {
+      "title": "Why This Model Works",
+      "whenProjectComesIn": "When a project comes in:",
+      "salesShare": "Sales team gets their share",
+      "projectContributorsShare": "Project contributors get their share",
+      "codebaseContributorsShare": "Codebase contributors whose components are used get their share",
+      "everyoneWins": "Everyone wins when we succeed together"
+    },
+    
+    "timeline": {
+      "title": "Expected Timeline:",
+      "month1to3Title": "Month 1-3:",
+      "month1to3Description": "Learn systems, contribute to projects, start earning initial revenue shares",
+      "month6to12Title": "Month 6-12:",
+      "month6to12Description": "Build reusable components, participate in partnerships, increase your earnings",
+      "year2PlusTitle": "Year 2+:",
+      "year2PlusDescription": "Major codebase contributor with SaaS involvement, potential for significant recurring revenue"
+    },
+    
+    "conclusion": "The more value you create for our collective ecosystem, the more you earn. It's that simple."
+  },
+  "getStarted": {
+    "title": "Get Started",
+    "intro": "This guide will help you quickly set up your development environment and make your first contribution to Databayt. Whether you're a seasoned developer or just starting out, we'll walk you through everything you need to know.",
+    "technologyUsed": "Technology used:",
+    "techStack": "Next.js, React, TypeScript, Tailwind CSS, pnpm...",
+    "seeFullStack": "see full stack →",
+    
+    "prerequisites": {
+      "title": "Prerequisites",
+      "description": "Before you begin, make sure you have the following set up:",
+      
+      "githubAccount": {
+        "title": "GitHub Account",
+        "description": "Free GitHub account with SSH keys configured. See our",
+        "setupGuide": "GitHub Setup Guide",
+        "forInstructions": "for detailed instructions."
+      },
+      
+      "nodejs": {
+        "title": "Node.js 18+",
+        "downloadFrom": "Download from",
+        "website": "nodejs.org",
+        "recommendation": "We recommend the LTS version for stability."
+      },
+      
+      "pnpm": {
+        "title": "pnpm",
+        "description": "Fast, disk space efficient package manager. Install with:"
+      },
+      
+      "codeEditor": {
+        "title": "Code Editor",
+        "forFree": "For free, we recommend",
+        "vsCode": "VS Code",
+        "forPaid": "For paid, we recommend",
+        "cursor": "Cursor"
+      }
+    },
+    
+    "completeSetupGuides": {
+      "title": "🔧 Complete Setup Guides",
+      "description": "New to GitHub or local development? We have detailed visual guides to help you:",
+      "githubSetupGuide": "📚 GitHub Setup Guide",
+      "localhostSetupGuide": "💻 Localhost Development Setup"
+    },
+    
+    "quickStart": {
+      "title": "Quick Start",
+      "description": "Get up and running in 5 minutes:",
+      
+      "step1": {
+        "title": "1. Fork & Clone",
+        "description": "First, fork the repository you want to contribute to on GitHub, then clone it locally:",
+        "code": "# Replace [repository] with the specific repo you want to contribute to\ngit clone https://github.com/your-username/[repository].git\ncd [repository]"
+      },
+      
+      "step2": {
+        "title": "2. Install Dependencies",
+        "description": "Install all project dependencies using pnpm:",
+        "code": "pnpm install"
+      },
+      
+      "step3": {
+        "title": "3. Set Up Environment",
+        "description": "Copy the environment variables file and configure as needed:",
+        "code": "cp .env.example .env.local"
+      },
+      
+      "step4": {
+        "title": "4. Start Development Server",
+        "description": "Run the development server:",
+        "code": "pnpm dev"
+      },
+      
+      "serverRunning": "Your app should now be running at",
+      "needMoreHelp": "Need more help?",
+      "ourVisualGuide": "Our",
+      "visualSetupGuide": "visual localhost setup guide",
+      "providesScreenshots": "provides detailed screenshots for each step above."
+    },
+    
+    "detailedGuide": {
+      "title": "📋 Detailed Step-by-Step Guide",
+      "description": "For a comprehensive visual guide with screenshots, check out our",
+      "localhostLink": "Localhost",
+      "page": "page."
+    },
+    
+    "firstContribution": {
+      "title": "Your First Contribution"
+    },
+    
+    "findingWork": {
+      "title": "Finding Something to Work On",
+      
+      "goodFirstIssues": {
+        "title": "Good First Issues",
+        "description": "Look for issues labeled \"good first issue\" - these are specifically chosen for newcomers."
+      },
+      
+      "documentation": {
+        "title": "Documentation",
+        "description": "Improve docs, fix typos, add examples. Perfect for getting familiar with our codebase."
+      },
+      
+      "uiComponents": {
+        "title": "UI Components",
+        "description": "Build reusable components following our design system and patterns."
+      }
+    },
+    
+    "makingChanges": {
+      "title": "Making Changes",
+      
+      "step1": {
+        "title": "Create a branch",
+        "description": "for your changes:",
+        "code": "git checkout -b feature/your-feature-name"
+      },
+      
+      "step2": {
+        "title": "Make your changes",
+        "description": "following our",
+        "codingPatterns": "coding patterns"
+      },
+      
+      "step3": {
+        "title": "Test your changes",
+        "description": "locally:",
+        "code": "pnpm build\npnpm lint"
+      },
+      
+      "step4": {
+        "title": "Commit your changes",
+        "description": "using conventional commits:",
+        "code": "git add .\ngit commit -m \"feat: add new component feature\""
+      },
+      
+      "step5": {
+        "title": "Push and create a Pull Request",
+        "code": "git push origin feature/your-feature-name"
+      }
+    },
+    
+    "workflow": {
+      "title": "Development Workflow"
+    },
+    
+    "projectStructure": {
+      "title": "Project Structure",
+      "description": "Understanding our architecture helps you navigate the codebase:",
+      "code": "src/\n├── app/                 # Next.js app router\n├── components/          # Reusable UI components\n│   ├── ui/             # Basic UI primitives\n│   ├── landing/        # Landing page components\n│   └── [feature]/      # Feature-specific components\n├── lib/                # Utility functions\n├── styles/             # Global styles\n└── types/              # TypeScript type definitions"
+    },
+    
+    "keyCommands": {
+      "title": "Key Commands",
+      
+      "development": {
+        "title": "Development",
+        "devServer": "Start dev server",
+        "build": "Build for production",
+        "start": "Run production build"
+      },
+      
+      "quality": {
+        "title": "Quality",
+        "lint": "Run ESLint",
+        "typeCheck": "Check TypeScript",
+        "format": "Format with Prettier"
+      }
+    },
+    
+    "gettingHelp": {
+      "title": "Getting Help"
+    },
+    
+    "communitySupport": {
+      "title": "Community Support",
+      
+      "discord": {
+        "title": "Discord Community",
+        "description": "Join our active Discord server with 500+ members. Get real-time help and connect with other contributors."
+      },
+      
+      "githubDiscussions": {
+        "title": "GitHub Discussions",
+        "description": "Ask questions, share ideas, and discuss features in our GitHub discussions forum."
+      }
+    },
+    
+    "mentorship": {
+      "title": "Mentorship Program",
+      "introduction": "New contributors get paired with experienced mentors who provide:",
+      "codeReview": "Code review and feedback",
+      "bestPractices": "Guidance on best practices",
+      "technicalChallenges": "Help with technical challenges",
+      "careerAdvice": "Career development advice"
+    },
+    
+    "nextSteps": {
+      "title": "Next Steps",
+      "description": "Once you're set up and have made your first contribution:",
+      "exploreCTA": "Explore the codebase",
+      "exploreDesc": "Browse different repositories to understand our ecosystem",
+      "readPatternsCTA": "Read the patterns",
+      "readPatternsDesc": "Check our",
+      "developmentPatterns": "development patterns",
+      "guide": "guide",
+      "joinCommunityCTA": "Join the community",
+      "joinCommunityDesc": "Connect with other contributors on Discord",
+      "findNicheCTA": "Find your niche",
+      "findNicheDesc": "Identify areas that match your interests and skills",
+      "shareWorkCTA": "Share your work",
+      "shareWorkDesc": "Showcase your contributions and get feedback"
+    },
+    
+    "resources": {
+      "title": "Resources"
+    },
+    
+    "essentialReading": {
+      "title": "Essential Reading",
+      "architecture": "Architecture Overview",
+      "architectureDesc": "Understand our system design",
+      "patterns": "Development Patterns",
+      "patternsDesc": "Learn our coding standards",
+      "contributing": "Contributing Guide",
+      "contributingDesc": "Detailed contribution guidelines",
+      "revenue": "Revenue Sharing",
+      "revenueDesc": "How contributors earn from their work"
+    },
+    
+    "quickLinks": {
+      "title": "Quick Links",
+      "githubOrg": "GitHub Organization",
+      "discordCommunity": "Discord Community",
+      "issueTracker": "Issue Tracker",
+      "roadmap": "Project Roadmap"
+    },
+    
+    "conclusion": {
+      "readyToBuild": "Ready to build something amazing?",
+      "learnByDoing": "The best way to learn is by doing. Pick a good first issue and start contributing today. Remember, every expert was once a beginner, and we're here to support your journey every step of the way."
+    }
+  },
+  "localhost": {
+    "title": "Localhost",
+    "description": "A complete step-by-step guide to fork, clone, and run Databayt projects locally on your machine.",
+    "whatYouWillLearn": "What you'll learn:",
+    "learningSteps": "Fork repository → Clone locally → Install dependencies → Run development server → Make your first contribution",
+    
+    "step1": {
+      "title": "Step 1: Fork the Project",
+      "description": "Start by creating your own copy of the repository on GitHub.",
+      "navigateRepo": "Navigate to the repository you want to contribute to",
+      "clickFork": "Click the \"Fork\" button in the top-right corner",
+      "imageAlt": "Click the Fork button on GitHub repository page"
+    },
+    
+    "step2": {
+      "title": "Step 2: Create Your Fork",
+      "description": "Ensure the repository name is available and create your fork.",
+      "verifyName": "Verify the repository name is available",
+      "keepDefaults": "Keep the default settings (unless you need to change them)",
+      "clickCreate": "Click \"Create fork\" to complete the process",
+      "imageAlt": "Create fork dialog with repository name and settings"
+    },
+    
+    "step3": {
+      "title": "Step 3: Open VS Code/Cursor",
+      "description": "Launch your preferred code editor and prepare to clone the repository.",
+      "openWindow": "Open a new window in VS Code or Cursor",
+      "clickClone": "Click on \"Clone Repository\" or use the Source Control panel",
+      "prepareURL": "Prepare to paste your repository URL",
+      "imageAlt": "VS Code or Cursor editor with clone repository option highlighted"
+    },
+    
+    "step4": {
+      "title": "Step 4: Clone from GitHub",
+      "description": "Get your forked repository URL and clone it locally.",
+      "goToRepo": "Go back to your forked repository on GitHub",
+      "clickCode": "Click the green \"Code\" button",
+      "copyURL": "Copy the HTTPS URL to your clipboard",
+      "pasteURL": "Paste it in your editor's clone dialog",
+      "imageAlt": "GitHub clone dialog showing HTTPS URL copy button"
+    },
+    
+    "step5": {
+      "title": "Step 5: Choose Local Directory",
+      "description": "Select where you want to store the project on your computer.",
+      "chooseDir": "Choose a directory for your projects (e.g., ~/Documents/projects/)",
+      "createFolder": "Create a new folder if needed",
+      "selectLocation": "Select the location and confirm",
+      "imageAlt": "File explorer showing directory selection for cloning"
+    },
+    
+    "step6": {
+      "title": "Step 6: Open in Editor",
+      "description": "Open the cloned project in your code editor.",
+      "waitCloning": "Wait for the cloning process to complete",
+      "clickOpen": "Click \"Open\" when prompted",
+      "projectReady": "Your project is now ready for development",
+      "imageAlt": "Project successfully opened in VS Code or Cursor"
+    },
+    
+    "step7": {
+      "title": "Step 7: Install Dependencies",
+      "description": "Use pnpm to install all required dependencies.",
+      "openTerminal": "Open the integrated terminal (Ctrl/Cmd + ~)",
+      "runInstall": "Run the install command:",
+      "installCommand": "pnpm install",
+      "waitInstall": "Wait for installation to complete",
+      "imageAlt": "Terminal showing pnpm install command running"
+    },
+    
+    "step8": {
+      "title": "Step 8: Set Up Environment",
+      "description": "Configure your environment variables for local development.",
+      "copyEnv": "Copy the environment template:",
+      "copyCommand": "cp .env.example .env.local",
+      "editEnv": "Edit .env.local with your specific values (if needed)",
+      "saveFile": "Save the file",
+      "imageAlt": "Environment file setup and configuration"
+    },
+    
+    "step9": {
+      "title": "Step 9: Start Development Server",
+      "description": "Launch the development server and see your app running.",
+      "runDev": "Run the development command:",
+      "devCommand": "pnpm dev",
+      "waitServer": "Wait for the server to start",
+      "openBrowser": "Open your browser to http://localhost:3000",
+      "imageAlt": "Terminal showing development server running and localhost URL"
+    },
+    
+    "step10": {
+      "title": "Step 10: Verify Installation",
+      "description": "Confirm everything is working correctly.",
+      "checkWebsite": "Check the website loads properly in your browser",
+      "verifyReload": "Verify hot reload by making a small change",
+      "ensureNoErrors": "Ensure no console errors are present",
+      "imageAlt": "Browser showing the running application at localhost:3000"
+    },
+    
+    "firstContribution": {
+      "title": "Next Steps: Making Your First Contribution",
+      "description": "Now that your local environment is set up, you're ready to contribute!",
+      
+      "createBranch": {
+        "title": "Create a Feature Branch",
+        "command": "git checkout -b feature/your-feature-name"
+      },
+      
+      "makeChanges": {
+        "title": "Make Your Changes",
+        "followPatterns": "Follow our coding patterns",
+        "checkPatterns": "Check /docs/pattern",
+        "useComponents": "Use our components",
+        "browseComponents": "Browse src/components/ui/ for reusable components",
+        "testLocally": "Test locally",
+        "ensureWorking": "Ensure your changes work properly"
+      },
+      
+      "testChanges": {
+        "title": "Test Your Changes",
+        "commands": "# Build the project\npnpm build\n\n# Run linting\npnpm lint\n\n# Type checking (if available)\npnpm type-check"
+      },
+      
+      "commitPush": {
+        "title": "Commit and Push",
+        "commands": "# Stage your changes\ngit add .\n\n# Commit with conventional format\ngit commit -m \"feat: add new feature description\"\n\n# Push to your fork\ngit push origin feature/your-feature-name"
+      },
+      
+      "createPR": {
+        "title": "Create a Pull Request",
+        "goToFork": "Go to your fork on GitHub",
+        "clickCompare": "Click \"Compare & pull request\"",
+        "fillTemplate": "Fill out the PR template",
+        "submit": "Submit for review"
+      }
+    },
+    
+    "commandsReference": {
+      "title": "Common Commands Reference",
+      
+      "development": {
+        "title": "Development",
+        "devServer": "Start development server",
+        "build": "Build for production",
+        "start": "Run production build"
+      },
+      
+      "quality": {
+        "title": "Quality Checks",
+        "lint": "Run ESLint",
+        "format": "Format code",
+        "typeCheck": "Check TypeScript"
+      }
+    },
+    
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      
+      "commonIssues": {
+        "title": "Common Issues",
+        "portIssue": "Port already in use?",
+        "portSolution": "# Kill process on port 3000\nnpx kill-port 3000\n# Or use a different port\npnpm dev -- --port 3001",
+        "nodeIssue": "Node modules issues?",
+        "nodeSolution": "# Clean and reinstall\nrm -rf node_modules pnpm-lock.yaml\npnpm install",
+        "envIssue": "Environment variables not working?",
+        "envCheck": "Check .env.local file exists",
+        "envRestart": "Restart the development server",
+        "envPrefix": "Ensure variables start with NEXT_PUBLIC_ for client-side"
+      }
+    },
+    
+    "gettingHelp": {
+      "title": "Getting Help",
+      
+      "communitySupport": {
+        "title": "Community Support",
+        "description": "Join our Discord server for real-time help and connect with other contributors."
+      },
+      
+      "documentation": {
+        "title": "Documentation",
+        "description": "Check our",
+        "getStarted": "Get Started guide",
+        "and": "and",
+        "contributing": "Contributing guidelines"
+      }
+    },
+    
+    "conclusion": "Congratulations! You now have a fully functional local development environment. Start exploring the codebase, pick an issue that interests you, and make your first contribution to Databayt!"
+  },
+  
+    "github": {
+      "title": "GitHub",
+      "description": "Master GitHub workflows and collaboration patterns for contributing to Databayt projects.",
+    "essentialKnowledge": {
+      "title": "Essential knowledge:",
+      "content": "Repository workflows → Collaboration best practices → Code quality standards → Community resources"
+    },
+    "workflowEssentials": {
+      "title": "Workflow Essentials",
+      "description": "Learn the core GitHub workflows that power effective collaboration."
+    },
+    "understandingFeatures": {
+      "title": "Understanding GitHub Features",
+      "repositories": {
+        "title": "Repositories",
+        "description": "Learn how to fork, clone, and manage repositories for your contributions."
+      },
+      "issues": {
+        "title": "Issues & Pull Requests",
+        "description": "Understand how to create issues, submit pull requests, and collaborate."
+      },
+      "branches": {
+        "title": "Branches",
+        "description": "Master the art of branching for feature development and bug fixes."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Learn GitHub's collaborative features like reviews, discussions, and projects."
+      }
+    },
+    "essentialCommands": {
+      "title": "Essential Git Commands",
+      "repositoryManagement": {
+        "title": "Repository Management:",
+        "commands": "# Clone a repository\ngit clone git@github.com:username/repository.git\n\n# Check repository status\ngit status\n\n# View commit history\ngit log --oneline"
+      },
+      "branchManagement": {
+        "title": "Branch Management:",
+        "commands": "# Create and switch to new branch\ngit checkout -b feature/your-feature\n\n# Switch between branches\ngit checkout main\ngit checkout feature/your-feature\n\n# List all branches\ngit branch -a"
+      },
+      "makingChanges": {
+        "title": "Making Changes:",
+        "commands": "# Stage changes\ngit add .\ngit add specific-file.txt\n\n# Commit changes\ngit commit -m \"feat: add new feature\"\n\n# Push changes\ngit push origin feature/your-feature"
+      },
+      "stayingUpdated": {
+        "title": "Staying Updated:",
+        "commands": "# Fetch latest changes\ngit fetch origin\n\n# Pull latest changes\ngit pull origin main\n\n# Merge changes\ngit merge origin/main"
+      }
+    },
+    "bestPractices": {
+      "title": "Best Practices"
+    },
+    "qualityStandards": {
+      "title": "Quality Standards",
+      "repoManagement": {
+        "title": "Repository Management",
+        "item1": "• Clear, descriptive naming",
+        "item2": "• Comprehensive README files",
+        "item3": "• Proper .gitignore setup",
+        "item4": "• Semantic version releases"
+      },
+      "pullRequests": {
+        "title": "Pull Requests",
+        "item1": "• Descriptive titles and descriptions",
+        "item2": "• References to related issues",
+        "item3": "• Focused, atomic changes",
+        "item4": "• Passing test requirements"
+      }
+    },
+    "commitFormat": {
+      "title": "Commit Message Format",
+      "description": "Use conventional commits for consistent history:",
+      "format": "type(scope): description\n\n[optional body]\n\n[optional footer]",
+      "types": "feat: A new feature\nfix: A bug fix\ndocs: Documentation changes\nstyle: Formatting changes\nrefactor: Code changes that neither fix bugs nor add features\nperf: Performance improvements\ntest: Adding or correcting tests\nchore: Changes to the build process or auxiliary tools"
+    },
+    "gettingHelp": {
+      "title": "Getting Help",
+      "communityResources": {
+        "title": "Community Resources",
+        "description": "Connect with the Databayt community for support and collaboration.",
+        "discussionForums": "Discussion Forums",
+        "codeReviews": "Code Reviews",
+        "pairProgramming": "Pair Programming"
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting",
+        "description": "Common issues and solutions for GitHub workflows.",
+        "mergeConflicts": "Resolving merge conflicts",
+        "accessPermissions": "Repository access permissions",
+        "gitErrors": "Common Git error messages"
+      }
+    }
+  },
+  
+    "stack": {
+      "title": "Technology Stack",
+      "introduction": "Databayt is built on a carefully curated technology stack that prioritizes performance, developer experience, and scalability. Our architecture follows modern best practices and leverages industry-leading tools across the full development lifecycle.",
+      "nextjs": {
+      "name": "Next.js 15",
+      "description": "Our React-based meta-framework providing server-side rendering, static site generation, and powerful developer tooling. Features App Router, streaming, and built-in optimizations for production-ready applications."
+    },
+    "react": {
+      "name": "React 19",
+      "description": "Component-based UI library enabling declarative, efficient user interfaces with concurrent features, server components, and enhanced developer experience."
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "description": "Strongly-typed JavaScript superset enhancing code reliability, maintainability, and developer productivity through comprehensive static analysis and IDE integration."
+    },
+    "tailwind": {
+      "name": "Tailwind CSS",
+      "description": "Utility-first CSS framework enabling rapid, consistent, and maintainable styling with excellent performance characteristics and design system integration."
+    },
+    "shadcn": {
+      "name": "shadcn/ui",
+      "description": "High-quality, accessible React components built on Radix UI primitives, providing a solid foundation for consistent user experiences."
+    },
+    "planetscale": {
+      "name": "PlanetScale",
+      "description": "Serverless MySQL platform providing branching workflows, horizontal scaling, and zero-downtime schema changes with enterprise-grade reliability."
+    },
+    "prisma": {
+      "name": "Prisma",
+      "description": "Next-generation ORM offering type-safe database access, intuitive schema management, and powerful query capabilities with excellent TypeScript integration."
+    },
+    "vercel": {
+      "name": "Vercel",
+      "description": "Frontend cloud platform providing instant deployments, automatic scaling, and edge optimization with seamless Git integration and performance monitoring."
+    },
+    "zod": {
+      "name": "Zod",
+      "description": "TypeScript-first schema validation library ensuring runtime type safety and comprehensive data validation across API boundaries."
+    },
+    "hookform": {
+      "name": "React Hook Form",
+      "description": "Performant, flexible forms library with minimal re-renders, built-in validation, and excellent developer experience for complex form scenarios."
+    },
+    "authjs": {
+      "name": "Auth.js",
+      "description": "Comprehensive authentication library providing secure, standards-compliant authentication with support for multiple providers and advanced security features."
+    },
+    "claude": {
+      "name": "Claude",
+      "description": "Advanced AI assistant integrated for intelligent code completion, documentation generation, and development workflow optimization."
+    },
+    "cursor": {
+      "name": "Cursor",
+      "description": "AI-powered code editor enhancing productivity through intelligent suggestions, code generation, and seamless development workflows."
+    },
+    "mcp": {
+      "name": "MCP (Model Context Protocol)",
+      "description": "Standardized protocol for AI model integration, enabling sophisticated AI-powered features throughout the development stack."
+    },
+    "python": {
+      "name": "Python",
+      "description": "Versatile programming language powering our AI/ML pipelines, data processing, and backend automation with extensive ecosystem support."
+    },
+    "rust": {
+      "name": "Rust",
+      "description": "Systems programming language ensuring memory safety and high performance for critical components requiring zero-cost abstractions."
+    },
+    "langgraph": {
+      "name": "LangGraph",
+      "description": "Advanced framework for building stateful, multi-actor AI applications with sophisticated workflow orchestration and agent coordination."
+    },
+    "vibecoding": {
+      "name": "Vibe Coding",
+      "description": "AI-enhanced development methodology focusing on intuitive, flow-state programming with intelligent assistance and context-aware tooling."
+    },
+    "figma": {
+      "name": "Figma",
+      "description": "Collaborative design platform enabling seamless design-to-development workflows, component libraries, and cross-functional team alignment."
+    },
+    "conclusion": "This technology stack represents our commitment to modern development practices, emphasizing type safety, performance, developer experience, and maintainable architecture patterns that scale with our growth."
+      },
+      
+    "pattern": {
+      "title": "Patterns",
+      "introduction": {
+        "consistency": "**Consistency** is the foundation of maintainable code. At Databayt, we follow established patterns that ensure our codebase remains scalable, readable, and collaborative. Every pattern serves a purpose — from atomic components to server actions, from naming conventions to file organization.",
+        "atomicDesign": "We believe in **atomic design principles** where small, reusable components compose into larger, more complex systems. This isn't just about React components; it's a philosophy that extends to functions, hooks, utilities, and entire application architecture.",
+        "realWorld": "The patterns documented here emerge from real-world usage across our [open source repositories](https://github.com/abdout/databayt), tested in production environments, and refined through community feedback. Every decision prioritizes developer experience, type safety, and long-term maintainability."
+      },
+      "namingConventions": {
+        "title": "Naming Conventions",
+        "filesAndFolders": {
+          "title": "Files and Folders",
+          "components": "**Components**: PascalCase for component files (`Button.tsx`, `UserProfile.tsx`)",
+          "pages": "**Pages**: kebab-case for route segments (`user-profile`, `sign-in`)",
+          "utilities": "**Utilities**: camelCase for utility files (`formatDate.ts`, `validateEmail.ts`)",
+          "constants": "**Constants**: SCREAMING_SNAKE_CASE for constant files (`API_ENDPOINTS.ts`)",
+          "hooks": "**Hooks**: camelCase with `use` prefix (`useAuth.ts`, `useLocalStorage.ts`)"
+        },
+        "variablesAndFunctions": {
+          "title": "Variables and Functions",
+          "components": "**Components**: PascalCase (`export function UserCard()`)",
+          "functions": "**Functions**: camelCase (`export function formatCurrency()`)",
+          "variables": "**Variables**: camelCase (`const userData = await fetchUser()`)",
+          "constants": "**Constants**: SCREAMING_SNAKE_CASE (`const API_BASE_URL = 'https://api.example.com'`)",
+          "types": "**Types/Interfaces**: PascalCase (`interface UserData`, `type ApiResponse`)"
+        },
+        "databaseAndAPI": {
+          "title": "Database and API",
+          "tables": "**Database tables**: snake_case (`user_profiles`, `order_items`)",
+          "routes": "**API routes**: kebab-case (`/api/user-profile`, `/api/order-history`)",
+          "env": "**Environment variables**: SCREAMING_SNAKE_CASE (`DATABASE_URL`, `NEXT_PUBLIC_API_KEY`)"
+        }
+      },
+      "functionPatterns": {
+        "title": "Function Patterns",
+        "arrowFunctions": {
+          "title": "Arrow Functions",
+          "description": "Preferred for utilities, event handlers, and inline functions. Excellent for maintaining lexical scope and modern JavaScript patterns.",
+          "example": "const formatPrice = (amount: number) => {\n  return new Intl.NumberFormat('en-US', {\n    style: 'currency',\n    currency: 'USD'\n  }).format(amount)\n}"
+        },
+        "functionDeclarations": {
+          "title": "Function Declarations",
+          "description": "Used for React components, API route handlers, and exported functions. Better for hoisting and debugging stack traces.",
+          "example": "export function UserProfile({ userId }: Props) {\n  const { user, loading } = useUser(userId)\n  \n  if (loading) return <Skeleton />\n  return <div>{user.name}</div>\n}"
+        }
+      },
+      "serverActions": {
+        "title": "Server Actions & Data Fetching",
+        "pattern": {
+          "title": "Server Actions Pattern",
+          "description": "We use Next.js server actions for form submissions and data mutations, following the \"use server\" directive pattern:",
+          "example": "'use server'\n\nimport { revalidatePath } from 'next/cache'\nimport { redirect } from 'next/navigation'\n\nexport async function createUser(formData: FormData) {\n  const userData = {\n    name: formData.get('name') as string,\n    email: formData.get('email') as string,\n  }\n  \n  try {\n    await db.user.create({ data: userData })\n    revalidatePath('/users')\n    redirect('/users')\n  } catch (error) {\n    throw new Error('Failed to create user')\n  }\n}"
+        },
+        "dataFetching": {
+          "title": "Data Fetching Hierarchy",
+          "serverComponents": "**Server Components**: Direct database queries for initial data",
+          "clientComponents": "**Client Components**: React Query/SWR for interactive data",
+          "serverActions": "**Server Actions**: Form submissions and mutations",
+          "apiRoutes": "**API Routes**: External integrations and webhooks"
+        }
+      },
+      "componentArchitecture": {
+        "title": "Component Architecture",
+        "atomicDesign": {
+          "title": "Atomic Design Structure",
+          "example": "components/\n├── atom/           # Basic elements (Button, Input, Icon)\n├── molecule/       # Simple combinations (SearchBox, FormField)\n├── organism/       # Complex components (Header, UserTable)\n├── template/       # Page layouts and structures\n└── page/          # Complete page compositions"
+        },
+        "composition": {
+          "title": "Component Composition Pattern",
+          "example": "// Compound component pattern\nexport function Card({ children, className, ...props }: CardProps) {\n  return (\n    <div className={cn(\"rounded-lg border bg-card\", className)} {...props}>\n      {children}\n    </div>\n  )\n}\n\nCard.Header = CardHeader\nCard.Content = CardContent\nCard.Footer = CardFooter"
+        }
+      },
+      "typescript": {
+        "title": "TypeScript Patterns",
+        "typeDefinition": {
+          "title": "Type Definition Strategy",
+          "props": "**Props**: Inline for simple components, separate interfaces for complex ones",
+          "api": "**API Types**: Generated from schema or OpenAPI specs",
+          "utility": "**Utility Types**: Leverage TypeScript's built-in utility types",
+          "strict": "**Strict Mode**: Always enabled with `strict: true` in tsconfig"
+        },
+        "generic": {
+          "title": "Generic Patterns",
+          "example": "// Generic hook pattern\nfunction useApi<T>(endpoint: string): {\n  data: T | null\n  loading: boolean\n  error: Error | null\n} {\n  // Implementation\n}\n\n// Generic component pattern\ninterface TableProps<T> {\n  data: T[]\n  columns: Column<T>[]\n  onRowClick?: (row: T) => void\n}"
+        }
+      },
+      "fileOrganization": {
+        "title": "File Organization",
+        "structure": {
+          "title": "Project Structure",
+          "example": "src/\n├── app/                    # Next.js app router\n│   ├── (auth)/            # Route groups\n│   ├── api/               # API routes\n│   └── globals.css        # Global styles\n├── components/            # Reusable components\n├── lib/                   # Utilities and configurations\n├── hooks/                 # Custom React hooks\n├── types/                 # TypeScript type definitions\n└── constants/             # Application constants"
+        },
+        "imports": {
+          "title": "Import Organization",
+          "example": "// 1. React and Next.js imports\nimport { useState } from 'react'\nimport { redirect } from 'next/navigation'\n\n// 2. Third-party libraries\nimport { clsx } from 'clsx'\nimport { z } from 'zod'\n\n// 3. Internal utilities and types\nimport { cn } from '@/lib/utils'\nimport type { User } from '@/types'\n\n// 4. Internal components\nimport { Button } from '@/components/atom/button'\nimport { UserCard } from '@/components/molecule/user-card'"
+        }
+      },
+      "styling": {
+        "title": "Styling Patterns",
+        "tailwind": {
+          "title": "Tailwind CSS Organization",
+          "component": "**Component styles**: Compose utilities with `cn()` helper",
+          "spacing": "**Consistent spacing**: Use Tailwind's spacing scale",
+          "responsive": "**Responsive design**: Mobile-first responsive patterns",
+          "darkMode": "**Dark mode**: CSS variables with Tailwind's dark mode"
+        },
+        "shadcn": {
+          "title": "shadcn/ui Integration",
+          "example": "// Extend base components\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center rounded-md text-sm font-medium\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive: \"bg-destructive text-destructive-foreground hover:bg-destructive/90\",\n      },\n      size: {\n        default: \"h-10 px-4 py-2\",\n        sm: \"h-9 rounded-md px-3\",\n        lg: \"h-11 rounded-md px-8\",\n      },\n    },\n  }\n)"
+        }
+      },
+      "errorHandling": {
+        "title": "Error Handling",
+        "boundaries": {
+          "title": "Graceful Error Boundaries",
+          "example": "// Error boundary pattern\nexport function ErrorBoundary({ children }: { children: React.ReactNode }) {\n  return (\n    <ErrorBoundaryProvider fallback={<ErrorFallback />}>\n      {children}\n    </ErrorBoundaryProvider>\n  )\n}\n\n// Form error handling\nexport function ContactForm() {\n  const [errors, setErrors] = useState<Record<string, string>>({})\n  \n  const handleSubmit = async (formData: FormData) => {\n    try {\n      await submitContact(formData)\n    } catch (error) {\n      if (error instanceof ValidationError) {\n        setErrors(error.fieldErrors)\n      }\n    }\n  }\n}"
+        }
+      },
+      "performance": {
+        "title": "Performance Patterns",
+        "optimization": {
+          "title": "Optimization Strategies",
+          "codeSplitting": "**Code splitting**: Dynamic imports for large components",
+          "image": "**Image optimization**: Next.js Image component with proper sizing",
+          "bundle": "**Bundle analysis**: Regular bundle size monitoring",
+          "caching": "**Caching**: Strategic use of React Server Components caching"
+        },
+        "loading": {
+          "title": "Loading States",
+          "example": "// Consistent loading pattern\nexport function UserProfile({ userId }: { userId: string }) {\n  const { data: user, isLoading } = useUser(userId)\n  \n  if (isLoading) return <UserProfileSkeleton />\n  if (!user) return <UserNotFound />\n  \n  return <UserProfileContent user={user} />\n}"
+        }
+      },
+      "adoption": {
+        "title": "Pattern Adoption",
+        "livingGuidelines": "These patterns are **living guidelines** that evolve with our codebase. They're documented in our [contributing guide](/docs/contributing) and enforced through ESLint rules, Prettier configuration, and code review processes.",
+        "consistency": "When in doubt, prioritize **consistency** over personal preference. Our patterns serve the community, ensuring that any developer can jump into any part of the codebase and immediately understand the structure and conventions.",
+        "battleTested": "Every pattern has been battle-tested across multiple projects and reflects real-world usage patterns from our [open source repositories](https://github.com/abdout/databayt). They balance developer experience with maintainability, type safety with flexibility."
+      }
+    },
+  
+  "credit": {
+    "title": "Credits",
+    "description": "Databayt is open source and powered by open source software. We're incredibly grateful to the amazing developers, designers, and content creators who have inspired and enabled our work.",
+    "coreInspirations": {
+      "title": "Core Inspirations",
+      "shadcn": {
+        "title": "shadcn/ui",
+        "description": "Our primary inspiration and foundation comes from ",
+        "linkText": "shadcn/ui",
+        "descriptionCont": ", created by ",
+        "authorLinkText": "@shadcn",
+        "descriptionEnd": ". This incredible project has set the standard for modern, accessible React components. We extensively use and build upon:",
+        "links": {
+          "official": "Official shadcn/ui Components",
+          "awesome": "Awesome shadcn/ui Collection",
+          "blocks": "shadcn Blocks",
+          "templates": "shadcn Templates"
+        }
+      }
+    },
+    "componentLibraries": {
+      "title": "Component Libraries",
+      "description": "We've drawn inspiration and learned from these excellent component libraries:",
+      "links": {
+        "aceternity": "Aceternity UI",
+        "aceternityDesc": "Beautiful animated components and micro-interactions",
+        "ns": "NS UI",
+        "nsDesc": "Modern UI components and patterns",
+        "fancy": "Fancy Components",
+        "fancyDesc": "Advanced UI components",
+        "chatbot": "shadcn Chatbot Kit",
+        "chatbotDesc": "Chat interface components"
+      }
+    },
+    "educationalResources": {
+      "title": "Educational Resources",
+      "youtubeChannels": {
+        "title": "YouTube Channels",
+        "description": "We've learned immensely from these educational content creators:",
+        "list": {
+          "jsm": "JavaScript Mastery - Advanced JavaScript and React tutorials",
+          "antonio": "Code with Antonio - In-depth web development guides",
+          "lama": "Lama Dev - Practical web development tutorials",
+          "fireship": "Fireship - Quick, informative tech explanations",
+          "wds": "Web Dev Simplified - Clear explanations of complex concepts"
+        }
+      }
+    },
+    "community": {
+      "title": "Community",
+      "description": "Our project wouldn't be possible without the broader open source community. Special thanks to:",
+      "list": {
+        "contributors": "All contributors who have submitted PRs, reported issues, or provided feedback",
+        "react": "The React and Next.js teams for building amazing frameworks",
+        "tailwind": "The TailwindCSS team for revolutionizing CSS workflows",
+        "knowledge": "Everyone who has shared their knowledge through blog posts, videos, and discussions"
+      }
+    },
+    "licenseAttribution": {
+      "title": "License and Attribution",
+      "description": "While we build upon these amazing resources, Databayt maintains its own unique identity and codebase. We strive to:",
+      "list": {
+        "attribute": "Properly attribute code and ideas to their original creators",
+        "respect": "Respect all license requirements",
+        "contribute": "Contribute back to the open source community",
+        "transparency": "Maintain transparency about our inspirations and sources"
+      }
+    },
+    "wantCredit": {
+      "prompt": "Want to be credited? If we've used your work and haven't properly attributed it, please ",
+      "link": "let us know"
+    }
+  },
+  "vibeCoding": {
+    "title": "Vibe Coding",
+    "introduction": "Welcome to the **Vibe Coding** documentation. This section covers the modern approach to software development using AI-powered code generation and conversational programming.",
+    
+    "whatIs": {
+      "title": "What is Vibe Coding?",
+      "description": "**Vibe Coding** refers to a software development approach where developers use large language models (LLMs) to generate code based on natural language prompts. It's characterized by a more relaxed and conversational style, where developers provide high-level directions and the AI handles the low-level implementation details.",
+      "characteristics": {
+        "intro": "Key characteristics of vibe coding:",
+        "prompts": {
+          "title": "Natural Language Prompts",
+          "description": "Describe what you want in plain English"
+        },
+        "ai": {
+          "title": "AI-Generated Code",
+          "description": "Let LLMs handle the precise coding details"
+        },
+        "conversation": {
+          "title": "Conversational Development",
+          "description": "Iterate through dialogue with AI assistants"
+        },
+        "direction": {
+          "title": "High-Level Direction",
+          "description": "Focus on the \"what\" rather than the \"how\""
+        },
+        "prototyping": {
+          "title": "Rapid Prototyping",
+          "description": "Quickly generate working code from ideas"
+        }
+      }
+    },
+    
+    "principles": {
+      "title": "Core Principles",
+      "promptEng": {
+        "title": "1. Prompt Engineering",
+        "intro": "Master the art of communicating with AI:",
+        "specific": "Be specific about requirements and constraints",
+        "context": "Provide context about your tech stack and preferences",
+        "clear": "Use clear, unambiguous language",
+        "break": "Break complex tasks into smaller, manageable prompts"
+      },
+      "iterative": {
+        "title": "2. Iterative Refinement",
+        "intro": "Develop through conversation:",
+        "start": "Start with a basic implementation",
+        "refine": "Refine through follow-up prompts",
+        "ask": "Ask for specific improvements or modifications",
+        "build": "Build complexity gradually"
+      },
+      "partner": {
+        "title": "3. AI as a Coding Partner",
+        "intro": "Leverage AI effectively:",
+        "boilerplate": "Use AI for boilerplate code generation",
+        "help": "Get help with complex algorithms and logic",
+        "docs": "Generate documentation and comments",
+        "explore": "Explore different implementation approaches"
+      },
+      "oversight": {
+        "title": "4. Human Oversight",
+        "intro": "Maintain quality and control:",
+        "review": "Review and understand generated code",
+        "test": "Test thoroughly before deployment",
+        "validate": "Validate security and performance implications",
+        "maintain": "Maintain architectural consistency"
+      }
+    },
+    
+    "footer": "Vibe coding represents the future of development - where human creativity meets AI capability. Focus on the big picture and let AI handle the details."
+  },
+  "upwork": {
+    "title": "Upwork",
+    "introduction": "A guide to establish Databayt as a premium automation specialist on Upwork. Every strategy outlined here is based on real production systems and proven results across multiple industries.",
+    "positioning": "We position ourselves not just as developers, but as **time-savers** — helping businesses reclaim their most valuable asset through intelligent automation. This guide transforms your existing portfolio into a competitive advantage that commands premium rates.",
+    
+    "readinessAssessment": {
+      "title": "Readiness Assessment",
+      "majorStrengths": {
+        "title": "Major Strengths",
+        "availableCode": {
+          "title": "Available Code",
+          "description": "Appointment booking, authentication systems, dashboard blocks, payment processing, form systems, listing displays, profile management, calendar widgets, landing pages, hero sections, testimonial sections, pricing tables, navigation patterns, order processing, attendance tracking, medical forms, treatment room management, search/filter functionality, role-based access, documentation architecture, responsive layouts, email systems."
+        },
+        "underwayCode": {
+          "title": "Underway Code",
+          "description": "Telemedicine integration, prescription handling, health status tracking, virtual tours, mortgage calculators, neighborhood information displays, entertainment packages, event timeline features, kitchen management, delivery tracking, customer reviews, reservation systems, loyalty programs, grade management systems, course scheduling, parent communication, teacher dashboards, exam systems, collaborative editing features."
+        }
+      },
+      "optimizationOpportunities": {
+        "title": "Optimization Opportunities",
+        "testimonials": "Add client testimonials to existing projects",
+        "roi": "Include ROI metrics for each automation solution",
+        "videos": "Create video walkthroughs for top 3 projects",
+        "caseStudies": "Add case study success stories with numbers",
+        "impact": "Document automation impact (hours saved, efficiency gains)",
+        "presentations": "Create client-facing project presentations",
+        "metrics": "Add GitHub contribution metrics",
+        "expertise": "Showcase multi-industry expertise clearly"
+      }
+    },
+    
+    "jobScoring": {
+      "title": "Job Scoring",
+      "criteria": "Scoring Criteria (1-10 scale)",
+      "technicalAlignment": {
+        "title": "Technical Alignment (Weight: 30%)",
+        "react": "React/Next.js projects: 10/10",
+        "automation": "Business automation: 10/10",
+        "typescript": "TypeScript requirements: 9/10",
+        "components": "Component libraries: 10/10",
+        "documentation": "Documentation projects: 8/10"
+      },
+      "businessValue": {
+        "title": "Business Value (Weight: 25%)",
+        "timeSaving": "Time-saving automation: 10/10",
+        "optimization": "Process optimization: 9/10",
+        "enterprise": "Custom enterprise solutions: 9/10",
+        "saas": "SaaS development: 8/10",
+        "integration": "Integration projects: 8/10"
+      },
+      "projectSize": {
+        "title": "Project Size & Scope (Weight: 20%)",
+        "medium": "Medium complexity (2-8 weeks): 10/10",
+        "longTerm": "Long-term partnerships: 9/10",
+        "shortSprint": "Short sprints (1-2 weeks): 7/10",
+        "largeEnterprise": "Large enterprise (3+ months): 8/10"
+      },
+      "clientProfile": {
+        "title": "Client Profile (Weight: 15%)",
+        "techSavvy": "Tech-savvy businesses: 9/10",
+        "successfulProjects": "Previous successful projects: 8/10",
+        "clearRequirements": "Clear requirements: 9/10",
+        "innovation": "Open to innovation: 10/10"
+      },
+      "budgetRange": {
+        "title": "Budget Range (Weight: 10%)",
+        "midRate": "$50-100/hour: 10/10",
+        "lowRate": "$30-50/hour: 8/10",
+        "highRate": "$100+/hour: 9/10",
+        "fixedPrice": "Fixed price $5k+: 8/10"
+      },
+      "minimumScore": "Minimum Viable Score: 7/10"
+    },
+    
+    "proposalGeneration": {
+      "title": "Proposal Generation",
+      "inputVariables": "INPUT VARIABLES:\n- Job Description: {JOB_DESCRIPTION}\n- Client Name: {CLIENT_NAME}\n- Client Industry: {CLIENT_INDUSTRY}\n- Project Budget: {BUDGET}\n- Timeline: {TIMELINE}\n- Key Requirements: {REQUIREMENTS}\n- Client Background: {CLIENT_BACKGROUND}\n\nOUTPUT VARIANTS:\n- Automation Focus: Time-saving, process optimization, ROI calculations\n- Web Design Focus: UI/UX, responsive design, conversion optimization  \n- Enterprise Focus: Scalable architecture, security compliance, multi-tenant\n- Startup Focus: MVP development, rapid prototyping, component reusability"
+    },
+    
+    "proposalFormula": {
+      "title": "Proposal Formula",
+      "template": "Subject: Automation-First Solution for {PROJECT_TYPE} | Databayt\n\nHi {CLIENT_NAME},\n\n**The Problem You're Facing:**\n{PERSONALIZED_PAIN_POINT_ANALYSIS}\n\n**Why This Resonates With Us:**\nAt Databayt, we live by \"Automate the boring.\" Your {SPECIFIC_CHALLENGE} is exactly the type of repetitive process we help businesses eliminate.\n\n**Our Approach for {PROJECT_NAME}:**\n\n**Technical Solution:**\n- {SPECIFIC_TECH_STACK_RECOMMENDATION}\n- {AUTOMATION_STRATEGY}\n- {PERFORMANCE_OPTIMIZATION}\n\n**Time-Saving Impact:**\n- Current process: {ESTIMATED_CURRENT_TIME}\n- Automated solution: {ESTIMATED_NEW_TIME}\n- Time saved: {SAVINGS_CALCULATION}\n\n**Deliverables & Timeline:**\nWeek 1-2: {PHASE_1}\nWeek 3-4: {PHASE_2}\nWeek 5-6: {PHASE_3}\n\n**Why Databayt?**\n- Open-source foundation (you own the code)\n- Proven automation expertise\n- Modern, scalable architecture\n- Transparent development process\n\n**Next Steps:**\nI'd love to discuss how we can save your team {X} hours per week. Available for a quick call this week?\n\nBest regards,\n{YOUR_NAME}\nDatabayt | Reclaim Your Time Through Automation"
+    },
+    
+    "promptGenerator": {
+      "title": "Prompt Generator",
+      "description": "Use this AI prompt template for automated proposal generation:"
+    },
+    
+    "profileSetup": {
+      "title": "Profile Setup",
+      "optimization": {
+        "title": "Optimization Checklist",
+        "photo": {
+          "title": "Profile Photo",
+          "lighting": "Professional headshot with good lighting",
+          "background": "Clean background (preferably tech-related)",
+          "expression": "Confident, approachable expression",
+          "resolution": "High resolution (400x400px minimum)"
+        },
+        "professionalTitle": {
+          "title": "Professional Title",
+          "recommended": "Recommended:",
+          "text": "\"Business Automation Expert | React/Next.js Developer | Time-Saving Solutions\""
+        },
+        "overview": {
+          "title": "Professional Overview (2,000 chars)",
+          "content": "AUTOMATE THE BORING, \n\nHelp businesses reclaim their most valuable asset: TIME.\n\nWe've built 8+ production automation systems across multiple industries, serving real users and saving thousands of hours annually.\n\nPROVEN INDUSTRY EXPERTISE:\nHealthcare Management (HIPAA-compliant) - health-underway.vercel.app\nEducation Platforms (Student/Parent portals) - ed.databayt.org  \nRestaurant POS & Kitchen Management Systems\nReal Estate & Property Management Platforms\nE-commerce & Inventory Solutions\n\nPRODUCTION IMPACT:\n• Healthcare: 80% reduction in appointment scheduling time\n• Education: 70% decrease in administrative tasks\n• Restaurant: Complete POS automation with real-time kitchen displays\n• Real Estate: Automated tenant management and maintenance tracking\n• 5 GitHub repositories with live production applications\n\nCUTTING-EDGE TECH STACK:\n• Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion\n• Backend: Prisma ORM, MongoDB, PostgreSQL, NextAuth, Stripe\n• Architecture: Atomic design, Component libraries, Enterprise security\n• Deployment: Vercel, production-ready with CDN optimization\n\nMY GUARANTEE:\nEvery solution I build is production-tested. You'll see live demos before we even start talking.\n\nReady to see automation in action? Check my live systems and let's discuss your specific needs.\n\nAvailable for consultation calls - I'll show you exactly how I'll automate your biggest time-wasters."
+        }
+      }
+    },
+    "apps": {
+      "title": "Active apps",
+      "repository": "Repo",
+      "preview": "View",
+      "data": {
+        "databayt": {
+          "name": "Databayt",
+          "description": "Business automation platform with comprehensive documentation architecture, hero sections, landing pages, authentication, technical record patterns, MCP protocols, roadmap templates, pricing strategies, and legal compliance blocks."
+        },
+        "codebase": {
+          "name": "Codebase",
+          "description": "Component library platform featuring shadcn/ui components, atomic templates, dashboard blocks, authentication forms, payment methods, calendar widgets, navigation patterns, card layouts, and interactive playground sections."
+        },
+        "company": {
+          "name": "Company",
+          "description": "Corporate website template with hero sections, service offerings, team displays, testimonials, contact forms, portfolio showcases, pricing tables, and professional landing page components."
+        },
+        "school": {
+          "name": "School",
+          "description": "Educational management platform with student registration, attendance tracking, grade management, course scheduling, parent communication, teacher dashboards, exam systems, and collaborative editing features."
+        },
+        "health": {
+          "name": "Health",
+          "description": "Healthcare management system featuring appointment scheduling, patient records, medical forms, doctor profiles, treatment room management, prescription handling, telemedicine integration, and health status tracking."
+        },
+        "realestate": {
+          "name": "Real Estate",
+          "description": "Property platform with listing templates, search filters, property details, agent profiles, virtual tours, mortgage calculators, contact forms, and neighborhood information displays."
+        },
+        "publicparty": {
+          "name": "Public Party",
+          "description": "Event management system with booking forms, venue listings, catering options, entertainment packages, guest management, payment processing, and event timeline features."
+        },
+        "food": {
+          "name": "Food",
+          "description": "Restaurant management platform featuring menu displays, order processing, delivery tracking, customer reviews, reservation systems, kitchen management, payment integration, and loyalty programs."
+        }
+      }
+    }
+  },
+  "contribute": {
+    "title": "Contributing",
+    "intro": "Thanks for your interest in contributing to Databayt. We're happy to have you here.",
+    "review": "Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.",
+    "help": "If you need any help, feel free to reach out to our team.",
+    
+    "aboutRepo": {
+      "title": "About this repository",
+      "description": "This repository is a monorepo.",
+      "pnpm": "We use [pnpm](https://pnpm.io) and [`workspaces`](https://pnpm.io/workspaces) for development.",
+      "turborepo": "We use [Turborepo](https://turbo.build/repo) as our build system.",
+      "changesets": "We use [changesets](https://github.com/changesets/changesets) for managing releases."
+    },
+    
+    "structure": {
+      "title": "Structure",
+      "description": "This repository is structured as follows:",
+      "code": "apps\n└── www\n    ├── app\n    ├── components\n    ├── content\n    └── registry\n        ├── default\n        │   ├── example\n        │   └── ui\n        └── new-york\n            ├── example\n            └── ui\npackages\n└── cli",
+      "table": {
+        "header1": "Path",
+        "header2": "Description",
+        "path1": "apps/www/app",
+        "desc1": "The Next.js application for the website.",
+        "path2": "apps/www/components",
+        "desc2": "The React components for the website.",
+        "path3": "apps/www/content",
+        "desc3": "The content for the website.",
+        "path4": "apps/www/registry",
+        "desc4": "The registry for the components.",
+        "path5": "packages/cli",
+        "desc5": "The `shadcn-ui` package."
+      }
+    },
+    
+    "development": {
+      "title": "Development",
+      "fork": {
+        "title": "Fork this repo",
+        "description": "You can fork this repo by clicking the fork button in the top right corner of this page."
+      },
+      "clone": {
+        "title": "Clone on your local machine",
+        "code": "git clone https://github.com/your-username/databayt.git"
+      },
+      "navigate": {
+        "title": "Navigate to project directory",
+        "code": "cd databayt"
+      },
+      "branch": {
+        "title": "Create a new Branch",
+        "code": "git checkout -b my-new-branch"
+      },
+      "install": {
+        "title": "Install dependencies",
+        "code": "pnpm install"
+      },
+      "run": {
+        "title": "Run a workspace",
+        "description": "You can use the `pnpm --filter=[WORKSPACE]` command to start the development process for a workspace.",
+        "examples": {
+          "title": "Examples",
+          "first": {
+            "description": "To run the website:",
+            "code": "pnpm --filter=www dev"
+          },
+          "second": {
+            "description": "To run the package:",
+            "code": "pnpm --filter=shadcn-ui dev"
+          }
+        }
+      }
+    },
+    
+    "commitConvention": {
+      "title": "Commit Convention",
+      "description": "Before you create a Pull Request, please check whether your commits comply with the commit conventions used in this repository.",
+      "followFormat": "When you create a commit we kindly ask you to follow the convention `category(scope or module): message` in your commit message while using one of the following categories:",
+      "categories": {
+        "feat": {
+          "title": "feat / feature",
+          "description": "all changes that introduce completely new code or new features"
+        },
+        "fix": {
+          "title": "fix",
+          "description": "changes that fix a bug (ideally you will additionally reference an issue if present)"
+        },
+        "refactor": {
+          "title": "refactor",
+          "description": "any code related change that is not a fix nor a feature"
+        },
+        "docs": {
+          "title": "docs",
+          "description": "changing existing or creating new documentation (i.e. README, docs for usage of a lib or cli usage)"
+        },
+        "build": {
+          "title": "build",
+          "description": "all changes regarding the build of the software, changes to dependencies or the addition of new dependencies"
+        },
+        "test": {
+          "title": "test",
+          "description": "all changes regarding tests (adding new tests or changing existing ones)"
+        },
+        "ci": {
+          "title": "ci",
+          "description": "all changes regarding the configuration of continuous integration (i.e. github actions, ci system)"
+        },
+        "chore": {
+          "title": "chore",
+          "description": "all changes to the repository that do not fit into any of the above categories"
+        }
+      },
+      "example": "e.g. `feat(components): add new prop to the avatar component`",
+      "moreInfo": "If you are interested in the detailed specification you can visit https://www.conventionalcommits.org/ or check out the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)."
+    },
+    
+    "testing": {
+      "title": "Testing",
+      "intro": "Tests are written using [Vitest](https://vitest.dev). You can run all the tests from the root of the repository.",
+      "command": "pnpm test",
+      "ensure": "Please ensure that the tests are passing when submitting a pull request. If you're adding new features, please include tests."
+    }
+  }
+}
