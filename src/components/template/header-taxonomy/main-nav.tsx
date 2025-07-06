@@ -5,11 +5,11 @@ import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 
 import { MainNavItem } from "./type"
-import { siteConfig } from "./constant"
 import { cn } from "@/lib/utils"
 import { Icons } from "./icons"
 import { MobileNav } from "./mobile-nav"
 import { Logo } from "@/components/atom/icons"
+import { useLocale } from "@/hooks/use-locale"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -19,13 +19,21 @@ interface MainNavProps {
 export function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
+  const { t } = useLocale()
+
+  // Function to get translated title for nav items
+  const getNavTitle = (originalTitle: string) => {
+    // Convert the original title to lowercase for key mapping
+    const key = originalTitle.toLowerCase()
+    return t(`navigation.${key}`)
+  }
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center gap-2 md:flex">
+      <Link href="/" className="hidden items-center gap-2 md:flex" style={{ position: "absolute", left: "1rem" }}>
         <Logo width={20} height={20} className="text-foreground" />
-        <span className="hidden font-bold sm:inline-block  ">
-          {siteConfig.name}
+        <span className="hidden font-bold sm:inline-block">
+          Databayt
         </span>
       </Link>
       {items?.length ? (
@@ -42,17 +50,17 @@ export function MainNav({ items, children }: MainNavProps) {
                 item.disabled && "cursor-not-allowed opacity-80"
               )}
             >
-              {item.title}
+              {getNavTitle(item.title)}
             </Link>
           ))}
         </nav>
       ) : null}
       <button
-        className="flex items-center space-x-2 md:hidden"
+        className="flex items-center space-x-2 rtl:space-x-reverse md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? <Icons.close /> : <Icons.logo />}
-        <span className="font-bold">Menu</span>
+        <span className="font-bold">{t('navigation.menu')}</span>
       </button>
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>

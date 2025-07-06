@@ -1,3 +1,5 @@
+'use client'
+
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -5,8 +7,12 @@ import React from 'react'
 import { MainNav } from './main-nav'
 import { marketingConfig } from './constant'
 import { ModeSwitcher } from './mode-switcher'
+import { LocaleSwitcher } from '@/components/locale-switcher'
+import { useLocale } from '@/hooks/use-locale'
 
 const TaxonomyHeader = () => {
+  const { t } = useLocale()
+
   return (
     <header className="sticky top-0 z-40 border-b border-dashed border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" style={{
       width: '100vw',
@@ -20,6 +26,7 @@ const TaxonomyHeader = () => {
           
           {/* Right side - Login and Theme toggle */}
           <div className="flex items-center gap-2">
+            <LocaleSwitcher />
             <Link
               href="/login"
               className={cn(
@@ -27,7 +34,7 @@ const TaxonomyHeader = () => {
                 "px-4 text-xs"
               )}
             >
-              Login
+              {t('common.login')}
             </Link>
             <ModeSwitcher />
           </div>

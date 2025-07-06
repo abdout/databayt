@@ -1,0 +1,356 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "close": "Close",
+    "liveChat": "Live chat",
+    "login": "Login"
+  },
+  "navigation": {
+    "home": "Home",
+    "docs": "Documentation",
+    "automated": "Automated",
+    "lab": "Lab",
+    "about": "About",
+    "contact": "Contact",
+    "features": "Features",
+    "pricing": "Pricing",
+    "documentation": "Documentation",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "landing": {
+    "hero": {
+      "title": "Automate the boring,\nElevate the wondrous.",
+      "description": "Building codebase for business automation and open sourcing everything. Follow along as we figure this out together.",
+      "getStarted": "Get Started",
+      "github": "GitHub",
+      "followDiscord": "Follow along on Discord"
+    },
+    "time": {
+      "title": "Time",
+      "subtitle": "We sell the origin of all values. Time is our most precious asset."
+    },
+    "collaboration": {
+      "title": "Let's Work Together",
+      "description": "Ready to elevate business with advanced automation solutions? Experience streamlined operations and enhanced efficiency for any industry.",
+      "contactUs": "Contact Us",
+      "emailPlaceholder": "Email address",
+      "messagePlaceholder": "What routine you would like to automate?"
+    },
+    "boost": {
+      "title": "Boost",
+      "description": "Thank you for the boost",
+      "becomePatron": "Become a Patron",
+      "buyCoffee": "Buy me a coffee",
+      "patreonLabel": "Become a Patron",
+      "coffeeLabel": "Buy me a coffee"
+    },
+    "codebase": {
+      "title": "Codebase",
+      "description": "The Repository of Wonders",
+      "exploreButton": "Explore Codebase",
+      "categories": {
+        "atom": {
+          "title": "Atom",
+          "description": "Atomic components for larger structures"
+        },
+        "template": {
+          "title": "Template",
+          "description": "Pre-designed layouts for quick setup"
+        },
+        "block": {
+          "title": "Block",
+          "description": "Reusable blocks for project assembly"
+        },
+        "micro": {
+          "title": "Micro",
+          "description": "Ready-to-use micro services"
+        }
+      }
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Explore our portfolio showcasing innovative business automation solutions, custom software development, and successful digital transformation projects that have helped companies streamline their operations and boost productivity.",
+      "button": "Gallery",
+      "company": "company"
+    },
+    "logoCloud": {
+      "trustedBy": "Trusted by amazing sponsors"
+    },
+    "openSource": {
+      "title": "Proudly Open Source",
+      "description": "Databayt is open source and powered by open source software.",
+      "codeAvailable": "The code is available on",
+      "github": "GitHub",
+      "contributors": "Contributors"
+    },
+    "testimonials": {
+      "title": "Client Testimonials",
+      "description": "Discover what our clients have achieved using Databayt's advanced data and development platform.",
+      "items": {
+        "amira": {
+          "name": "Amira Mohammed Al-Saleh",
+          "role": "Senior Frontend Developer",
+          "content": "Databayt platform changed my perspective on development. Advanced tools and accurate data make my work more professional and efficient."
+        },
+        "osman": {
+          "name": "Osman Ahmed Al-Kareem",
+          "role": "Lead Software Developer",
+          "content": "The most user-friendly platform I've used. Excellent UI and powerful tools that meet all our technical needs."
+        },
+        "fatima": {
+          "name": "Fatima Ali Al-Nour",
+          "role": "Technical Project Manager",
+          "content": "A comprehensive platform with exceptional customer service. Helped us accelerate our projects and improve result quality."
+        },
+        "ahmed": {
+          "name": "Ahmed Hassan Al-Badri",
+          "role": "Mobile App Developer",
+          "content": "Advanced and 100% reliable tools. Significantly increased my productivity and reduced development time."
+        },
+        "layla": {
+          "name": "Layla Abdullah Al-Hameed",
+          "role": "UX Designer",
+          "content": "Elegant design and advanced features. Makes the design and development process an enjoyable and productive experience."
+        },
+        "mohamed": {
+          "name": "Mohamed Salem Al-Rasheed",
+          "role": "IT Manager",
+          "content": "An integrated solution supporting all our company's technical operations. Professional support team providing 24/7 assistance."
+        }
+      }
+    },
+    "stack": {
+      "title": "Stack",
+      "description": "Databayt leverages state-of-the-art technology to craft innovative and modern applications, delivering seamless performance, scalability, and a superior user experience.",
+      "technologies": {
+        "nextjs": {
+          "title": "Next.js 15",
+          "description": "App dir, Routing, Layouts, Loading UI and API routes."
+        },
+        "react": {
+          "title": "React 19",
+          "description": "Server and Client Components. Use hook."
+        },
+        "database": {
+          "title": "Database",
+          "description": "ORM using Prisma and deployed on Plantscale."
+        },
+        "components": {
+          "title": "Components",
+          "description": "UI components built using Radix UI and styled with Tailwind CSS."
+        },
+        "authentication": {
+          "title": "Authentication",
+          "description": "Authentication using Auth.js and middlewares."
+        },
+        "subscriptions": {
+          "title": "Subscriptions",
+          "description": "Free and paid subscriptions using Stripe."
+        }
+      }
+    },
+    "faqs": {
+      "title": "Frequently\nAsked\nQuestions",
+      "subtitle": "Your guide to business automation with Databayt.",
+      "questions": {
+        "openSource": {
+          "title": "Is the codebase really open source?",
+          "description": "Yes! Every component and building block is open source. We charge for crafting fully functional solutions and ensuring their ongoing reliability.",
+          "points": {
+            "1": "All atomic components and templates are freely available",
+            "2": "Contributors earn a share of the value they help create",
+            "3": "Full transparency in development and business processes",
+            "4": "Community-driven innovation and collaboration"
+          }
+        },
+        "whatAutomate": {
+          "title": "What exactly does Databayt automate?",
+          "description": "We automate repetitive business processes, streamline workflows, and build custom solutions that save you time and reduce manual work.",
+          "points": {
+            "1": "Data processing and analysis automation",
+            "2": "Workflow optimization and task automation",
+            "3": "Custom enterprise applications and integrations"
+          }
+        },
+        "planSelection": {
+          "title": "How do I know which plan is right for my business?",
+          "description": "Choose One Project for specific challenges, Strategic Partner for ongoing development needs, or Product Access for ready-made automation tools. We can help you decide during a consultation."
+        },
+        "dataScientist": {
+          "title": "How can I contribute as a Data Scientist?",
+          "description": "Build data analysis automation, predictive models, AI agents for business insights"
+        },
+        "support": {
+          "title": "Do you provide ongoing support?",
+          "description": "Yes, we offer continuous support and maintenance to ensure your automation solutions keep running smoothly as your business grows and evolves."
+        },
+        "remote": {
+          "title": "Is this work remote?",
+          "description": "Yes, completely remote! Contributors work from anywhere in the world. We use GitHub for collaboration, async communication, and project management."
+        },
+        "partTime": {
+          "title": "What if I can only contribute part-time?",
+          "description": "Perfect! Most contributors work part-time:",
+          "points": {
+            "1": "No minimum time commitment required",
+            "2": "Contribute when your schedule allows",
+            "3": "Start with small tasks and grow your involvement",
+            "4": "Earn proportional to your contribution level"
+          }
+        },
+        "payment": {
+          "title": "How much do you pay contributors?",
+          "description": "We use a revenue-sharing model:",
+          "points": {
+            "1": "Contributors earn a percentage of revenue generated from components they build",
+            "2": "Higher contribution value = higher revenue share",
+            "3": "Transparent tracking of all contributions and earnings",
+            "4": "Payment details discussed during onboarding"
+          }
+        },
+        "getStartedContributing": {
+          "title": "How do I get started contributing?",
+          "points": {
+            "1": "Explore the codebase at our GitHub repository",
+            "2": "Join our community discussions to introduce yourself",
+            "3": "Pick a first issue - we have \"good first issue\" labels for newcomers",
+            "4": "Submit a pull request - start small and build up",
+            "5": "Earn your first revenue share as your contributions are used"
+          }
+        },
+        "getStarted": {
+          "title": "How do I get started?",
+          "description": "Contact us for a consultation where we'll discuss your specific needs, challenges, and goals. We'll recommend the best approach and provide a detailed proposal."
+        },
+        "useComponents": {
+          "title": "Can I use Databayt components in my own projects?",
+          "description": "Yes! All components are open source and can be used in your projects according to their respective licenses. We encourage reuse and building upon our work."
+        },
+        "portfolio": {
+          "title": "Can I include Databayt projects in my portfolio?",
+          "description": "Absolutely! Working with us provides multiple portfolio benefits:",
+          "points": {
+            "1": "Add real-world enterprise projects to your portfolio",
+            "2": "Showcase your contributions to open-source",
+            "3": "Demonstrate experience with modern tech stack",
+            "4": "Build a public contribution history on GitHub"
+          }
+        },
+        "earningModel": {
+          "title": "How does the earning model work for real-world projects?",
+          "description": "Our earning model has multiple streams:",
+          "points": {
+            "1": "Revenue share from components used in client projects",
+            "2": "Direct earnings from client project implementations",
+            "3": "Ongoing maintenance and support revenue",
+            "4": "Bonus rewards for high-impact contributions",
+            "5": "Ownership stake in projects you help build"
+          }
+        },
+        "moreQuestions": {
+          "title": "Still have questions?",
+          "links": {
+            "github": "Join our community discussions on GitHub",
+            "discord": "Join our Discord community",
+            "consultation": "Contact us for a free consultation",
+            "docs": "Check our documentation at databayt.org/docs",
+            "email": "Email us at hello@databayt.org"
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "Automate the boring. Transform your business with intelligent and innovative automation solutions.",
+    "copyright": "© All rights reserved and freely available.",
+    "builtBy": "Developed by",
+    "author": "Databayt Team",
+    "hostedOn": "Hosted on",
+    "illustrationsBy": "Illustrations designed by",
+    "sourceCodeAvailable": "The source code is available on",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe"
+    },
+    "sections": {
+      "about": {
+        "title": "ABOUT US",
+        "links": {
+          "paradigm": "Our Philosophy",
+          "contributors": "Contributors",
+          "careers": "Careers",
+          "investors": "Investors"
+        }
+      },
+      "contribute": {
+        "title": "CONTRIBUTE",
+        "links": {
+          "documentation": "Documentation",
+          "guidelines": "Guidelines",
+          "inspiration": "Inspiration",
+          "issues": "Technical Issues",
+          "pullRequests": "Pull Requests",
+          "codeOfConduct": "Code of Conduct"
+        }
+      },
+      "solution": {
+        "title": "SOLUTIONS",
+        "links": {
+          "workflow": "Workflow",
+          "integration": "Integration",
+          "aiAgent": "AI Agent",
+          "features": "Features",
+          "blockchain": "Blockchain"
+        }
+      },
+      "support": {
+        "title": "SUPPORT",
+        "links": {
+          "helpCenter": "Help Center",
+          "faqs": "FAQs",
+          "contact": "Contact Us",
+          "sitemap": "Sitemap"
+        }
+      }
+    },
+    "links": {
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "safety": "Safety",
+      "status": "Service Status"
+    }
+  },
+  "pages": {
+    "agent": {
+      "title": "AI Agents",
+      "searchPlaceholder": "Search intelligent agents..."
+    },
+    "automated": {
+      "title": "Automated Solutions",
+      "description": "Beautifully designed. Well maintained. Blazing fast.",
+      "requestAutomation": "Request your automation",
+      "viewProject": "View project",
+      "perMonth": "Per Month After Trial",
+      "noCard": "No credit card required for now",
+      "easyCancel": "Easy to cancel",
+      "startTrial": "Start Free Trial"
+    }
+  },
+  "components": {
+    "wizard": {
+      "title": "Component Wizard",
+      "description": "Discover and integrate our pre-built components to accelerate your development process.",
+      "launchButton": "Launch Wizard"
+    }
+  }
+}

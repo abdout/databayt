@@ -2,6 +2,7 @@
 
 import { useEffect, useState, createContext, useContext, useRef } from "react";
 import { useSidebar } from "@/components/ui/sidebar";
+import { validateHeadingIds } from "./utils/validate-headings";
 
 // Context for active sections
 const ActiveSectionContext = createContext<string>("");
@@ -28,20 +29,58 @@ export function DocsTableOfContents() {
     const extractHeadings = () => {
       const headingElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
       const headingsArray: Array<{id: string, text: string, level: number}> = [];
+      // Keep track of existing IDs to ensure uniqueness
+      const existingIds = new Set<string>();
+      const duplicateIds = new Set<string>();
+      
+      // First pass - check for duplicate IDs
+      headingElements.forEach((heading) => {
+        const id = heading.id;
+        if (id) {
+          if (existingIds.has(id)) {
+            duplicateIds.add(id);
+            console.warn(`[DocsTableOfContents] Duplicate heading ID found: ${id}`);
+          }
+          existingIds.add(id);
+        }
+      });
+      
+      // Reset for second pass
+      existingIds.clear();
       
       headingElements.forEach((heading) => {
         const level = parseInt(heading.tagName.charAt(1));
         const text = heading.textContent || '';
         let id = heading.id;
         
-        // Generate ID if not present
-        if (!id) {
-          id = text.toLowerCase()
+        // Generate ID if not present or ensure it's unique
+        if (!id || duplicateIds.has(id)) {
+          // Get the base ID from text
+          let baseId = text.toLowerCase()
             .replace(/[^\w\s-]/g, '')
             .replace(/\s+/g, '-')
             .trim();
+          
+          // Handle empty or purely symbolic text (like "-")
+          if (!baseId || baseId === '-') {
+            baseId = `heading-${level}-${headingsArray.length}`;
+          }
+          
+          // Make sure the ID is unique
+          let uniqueId = baseId;
+          let counter = 1;
+          
+          while (existingIds.has(uniqueId) || document.getElementById(uniqueId)) {
+            uniqueId = `${baseId}-${counter}`;
+            counter++;
+          }
+          
+          id = uniqueId;
           heading.id = id;
         }
+        
+        // Add to tracking set
+        existingIds.add(id);
         
         // Only include h2 and h3 for cleaner ToC
         if (level === 2 || level === 3) {
@@ -53,7 +92,13 @@ export function DocsTableOfContents() {
     };
 
     // Run after a short delay to ensure MDX content is rendered
-    const timer = setTimeout(extractHeadings, 100);
+    const timer = setTimeout(() => {
+      extractHeadings();
+      // Validate heading IDs in development environment
+      if (process.env.NODE_ENV !== 'production') {
+        validateHeadingIds();
+      }
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
@@ -131,9 +176,9 @@ export function DocsTableOfContents() {
           </div>
           
           <nav ref={navRef} className="mt-2 max-h-[calc(100vh-180px)] overflow-hidden pr-2">
-            {headings.map((heading) => (
+            {headings.map((heading, index) => (
               <div 
-                key={heading.id}
+                key={`${heading.id}-${index}`}
                 className="relative" 
                 onMouseEnter={() => setHoveredItem(heading.id)}
                 onMouseLeave={() => setHoveredItem(null)}

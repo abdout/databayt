@@ -29,12 +29,15 @@ const Contributors = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-4 md:grid-cols-10">
+    <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 max-w-4xl mx-auto justify-items-center">
       {contributors.map((contributor, index) => (
-        <div key={index} className="relative w-[85px] h-[85px] rounded-full overflow-hidden bg-gray-100">
+        <div 
+          key={index} 
+          className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-muted shadow-sm hover:shadow-md transition-shadow"
+        >
           <Image 
             src={`/contributors/${contributor}`} 
-            alt="" 
+            alt={`Contributor ${index + 1}`}
             fill
             className="object-cover" 
           />

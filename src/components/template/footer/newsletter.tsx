@@ -1,16 +1,33 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useLocale } from "@/hooks/use-locale";
 
 const NewsLetter = () => {
-  return (
-    <div className="flex flex-col space-y-4 px-8 md:px-0">
-      <h5 className="text-[16px] md:text-[19px] font-medium">NewsLetter</h5>
-      
-        <Input type="email" placeholder="Email address" className="w-52 h-9"/>
-        <Button type="submit" size= 'sm' className="w-24 ">Subscribe</Button>
-    
-    </div>
-  )
-}
+  const { t } = useLocale();
 
-export default NewsLetter
+  return (
+    <div className="newsletter-container flex flex-col space-y-6 w-full max-w-[300px] items-center lg:items-start rtl:lg:items-end text-center lg:text-start rtl:lg:text-end">
+      <h5 className="text-lg md:text-xl font-semibold rtl:font-bold rtl:text-xl text-center lg:text-start rtl:lg:text-end">
+        {t("footer.newsletter.title")}
+      </h5>
+      <div className="flex flex-col space-y-4 w-full">
+        <Input
+          type="email"
+          placeholder={t("footer.newsletter.placeholder")}
+          className="w-full h-11 text-start rtl:text-end placeholder:text-start rtl:placeholder:text-end border-primary/20 focus:border-primary transition-colors"
+        />
+        <Button
+          type="submit"
+          size="default"
+          className="w-full sm:w-auto sm:self-start rtl:sm:self-end px-8 py-2 font-medium rtl:font-semibold"
+        >
+          {t("footer.newsletter.subscribe")}
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export default NewsLetter;

@@ -12,11 +12,11 @@ import { ArrowDown, ThumbsDown, ThumbsUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAutoScroll } from "@/components/template/chatbot/use-scroll"
 import { Button } from "@/components/ui/button"
-import { type Message } from "@/components/template/chatbot/chat-message"
+import { type Message, type MessagePart } from "@/components/template/chatbot/chat-message"
 import { CopyButton } from "@/components/template/chatbot/copy-button"
 import { MessageInput } from "@/components/template/chatbot/message-input"
 import { MessageList } from "@/components/template/chatbot/message-list"
-import { PromptSuggestions } from "@/components/template/chatbot/prompt-suggestions"
+import { useLocale } from "@/hooks/use-locale"
  
 interface ChatPropsBase {
   handleSubmit: (
@@ -33,7 +33,7 @@ interface ChatPropsBase {
     messageId: string,
     rating: "thumbs-up" | "thumbs-down"
   ) => void
-  setMessages?: (messages: any[]) => void
+  setMessages?: (messages: Array<Message>) => void
   transcribeAudio?: (blob: Blob) => Promise<string>
 }
  
@@ -56,15 +56,15 @@ export function Chat({
   handleInputChange,
   stop,
   isGenerating,
-  append,
-  suggestions,
+  // append,
+  // suggestions,
   className,
   onRateResponse,
   setMessages,
   transcribeAudio,
 }: ChatProps) {
+  const { t, direction } = useLocale()
   const lastMessage = messages.at(-1)
-  const isEmpty = messages.length === 0
   const isTyping = lastMessage?.role === "user"
  
   const messagesRef = useRef(messages)
@@ -90,15 +90,15 @@ export function Chat({
       const updatedToolInvocations = lastAssistantMessage.toolInvocations.map(
         (toolInvocation) => {
           if (toolInvocation.state === "call") {
-            needsUpdate = true
+            needsUpdate = true;
             return {
               ...toolInvocation,
-              state: "result",
+              state: "result" as const,
               result: {
                 content: "Tool execution was cancelled",
                 __cancelled: true, // Special marker to indicate cancellation
               },
-            } as const
+            }
           }
           return toolInvocation
         }
@@ -113,24 +113,25 @@ export function Chat({
     }
  
     if (lastAssistantMessage.parts && lastAssistantMessage.parts.length > 0) {
-      const updatedParts = lastAssistantMessage.parts.map((part: any) => {
+      const updatedParts = lastAssistantMessage.parts.map((part: MessagePart) => {
         if (
           part.type === "tool-invocation" &&
-          part.toolInvocation &&
+          "toolInvocation" in part &&
           part.toolInvocation.state === "call"
         ) {
-          needsUpdate = true
+          needsUpdate = true;
           return {
-            ...part,
-            toolInvocation: {
-              ...part.toolInvocation,
-              state: "result",
-              result: {
-                content: "Tool execution was cancelled",
-                __cancelled: true,
+              ...part,
+              toolInvocation: {
+                ...part.toolInvocation,
+                state: "result" as const,
+                toolName: part.toolInvocation.toolName,
+                result: {
+                  content: "Tool execution was cancelled",
+                  __cancelled: true,
+                },
               },
-            },
-          }
+            }
         }
         return part
       })
@@ -216,7 +217,7 @@ export function Chat({
         isPending={isGenerating || isTyping}
         handleSubmit={handleSubmit}
       >
-        {({ files, setFiles }) => (
+        {() => (
           <MessageInput
             value={input}
             onChange={handleInputChange}
@@ -224,7 +225,8 @@ export function Chat({
             stop={handleStop}
             isGenerating={isGenerating}
             transcribeAudio={transcribeAudio}
-            placeholder="Paste a job description..."
+            placeholder={t("pages.agent.upwork.placeholder")}
+            className={direction === 'rtl' ? 'text-right' : 'text-left'}
           />
         )}
       </ChatForm>
@@ -292,7 +294,7 @@ ChatContainer.displayName = "ChatContainer"
  
 interface ChatFormProps {
   className?: string
-  isPending: boolean
+  isPending?: boolean
   handleSubmit: (
     event?: { preventDefault?: () => void },
     options?: { experimental_attachments?: FileList }
@@ -304,7 +306,7 @@ interface ChatFormProps {
 }
  
 export const ChatForm = forwardRef<HTMLFormElement, ChatFormProps>(
-  ({ children, handleSubmit, isPending, className }, ref) => {
+  ({ children, handleSubmit, className }, ref) => {
     const [files, setFiles] = useState<File[] | null>(null)
  
     const onSubmit = (event: React.FormEvent) => {

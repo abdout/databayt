@@ -77,11 +77,12 @@ interface ToolResult {
   toolName: string
   result: {
     __cancelled?: boolean
-    [key: string]: any
+    content?: string
+    [key: string]: unknown
   }
 }
 
-type ToolInvocation = PartialToolCall | ToolCall | ToolResult
+export type ToolInvocation = PartialToolCall | ToolCall | ToolResult
 
 interface ReasoningPart {
   type: "reasoning"
@@ -103,7 +104,7 @@ interface SourcePart {
   type: "source"
 }
 
-type MessagePart = TextPart | ReasoningPart | ToolInvocationPart | SourcePart
+export type MessagePart = TextPart | ReasoningPart | ToolInvocationPart | SourcePart
 
 export interface Message {
   id: string

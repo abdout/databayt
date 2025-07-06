@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 // import Marquee from "@/components/ui/marquee";
@@ -33,6 +35,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import SectionHeading from "./atom/section-heading";
 import { CompactMarqueeDemo } from "../../public/templates/marquee/demo";
+import { useLocale } from "@/hooks/use-locale";
 
 // const features = [
 //   { name: "Authentication", icon: KeyRound },
@@ -93,11 +96,15 @@ import { CompactMarqueeDemo } from "../../public/templates/marquee/demo";
 // };
 
 const Wizard = () => {
+  const { t } = useLocale();
+  
   return (
     <section className="flex items-center justify-center flex-col">
       
-        <SectionHeading title="Wizard" description="Choose features, get real-time cost and delivery
-          estimates."/>
+        <SectionHeading 
+          title={t("components.wizard.title")} 
+          description={t("components.wizard.description")}
+        />
        
 
         {/* <div className="relative w-full max-w-5xl lg:max-w-7xl h-[250px] overflow-hidden">
@@ -122,7 +129,7 @@ const Wizard = () => {
 
         <Link href="/wizard" className="relative z-10 mt-8">
           <Button size="lg" className="px-8">
-            Launch Wizard
+            {t("components.wizard.launchButton")}
           </Button>
         </Link>
       

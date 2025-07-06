@@ -1,11 +1,13 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
 
 import { MainNavItem } from "./type"
-import { siteConfig } from "./constant"
 import { cn } from "@/lib/utils"
 import { useLockBody } from "./use-lock-body"
 import { Icons } from "./icons"
+import { useLocale } from "@/hooks/use-locale"
 
 interface MobileNavProps {
   items: MainNavItem[]
@@ -14,6 +16,7 @@ interface MobileNavProps {
 
 export function MobileNav({ items, children }: MobileNavProps) {
   useLockBody()
+  const { t } = useLocale()
 
   return (
     <div
@@ -22,9 +25,11 @@ export function MobileNav({ items, children }: MobileNavProps) {
       )}
     >
       <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md">
-        <Link href="/" className="flex items-center space-x-2">
-          <Icons.logo />
-          <span className="font-bold">{siteConfig.name}</span>
+        <Link href="/" style={{ position: "relative" }}>
+          <div className="flex items-center" style={{ direction: "ltr" }}>
+            <Icons.logo />
+            <span className="ml-2 font-bold">Databayt</span>
+          </div>
         </Link>
         <nav className="grid grid-flow-row auto-rows-max text-sm">
           {items.map((item, index) => (
@@ -32,11 +37,12 @@ export function MobileNav({ items, children }: MobileNavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
+                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline text-start rtl:text-end",
                 item.disabled && "cursor-not-allowed opacity-60"
               )}
             >
-              {item.title}
+              {/* Convert title to key format for translation */}
+              {t(`navigation.${item.title.toLowerCase()}`)}
             </Link>
           ))}
         </nav>

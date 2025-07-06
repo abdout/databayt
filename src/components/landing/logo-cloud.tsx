@@ -1,6 +1,9 @@
+'use client'
+
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import Image from 'next/image'
+import { useLocale } from '@/hooks/use-locale'
 
 const sponsors = [
     { 
@@ -55,12 +58,14 @@ const sponsors = [
 ]
 
 export default function LogoCloud() {
+    const { t } = useLocale()
+
     return (
         <section className="bg-background overflow-hidden py-16">
             <div className="group relative m-auto max-w-7xl px-6">
                 <div className="flex flex-col items-center md:flex-row">
                     <div className="md:max-w-44 md:border-r md:pr-6">
-                        <p className="text-end text-sm">Trusted by amazing sponsors</p>
+                        <p className="text-end text-sm">{t('landing.logoCloud.trustedBy')}</p>
                     </div>
                     <div className="relative py-6 md:w-[calc(100%-11rem)]">
                         <InfiniteSlider
