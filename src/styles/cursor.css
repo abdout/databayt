@@ -14,6 +14,11 @@ button,
   .link {
     cursor: auto !important;
   }
+  
+  .cursor,
+  .cursorFollower {
+    display: none !important;
+  }
 }
 
 .cursor {
@@ -25,10 +30,10 @@ button,
   pointer-events: none;
   z-index: 999;
   mix-blend-mode: difference;
-  transition: transform .15s ease-out;
+  transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out;
   transform-origin: center;
   display: none;
-  will-change: transform;
+  will-change: transform, width, height;
 }
 
 .cursorFollower {
@@ -40,8 +45,8 @@ button,
   pointer-events: none;
   z-index: 998;
   mix-blend-mode: difference;
-  transition: transform .3s ease-out;
-  will-change: transform;
+  transition: transform 0.3s ease-out, opacity 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out;
+  will-change: transform, opacity, width, height;
   display: none;
 }
 
@@ -49,4 +54,16 @@ button,
 .cursor.is-active,
 .cursorFollower.is-active {
   display: block;
+}
+
+/* Hover states - controlled by JavaScript */
+.cursor.is-hovering {
+  width: 8px;
+  height: 8px;
+}
+
+.cursorFollower.is-hovering {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
 }
