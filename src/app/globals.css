@@ -9,6 +9,7 @@
 @import "../styles/border.css";
 @import "../styles/clock.css";
 @import "../styles/marquee.css";
+@import "../styles/cursor.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -132,6 +133,7 @@
 
 body {
   overflow-x: hidden;
+   cursor: none;
   /* Removed conflicting padding/margin styles */
 } 
 

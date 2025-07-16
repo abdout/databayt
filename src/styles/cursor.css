@@ -1,0 +1,52 @@
+html,
+body,
+a,
+button,
+.link {
+  cursor: none !important;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  a,
+  button,
+  .link {
+    cursor: auto !important;
+  }
+}
+
+.cursor {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: difference;
+  transition: transform .15s ease-out;
+  transform-origin: center;
+  display: none;
+  will-change: transform;
+}
+
+.cursorFollower {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 998;
+  mix-blend-mode: difference;
+  transition: transform .3s ease-out;
+  will-change: transform;
+  display: none;
+}
+
+/* Show cursors when JavaScript is ready */
+.cursor.is-active,
+.cursorFollower.is-active {
+  display: block;
+}

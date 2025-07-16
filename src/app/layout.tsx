@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Toaster } from "sonner";
+import Cursor from "@/components/cursor";
 
 export const metadata: Metadata = {
   title: "Databayt",
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <div className="layout-container">
+            <Cursor isDesktop={true} />
             <Toaster position="bottom-right" />
             {children}
           </div>

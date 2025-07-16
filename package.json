@@ -39,6 +39,7 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.15.0",
     "geist": "^1.4.2",
+    "gsap": "^3.13.0",
     "input-otp": "^1.4.2",
     "jotai": "^2.12.5",
     "lucide-react": "^0.511.0",
