@@ -105,6 +105,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/vibe-coding",
           items: [],
         },
+        {
+          title: "Sales",
+          href: "/docs/sales",
+          items: [],
+        },
       ],
     },
     {
