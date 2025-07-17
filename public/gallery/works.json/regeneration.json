@@ -1,0 +1,24 @@
+{
+  "documentTitle": "Gucci, The Regeneration Suite",
+  "hero": {
+    "image": "/gallery/works/regeneration/hero.jpg",
+    "title": [
+      "Iconoc Art At", "Your Fingertip"
+    ],
+    "leadDesigner": "A playful yet powerful experience with real perspectives. Every little thing has been curated to make you feel – Head & Heart",
+    "doneWith": "AKQA Amsterdam"
+  },
+  "images": [
+    ["/gallery/works/regeneration/G1.jpg"],
+    ["/gallery/works/regeneration/G2.jpg", "/gallery/works/regeneration/G3.jpg"],
+    ["/gallery/works/regeneration/G4.jpg", "/gallery/works/regeneration/G5.jpg", "/gallery/works/regeneration/G6.jpg"],
+    ["/gallery/works/regeneration/G7.jpg", "/gallery/works/regeneration/G8.jpg"],
+    ["/gallery/works/regeneration/G9.jpg", "/gallery/works/regeneration/G10.jpg"],
+    ["/gallery/works/regeneration/G11.jpg"]
+  ],
+  "next": {
+    "image": "/gallery/works/loyality/next.jpg",
+    "slug": "loyality",
+    "title": "Reimagining Loyalty"
+  }
+}

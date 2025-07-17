@@ -133,7 +133,6 @@
 
 body {
   overflow-x: hidden;
-   cursor: none;
   /* Removed conflicting padding/margin styles */
 } 
 

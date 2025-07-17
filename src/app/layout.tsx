@@ -1,12 +1,12 @@
 // RootLayout.tsx
 import type { Metadata } from "next";
-import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Toaster } from "sonner";
 import Cursor from "@/components/cursor";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Databayt",
@@ -29,8 +29,8 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <div className="layout-container">
-            <Cursor isDesktop={true} />
             <Toaster position="bottom-right" />
+            <Cursor isDesktop={true} /> 
             {children}
           </div>
         </ThemeProvider>

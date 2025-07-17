@@ -1,0 +1,22 @@
+{
+  "documentTitle": "Swarovski, Reinventing Wonder",
+  "hero": {
+    "image": "/gallery/works/wonder/hero.jpg",
+    "title": ["More Than", "Delightful", "Pieces"],
+    "leadDesigner": "Presenting Swarovski Fine Interiors’s portfolio in an unprecedented way, a digital experience based on immersive and storytelling features.",
+    "doneWith": "AKQA Amsterdam"
+  },
+  "images": [
+    ["/gallery/works/wonder/SW0.jpg", "/gallery/works/wonder/SW1.jpg", "/gallery/works/wonder/SW2.jpg"],
+    ["/gallery/works/wonder/SW3.jpg", "/gallery/works/wonder/SW4.jpg"],
+    ["/gallery/works/wonder/SW5.jpg", "/gallery/works/wonder/SW12.jpg"],
+    ["/gallery/works/wonder/SW7.jpg" ,"/gallery/works/wonder/SW8.jpg", "/gallery/works/wonder/SW13.jpg"],
+    ["/gallery/works/wonder/SW9.jpg", "/gallery/works/wonder/SW10.jpg", "/gallery/works/wonder/SW11.jpg"],
+    ["/gallery/works/wonder/SW14.jpg"]
+  ],
+  "next": {
+    "image": "/gallery/works/canvas/next.jpg",
+    "slug": "canvas",
+    "title": "Beyond The Canvas"
+}
+}

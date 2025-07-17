@@ -20,7 +20,7 @@ interface SiteLayoutProps {
 export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <div 
-      className="relative flex min-h-screen flex-col bg-background text-foreground antialiased"
+      className="relative flex min-h-screen flex-col bg-background text-foreground antialiased marketing-layout"
       data-slot="site-layout"
     >
       <TaxonomyHeader />

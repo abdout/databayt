@@ -1,0 +1,109 @@
+:root {
+  --grid-gap: 1vw;
+  --grid-column-count: 5;
+  --grid-row-count: 4;
+  --content-column-size: calc(
+    (100vw - (var(--grid-column-count) - 1) * var(--grid-gap)) /
+      (var(--grid-column-count) - 1)
+  );
+  --content-row-size: calc(
+    (100vh - (var(--grid-row-count)) * var(--grid-gap)) /
+      (var(--grid-row-count))
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #121214;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-column-count),
+    var(--content-column-size)
+  );
+  gap: var(--grid-gap);
+
+  overflow: hidden;
+  
+  /* Smooth scaling from center */
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.column {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-row-count), var(--content-row-size));
+  gap: var(--grid-gap);
+
+  transform: translateX(-50%);
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  position: relative;
+  
+  /* Hide initially until animation starts */
+  opacity: 0;
+}
+
+.content.ready {
+  opacity: 1;
+}
+
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Smooth transition to prevent flicker */
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.content.home img {
+  transform: scale(1.5);
+  /* Extra smooth transition for home image */
+  transition: transform 0.2s ease-out;
+}

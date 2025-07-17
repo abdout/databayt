@@ -1,0 +1,21 @@
+{
+  "documentTitle": "Rituals, Reimagining Loyalty",
+  "hero": {
+    "image": "/gallery/works/loyality/hero.jpg",
+    "title": [
+      "Where Your", "Wellbeing is Part", "Of the Journey"
+    ],
+    "leadDesigner": "Reimagining loyalty by Bringing Rituals art of gifting online – Thoughtfully curated rewards for our most loyal customers",
+    "doneWith": "AKQA Amsterdam"
+  },
+  "images": [
+    ["/gallery/works/loyality/R1.jpg", "/gallery/works/loyality/R2.jpg", "/gallery/works/loyality/R3.jpg"],
+    ["/gallery/works/loyality/R4.jpg", "/gallery/works/loyality/R5.jpg", "/gallery/works/loyality/R6.jpg", "/gallery/works/loyality/R7.jpg", "/gallery/works/loyality/R8.jpg"],
+    ["/gallery/works/loyality/R9.jpg", "/gallery/works/loyality/R10.jpg", "/gallery/works/loyality/R11.jpg", "/gallery/works/loyality/R15.jpg"]
+  ],
+  "next": {
+    "image": "/gallery/works/full-sound/next.jpg",
+    "slug": "full-sound",
+    "title": "Sound Expressed In Full"
+}
+}

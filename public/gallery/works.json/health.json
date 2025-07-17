@@ -1,0 +1,24 @@
+{
+    "documentTitle": "Moco, Beyond The Canvas",
+    "hero": {
+      "image": "/gallery/works/health/hero.jpg",
+      "title": [
+        "A Restorative", "& Immersive", "Experience"
+      ],
+      "leadDesigner": "To celebrate 100 years of Gucci, we partnered with The Savoy to create an immersive experience that honours regeneration",
+      "doneWith": "AKQA Amsterdam"
+    },
+    "images": [
+      ["/gallery/works/health/M0.jpg"],
+      ["/gallery/works/health/M1.jpg", "/gallery/works/health/M2.jpg"],
+      ["/gallery/works/health/M3.jpg"],
+      ["/gallery/works/health/M4.jpg", "/gallery/works/health/M5.jpg"],
+      ["/gallery/works/health/M6.jpg", "/gallery/works/health/M7.jpg"],
+      ["/gallery/works/health/M13.jpg", "/gallery/works/health/M14.jpg"]
+    ],
+    "next": {
+      "image": "/gallery/works/regeneration/next.jpg",
+      "title": "Reimagining Loyalty",
+      "slug": "regeneration"
+    }
+  }

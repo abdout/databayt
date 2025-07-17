@@ -1,17 +1,19 @@
-html,
-body,
-a,
-button,
-.link {
+/* Remove global cursor override */
+.marketing-layout {
+  cursor: none !important;
+}
+
+.marketing-layout a,
+.marketing-layout button,
+.marketing-layout .link {
   cursor: none !important;
 }
 
 @media (max-width: 768px) {
-  html,
-  body,
-  a,
-  button,
-  .link {
+  .marketing-layout,
+  .marketing-layout a,
+  .marketing-layout button,
+  .marketing-layout .link {
     cursor: auto !important;
   }
   

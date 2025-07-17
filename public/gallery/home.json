@@ -1,0 +1,52 @@
+{
+  "worksList": [
+    {
+      "image": "/gallery/home/regeneration.jpg",
+      "slug": "regeneration",
+      "title": "The Regeneration Suite",
+      "id": "1"
+    },
+    {
+      "image": "/gallery/home/loyality.jpg",
+      "slug": "loyality",
+      "title": "Reimagining Loyalty",
+      "id": "2"
+    },
+    {
+      "image": "/gallery/home/full-sound.jpg",
+      "slug": "full-sound",
+      "title": "Sound Expressed In Full",
+      "id": "3"
+    },
+    {
+      "image": "/gallery/home/wonder.jpg",
+      "slug": "wonder",
+      "title": "Reinventing Wonder",
+      "id": "4"
+    },
+    {
+      "image": "/gallery/home/canvas.jpg",
+      "slug": "canvas",
+      "title": "Beyond The Canvas",
+      "id": "5"
+    },
+    {
+      "image": "/gallery/home/food.jpg",
+      "slug": "food",
+      "title": "Food & Drink",
+      "id": "6"
+    },
+    {
+      "image": "/gallery/home/school.jpg",
+      "slug": "school",
+      "title": "School of Life",
+      "id": "7"
+    },
+    {
+      "image": "/gallery/home/health.jpg",
+      "slug": "health",
+      "title": "Health & Wellness",
+      "id": "8"
+    }
+  ]
+}

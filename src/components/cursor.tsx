@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 interface CursorProps {
@@ -9,6 +9,7 @@ interface CursorProps {
 const Cursor: React.FC<CursorProps> = ({ isDesktop }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
+  const [isMarketingPage, setIsMarketingPage] = useState(false);
 
   const onHover = () => {
     if (cursorRef.current && followerRef.current) {
@@ -25,7 +26,29 @@ const Cursor: React.FC<CursorProps> = ({ isDesktop }) => {
   };
 
   useEffect(() => {
-    if (!isDesktop || !cursorRef.current || !followerRef.current) return;
+    // Check if we're on a marketing page
+    const checkMarketingPage = () => {
+      const marketingElement = document.querySelector('.marketing-layout');
+      setIsMarketingPage(!!marketingElement);
+    };
+
+    // Initial check
+    checkMarketingPage();
+
+    // Set up a mutation observer to watch for changes
+    const observer = new MutationObserver(checkMarketingPage);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop || !isMarketingPage || !cursorRef.current || !followerRef.current) return;
 
     const cursor = cursorRef.current;
     const follower = followerRef.current;
@@ -107,9 +130,9 @@ const Cursor: React.FC<CursorProps> = ({ isDesktop }) => {
         link.removeEventListener("mouseleave", onUnhover);
       });
     };
-  }, [isDesktop]);
+  }, [isDesktop, isMarketingPage]);
 
-  if (!isDesktop) return null;
+  if (!isDesktop || !isMarketingPage) return null;
 
   return (
     <>
