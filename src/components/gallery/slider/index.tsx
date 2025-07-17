@@ -166,7 +166,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
   }, [setPosition]);
 
   return (
-    <div>
+    <div >
       <Cross />
       
       <div className={`flex items-center  h-screen ${dragging ? 'pointer-events-none' : ''}`}>

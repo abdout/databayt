@@ -22,6 +22,25 @@ export default function WorkDetails() {
     if (!navigating.current) {
       window.scrollTo(0, 0);
     }
+    
+    // Hide scrollbar with inline styles as backup
+    const style = document.createElement('style');
+    style.textContent = `
+      html, body {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+      html::-webkit-scrollbar, body::-webkit-scrollbar, ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   const setNavigating = (state: boolean) => {
