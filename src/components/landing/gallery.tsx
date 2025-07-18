@@ -26,7 +26,7 @@ export function Gallery() {
       
       // Calculate scale based on how close the element is to the center of viewport
       const normalizedDistance = Math.max(0, Math.min(1, distanceFromCenter / maxDistance));
-      const newScale = 0.8 + (1 - normalizedDistance) * 0.2; // Scale from 0.8 to 1.0
+      const newScale = 0.92 + (1 - normalizedDistance) * 0.08; // Scale from 0.92 to 1.0
       
       setScale(newScale);
     };
