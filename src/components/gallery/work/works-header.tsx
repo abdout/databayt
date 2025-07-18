@@ -6,7 +6,8 @@ import Link from "next/link";
 export const WorksHeader: React.FC = () => {
   return (
     <header className="header">
-      <Link href="/" className="header__link">
+      <Link href="/gallery" className="header__link ">
+      
         Back
       </Link>
     </header>

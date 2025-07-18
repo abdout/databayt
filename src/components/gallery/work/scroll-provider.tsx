@@ -50,13 +50,10 @@ export const ScrollProvider = ({ children, wrapper }: ScrollProviderProps) => {
         const LocomotiveScroll = (await import("locomotive-scroll")).default;
         
         locomotiveScroll.current = new LocomotiveScroll({
-          lenisOptions: {
-            wrapper: wrapper ? document.querySelector(wrapper) : window,
-            duration: 0.7,
-            lerp: 0.1,
-            smoothWheel: true,
-            wheelMultiplier: 1.3,
-          },
+          el: wrapper ? document.querySelector(wrapper) as HTMLElement : document.body,
+          smooth: true,
+          lerp: 0.1,
+          multiplier: 1.3,
         });
       } catch (error) {
         console.error("Error initializing Locomotive Scroll:", error);

@@ -13,21 +13,21 @@
       "id": "2"
     },
     {
-      "image": "/gallery/home/full-sound.jpg",
-      "slug": "full-sound",
-      "title": "Sound Expressed In Full",
+      "image": "/gallery/home/codebase.jpg",
+      "slug": "codebase",
+      "title": "Shared Codebase",
       "id": "3"
     },
     {
-      "image": "/gallery/home/wonder.jpg",
+      "image": "/gallery/home/wonder.png",
       "slug": "wonder",
-      "title": "Reinventing Wonder",
+      "title": "State of Comfort",
       "id": "4"
     },
     {
-      "image": "/gallery/home/canvas.jpg",
-      "slug": "canvas",
-      "title": "Beyond The Canvas",
+      "image": "/gallery/home/image.png",
+      "slug": "company",
+      "title": "Beyond The Revenue",
       "id": "5"
     },
     {

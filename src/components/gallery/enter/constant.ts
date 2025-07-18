@@ -1,4 +1,4 @@
-import type { ImageItem, GalleryColumn, AnimationConfig } from '@/components/enter/type';
+import type { ImageItem, GalleryColumn, AnimationConfig } from '@/components/gallery/enter/type';
 
 export const IMAGES: ImageItem[] = [
   { src: '/images/0.jpg', alt: 'Gallery image 1', priority: true },

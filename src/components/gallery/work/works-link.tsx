@@ -23,13 +23,18 @@ export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating }) => {
     offset: ["0% 0%", "100% 100%"],
   });
 
+  // First half: translate Y up to mid screen
+  const y = useTransform(scrollYProgress, [0, 0.5], ["50vh", "0vh"]);
+  
+  // Second half: scale from mid screen to full screen
+  const scale = useTransform(scrollYProgress, [0.5, 1], [0.6, 1]);
+  
+  // Clip path animation adjusted for better timing
   const clipPath = useTransform(
     scrollYProgress,
-    [0, 1],
-    ["inset(0% 30%)", "inset(0% 0%)"]
+    [0, 0.3, 1],
+    ["inset(0% 30%)", "inset(0% 15%)", "inset(0% 0%)"]
   );
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 3000,
@@ -68,7 +73,7 @@ export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating }) => {
       <div className="link--sticky">
         <motion.img
           src={nextData.image}
-          style={{ clipPath, scale }}
+          style={{ clipPath, scale, y }}
           alt="next-proj"
           className="link__image"
         />
