@@ -1,51 +1,51 @@
 {
   "worksList": [
     {
-      "image": "/gallery/home/regeneration.jpg",
-      "slug": "regeneration",
-      "title": "The Regeneration Suite",
-      "id": "1"
-    },
-    {
-      "image": "/gallery/home/loyality.jpg",
-      "slug": "loyality",
-      "title": "Reimagining Loyalty",
-      "id": "2"
-    },
-    {
       "image": "/gallery/home/codebase.jpg",
       "slug": "codebase",
       "title": "Shared Codebase",
+      "id": "1"
+    },
+    {
+      "image": "/gallery/home/hogwarts.jpg",
+      "slug": "hogwarts",
+      "title": "The Boy Who Lived",
+      "id": "2"
+    },
+    {
+      "image": "/gallery/home/mkan.png",
+      "slug": "mkan",
+      "title": "State of Comfort",
       "id": "3"
     },
     {
-      "image": "/gallery/home/wonder.png",
-      "slug": "wonder",
-      "title": "State of Comfort",
-      "id": "4"
-    },
-    {
-      "image": "/gallery/home/image.png",
+      "image": "/gallery/home/company.webp",
       "slug": "company",
-      "title": "Beyond The Revenue",
-      "id": "5"
+      "title": "Post Revenue",
+      "id": "4"
     },
     {
       "image": "/gallery/home/food.jpg",
       "slug": "food",
-      "title": "Food & Drink",
-      "id": "6"
+      "title": "A Taste Might Last",
+      "id": "5"
     },
     {
-      "image": "/gallery/home/school.jpg",
-      "slug": "school",
-      "title": "School of Life",
-      "id": "7"
+      "image": "/gallery/home/automative.jpeg",
+      "slug": "automative",
+      "title": "Fast Car",
+      "id": "6"
     },
     {
       "image": "/gallery/home/health.jpg",
       "slug": "health",
       "title": "Health & Wellness",
+      "id": "7"
+    },
+    {
+      "image": "/gallery/home/regeneration.jpg",
+      "slug": "regeneration",
+      "title": "The Regeneration Suite",
       "id": "8"
     }
   ]

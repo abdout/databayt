@@ -266,31 +266,15 @@ export const Works: React.FC = () => {
           .works-thumbnail__image {
             width: 100%;
             height: 100%;
-            filter: brightness(1.1);
-            transition: 0.5s ease;
-            transform-origin: opacity filter scale;
             object-fit: cover;
             cursor: pointer;
-          }
-
-          @media (hover: hover) {
-            .works-thumbnail__image:hover {
-              opacity: 0.5;
-              scale: 1.1;
-            }
           }
 
           .works-thumbnail__image-wrapper {
             aspect-ratio: 16/9;
             width: 4vw;
             overflow: hidden;
-          }
-
-          .works-thumbnail__image--active {
-            filter: brightness(0.5);
-            scale: 1.2 !important;
-            opacity: 1 !important;
-            cursor: default;
+            position: relative;
           }
 
           @media (max-width: 768px) {
@@ -389,27 +373,42 @@ export const Works: React.FC = () => {
             <img
               src={activeWork.image}
               alt="full-screen-work"
-              className="full-screen-work__imag"
+              className="full-screen-work__image"
             />
-            
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                zIndex: 1,
+                pointerEvents: 'none'
+              }}
+            />
           </motion.div>
         </AnimatePresence>
         <ul className="works-thumbnail">
           {data.worksList.map((currW, i) => (
             <li key={i} className="works-thumbnail__image-wrapper">
-              <motion.img
+              <img
                 src={currW.image}
                 alt="thumbnail"
-                className={classNames("works-thumbnail__image", {
-                  "works-thumbnail__image--active": page === i,
-                })}
+                className="works-thumbnail__image"
                 onClick={() => paginateThumbnail(i)}
-                drag
-                dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                dragElastic={0.1}
-                onDragStart={handleDragStart}
-                onDragEnd={handleDragEnd}
-                style={{ cursor: 'default' }}
+                style={{ cursor: 'pointer' }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  pointerEvents: 'none'
+                }}
               />
             </li>
           ))}
