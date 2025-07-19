@@ -29,7 +29,6 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <div className="layout-container">
-            <Cursor isDesktop={true} />
             <Toaster position="bottom-right" />
             {children}
           </div>

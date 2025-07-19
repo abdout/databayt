@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import TaxonomyHeader from "@/components/template/header-taxonomy/taxonomy-header";
 import {SiteFooter} from "@/components/template/footer/site-footer";
 // import { SiteFooter } from "@/components/site-footer";
+import Cursor from "@/components/cursor";
+import "@/styles/cursor.css";
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +26,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
       data-slot="site-layout"
     >
       <TaxonomyHeader />
+      <Cursor isDesktop={true} />
       <main 
         className="flex-1 focus-visible:outline-hidden" 
         data-slot="main-content"
