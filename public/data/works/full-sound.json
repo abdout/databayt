@@ -1,0 +1,30 @@
+{
+  "documentTitle": "Sennheiser, Sound Expressed In Full",
+  "hero": {
+    "image": "/images/works/full-sound/hero.jpg",
+    "title": ["The Future of", "Audio Expressed", "In Full"],
+    "leadDesigner": "A premium experience that brings forward the future of audio by injecting the right amount of emotion and craft Sennheiser deserves.",
+    "doneWith": "AKQA Amsterdam"
+  },
+  "images": [
+    [
+      "/images/works/full-sound/S1.jpg",
+      "/images/works/full-sound/S8.jpg"
+    ],
+    [
+      "/images/works/full-sound/S2.jpg",
+      "/images/works/full-sound/S3.jpg",
+      "/images/works/full-sound/S10.jpg",
+      "/images/works/full-sound/S11.jpg"
+    ],
+    [
+      "/images/works/full-sound/S12.jpg",
+      "/images/works/full-sound/S13.jpg"
+    ]
+  ],
+  "next": {
+    "image": "/images/works/wonder/next.jpg",
+    "slug": "wonder",
+    "title": "Reinventing Wonder"
+}
+}
