@@ -46,11 +46,11 @@
 }
 
 /* Reset and base styles */
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 
 .work-layout,
 .work-layout html,

@@ -64,7 +64,7 @@ export default function Home() {
   // Show error state
   if (error) {
     return (
-      <div className="work-layout font-neue-haas-display">
+      <div className="work-layout font-neue-haas-display m-0 p-0 bg-black overflow-hidden">
         <main className="main">
           <div className="error-state">
             <h2>Error loading data</h2>
@@ -79,7 +79,7 @@ export default function Home() {
   }
 
   return (
-    <div className="work-layout font-neue-haas-display">
+    <div className="work-layout font-neue-haas-display m-0 p-0 bg-black overflow-hidden">
       <main className="main">
         {pageState === 'loading' && (
           <LoadingScreen 

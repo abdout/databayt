@@ -122,6 +122,38 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
             background-color: #121214;
           }
 
+          /* Hide scrollbar for the entire page when works component is active */
+          .work-layout {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+
+          .work-layout::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+          }
+
+          /* Hide scrollbar for the works component specifically */
+          .works {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+
+          .works::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+          }
+
+          /* Ensure body and html also hide scrollbars when in gallery mode */
+          body.work-layout,
+          html.work-layout {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+          }
+
+          body.work-layout::-webkit-scrollbar,
+          html.work-layout::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+          }
+
           .full-screen-work {
             user-select: none;
             width: 100vw;
