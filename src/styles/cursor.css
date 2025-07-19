@@ -1,17 +1,18 @@
-html,
-body,
-a,
-button,
-.link {
+/* Only hide native cursor when custom cursor is active */
+body.custom-cursor-active,
+body.custom-cursor-active *,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active .link {
   cursor: none !important;
 }
 
 @media (max-width: 768px) {
-  html,
-  body,
-  a,
-  button,
-  .link {
+  body.custom-cursor-active,
+  body.custom-cursor-active *,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active .link {
     cursor: auto !important;
   }
   

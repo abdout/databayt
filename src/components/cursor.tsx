@@ -30,6 +30,9 @@ const Cursor: React.FC<CursorProps> = ({ isDesktop }) => {
     const cursor = cursorRef.current;
     const follower = followerRef.current;
 
+    // Add custom cursor class to body to enable cursor hiding CSS
+    document.body.classList.add('custom-cursor-active');
+
     // Show cursors
     cursor.classList.add('is-active');
     follower.classList.add('is-active');
@@ -96,6 +99,9 @@ const Cursor: React.FC<CursorProps> = ({ isDesktop }) => {
     }, 2000);
 
     return () => {
+      // Remove custom cursor class from body
+      document.body.classList.remove('custom-cursor-active');
+      
       cursor.classList.remove('is-active');
       follower.classList.remove('is-active');
       cursor.classList.remove('is-hovering');
