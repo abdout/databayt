@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from "framer-motion";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { GeistSans } from "geist/font/sans";
 import { anim, SliderAnim } from "./animations";
 import { classNames } from "./utils";
 import { HomeData } from "./type";
@@ -173,8 +174,20 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
             height: 100%;
             z-index: -1;
             transition: 1s cubic-bezier(0.08, 0.99, 0.39, 1);
-            
             object-fit: cover;
+            filter: brightness(0.6);
+          }
+
+          .full-screen-work::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+            pointer-events: none;
           }
 
           .full-screen-work__image--hovering {
@@ -184,7 +197,7 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
 
           .full-screen-work__content {
             position: fixed;
-            z-index: 10;
+            z-index: 20;
             left: 50%;
             top: 50vh;
             transform: translate(-50%, -50%);
@@ -206,6 +219,14 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
             text-decoration: none;
             pointer-events: auto;
             color: inherit !important;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+          }
+
+          /* Override any gallery font for this specific text */
+          .works .full-screen-work__content .text,
+          .works .full-screen-work__content .text *,
+          .works .full-screen-work__content .text h1 {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
           }
 
           .full-screen-work__content .text:hover {
@@ -361,7 +382,7 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
               +
             </motion.h1>
 
-            <Link href={`/gallery/${activeWork.slug}`} className="text">
+            <Link href={`/gallery/${activeWork.slug}`} className={`text ${GeistSans.className}`}>
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 <AnimatePresence mode="popLayout">
                   <motion.h1
@@ -369,6 +390,12 @@ export const Works: React.FC<WorksProps> = ({ data }) => {
                     key={activeWork.title}
                     onHoverStart={() => setTitleHover(true)}
                     onHoverEnd={() => setTitleHover(false)}
+                    style={{
+                      fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
+                      fontSize: '3.5vw',
+                      letterSpacing: '0.01em',
+                      fontWeight: '600'
+                    }}
                   >
                     {activeWork.title}
                   </motion.h1>
