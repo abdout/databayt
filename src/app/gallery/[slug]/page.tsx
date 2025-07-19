@@ -35,41 +35,57 @@ export default function WorkDetails() {
       window.scrollTo(0, 0);
     }
 
-    // Inject critical styles for the gallery page
+    // Inject critical styles for the gallery page (scoped to avoid affecting other pages)
     const styleId = 'gallery-page-styles';
+    let style: HTMLStyleElement | null = null;
+    
     if (!document.getElementById(styleId)) {
-      const style = document.createElement('style');
+      style = document.createElement('style');
       style.id = styleId;
       style.textContent = `
-        /* Hide scrollbar for entire page */
-        html, body {
+        /* Complete scrollbar hiding for gallery page */
+        html.gallery-active,
+        body.gallery-active,
+        html.gallery-active *,
+        body.gallery-active * {
           scrollbar-width: none !important; /* Firefox */
           -ms-overflow-style: none !important; /* IE and Edge */
         }
         
-        html::-webkit-scrollbar,
-        body::-webkit-scrollbar {
+        html.gallery-active::-webkit-scrollbar,
+        body.gallery-active::-webkit-scrollbar,
+        html.gallery-active *::-webkit-scrollbar,
+        body.gallery-active *::-webkit-scrollbar {
           display: none !important; /* Chrome, Safari, Opera */
+          width: 0 !important;
+          height: 0 !important;
         }
         
-        /* Hide scrollbar for work layout specifically */
-        .work-layout {
+        /* Backup scoping for work-layout */
+        .work-layout,
+        .work-layout *,
+        .work-layout .main,
+        .work-layout .main *,
+        .work-layout .works-details,
+        .work-layout .works-details * {
           scrollbar-width: none !important;
           -ms-overflow-style: none !important;
         }
         
-        .work-layout::-webkit-scrollbar {
+        .work-layout::-webkit-scrollbar,
+        .work-layout *::-webkit-scrollbar,
+        .work-layout .main::-webkit-scrollbar,
+        .work-layout .main *::-webkit-scrollbar,
+        .work-layout .works-details::-webkit-scrollbar,
+        .work-layout .works-details *::-webkit-scrollbar {
           display: none !important;
+          width: 0 !important;
+          height: 0 !important;
         }
         
-        /* Ensure main content also hides scrollbars */
-        .main {
-          scrollbar-width: none !important;
-          -ms-overflow-style: none !important;
-        }
-        
-        .main::-webkit-scrollbar {
-          display: none !important;
+        html.gallery-active,
+        body.gallery-active {
+          overflow-x: hidden !important;
         }
 
         /* Header styles */
@@ -98,21 +114,32 @@ export default function WorkDetails() {
           border-color: rgba(249, 245, 239, 0.6);
         }
 
-        /* Progress Bar styles */
+        /* Progress Bar styles - Ensure visibility */
         .progress-bar {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          z-index: 1000;
-          width: 2vw;
+          position: fixed !important;
+          top: 0 !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          z-index: 9999 !important;
+          width: 2vw !important;
+          pointer-events: auto !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
         }
 
         .progress-bar__bar {
-          width: 0.25vw;
-          height: 100%;
-          background-color: #f9f5ef;
-          transform-origin: top;
+          width: 0.25vw !important;
+          height: 100% !important;
+          background-color: #f9f5ef !important;
+          transform-origin: top !important;
+          will-change: transform !important;
+          backface-visibility: hidden !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: translateZ(0) !important;
+          transition: none !important;
         }
 
         .progress-bar__range {
@@ -127,14 +154,21 @@ export default function WorkDetails() {
           transform-origin: left;
           opacity: 0;
           cursor: pointer;
+          pointer-events: auto;
+          background: transparent;
+          border: none;
+          outline: none;
         }
 
         .progress-bar__range::-webkit-slider-thumb {
+          -webkit-appearance: none;
           appearance: none;
           width: 20px;
           height: 20px;
           background: transparent;
           cursor: pointer;
+          border: none;
+          outline: none;
         }
 
         .progress-bar__range::-moz-range-thumb {
@@ -143,6 +177,20 @@ export default function WorkDetails() {
           background: transparent;
           cursor: pointer;
           border: none;
+          outline: none;
+          -moz-appearance: none;
+        }
+
+        .progress-bar__range::-webkit-slider-track {
+          background: transparent;
+          border: none;
+          outline: none;
+        }
+
+        .progress-bar__range::-moz-range-track {
+          background: transparent;
+          border: none;
+          outline: none;
         }
 
         /* Mobile responsive */
@@ -155,6 +203,28 @@ export default function WorkDetails() {
       `;
       document.head.appendChild(style);
     }
+
+    // Add gallery-active class to html and body for scoped scrollbar hiding
+    document.documentElement.classList.add('gallery-active');
+    document.body.classList.add('gallery-active');
+
+    // Cleanup function to remove styles and classes when component unmounts
+    return () => {
+      const existingStyle = document.getElementById(styleId);
+      if (existingStyle) {
+        existingStyle.remove();
+      }
+      
+      // Remove gallery-active classes when leaving the page
+      document.documentElement.classList.remove('gallery-active');
+      document.body.classList.remove('gallery-active');
+      
+      // Restore original scrollbar behavior
+      document.documentElement.style.removeProperty('scrollbar-width');
+      document.documentElement.style.removeProperty('-ms-overflow-style');
+      document.body.style.removeProperty('scrollbar-width');
+      document.body.style.removeProperty('-ms-overflow-style');
+    };
   }, []);
 
   // Ensure page is ready for scroll interactions with proper timing

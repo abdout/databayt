@@ -1,45 +1,66 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useSpring, useScroll } from "framer-motion";
-import { useScroll as useCustomScroll } from "./use-scroll";
+import { motion, useScroll } from "framer-motion";
 
 export const ProgressBar: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleY = useSpring(scrollYProgress, { stiffness: 1000, damping: 100 });
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [rangeValue, setRangeValue] = useState(0);
-  const { rangeScrollTo, isReady } = useCustomScroll();
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      
+      setScrollProgress(scrolled);
+      setRangeValue(scrolled);
+    };
+
+    // Initial call
+    updateScrollProgress();
+
+    // Add scroll listener
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress);
+    };
+  }, []);
 
   const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
     setRangeValue(value);
     
-    if (typeof window !== 'undefined') {
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollTo = (documentHeight * value) / 100;
-      
-      // Only use Locomotive if ready, otherwise use native
-      if (isReady) {
-        rangeScrollTo(scrollTo.toString());
-      } else {
-        window.scrollTo({
-          top: scrollTo,
-          behavior: 'smooth'
-        });
-      }
-    }
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollTo = (documentHeight * value) / 100;
+    
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
   };
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((v) => {
-      setRangeValue(v * 100);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
-
   return (
-    <div className="progress-bar">
-      <motion.div className="progress-bar__bar" style={{ scaleY }} />
+    <div className="progress-bar" style={{ 
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      width: '2vw',
+      zIndex: 9999,
+      pointerEvents: 'auto'
+    }}>
+      <div 
+        className="progress-bar__bar"
+        style={{
+          width: '0.25vw',
+          height: `${scrollProgress}%`,
+          backgroundColor: '#f9f5ef',
+          transformOrigin: 'top',
+          transition: 'height 0.1s ease-out'
+        }}
+      />
       <input
         type="range"
         min="0"
@@ -47,6 +68,22 @@ export const ProgressBar: React.FC = () => {
         value={rangeValue}
         onChange={handleRangeChange}
         className="progress-bar__range"
+        style={{
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          left: 0,
+          rotate: '90deg',
+          width: '100vh',
+          height: '1vw',
+          transform: 'translate(-2%, -30%)',
+          transformOrigin: 'left',
+          opacity: 0,
+          cursor: 'pointer',
+          background: 'transparent',
+          border: 'none',
+          outline: 'none'
+        }}
       />
     </div>
   );
