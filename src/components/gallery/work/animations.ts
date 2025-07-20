@@ -27,61 +27,85 @@ export const PageAnim = {
   presencePage: {
     initial: {
       opacity: 0,
-      transition,
-    },
-    animate: {
-      opacity: 1,
+      scale: 0.98,
       transition: {
-        ...transition,
-        delay: 0.45,
+        duration: 0.6,
+        ease: [0.19, 1, 0.22, 1],
       },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        ...transition,
-      },
-    },
-  },
-  block: {
-    initial: {
-      opacity: 0,
-      scale: 1.2,
-      transition,
     },
     animate: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0, 0.72, 0.1, 0.99],
+        ease: [0.19, 1, 0.22, 1],
+        delay: 0.3,
+        staggerChildren: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 1.02,
+      transition: {
+        duration: 0.5,
+        ease: [0.19, 1, 0.22, 1],
+      },
+    },
+  },
+  block: {
+    initial: {
+      opacity: 0,
+      scale: 1.05,
+      y: 40,
+      transition: {
+        duration: 0.6,
+        ease: [0.19, 1, 0.22, 1],
+      },
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.19, 1, 0.22, 1],
         delay: 0.2,
       },
     },
     exit: {
-      opacity: 1,
-      scale: 1,
+      opacity: 0,
+      scale: 0.95,
+      y: -20,
       transition: {
-        ...transition,
+        duration: 0.4,
+        ease: [0.19, 1, 0.22, 1],
       },
     },
   },
   list: {
     initial: {
       opacity: 0,
-      transition,
+      y: 20,
+      transition: {
+        duration: 0.5,
+        ease: [0.19, 1, 0.22, 1],
+      },
     },
     animate: (i: number[]) => ({
       opacity: 1,
+      y: 0,
       transition: {
-        ...transition,
-        delay: i[0],
+        duration: 0.7,
+        ease: [0.19, 1, 0.22, 1],
+        delay: i[0] * 0.1,
       },
     }),
     exit: {
       opacity: 0,
+      y: -10,
       transition: {
-        ...transition,
+        duration: 0.4,
+        ease: [0.19, 1, 0.22, 1],
       },
     },
   },
@@ -121,11 +145,11 @@ export const WorksAnim = {
 };
 
 /**
- * Slider animation variants
+ * Slider animation variants - Enhanced for reference-like smoothness
  */
 const transitionLayer = {
-  ease: [0.08, 0.99, 0.37, 1],
-  duration: 1.5,
+  ease: [0.19, 1, 0.22, 1], // More fluid easing curve
+  duration: 0.9, // Slightly longer for smoothness
 };
 
 export const SliderAnim = {
@@ -133,17 +157,32 @@ export const SliderAnim = {
     enter: (direction: number) => {
       return {
         x: direction > 0 ? "100%" : "-100%",
-        transition: transitionLayer,
+        scale: 0.95,
+        opacity: 0.8,
+        transition: {
+          ...transitionLayer,
+          duration: 1.1, // Longer enter animation
+        },
       };
     },
     center: {
       x: "0%",
-      transition: transitionLayer,
+      scale: 1,
+      opacity: 1,
+      transition: {
+        ...transitionLayer,
+        duration: 0.9,
+      },
     },
     exit: (direction: number) => {
       return {
         x: direction < 0 ? "100%" : "-100%",
-        transition: transitionLayer,
+        scale: 1.05,
+        opacity: 0.6,
+        transition: {
+          ...transitionLayer,
+          duration: 0.8, // Faster exit
+        },
       };
     },
   },
@@ -163,55 +202,58 @@ export const SliderAnim = {
   },
   text: {
     initial: {
-      y: "50%",
-      clipPath: "inset(0% 0% 100% 0%)",
-      transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
-      },
+      y: "120%",
+      opacity: 0,
+      scale: 0.9,
     },
     animate: {
       y: "0%",
-      clipPath: "inset(0% 0% 0% 0%)",
+      opacity: 1,
+      scale: 1,
       transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
-        delay: 0.3,
+        ease: [0.19, 1, 0.22, 1],
+        duration: 0.8,
+        delay: 0.15,
+        staggerChildren: 0.1,
       },
     },
     exit: {
-      y: "-50%",
-      clipPath: "inset(100% 0% 0% 0%)",
+      y: "-120%",
+      opacity: 0,
+      scale: 1.1,
       transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
+        ease: [0.19, 1, 0.22, 1],
+        duration: 0.6,
       },
     },
   },
   id: {
     initial: {
-      y: "50%",
+      y: "100%",
+      opacity: 0,
       clipPath: "inset(0% 0% 100% 0%)",
       transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
+        ease: [0.19, 1, 0.22, 1],
+        duration: 1.0,
       },
     },
     animate: {
       y: "0%",
+      opacity: 1,
       clipPath: "inset(0% 0% 0% 0%)",
       transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
-        delay: 0.3,
+        ease: [0.19, 1, 0.22, 1],
+        duration: 1.0,
+        delay: 0.25,
       },
     },
     exit: {
-      y: "-50%",
+      y: "-100%",
+      opacity: 0,
       clipPath: "inset(100% 0% 0% 0%)",
       transition: {
-        ease: [0.08, 0.99, 0.39, 1.01],
-        duration: 1.2,
+        ease: [0.19, 1, 0.22, 1],
+        duration: 0.8,
       },
     },
   },

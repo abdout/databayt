@@ -701,49 +701,195 @@ html.has-scroll-dragging {
   }
 }
 
-/* Progress Bar Styles */
-.progress-bar {
+/* Old progress bar styles removed - conflicts resolved */
+
+.progress-bar-container {
   position: fixed;
+  left: 0;
   top: 0;
+  height: 100vh;
+  width: 2vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 9999;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.progress-bar__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(249, 245, 239, 0.2);
+  z-index: 1;
+}
+
+.progress-bar__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #f9f5ef;
+  transform-origin: top;
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.progress-bar-container:hover .progress-bar__track {
+  background-color: rgba(249, 245, 239, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.progress-bar-container:hover .progress-bar__fill {
+  width: 2px;
+  transition: width 0.3s ease;
+}
+
+.progress-thumbnail-wrapper {
+  position: absolute;
+  left: 100%;
+  width: 120px; 
+  pointer-events: none;
+}
+
+.progress-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.progress-thumbnail__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progress-thumbnail__view {
+  position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 1000;
-  width: 2vw;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 0;
+  font-weight: 500;
 }
 
-.progress-bar__bar {
-  width: 0.25vw;
-  height: 100%;
+.works-link-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--c-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--c-white);
+}
+
+.works-link__content {
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  max-width: 80%;
+}
+
+.works-link__next-text {
+  font-size: 1.2vw;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.works-link__title {
+  font-size: 4.5vw;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.works-link__progress {
+  height: 1px;
   background-color: var(--c-white);
-  transform-origin: top;
+  margin-top: 2rem;
+  opacity: 0.8;
 }
 
-.progress-bar__range {
+.works-link__image-container {
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  rotate: 90deg;
-  width: 100vh;
-  height: 1vw;
-  transform: translate(-2%, -30%);
-  transform-origin: left;
-  opacity: 0;
-  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.progress-bar__range::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  cursor: pointer;
+.works-link__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) saturate(0.8);
+  will-change: transform;
 }
 
-.progress-bar__range::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  cursor: pointer;
-  border: none;
+.works-link__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  font-size: 0.9vw;
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+}
+
+.works-link__scroll-arrow {
+  font-size: 1.2vw;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+.works-link-container:hover .works-link__title {
+  letter-spacing: 0.01em;
+  transition: letter-spacing 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.works-link-container:hover .works-link__scroll-indicator {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .works-link__next-text {
+    font-size: 3vw;
+    margin-bottom: 0.5rem;
+  }
+  .works-link__title {
+    font-size: 8vw;
+  }
+  .works-link__scroll-indicator {
+    font-size: 3vw;
+    bottom: 1rem;
+  }
+  .works-link__scroll-arrow {
+    font-size: 4vw;
+  }
 }

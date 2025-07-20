@@ -1,93 +1,133 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { AnchorLink } from "./anchor-link";
+import { WorkDetailsData } from "./type";
 
 interface WorksLinkProps {
   setNavigating: (state: boolean) => void;
-  data: {
-    next: {
-      image: string;
-      slug: string;
-      title: string;
-    };
-  };
+  data: WorkDetailsData;
 }
 
 export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating, data }) => {
-  const { next: nextData } = data;
-  const container = useRef<HTMLDivElement>(null);
+  const { nextProject } = data;
   const router = useRouter();
-  const [progressValue, setProgressValue] = useState(0);
-  const [hasNavigated, setHasNavigated] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [shouldAutoNavigate, setShouldAutoNavigate] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["0% 0%", "100% 100%"],
+    target: containerRef,
+    offset: ["start end", "end end"],
   });
 
-  const clipPath = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["inset(0% 30%)", "inset(0% 0%)"]
-  );
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 3000,
-    damping: 50,
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScrollProgress(latest);
+    
+    // Auto-navigate when scrolled to bottom (like reference)
+    if (latest >= 0.95 && !shouldAutoNavigate) {
+      setShouldAutoNavigate(true);
+      setTimeout(() => {
+        handleNavigate();
+      }, 800); // Delay to match reference timing
+    }
   });
+
+  if (!nextProject) {
+    return null;
+  }
 
   const handleNavigate = () => {
-    setHasNavigated(true);
     setNavigating(true);
-    router.push(`/gallery/${nextData.slug}`);
+    
+    // Add page transition effect
+    document.body.style.overflow = 'hidden';
+    
+    setTimeout(() => {
+      router.push(`/gallery/${nextProject.slug}`);
+    }, 300);
   };
 
-  useMotionValueEvent(smoothProgress, "change", (latest) => {
-    const roundedProgress = Math.round(latest * 100);
-    setProgressValue(roundedProgress);
-
-    if (roundedProgress >= 100 && !hasNavigated) {
+  const handleClick = () => {
+    if (!shouldAutoNavigate) {
       handleNavigate();
     }
-  });
-
-  useEffect(() => {
-    if (hasNavigated) {
-      const timeoutId = setTimeout(() => {
-        window.scrollTo(0, 0);
-        setNavigating(false);
-        setHasNavigated(false);
-      }, 100);
-
-      return () => clearTimeout(timeoutId);
-    }
-  }, [hasNavigated, setNavigating]);
+  };
 
   return (
-    <section className="link" ref={container}>
-      <div className="link--sticky">
-        <motion.img
-          src={nextData.image}
-          style={{ clipPath, scale }}
-          alt="next-proj"
-          className="link__image"
+    <section 
+      ref={containerRef}
+      className="works-link-container"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
+    >
+      <div className="works-link__content">
+        <motion.h2 
+          className="works-link__next-text"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Next Project
+        </motion.h2>
+        <motion.h1 
+          className="works-link__title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {nextProject.title}
+        </motion.h1>
+        <motion.div 
+          className="works-link__progress"
+          initial={{ width: 0 }}
+          animate={{ width: shouldAutoNavigate ? "100%" : "0%" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         />
-        <div className="link__title">
-          <AnchorLink 
-            toSection="#bottom" 
-            className="progress"
-          >
-            <h1>{nextData.title}</h1>
-            <span className="progress__num small-text">{progressValue}</span>
-          </AnchorLink>
-          <h2>Next Project</h2>
-        </div>
       </div>
+      
+      <motion.div 
+        className="works-link__image-container"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ 
+          opacity: isHovered ? 0.8 : 0, 
+          scale: isHovered ? 1 : 1.1 
+        }}
+        transition={{ 
+          duration: 0.6, 
+          ease: [0.16, 1, 0.3, 1] 
+        }}
+      >
+        <motion.img
+          src={nextProject.image}
+          alt={nextProject.title}
+          className="works-link__image"
+          style={{
+            transform: isHovered ? "scale(1.05)" : "scale(1)",
+            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)"
+          }}
+        />
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div 
+        className="works-link__scroll-indicator"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: shouldAutoNavigate ? 0 : 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <span>Scroll to continue</span>
+        <motion.div 
+          className="works-link__scroll-arrow"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          ↓
+        </motion.div>
+      </motion.div>
     </section>
   );
 }; 
