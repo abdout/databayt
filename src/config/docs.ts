@@ -86,6 +86,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Structure",
+          href: "/docs/structure",
+          items: [],
+        },
+        {
           title: "Stack",
           href: "/docs/stack",
           items: [],
