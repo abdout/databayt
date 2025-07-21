@@ -1,4 +1,4 @@
-import Slider from '@/components/slider';
+import Slider from '@/components/gallery/slider';
 import "../globals.css";
 
 // Load the same data that the Works view consumes (compiled at build-time from the `public` folder)
