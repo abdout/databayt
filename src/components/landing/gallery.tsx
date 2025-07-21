@@ -10,7 +10,7 @@ export function Gallery() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(false);
-  const [scale, setScale] = useState(0.8);
+  const [scale, setScale] = useState(0.9);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
@@ -26,7 +26,7 @@ export function Gallery() {
       
       // Calculate scale based on how close the element is to the center of viewport
       const normalizedDistance = Math.max(0, Math.min(1, distanceFromCenter / maxDistance));
-      const newScale = 0.8 + (1 - normalizedDistance) * 0.2; // Scale from 0.8 to 1.0
+      const newScale = 0.9 + (1 - normalizedDistance) * 0.1; // Scale from 0.9 to 1.0
       
       setScale(newScale);
     };
@@ -94,7 +94,7 @@ export function Gallery() {
 
       <div 
         ref={containerRef}
-        className="mt-10 relative aspect-video w-full max-w-3xl mx-auto rounded-sm overflow-hidden bg-black/5 transition-transform duration-300 ease-out"
+        className="mt-10 relative aspect-video w-full max-w-3xl mx-auto rounded-sm overflow-hidden bg-black/5 transition-transform duration-500 ease-out"
         style={{ 
           transform: `scale(${scale})`,
           willChange: 'transform'
