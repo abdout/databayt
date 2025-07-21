@@ -45,6 +45,7 @@
     "gsap": "^3.13.0",
     "input-otp": "^1.4.2",
     "jotai": "^2.12.5",
+    "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.511.0",
     "motion": "^12.15.0",
     "next": "15.3.3",
@@ -69,6 +70,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/locomotive-scroll": "^4.1.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

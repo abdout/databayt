@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback, useRef, useState } from 'react';
 import { easings } from '@/components/gallery/work/animations';
+import LocomotiveScroll from "locomotive-scroll";
 
 interface UseScrollResult {
   scrollTo: (e: React.MouseEvent, currentLink: string) => void;
@@ -11,7 +12,7 @@ interface UseScrollResult {
 }
 
 export function useScroll(wrapper?: string): UseScrollResult {
-  const locomotiveScrollRef = useRef<any>(null);
+  const locomotiveScrollRef = useRef<LocomotiveScroll | null>(null);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -32,43 +33,28 @@ export function useScroll(wrapper?: string): UseScrollResult {
         // Additional small delay to ensure all components are mounted
         await new Promise(resolve => setTimeout(resolve, 200));
         
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        
         // Destroy any existing instance
         if (locomotiveScrollRef.current) {
           locomotiveScrollRef.current.destroy();
         }
         
-        locomotiveScrollRef.current = new LocomotiveScroll({
-          lenisOptions: {
-            wrapper: wrapper ? document.querySelector(wrapper) : window,
-            duration: 0.7,
+        const scrollElement = wrapper 
+          ? document.querySelector(wrapper) as HTMLElement
+          : document.querySelector('[data-scroll-container]') as HTMLElement;
+        
+        if (scrollElement) {
+          locomotiveScrollRef.current = new LocomotiveScroll({
+            el: scrollElement,
+            smooth: true,
+            multiplier: 1.3,
             lerp: 0.1,
-            smoothWheel: true,
-            wheelMultiplier: 1.3,
-            // Explicitly enable keyboard
-            keyboard: true,
-            // Ensure touch events work
-            touchMultiplier: 2,
-            // Prevent native scroll
-            prevent: (node) => node.tagName === 'INPUT' || node.tagName === 'TEXTAREA' || node.tagName === 'SELECT',
-          },
-        });
+          });
+        }
 
-        // Force update scroll position and resize
+        // Force update scroll position
         if (locomotiveScrollRef.current) {
           locomotiveScrollRef.current.start();
-          
-          // Use resize instead of refresh for new Lenis API
-          setTimeout(() => {
-            if (locomotiveScrollRef.current && locomotiveScrollRef.current.resize) {
-              locomotiveScrollRef.current.resize();
-              setIsReady(true);
-            } else {
-              // Fallback if resize method doesn't exist
-              setIsReady(true);
-            }
-          }, 100);
+          setIsReady(true);
         }
       } catch (error) {
         console.error("Error initializing Locomotive Scroll:", error);
@@ -89,14 +75,12 @@ export function useScroll(wrapper?: string): UseScrollResult {
     };
   }, [wrapper]);
 
-  // Add window resize handler to resize Locomotive Scroll
+  // Add window resize handler to update Locomotive Scroll
   useEffect(() => {
     const handleResize = () => {
       if (locomotiveScrollRef.current && isReady) {
-        // Use resize instead of refresh for new Lenis API
-        if (locomotiveScrollRef.current.resize) {
-          locomotiveScrollRef.current.resize();
-        }
+        // Trigger a scroll update on resize
+        locomotiveScrollRef.current.update();
       }
     };
 
@@ -110,7 +94,7 @@ export function useScroll(wrapper?: string): UseScrollResult {
     if (locomotiveScrollRef.current && isReady) {
       locomotiveScrollRef.current.scrollTo(currentLink, {
         duration: 1.5,
-        easing: easings.easeInOutExpo,
+        easing: [0.19, 1, 0.22, 1],
       });
     } else {
       // Fallback to native scroll
@@ -128,7 +112,7 @@ export function useScroll(wrapper?: string): UseScrollResult {
       locomotiveScrollRef.current.scrollTo(currentLink, {
         duration: 2,
         offset: -100,
-        easing: easings.easeInOutExpo,
+        easing: [0.19, 1, 0.22, 1],
       });
     } else {
       // Fallback to native scroll with offset

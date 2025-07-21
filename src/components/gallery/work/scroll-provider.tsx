@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, ReactNode } from "react";
 import { ScrollContext } from "./scroll-context";
 import { easings } from "./animations";
+import LocomotiveScroll from "locomotive-scroll";
 
 interface ScrollProviderProps {
   children: ReactNode;
@@ -10,14 +11,14 @@ interface ScrollProviderProps {
 }
 
 export const ScrollProvider = ({ children, wrapper }: ScrollProviderProps) => {
-  const locomotiveScroll = useRef<any>(null);
+  const locomotiveScroll = useRef<LocomotiveScroll | null>(null);
 
   const scrollTo = (e: React.MouseEvent, currentLink: string) => {
     e.preventDefault();
     if (locomotiveScroll.current) {
       locomotiveScroll.current.scrollTo(currentLink, {
         duration: 1.5,
-        easing: easings.easeInOutExpo,
+        easing: [0.19, 1, 0.22, 1],
       });
     }
   };
@@ -28,7 +29,7 @@ export const ScrollProvider = ({ children, wrapper }: ScrollProviderProps) => {
       locomotiveScroll.current.scrollTo(currentLink, {
         duration: 2,
         offset: -100,
-        easing: easings.easeInOutExpo,
+        easing: [0.19, 1, 0.22, 1],
       });
     }
   };
@@ -47,17 +48,18 @@ export const ScrollProvider = ({ children, wrapper }: ScrollProviderProps) => {
 
     const initScroll = async () => {
       try {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        const scrollElement = wrapper 
+          ? document.querySelector(wrapper) as HTMLElement
+          : document.querySelector('[data-scroll-container]') as HTMLElement;
         
-        locomotiveScroll.current = new LocomotiveScroll({
-          lenisOptions: {
-            wrapper: wrapper ? document.querySelector(wrapper) : window,
-            duration: 0.7,
+        if (scrollElement) {
+          locomotiveScroll.current = new LocomotiveScroll({
+            el: scrollElement,
+            smooth: true,
+            multiplier: 1.3,
             lerp: 0.1,
-            smoothWheel: true,
-            wheelMultiplier: 1.3,
-          },
-        });
+          });
+        }
       } catch (error) {
         console.error("Error initializing Locomotive Scroll:", error);
       }
