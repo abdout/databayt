@@ -3,7 +3,7 @@ import "../globals.css";
 
 // Load the same data that the Works view consumes (compiled at build-time from the `public` folder)
 // This keeps Slider fully static and avoids runtime fetch issues on the server.
-import homeData from '../../../../public/data/home.json';
+import homeData from '../../../../public/gallery/home.json';
 
 export default function SliderPage() {
   return (

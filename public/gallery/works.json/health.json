@@ -1,0 +1,24 @@
+{
+    "documentTitle": "Health & Wellness",
+    "hero": {
+      "image": "/gallery/works/canvas/hero.jpg",
+      "title": [
+        "Health &", "Wellness", "Experience"
+      ],
+      "leadDesigner": "A comprehensive health and wellness platform designed to improve user wellbeing through innovative digital solutions",
+      "doneWith": "AKQA Amsterdam"
+    },
+    "images": [
+      ["/gallery/works/canvas/M0.jpg"],
+      ["/gallery/works/canvas/M1.jpg", "/gallery/works/canvas/M2.jpg"],
+      ["/gallery/works/canvas/M3.jpg"],
+      ["/gallery/works/canvas/M4.jpg", "/gallery/works/canvas/M5.jpg"],
+      ["/gallery/works/canvas/M6.jpg", "/gallery/works/canvas/M7.jpg"],
+      ["/gallery/works/canvas/M13.jpg", "/gallery/works/canvas/M14.jpg"]
+    ],
+    "next": {
+      "image": "/gallery/works/regeneration/next.jpg",
+      "title": "The Regeneration Suite",
+      "slug": "regeneration"
+    }
+  }

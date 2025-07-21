@@ -50,6 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
               {...anim(WorksAnim.hero)} 
               custom={i} 
               key={i}
+              className="font-sans"
               style={{ 
                 fontWeight: 400,
                 fontSize: "2.5vw",
@@ -67,6 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <motion.h2
             {...anim(WorksAnim.hero)}
             custom={2.5}
+            className="font-sans"
             style={{
               fontWeight: 500,
               fontSize: "1.5vw",
@@ -80,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <motion.p
             {...anim(WorksAnim.hero)}
             custom={3}
-            className="small-text shadow"
+            className="small-text shadow font-sans"
             style={{
               paddingTop: "1vw",
               fontWeight: 400,
@@ -97,6 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <motion.h2
             {...anim(WorksAnim.hero)}
             custom={3.5}
+            className="font-sans"
             style={{
               fontWeight: 500,
               fontSize: "1.5vw",
@@ -110,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <motion.p
             {...anim(WorksAnim.hero)}
             custom={4}
-            className="small-text shadow"
+            className="small-text shadow font-sans"
             style={{
               paddingTop: "1vw",
               fontWeight: 400,
@@ -125,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
         </div>
 
         <div 
-          className="scroll-down"
+          className="scroll-down font-sans"
           style={{
             fontWeight: 400,
             fontSize: "1.3vw",
@@ -137,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             marginLeft: "-1vw"
           }}
         >
-          <AnchorLink className="small-text" toSection="#works-images">
+          <AnchorLink className="small-text font-sans" toSection="#works-images">
             Scroll down
           </AnchorLink>
         </div>

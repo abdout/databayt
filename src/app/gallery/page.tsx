@@ -16,7 +16,7 @@ type PageState = 'loading' | 'gallery' | 'work';
 export default function Home() {
   const [pageState, setPageState] = useState<PageState>('loading');
   const [animationKey, setAnimationKey] = useState(0);
-  const { data, isLoading, error } = useData("/data/home.json");
+  const { data, isLoading, error } = useData("/gallery/home.json");
 
   useEffect(() => {
     // Set flag to indicate we've visited gallery

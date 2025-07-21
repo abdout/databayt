@@ -31,7 +31,7 @@ async function fetchData<T>(url: string): Promise<T> {
  * Fetch home page data
  */
 export async function getHomeData(): Promise<HomeData> {
-  return fetchData<HomeData>(`${BASE_URL}/data/home.json`);
+  return fetchData<HomeData>(`${BASE_URL}/gallery/home.json`);
 }
 
 /**

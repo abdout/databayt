@@ -2,49 +2,49 @@
   "worksList": [
    
     {
-      "image": "/images/home/codebase.jpg",
+      "image": "/gallery/home/codebase.jpg",
       "slug": "codebase",
       "title": "Shared Codebase",
       "id": "2"
     },
     {
-      "image": "/images/home/hogwarts.jpg",
+      "image": "/gallery/home/hogwarts.jpg",
       "slug": "hogwarts",
       "title": "The Boy Who Lived",
       "id": "3"
     },
     {
-      "image": "/images/home/company.webp",
+      "image": "/gallery/home/company.webp",
       "slug": "company",
       "title": "Post Revanuation",
       "id": "4"
     },
     {
-      "image": "/images/home/food.jpg",
+      "image": "/gallery/home/food.jpg",
       "slug": "food",
       "title": "A Taste Might Last",
       "id": "5"
     },
     {
-      "image": "/images/home/mkan.png",
+      "image": "/gallery/home/mkan.png",
       "slug": "mkan",
       "title": "State Of Comfort",
       "id": "6"
     },
     {
-      "image": "/images/home/automotive.jpeg",
+      "image": "/gallery/home/automotive.jpeg",
       "slug": "automotive",
       "title": "Fast Car",
       "id": "7"
     },
     {
-      "image": "/images/home/health.jpg",
+      "image": "/gallery/home/health.jpg",
       "slug": "health",
       "title": "Health & Wellness",
       "id": "8"
     },
     {
-      "image": "/images/home/regeneration.jpg",
+      "image": "/gallery/home/regeneration.jpg",
       "slug": "regeneration",
       "title": "The Regeneration Suite",
       "id": "1"

@@ -25,7 +25,7 @@ export default function WorkDetails() {
   const params = useParams();
   const slug = params.slug as string;
   const navigating = useRef(false);
-  const { data, isLoading, error } = useData(`/data/works/${slug}.json`);
+  const { data, isLoading, error } = useData(`/gallery/works.json/${slug}.json`);
   const workImagesRef = useRef<HTMLDivElement>(null);
   
   // Initialize scroll immediately at page level
@@ -224,7 +224,8 @@ export default function WorkDetails() {
         left: '50%',
         transform: 'translateX(-50%)',
         marginLeft: 0,
-        marginRight: 0
+        marginRight: 0,
+        overflowX: 'hidden'
       }}
     >
       <main 
@@ -233,7 +234,8 @@ export default function WorkDetails() {
           margin: 0,
           padding: 0,
           width: '100%',
-          minHeight: '100vh'
+          minHeight: '100vh',
+          overflowX: 'hidden'
         }}
       >
         <motion.main 

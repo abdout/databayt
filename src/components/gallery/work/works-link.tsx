@@ -66,7 +66,7 @@ export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating, data }) => 
     >
       <div className="works-link__content">
         <motion.h2 
-          className="works-link__next-text"
+          className="works-link__next-text font-sans"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -74,7 +74,7 @@ export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating, data }) => 
           Next Project
         </motion.h2>
         <motion.h1 
-          className="works-link__title"
+          className="works-link__title font-sans"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -114,7 +114,7 @@ export const WorksLink: React.FC<WorksLinkProps> = ({ setNavigating, data }) => 
 
       {/* Scroll indicator */}
       <motion.div 
-        className="works-link__scroll-indicator"
+        className="works-link__scroll-indicator font-sans"
         initial={{ opacity: 1 }}
         animate={{ opacity: shouldAutoNavigate ? 0 : 1 }}
         transition={{ duration: 0.3 }}
